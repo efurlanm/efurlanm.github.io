@@ -1,0 +1,1139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.4.6.2 (Linux)"/>
+	<meta name="created" content="2020-09-13T23:18:23.762026957"/>
+	<meta name="changed" content="2020-09-13T23:41:26.555076686"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin-left: 2cm; margin-right: 1cm; margin-top: 1cm; margin-bottom: 1cm }
+		p { margin-bottom: 0.25cm; line-height: 115%; background: transparent }
+		h4 { margin-top: 0.21cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h4.western { font-family: "Liberation Serif", serif; font-size: 12pt; font-weight: bold }
+		h4.cjk { font-family: "Tahoma"; font-size: 12pt; font-weight: bold }
+		h4.ctl { font-family: "Lohit Devanagari"; font-size: 12pt; font-weight: bold }
+		h4.min-h4 { border: none; padding: 0cm; font-size: 18pt; font-weight: normal }
+		h1 { margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Liberation Sans", sans-serif; font-size: 18pt; font-weight: bold }
+		h1.cjk { font-family: "Noto Sans CJK SC"; font-size: 18pt; font-weight: bold }
+		h1.ctl { font-family: "Lohit Devanagari"; font-size: 18pt; font-weight: bold }
+		h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h2.western { font-family: "Liberation Serif", serif; font-size: 18pt; font-weight: bold }
+		h2.cjk { font-family: "Tahoma"; font-size: 18pt; font-weight: bold }
+		h2.ctl { font-family: "Lohit Devanagari"; font-size: 18pt; font-weight: bold }
+		pre { background: transparent }
+		pre.western { font-family: "Liberation Mono", monospace; font-size: 10pt }
+		pre.cjk { font-family: "Noto Sans Mono CJK SC", monospace; font-size: 10pt }
+		pre.ctl { font-family: "Liberation Mono", monospace; font-size: 10pt }
+		blockquote { margin-left: 1cm; margin-right: 1cm; background: #f6f6f6; border: 1px solid #dddddd; padding: 0.13cm; background: transparent }
+		td p { line-height: 115%; background: transparent }
+		a:visited { color: #ffffff; letter-spacing: normal; so-language: zxx; font-weight: normal; text-decoration: none }
+		a:link { color: #000080; so-language: zxx; text-decoration: underline }
+		em { font-style: italic }
+		strong { font-weight: bold }
+	</style>
+</head>
+<body lang="pt-BR" link="#000080" vlink="#ffffff" dir="ltr"><h4 class="min-h4" style="margin-top: 0cm; margin-bottom: 0cm">
+How To Make Python Run As Fast As Julia 
+</h4>
+<p><a name="entry_rating_7fb8a943-39c5-4771-9ffc-f10d6fd093f8"></a><a href="javascript:;">JeanFrancoisPuget</a>
+2700028FGP | Dec 1 2015 | Comments (30) | Visits (260632) 
+</p>
+<div id="entry_rating_7fb8a943-39c5-4771-9ffc-f10d6fd093f8_widget" dir="ltr"><p>
+	<br/>
+<br/>
+
+	</p>
+</div>
+<h1 class="western" style="margin-top: 0cm; margin-bottom: 0cm">Julia
+vs Python</h1>
+<p>Should we ditch Python and other languages in favor of Julia for
+technical computing?  That's certainly a thought that comes to mind
+when one looks at the benchmarks on <a href="https://web.archive.org/web/20190402091508/http://julialang.org/">http://julialang.org/.
+</a> Python and other high level languages are way behind in term of
+speed.  The first question that came to my mind was different
+however: did the Julia team wrote Python benchmarks the best way for
+Python? 
+</p>
+<p>My take on this kind of cross language comparison is that the
+benchmarks should be defined by tasks to perform, then have language
+experts write the best code they can to perform these tasks.  If the
+code is all written by one language team, then there is a risk that
+other languages aren't used at best.</p>
+<p>One thing the Julia team did right is to publish on github the
+<a href="https://web.archive.org/web/20190402091508/https://github.com/JuliaLang/julia/tree/master/test/perf/micro">code
+they used</a>.  In particular, the Python code can be found <a href="https://web.archive.org/web/20190402091508/https://github.com/JuliaLang/julia/blob/master/test/perf/micro/perf.py">here</a>.
+</p>
+<p>A first look at this code confirms the bias I was afraid of.  The
+code is written in a C style with heavy use of loops over arrays and
+lists.  This is not the best way to use Python.</p>
+<p>I won't blame the Julia team, as I have been guilty of the exact
+same bias.  But I learned the hard lesson: loops on arrays or lists
+should be avoided at almost any cost as they are really slow in
+Python, see <a href="https://web.archive.org/web/20190402091508/https://www.ibm.com/developerworks/community/blogs/jfp/entry/Python_Is_Not_C?lang=en">Python
+is not C</a>.</p>
+<p>Given this bias towards C style, the interesting question (to me
+at least) is whether we can improve these benchmarks with a better
+use of Python and its tools? 
+</p>
+<p>Before I give the answer below, let me say that I am in no way
+trying to downplay Julia.  It is certainly a language worth
+monitoring as it is further developed and improved.  I just want to
+have a look at the Python side of things.  Actually, I am using this
+as an excuse to explore various Python tools that can be used to make
+code run faster. 
+</p>
+<p>In what follows I use Python 3.5.1 with <a href="https://web.archive.org/web/20190402091508/https://www.google.fr/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwi1n9KroLfJAhXFuhQKHbMhA-8QFggeMAA&amp;url=https%3A%2F%2Fwww.continuum.io%2Fdownloads&amp;usg=AFQjCNH5KKA7CTASoQKpNBeQAV2xSKKTrQ">Anaconda</a>
+on a Windows machine.  The notebook containing the complete code for
+all benchmarks below is available <a href="https://web.archive.org/web/20190402091508/https://gist.github.com/jfpuget/b53f1e15a37aba5944ad">on
+github</a> and on <a href="https://web.archive.org/web/20190402091508/http://nbviewer.jupyter.org/gist/jfpuget/b53f1e15a37aba5944ad">nbviewer</a>.</p>
+<p>Comments on various social media make me add this: I am not
+writing any C code here: if you're not convinced, then try to find
+any semicolon. All the tools used in this blog run in the standard
+CPython implementation available in Anaconda or other distributions. 
+All the code below runs in <a href="https://web.archive.org/web/20190402091508/https://gist.github.com/jfpuget/b53f1e15a37aba5944ad">a
+single notebook</a>.  I tried to use the Julia micro performance file
+from <a href="https://web.archive.org/web/20190402091508/https://github.com/JuliaLang/julia/blob/master/test/perf/micro/perf.jl">github</a>
+but it does not run as is with Julia 0.4.2.  I had to edit it and
+replace @timeit by @time to make it run.  I also had to add calls to
+the timed functions before timing them, otherwise the compilation
+time was included.  I ran it with the Julia command line interface,
+on the same machine as the one used to run Python.</p>
+<h2 class="western" style="margin-top: 0cm; margin-bottom: 0cm">Timing
+Code</h2>
+<p>The first benchmark Julia team used is a naive coding of the
+Fibonacci function. 
+</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#008000"><b>def</b></font> <font color="#0000ff">fib</font>(n):
+    <font color="#008000"><b>if</b></font> n<font color="#666666">&lt;2</font>:
+        <font color="#008000"><b>return</b></font> n
+    <font color="#008000"><b>return</b></font> fib(n<font color="#666666">-1</font>)<font color="#666666">+</font>fib(n<font color="#666666">-2</font>)</pre><p>
+This function grows rapidly with n, for instance:</p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">fib(100)
+= 354224848179261915075</font></p>
+<p>Note how Python arbitrary precision comes in handy.  Coding the
+same in a language like C would some coding effort to avoid integer
+overflow.  In Julia one would have to use the BigInt type.</p>
+<p>All the Julia benchmarks are about running times.  Here are the
+timings with and without BigInt in Julia</p>
+<p>  <font face="courier new, courier, monospace">0.000080 seconds
+(149 allocations: 10.167 KB)<br/>
+  0.012717 seconds (262.69 k
+allocations: 4.342 MB)</font></p>
+<p>One way to get running times in Python notebooks is to use the
+magic <font face="courier new, courier, monospace">%timeit</font>. 
+For instance, typing</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.5cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#666666">%</font><font color="#008000"><b>timeit</b></font> fib(20)</pre><p>
+in a new cell and executing it outputs</p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">100
+loops, best of 3: 3.77 ms per loop</font></p>
+<p>It means that the timer did the following:</p>
+<ol>
+	<li><p>Run <font face="courier new, courier, monospace">fib(20)</font>
+	one hundred times, store the total running time 
+	</p>
+	<li><p>Run <font face="courier new, courier, monospace">fib(20)</font>
+	one hundred times, store the total running time 
+	</p>
+	<li><p>Run <font face="courier new, courier, monospace">fib(20)</font>
+	one hundred times, store the total running time 
+	</p>
+	<li><p>Get the smallest running time from the three runs, divide it
+	by 100, and outputs the result as the best running time for <font face="courier new, courier, monospace">fib(20)</font>
+		</p>
+</ol>
+<p>The sizes of loops (100  and 3 here) are automatically adjusted by
+the timer.  They may change depending on how fast the timed code
+runs.</p>
+<p>Python timing compares very favorably against Julia timing when
+BigInt are used: 3 milliseconds vs 12 milliseconds.  Python is 4
+times faster than Julia when arbitrary precision is used. 
+</p>
+<p>However, Python is way slower than Julia's default 64 bits
+integers.  Let's see how we can force the use of 64 bits integers in
+Python.</p>
+<h2 class="western" style="margin-top: 0cm; margin-bottom: 0cm">Compiling
+With Cython</h2>
+<p>One way to do it is to use the <a href="https://web.archive.org/web/20190402091508/http://docs.cython.org/">Cython</a>
+compiler.  This compiler is written in Python.  It can be installed
+via</p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">pip
+install Cython</font></p>
+<p>If you use Anaconda, the installation is different.  As it is a
+bit tricky I wrote a blog entry about it: <a href="https://web.archive.org/web/20190402091508/https://www.ibm.com/developerworks/community/blogs/jfp/entry/Installing_Cython_On_Anaconda_On_Windows?lang=en" target="_blank">Installing
+Cython For Anaconda On Windows</a></p>
+<p>Once installed, we load Cython in the notebook with the <font face="courier new, courier, monospace">%load_ext</font>
+magic:</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.5cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#666666">%</font><font color="#008000"><b>load_ext</b></font> Cython</pre><p>
+We can then compile code in our notebook.  All we have to do is to
+put all the code we want to compile in one cell, including the
+required import statements, and start that cell with the cell magic
+<font face="courier new, courier, monospace">%%cython</font>:</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#666666">%%</font>cython
+<font color="#008000"><b>def</b></font> <font color="#0000ff">fib_cython</font>(n):
+    <font color="#008000"><b>if</b></font> n<font color="#666666">&lt;2</font>:
+        <font color="#008000"><b>return</b></font> n
+    <font color="#008000"><b>return</b></font> fib_cython(n<font color="#666666">-1</font>)<font color="#666666">+</font>fib_cython(n<font color="#666666">-2</font>)</pre><p>
+Executing that cell compiles the code seamlessly.  We use a slightly
+different name for our function to reflect that it is compiled with
+Cython.  Of course, there is no need to do this in general.  We could
+have replaced the previous function by a compiled function of the
+same name.</p>
+<p>Timing it yields</p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">1000
+loops, best of 3: 1.47 ms per loop</font></p>
+<p>Wow, more than 2 times faster than the original Python code!  We
+are now 9 times faster than Julia with BigInt.</p>
+<p>We can also try with static typing.  We declare the function with
+the keyword <font face="courier new, courier, monospace">cpdef</font>
+instead of <font face="courier new, courier, monospace">def</font>. 
+It allows us to type the parameters of the function with their
+corresponding C types.  Our code becomes.</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.5cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#666666">%%</font>cython</pre><blockquote style="margin-bottom: 0cm">
+ 
+</blockquote>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#008000"><b>cpdef</b></font> <font color="#b00040">long</font> <font color="#0000ff">fib_cython_type</font>(<font color="#008000">long</font> n):
+    <font color="#008000"><b>if</b></font> n<font color="#666666">&lt;2</font>:
+        <font color="#008000"><b>return</b></font> n
+    <font color="#008000"><b>return</b></font> fib_cython_type(n<font color="#666666">-1</font>)<font color="#666666">+</font>fib_cython_type(n<font color="#666666">-2</font>)</pre><p>
+After executing that cell, timing it yields</p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">10000
+loops, best of 3: 24.4 µs per loop</font></p>
+<p>Amazing, we're now at 24 micro seconds, about 150 times faster
+than the original benchmark !   This compares favorably with the 80
+microseconds used by Julia.</p>
+<p>One can argue that static typing defeats the purpose of Python.  I
+kind of agree with that in general, and we will see later a way to
+avoid this without sacrificing performance.  But I don't think this
+is the issue here.  The Fibonacci function is meant to be called with
+integers.  What we lose with static typing is the arbitrary precision
+that Python provides.  In the case of Fibonacci, using the C type
+<font face="courier new, courier, monospace">long</font> limits the
+size of the input parameter because too large parameters would result
+in integer overflow. 
+</p>
+<p>Note that Julia computation is done with 64 bits integers too,
+hence comparing our statically typed version with that of Julia is
+fair. 
+</p>
+<h2 class="western" style="margin-top: 0cm; margin-bottom: 0cm">Caching
+Computation</h2>
+<p>We can do better while keeping Python arbitrary precision.  The
+<font face="courier new, courier, monospace">fib</font> function
+repeats the same computation many times.  For instance, <font face="courier new, courier, monospace">fib(20)</font>
+will call <font face="courier new, courier, monospace">fib(19)</font>
+and <font face="courier new, courier, monospace">fib(18)</font>.  In
+turn, <font face="courier new, courier, monospace">fib(19)</font>
+will call <font face="courier new, courier, monospace">fib(18)</font>
+and <font face="courier new, courier, monospace">fib(17)</font>.  As
+a result <font face="courier new, courier, monospace">fib(18)</font>
+will be called twice.  A little analysis shows that <font face="courier new, courier, monospace">fib(17)</font>
+will be called 3 times, and <font face="courier new, courier, monospace">fib(16)</font>
+five times, etc. 
+</p>
+<p>In Python 3, we can avoid these repeated computations using the
+functools standard library. 
+</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#008000"><b>from</b></font> <font color="#0000ff"><b>functools</b></font> <font color="#008000"><b>import</b></font> lru_cache <font color="#008000"><b>as</b></font> cache
+
+<font color="#aa22ff">@cache</font>(maxsize<font color="#666666">=</font><font color="#008000"><b>None</b></font>)
+<font color="#008000"><b>def</b></font> <font color="#0000ff">fib_cache</font>(n):
+    <font color="#008000"><b>if</b></font> n<font color="#666666">&lt;2</font>:
+        <font color="#008000"><b>return</b></font> n
+    <font color="#008000"><b>return</b></font> fib_cache(n<font color="#666666">-1</font>)<font color="#666666">+</font>fib_cache(n<font color="#666666">-2</font>)</pre><p>
+Timing this function yields:</p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">1000000
+loops, best of 3: 127 ns per loop</font></p>
+<p>This is an additional 190 times speedup, and about 30,000 times
+faster than the original ¨Python code!  I find it impressive given
+we merely add an annotation to the recursive function.</p>
+<p>Note that Julia also can memoize functions, see this <a href="https://web.archive.org/web/20190402091508/http://nbviewer.jupyter.org/gist/Ismael-VC/b04ad17ee44c89917803">example</a>
+provided by Ismael V.C.</p>
+<p>This automated cache isn't available with Python 2.7.  We need to
+transform the code explicitly in order to avoid duplicate computation
+in that case.</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#008000"><b>def</b></font> <font color="#0000ff">fib_seq</font>(n):
+    <font color="#008000"><b>if</b></font> n <font color="#666666">&lt;</font> <font color="#666666">2</font>:
+        <font color="#008000"><b>return</b></font> n
+    a,b <font color="#666666">=</font> <font color="#666666">1</font>,<font color="#666666">0</font>
+    <font color="#008000"><b>for</b></font> i <font color="#aa22ff"><b>in</b></font> <font color="#008000">range</font>(n<font color="#666666">-1</font>):
+        a,b <font color="#666666">=</font> a<font color="#666666">+</font>b,a
+    <font color="#008000"><b>return</b></font> a    </pre><p>
+Note that this code makes use of Python ability to simultaneously
+assign two local variables.  Timing it yields</p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">1000000
+loops, best of 3: 1.81 µs per loop</font></p>
+<p>Another 20 times speedup!  Let us compile our function, with and
+without static typing.  Note how we use the <font face="courier new, courier, monospace">cdef</font>
+keyword to type local variables.</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#666666">%%</font>cython
+
+<font color="#008000"><b>def</b></font> <font color="#0000ff">fib_seq_cython</font>(n):
+    <font color="#008000"><b>if</b></font> n <font color="#666666">&lt;</font> <font color="#666666">2</font>:
+        <font color="#008000"><b>return</b></font> n
+    a,b <font color="#666666">=</font> <font color="#666666">1</font>,<font color="#666666">0</font>
+    <font color="#008000"><b>for</b></font> i <font color="#aa22ff"><b>in</b></font> <font color="#008000">range</font>(n<font color="#666666">-1</font>):
+        a,b <font color="#666666">=</font> a<font color="#666666">+</font>b,a
+    <font color="#008000"><b>return</b></font> a    
+
+<font color="#008000"><b>cpdef</b></font> <font color="#b00040">long</font> <font color="#0000ff">fib_seq_cython_type</font>(<font color="#008000">long</font> n):
+    <font color="#008000"><b>if</b></font> n <font color="#666666">&lt;</font> <font color="#666666">2</font>:
+        <font color="#008000"><b>return</b></font> n
+    <font color="#008000"><b>cdef</b></font> <font color="#b00040">long</font> <font color="#0000ff">a</font>,<font color="#0000ff">b</font>
+    a,b <font color="#666666">=</font> <font color="#666666">1</font>,<font color="#666666">0</font>
+    <font color="#008000"><b>for</b></font> i <font color="#aa22ff"><b>in</b></font> <font color="#008000">range</font>(n<font color="#666666">-1</font>):
+        a,b <font color="#666666">=</font> a<font color="#666666">+</font>b,a
+    <font color="#008000"><b>return</b></font> a</pre><p>
+We can time both versions in one cell:</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#666666">%</font><font color="#008000"><b>timeit</b></font> fib_seq_cython(20)
+<font color="#666666">%</font><font color="#008000"><b>timeit</b></font> fib_seq_cython_type(20)</pre><p>
+It yields</p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">1000000
+loops, best of 3: 953 ns per loop </font>
+</p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">10000000
+loops, best of 3: 82 ns per loop</font></p>
+<p>We are now at 82 nano seconds with the statically typed code,
+about <em>45,000</em>  times faster than the original benchmark! 
+</p>
+<p>If we want to compute the Fibonacci number for arbitrary input,
+then we should stick to the untyped version, which runs with a
+respectable<em> 30,000</em> times  speedup.  Not so bad isn't it?</p>
+<h2 class="western" style="margin-top: 0cm; margin-bottom: 0cm">Compiling
+With Numba</h2>
+<p>Let us use another tool called <a href="https://web.archive.org/web/20190402091508/http://numba.pydata.org/">Numba</a>.
+ It is a just in time (jit) compiler for a subset of Python.  It does
+not work yet on all of Python, but when it does work it can do
+marvels. 
+</p>
+<p>Installing it can be cumbersome.  I recommend that you use a
+Python distribution like <a href="https://web.archive.org/web/20190402091508/https://www.google.fr/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwi1n9KroLfJAhXFuhQKHbMhA-8QFggeMAA&amp;url=https%3A%2F%2Fwww.continuum.io%2Fdownloads&amp;usg=AFQjCNH5KKA7CTASoQKpNBeQAV2xSKKTrQ">Anaconda</a>
+or a <a href="https://web.archive.org/web/20190402091508/https://www.ibm.com/developerworks/community/blogs/jfp/entry/Using_Docker_Machine_On_Windows?lang=en">Docker
+image</a> where Numba is already installed.  Once installed, we
+import its jit compiler:</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.5cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#008000"><b>from</b></font> <font color="#0000ff"><b>numba</b></font> <font color="#008000"><b>import</b></font> jit</pre><p>
+Using it is very simple.  We only need to add a decoration to the
+functions we want to compile.  Our code becomes:</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#aa22ff">@jit</font>
+<font color="#008000"><b>def</b></font> <font color="#0000ff">fib_seq_numba</font>(n):
+    <font color="#008000"><b>if</b></font> n <font color="#666666">&lt;</font> <font color="#666666">2</font>:
+        <font color="#008000"><b>return</b></font> n
+    a,b <font color="#666666">=</font> <font color="#666666">1</font>,<font color="#666666">0</font>
+    <font color="#008000"><b>for</b></font> i <font color="#aa22ff"><b>in</b></font> <font color="#008000">range</font>(n<font color="#666666">-1</font>):
+        a,b <font color="#666666">=</font> a<font color="#666666">+</font>b,a
+    <font color="#008000"><b>return</b></font> a    </pre><p>
+Timing it yields</p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">1000000
+loops, best of 3: 216 ns per loop</font></p>
+<p>We are faster than the untyped Cython code, and about <em>17,000</em>
+times faster than the original Python code! 
+</p>
+<h2 class="western" style="margin-top: 0cm; margin-bottom: 0cm">Using
+Numpy</h2>
+<p>Let's now look at the second benchmark.  It is an implementation
+of the quicksort algorithm.  Julia team used that Python code:</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#008000"><b>def</b></font> <font color="#0000ff">qsort_kernel</font>(a, lo, hi):
+    i <font color="#666666">=</font> lo
+    j <font color="#666666">=</font> hi
+    <font color="#008000"><b>while</b></font> i <font color="#666666">&lt;</font> hi:
+        pivot <font color="#666666">=</font> a[(lo<font color="#666666">+</font>hi) <font color="#666666">//</font> <font color="#666666">2</font>]
+        <font color="#008000"><b>while</b></font> i <font color="#666666">&lt;=</font> j:
+            <font color="#008000"><b>while</b></font> a[i] <font color="#666666">&lt;</font> pivot:
+                i <font color="#666666">+=</font> <font color="#666666">1</font>
+            <font color="#008000"><b>while</b></font> a[j] <font color="#666666">&gt;</font> pivot:
+                j <font color="#666666">-=</font> <font color="#666666">1</font>
+            <font color="#008000"><b>if</b></font> i <font color="#666666">&lt;=</font> j:
+                a[i], a[j] <font color="#666666">=</font> a[j], a[i]
+                i <font color="#666666">+=</font> <font color="#666666">1</font>
+                j <font color="#666666">-=</font> <font color="#666666">1</font>
+        <font color="#008000"><b>if</b></font> lo <font color="#666666">&lt;</font> j:
+            qsort_kernel(a, lo, j)
+        lo <font color="#666666">=</font> i
+        j <font color="#666666">=</font> hi
+    <font color="#008000"><b>return</b></font> a</pre><p>
+I wrapped their benchmarking code in a function:</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.5cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#008000"><b>import</b></font> <font color="#0000ff"><b>random</b></font></pre><blockquote style="margin-bottom: 0cm">
+ 
+</blockquote>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#008000"><b>def</b></font> <font color="#0000ff">benchmark_qsort</font>():
+    lst <font color="#666666">=</font> [ random<font color="#666666">.</font>random() <font color="#008000"><b>for</b></font> i <font color="#aa22ff"><b>in</b></font> <font color="#008000">range</font>(<font color="#666666">1</font>,<font color="#666666">5000</font>) ]
+    qsort_kernel(lst, <font color="#666666">0</font>, <font color="#008000">len</font>(lst)<font color="#666666">-1</font>)</pre><p>
+Timing it yields:</p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">100
+loops, best of 3: 17.7 ms per loop</font></p>
+<p>The above code is really like C code.  Cython should do well on
+it.  Besides using Cython and static typing, let us use Numpy arrays
+instead of lists.  Indeed, <a href="https://web.archive.org/web/20190402091508/http://www.numpy.org/">Numpy</a>
+arrays are faster than Python lists when their size is large, say
+thousands of elements or more. 
+</p>
+<p>Installing Numpy can take a while, I recommend you use <a href="https://web.archive.org/web/20190402091508/https://www.google.fr/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwi1n9KroLfJAhXFuhQKHbMhA-8QFggeMAA&amp;url=https%3A%2F%2Fwww.continuum.io%2Fdownloads&amp;usg=AFQjCNH5KKA7CTASoQKpNBeQAV2xSKKTrQ">Anaconda</a>
+or a <a href="https://web.archive.org/web/20190402091508/https://www.ibm.com/developerworks/community/blogs/jfp/entry/Using_Docker_Machine_On_Windows?lang=en">Docker
+image</a> where the Python scientific stack is already installed. 
+</p>
+<p>When using Cython, we need to import Numpy in the cell to which
+Cython is applied. Numpy arrays are declared with a special syntax
+indicating the type of elements of arrays, and the number of
+dimensions of the array (1D, 2D, etc).  The decorators tell Cython to
+remove bound checking.</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#666666">%%</font>cython
+<font color="#008000"><b>import</b></font> <font color="#0000ff"><b>numpy</b></font> <font color="#008000"><b>as</b></font> <font color="#0000ff"><b>np</b></font>
+<font color="#008000"><b>import</b></font> <font color="#0000ff"><b>cython</b></font>
+
+<font color="#aa22ff">@cython</font><font color="#666666">.</font>boundscheck(<font color="#008000">False</font>)
+<font color="#aa22ff">@cython</font><font color="#666666">.</font>wraparound(<font color="#008000">False</font>)
+<font color="#008000"><b>cdef</b></font> <font color="#b00040">double</font>[:] \
+qsort_kernel_cython_numpy_type(double[:] a, \
+                               <font color="#008000">long</font> lo, \
+                               <font color="#008000">long</font> hi):
+    <font color="#008000"><b>cdef</b></font>: 
+        <font color="#008000">long</font> i, j
+        double pivot
+    i <font color="#666666">=</font> lo
+    j <font color="#666666">=</font> hi
+    <font color="#008000"><b>while</b></font> i <font color="#666666">&lt;</font> hi:
+        pivot <font color="#666666">=</font> a[(lo<font color="#666666">+</font>hi) <font color="#666666">//</font> <font color="#666666">2</font>]
+        <font color="#008000"><b>while</b></font> i <font color="#666666">&lt;=</font> j:
+            <font color="#008000"><b>while</b></font> a[i] <font color="#666666">&lt;</font> pivot:
+                i <font color="#666666">+=</font> <font color="#666666">1</font>
+            <font color="#008000"><b>while</b></font> a[j] <font color="#666666">&gt;</font> pivot:
+                j <font color="#666666">-=</font> <font color="#666666">1</font>
+            <font color="#008000"><b>if</b></font> i <font color="#666666">&lt;=</font> j:
+                a[i], a[j] <font color="#666666">=</font> a[j], a[i]
+                i <font color="#666666">+=</font> <font color="#666666">1</font>
+                j <font color="#666666">-=</font> <font color="#666666">1</font>
+        <font color="#008000"><b>if</b></font> lo <font color="#666666">&lt;</font> j:
+            qsort_kernel_cython_numpy_type(a, lo, j)
+        lo <font color="#666666">=</font> i
+        j <font color="#666666">=</font> hi
+    <font color="#008000"><b>return</b></font> a
+
+<font color="#008000"><b>def</b></font> <font color="#0000ff">benchmark_qsort_numpy_cython</font>():
+    lst <font color="#666666">=</font> np<font color="#666666">.</font>random<font color="#666666">.</font>rand(<font color="#666666">5000</font>)
+    qsort_kernel_cython_numpy_type(lst, <font color="#666666">0</font>, <font color="#008000">len</font>(lst)<font color="#666666">-1</font>)</pre><p>
+Timing the <font face="courier new, courier, monospace">benchmark_qsort_numpy_cython()</font>
+function yields</p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">1000
+loops, best of 3: 772 µs per loop</font></p>
+<p>We are about 23 times faster than the original benchmark, but this
+is still not the best way to use Python.  The best way is to use the
+Numpy built-in <font face="courier new, courier, monospace">sort()</font>
+function.  Its default behavior is to use the quick sort algorithm. 
+Timing this code</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#008000"><b>def</b></font> <font color="#0000ff">benchmark_sort_numpy</font>():
+    lst <font color="#666666">=</font> np<font color="#666666">.</font>random<font color="#666666">.</font>rand(<font color="#666666">5000</font>)
+    np<font color="#666666">.</font>sort(lst)</pre><p>
+yields</p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">1000
+loops, best of 3: 306 µs per loop</font></p>
+<p>We are now 58 times faster than the original benchmark!  Julia
+takes 419 micro seconds on that benchmark, hence compiled Python is
+40% faster.</p>
+<p>I know, some readers will say that I am not comparing apple to
+apple.  I disagree.  Remember, the task at hand is to sort an input
+array using the host language in the best possible way.  In this
+case, the best possible way is to use a built-in function. 
+</p>
+<h2 class="western" style="margin-top: 0cm; margin-bottom: 0cm">Profiling
+Code</h2>
+<p>Let use now look at a third example, computing the Mandelbrot set.
+ Julia team used this Python code:</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#008000"><b>def</b></font> <font color="#0000ff">mandel</font>(z):
+    maxiter <font color="#666666">=</font> <font color="#666666">80</font>
+    c <font color="#666666">=</font> z
+    <font color="#008000"><b>for</b></font> n <font color="#aa22ff"><b>in</b></font> <font color="#008000">range</font>(maxiter):
+        <font color="#008000"><b>if</b></font> <font color="#008000">abs</font>(z) <font color="#666666">&gt;</font> <font color="#666666">2</font>:
+            <font color="#008000"><b>return</b></font> n
+        z <font color="#666666">=</font> z<font color="#666666">*</font>z <font color="#666666">+</font> c
+    <font color="#008000"><b>return</b></font> maxiter
+
+<font color="#008000"><b>def</b></font> <font color="#0000ff">mandelperf</font>():
+    r1 <font color="#666666">=</font> np<font color="#666666">.</font>linspace(<font color="#666666">-2.0</font>, <font color="#666666">0.5</font>, <font color="#666666">26</font>)
+    r2 <font color="#666666">=</font> np<font color="#666666">.</font>linspace(<font color="#666666">-1.0</font>, <font color="#666666">1.0</font>, <font color="#666666">21</font>)
+    <font color="#008000"><b>return</b></font> [mandel(<font color="#008000">complex</font>(r, i)) <font color="#008000"><b>for</b></font> r <font color="#aa22ff"><b>in</b></font> r1 <font color="#008000"><b>for</b></font> i <font color="#aa22ff"><b>in</b></font> r2]</pre><blockquote style="margin-bottom: 0cm">
+ 
+</blockquote>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.5cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#008000"><b>assert</b></font> <font color="#008000">sum</font>(mandelperf()) <font color="#666666">==</font> <font color="#666666">14791</font></pre><p>
+The last line is a sanity check.  Timing the <font face="courier new, courier, monospace">mandelperf()</font>
+function yields:</p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">100
+loops, best of 3: 6.57 ms per loop </font>
+</p>
+<p>Using Cython yields:</p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">100
+loops, best of 3: 3.6 ms per loop</font></p>
+<p>Not bad, but we can do better using Numba.  Unfortunately, Numba
+does not compile list comprehensions yet.  Therefore we cannot apply
+it to the second function, but we can apply it to the first one.  Our
+code looks like this.</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#aa22ff">@jit</font>
+<font color="#008000"><b>def</b></font> <font color="#0000ff">mandel_numba</font>(z):
+    maxiter <font color="#666666">=</font> <font color="#666666">80</font>
+    c <font color="#666666">=</font> z
+    <font color="#008000"><b>for</b></font> n <font color="#aa22ff"><b>in</b></font> <font color="#008000">range</font>(maxiter):
+        <font color="#008000"><b>if</b></font> <font color="#008000">abs</font>(z) <font color="#666666">&gt;</font> <font color="#666666">2</font>:
+            <font color="#008000"><b>return</b></font> n
+        z <font color="#666666">=</font> z<font color="#666666">*</font>z <font color="#666666">+</font> c
+    <font color="#008000"><b>return</b></font> maxiter
+
+<font color="#008000"><b>def</b></font> <font color="#0000ff">mandelperf_numba</font>():
+    r1 <font color="#666666">=</font> np<font color="#666666">.</font>linspace(<font color="#666666">-2.0</font>, <font color="#666666">0.5</font>, <font color="#666666">26</font>)
+    r2 <font color="#666666">=</font> np<font color="#666666">.</font>linspace(<font color="#666666">-1.0</font>, <font color="#666666">1.0</font>, <font color="#666666">21</font>)
+<font color="#008000">    </font><font color="#008000"><b>return</b></font> [mandel(<font color="#008000">complex</font>(r, i)) <font color="#008000"><b>for</b></font> r <font color="#aa22ff"><b>in</b></font> r1 <font color="#008000"><b>for</b></font> i <font color="#aa22ff"><b>in</b></font> r2]</pre><p>
+Timing it yields</p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">1000
+loops, best of 3: 481 µs per loop</font></p>
+<p>Not bad, four times faster than Cython, and 9 times faster than
+the original Python code! 
+</p>
+<p>Can we do more?  One way to know is to profile the code.  The
+built-in <font face="courier new, courier, monospace">%prun</font>
+profiler is not precise enough here, and we must use a better
+profiler known as <a href="https://web.archive.org/web/20190402091508/https://github.com/rkern/line_profiler">line_profiler</a>.
+ It can be installed via pip:</p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">pip
+install line_profiler</font></p>
+<p>Once installed, we load it:</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.5cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#666666">%</font><font color="#008000"><b>load_ext</b></font> line_profiler</pre><p>
+We can then profile the function using a magic:</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.5cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#666666">%</font><font color="#008000"><b>lprun</b></font> -s -f mandelperf_numba mandelperf_numba()</pre><p>
+It outputs the following in a pop up window.</p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">Timer
+unit: 1e-06 s</font></p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">Total
+time: 0.003666 s<br/>
+File:
+&lt;ipython-input-102-e6043a6167d6&gt;<br/>
+Function:
+mandelperf_numba at line 11</font></p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">Line
+#      Hits         Time  Per Hit   % Time  Line
+Contents<br/>
+==============================================================<br/>
+
+   11                                           def
+mandelperf_numba():<br/>
+    12         1         1994   1994.0    
+54.4      r1 = np.linspace(-2.0, 0.5, 26)<br/>
+    13         1      
+   267    267.0      7.3      r2 = np.linspace(-1.0, 1.0, 21)<br/>
+  
+ 14         1         1405   1405.0     38.3      return
+[mandel_numba(complex(r, i)) for r in r1 for i in r2]</font></p>
+<p>We see that the bulk of the time is spent in the first and last
+lines of our <font face="courier new, courier, monospace">mandelperf_numba()</font>
+function.  The last line is a bit complex, let us break it into two
+pieces, and profile again:</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#008000"><b>def</b></font> <font color="#0000ff">mandelperf_numba</font>():
+    r1 <font color="#666666">=</font> np<font color="#666666">.</font>linspace(<font color="#666666">-2.0</font>, <font color="#666666">0.5</font>, <font color="#666666">26</font>)
+    r2 <font color="#666666">=</font> np<font color="#666666">.</font>linspace(<font color="#666666">-1.0</font>, <font color="#666666">1.0</font>, <font color="#666666">21</font>)
+    c3 <font color="#666666">=</font> [<font color="#008000">complex</font>(r,i) <font color="#008000"><b>for</b></font> r <font color="#aa22ff"><b>in</b></font> r1 <font color="#008000"><b>for</b></font> i <font color="#aa22ff"><b>in</b></font> r2]
+    <font color="#008000"><b>return</b></font> [mandel_numba(c) <font color="#008000"><b>for</b></font> c <font color="#aa22ff"><b>in</b></font> c3]</pre><p>
+Profiler output becomes</p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">Timer
+unit: 1e-06 s</font></p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">Total
+time: 0.002002 s<br/>
+File:
+&lt;ipython-input-113-ba7b044b2c6c&gt;<br/>
+Function:
+mandelperf_numba at line 11</font></p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">Line
+#      Hits         Time  Per Hit   % Time  Line
+Contents<br/>
+==============================================================<br/>
+
+   11                                           def
+mandelperf_numba():<br/>
+    12         1          678    678.0    
+33.9      r1 = np.linspace(-2.0, 0.5, 26)<br/>
+    13         1      
+   235    235.0     11.7      r2 = np.linspace(-1.0, 1.0, 21)<br/>
+  
+ 14         1          617    617.0     30.8      c3 = [complex(r, i)
+for r in r1 for i in r2]<br/>
+    15         1          472    472.0 
+   23.6      return [mandel_numba(c) for c in c3]</font></p>
+<p>We see that the calls to the function <font face="courier new, courier, monospace">mandel_numba()</font>
+takes only one fourth of the total time.  The rest of the time is
+spent in the <font face="courier new, courier, monospace">mandelperf_numba()</font>
+function.  Optimizing it is worthwhile.</p>
+<h2 class="western" style="margin-top: 0cm; margin-bottom: 0cm">Using
+Numpy Again</h2>
+<p>Using Cython isn't helping much here, and Numba does not apply. 
+One way out of this dilemma is to use Numpy again.  We will replace
+the following by Numpy code that produces an equivalent result.</p>
+<p>    <font face="courier new, courier, monospace">return
+[mandel_numba(complex(r, i)) for r in r1 for i in r2]</font></p>
+<p>This code is building what is known as a 2D mesh.  It computes the
+complex number representation of points whose coordinates are given
+by <font face="courier new, courier, monospace">r1</font> and <font face="courier new, courier, monospace">r2</font>.
+ Point <em>P</em><em><sub>ij</sub></em> coordinates are <font face="courier new, courier, monospace">r1[i]</font>
+and <font face="courier new, courier, monospace">r2[j]</font>.  <em>P</em><em><sub>ij</sub></em>
+is represented by the complex number <font face="courier new, courier, monospace">r1[i]
++ 1j*r2[j]</font> where the special constant <font face="courier new, courier, monospace">1j
+</font>represents the unitary imaginary number <em>i. </em>
+</p>
+<p>We can code this computation directly:</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#aa22ff">@jit</font>
+<font color="#008000"><b>def</b></font> <font color="#0000ff">mandelperf_numba_mesh</font>():
+    width <font color="#666666">=</font> <font color="#666666">26</font>
+    height <font color="#666666">=</font> <font color="#666666">21</font>
+    r1 <font color="#666666">=</font> np<font color="#666666">.</font>linspace(<font color="#666666">-2.0</font>, <font color="#666666">0.5</font>, width)
+    r2 <font color="#666666">=</font> np<font color="#666666">.</font>linspace(<font color="#666666">-1.0</font>, <font color="#666666">1.0</font>, height)
+    mandel_set <font color="#666666">=</font> np<font color="#666666">.</font>empty((width,height), dtype<font color="#666666">=</font><font color="#008000">int</font>)
+    <font color="#008000"><b>for</b></font> i <font color="#aa22ff"><b>in</b></font> <font color="#008000">range</font>(width):
+        <font color="#008000"><b>for</b></font> j <font color="#aa22ff"><b>in</b></font> <font color="#008000">range</font>(height):
+            mandel_set[i,j] <font color="#666666">=</font> mandel_numba(r1[i] <font color="#666666">+</font> <font color="#666666">1</font>j<font color="#666666">*</font>r2[j])
+    <font color="#008000"><b>return</b></font> mandel_set</pre><p>
+Note that I changed the return value to be a 2D array of integers. 
+That's closer to what we need if we were to display the result.</p>
+<p>Timing it yields</p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">10000
+loops, best of 3: 126 µs per loop </font>
+</p>
+<p>We are about 50 times faster than the original Python code!  Julia
+takes 196 micro seconds on that benchmark, hence compiled Python is
+60% faster.</p>
+<p>[Edited on February 2, 2016].  We can do even better in Python,
+see <a href="https://web.archive.org/web/20190402091508/https://www.ibm.com/developerworks/community/blogs/jfp/entry/How_To_Compute_Mandelbrodt_Set_Quickly?lang=en">How
+To Quickly Compute Mandelbrot Set In Python.</a></p>
+<h2 class="western" style="margin-top: 0cm; margin-bottom: 0cm">Vectorizing</h2>
+<p>Let us look at another example.  I am not sure about what is
+measured to be honest, but here is the code the Julia team used .</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#008000"><b>def</b></font> <font color="#0000ff">parse_int</font>():
+    <font color="#008000"><b>for</b></font> i <font color="#aa22ff"><b>in</b></font> <font color="#008000">range</font>(<font color="#666666">1</font>,<font color="#666666">1000</font>):
+        n <font color="#666666">=</font> random<font color="#666666">.</font>randint(<font color="#666666">0</font>,<font color="#666666">2**32-1</font>)
+        s <font color="#666666">=</font> <font color="#008000">hex</font>(n)
+        m <font color="#666666">=</font> <font color="#008000">int</font>(s,<font color="#666666">16</font>)
+        <font color="#008000"><b>assert</b></font> m <font color="#666666">==</font> n</pre><p>
+Actually Julia's team code has an extra instruction that strips the
+ending <font face="courier new, courier, monospace">'L' </font>in
+case it is present.  That line is required for my Anaconda install,
+but it is not required for my Python 3 install, therefore I removed
+it.  The original code is:</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#008000"><b>def</b></font> <font color="#0000ff">parse_int</font>():
+    <font color="#008000"><b>for</b></font> i <font color="#aa22ff"><b>in</b></font> <font color="#008000">range</font>(<font color="#666666">1</font>,<font color="#666666">1000</font>):
+        n <font color="#666666">=</font> random<font color="#666666">.</font>randint(<font color="#666666">0</font>,<font color="#666666">2**32-1</font>)
+        s <font color="#666666">=</font> <font color="#008000">hex</font>(n)
+        <font color="#008000"><b>if</b></font> s[<font color="#666666">-1</font>]<font color="#666666">==</font><font color="#ba2121">'L'</font>:
+            s <font color="#666666">=</font> s[<font color="#666666">0</font>:<font color="#666666">-1</font>]    
+        m <font color="#666666">=</font> <font color="#008000">int</font>(s,<font color="#666666">16</font>)
+        <font color="#008000"><b>assert</b></font> m <font color="#666666">==</font> n</pre><p>
+Timing the modified code yields:</p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">100
+loops, best of 3: 3.29 ms per loop</font></p>
+<p>Neither Numba nor Cython seem to help.</p>
+<p>As I was puzzled by this benchmark, I profiled the original code. 
+Here is the result:</p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">Timer
+unit: 1e-06 s</font></p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">Total
+time: 0.013807 s<br/>
+File: &lt;ipython-input-3-1d995505b176&gt;<br/>
+Function:
+parse_int at line 1</font></p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">Line
+#      Hits         Time  Per Hit   % Time  Line
+Contents<br/>
+==============================================================<br/>
+
+    1                                           def parse_int():<br/>
+
+    2      1000          699      0.7      5.1      for i in
+range(1,1000):<br/>
+     3       999         9149      9.2     66.3  
+       n = random.randint(0,2**32-1)<br/>
+     4       999        
+1024      1.0      7.4          s = hex(n)<br/>
+     5       999     
+    863      0.9      6.3          if s[-1]=='L':<br/>
+     6        
+                                              s = s[0:-1]<br/>
+     7
+      999         1334      1.3      9.7          m = int(s,16)<br/>
+
+    8       999          738      0.7      5.3          assert m == n</font></p>
+<p> 
+</p>
+<p>We see that most of the time is in generating the random numbers. 
+I am not sure this was the intent of the benchmark...</p>
+<p>One way to speed this is to use the Numpy random generator.  Given
+Numpy uses C ints, we must limit the largest value to 2^31 - 1.  The
+code becomes:</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#008000"><b>def</b></font> <font color="#0000ff">parse_int1_numpy</font>():
+    <font color="#008000"><b>for</b></font> i <font color="#aa22ff"><b>in</b></font> <font color="#008000">range</font>(<font color="#666666">1</font>,<font color="#666666">1000</font>):
+        n <font color="#666666">=</font> np<font color="#666666">.</font>random<font color="#666666">.</font>randint(<font color="#666666">0</font>,<font color="#666666">2**31-1</font>)
+        s <font color="#666666">=</font> <font color="#008000">hex</font>(n)
+        m <font color="#666666">=</font> <font color="#008000">int</font>(s,<font color="#666666">16</font>)
+        <font color="#008000"><b>assert</b></font> m <font color="#666666">==</font> n</pre><p>
+Timing it yields</p>
+<pre class="western" style="margin-left: 1.06cm; margin-bottom: 0.5cm">1000 loops, best of 3: 1.05 ms per loop</pre><p>
+Not bad, more than 3 times faster!  Appmying Numba doe snot help, but
+cython provides some further improvement:</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#aa22ff">@cython</font><font color="#666666">.</font>boundscheck(<font color="#008000">False</font>)
+<font color="#aa22ff">@cython</font><font color="#666666">.</font>wraparound(<font color="#008000">False</font>)
+<font color="#008000"><b>cpdef</b></font> <font color="#0000ff">parse_int_cython_numpy</font>():
+    cdef:
+        <font color="#008000">int</font> i,n,m
+    <font color="#008000"><b>for</b></font> i <font color="#aa22ff"><b>in</b></font> <font color="#008000">range</font>(<font color="#666666">1</font>,<font color="#666666">1000</font>):
+        n <font color="#666666">=</font> np<font color="#666666">.</font>random<font color="#666666">.</font>randint(<font color="#666666">0</font>,<font color="#666666">2**31-1</font>)
+        m <font color="#666666">=</font> <font color="#008000">int</font>(<font color="#008000">hex</font>(n),<font color="#666666">16</font>)
+        <font color="#008000"><b>assert</b></font> m <font color="#666666">==</font> n</pre><p>
+Fiming it yields:</p>
+<pre class="western" style="margin-left: 1.06cm; margin-bottom: 0.5cm">1000 loops, best of 3: 817 µs per loop</pre><p>
+One way to further speed this up is to move the generation of random
+numbers out of the loop using Numpy.  We create an array of random
+numbers in one step. 
+</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#008000"><b>def</b></font> <font color="#0000ff">parse_int_vec</font>():
+    n <font color="#666666">=</font> np<font color="#666666">.</font>random<font color="#666666">.</font>randint(<font color="#666666">2^31-1</font>,size<font color="#666666">=1000</font>)
+    <font color="#008000"><b>for</b></font> i <font color="#aa22ff"><b>in</b></font> <font color="#008000">range</font>(<font color="#666666">1</font>,<font color="#666666">1000</font>):
+        ni <font color="#666666">=</font> n[i]
+        s <font color="#666666">=</font> <font color="#008000">hex</font>(ni)
+        m <font color="#666666">=</font> <font color="#008000">int</font>(s,<font color="#666666">16</font>)
+        <font color="#008000"><b>assert</b></font> m <font color="#666666">==</font> ni</pre><p>
+Timing it yields:</p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">1000
+loops, best of 3: 848 µs per loop</font></p>
+<p>Not bad, 4 times faster than the original code, and close to the
+Cython code speed.</p>
+<p>Once we have an array it seems silly to loop over it to apply the
+<font face="courier new, courier, monospace">hex()</font> and the
+<font face="courier new, courier, monospace">int()</font> functions
+one element at a time.  Good news it that Numpy provides a way to
+apply functions to an array rather than in a loop, namely the
+<font face="courier new, courier, monospace">numpy.vectorize()
+</font>function.  This function takes as input a function that
+operate one one object at a time  It returns a new function that
+operates on an array.</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6">vhex <font color="#666666">=</font> np<font color="#666666">.</font>vectorize(<font color="#008000">hex</font>)
+vint <font color="#666666">=</font> np<font color="#666666">.</font>vectorize(<font color="#008000">int</font>)
+
+<font color="#008000"><b>def</b></font> <font color="#0000ff">parse_int_numpy</font>():
+    n <font color="#666666">=</font> np<font color="#666666">.</font>random<font color="#666666">.</font>randint(<font color="#666666">0</font>,<font color="#666666">2**31-1</font>,<font color="#666666">1000</font>)
+    s <font color="#666666">=</font> vhex(n)
+    m <font color="#666666">=</font> vint(s,<font color="#666666">16</font>)
+    np<font color="#666666">.</font>all(m <font color="#666666">==</font> n)
+    <font color="#008000"><b>return</b></font> s</pre><p>
+This code runs a bit faster, and nearly as fast as the Cython code:</p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">1000
+loops, best of 3: 733 µs per loop</font></p>
+<p>Cython can be used to speed this up.</p>
+<pre class="western" style="margin-left: 1cm; margin-right: 1cm; border: 1px solid #dddddd; padding: 0.13cm; background: #f6f6f6"><font color="#666666">%%</font>cython
+<font color="#008000"><b>import</b></font> <font color="#0000ff"><b>numpy</b></font> <font color="#008000"><b>as</b></font> <font color="#0000ff"><b>np</b></font>
+<font color="#008000"><b>import</b></font> <font color="#0000ff"><b>cython</b></font>
+
+<font color="#aa22ff">@cython</font><font color="#666666">.</font>boundscheck(<font color="#008000">False</font>)
+<font color="#aa22ff">@cython</font><font color="#666666">.</font>wraparound(<font color="#008000">False</font>)
+<font color="#008000"><b>cpdef</b></font> <font color="#0000ff">parse_int_vec_cython</font>():
+    <font color="#008000"><b>cdef</b></font>:
+        <font color="#008000">int</font> i,m
+        <font color="#008000">int</font>[:] n
+    n <font color="#666666">=</font> np<font color="#666666">.</font>random<font color="#666666">.</font>randint(<font color="#666666">0</font>,<font color="#666666">2**31-1</font>,<font color="#666666">1000</font>)
+    <font color="#008000"><b>for</b></font> i <font color="#aa22ff"><b>in</b></font> <font color="#008000">range</font>(<font color="#666666">1</font>,<font color="#666666">1000</font>):
+        m <font color="#666666">=</font> <font color="#008000">int</font>(<font color="#008000">hex</font>(n[i]),<font color="#666666">16</font>)
+        <font color="#008000"><b>assert</b></font> m <font color="#666666">==</font> n[i]</pre><p>
+Timing it yields.</p>
+<p style="margin-left: 1.06cm"><font face="courier new, courier, monospace">1000
+loops, best of 3: 472 µs per loop</font></p>
+<h2 class="western" style="margin-top: 0cm; margin-bottom: 0cm">Summary</h2>
+<p>We have described above how to speed up 4 of the examples used by
+the Julia team.  There are 3 more:</p>
+<ul>
+	<li><p>pisum can run 29 times faster with Numba.  
+	</p>
+	<li><p>randmatstat can be made 2 times faster by better use of
+	Numpy.  
+	</p>
+	<li><p>randmatmul is so simple that no tool can be applied to it.  
+	</p>
+</ul>
+<p>The notebook containing complete code for all 7 examples is
+available <a href="https://web.archive.org/web/20190402091508/https://gist.github.com/jfpuget/b53f1e15a37aba5944ad">on
+github</a> and on <a href="https://web.archive.org/web/20190402091508/http://nbviewer.jupyter.org/gist/jfpuget/b53f1e15a37aba5944ad">nbviewer</a>.</p>
+<p>Let's summarize in a table where we are.  We display the speedup
+we get between the original Python code and the optimized one.  We
+also display the tools we used  for each of the benchmark example
+used by the Julia team.</p>
+<p> 
+</p>
+<table width="520" cellpadding="2" cellspacing="1">
+	<col width="82"/>
+
+	<col width="46"/>
+
+	<col width="69"/>
+
+	<col width="57"/>
+
+	<col width="74"/>
+
+	<col width="50"/>
+
+	<col width="49"/>
+
+	<col width="50"/>
+
+	<tr>
+		<td width="82" style="border: 1px double #808080; padding: 0.05cm"><p>
+			Time in micro seconds</p>
+		</td>
+		<td width="46" style="border: 1px double #808080; padding: 0.05cm"><p>
+			Julia</p>
+		</td>
+		<td width="69" style="border: 1px double #808080; padding: 0.05cm"><p style="margin-bottom: 0.5cm">
+			Python</p>
+			<p>Optimized</p>
+		</td>
+		<td width="57" style="border: 1px double #808080; padding: 0.05cm"><p>
+			Python Original</p>
+		</td>
+		<td width="74" style="border: 1px double #808080; padding: 0.05cm"><p>
+			Julia / Python Optimized</p>
+		</td>
+		<td width="50" style="border: 1px double #808080; padding: 0.05cm"><p>
+			Numpy</p>
+		</td>
+		<td width="49" style="border: 1px double #808080; padding: 0.05cm"><p>
+			Numba</p>
+		</td>
+		<td width="50" style="border: 1px double #808080; padding: 0.05cm"><p>
+			Cython</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="82" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			Fibonacci<br/>
+64 bits</p>
+		</td>
+		<td width="46" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			80</p>
+		</td>
+		<td width="69" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			24</p>
+		</td>
+		<td width="57" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			NA</p>
+		</td>
+		<td width="74" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			3.8</p>
+		</td>
+		<td width="50" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			 
+			</p>
+		</td>
+		<td width="49" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			 
+			</p>
+		</td>
+		<td width="50" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			X</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="82" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			Fib BigInt</p>
+		</td>
+		<td width="46" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			12,717</p>
+		</td>
+		<td width="69" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			1,470</p>
+		</td>
+		<td width="57" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			3,770</p>
+		</td>
+		<td width="74" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			8.7</p>
+		</td>
+		<td width="50" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			 
+			</p>
+		</td>
+		<td width="49" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			 
+			</p>
+		</td>
+		<td width="50" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			 
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="82" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			quicksort</p>
+		</td>
+		<td width="46" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			419</p>
+		</td>
+		<td width="69" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			306</p>
+		</td>
+		<td width="57" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			17,700</p>
+		</td>
+		<td width="74" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			1.4</p>
+		</td>
+		<td width="50" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			X</p>
+		</td>
+		<td width="49" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			 
+			</p>
+		</td>
+		<td width="50" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			X</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="82" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			Mandelbrot</p>
+		</td>
+		<td width="46" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			196</p>
+		</td>
+		<td width="69" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			126</p>
+		</td>
+		<td width="57" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			6,570</p>
+		</td>
+		<td width="74" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			1.6</p>
+		</td>
+		<td width="50" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			X</p>
+		</td>
+		<td width="49" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			X</p>
+		</td>
+		<td width="50" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			 
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="82" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			pisum</p>
+		</td>
+		<td width="46" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			34,783</p>
+		</td>
+		<td width="69" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			20,400</p>
+		</td>
+		<td width="57" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			926,000</p>
+		</td>
+		<td width="74" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			1.7</p>
+		</td>
+		<td width="50" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			 
+			</p>
+		</td>
+		<td width="49" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			X</p>
+		</td>
+		<td width="50" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			 
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="82" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			randmatmul</p>
+		</td>
+		<td width="46" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			95,975</p>
+		</td>
+		<td width="69" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			83,7000</p>
+		</td>
+		<td width="57" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			83,700</p>
+		</td>
+		<td width="74" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			1.1</p>
+		</td>
+		<td width="50" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			X</p>
+		</td>
+		<td width="49" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			 
+			</p>
+		</td>
+		<td width="50" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			 
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="82" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			parse int</p>
+		</td>
+		<td width="46" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			244</p>
+		</td>
+		<td width="69" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			472</p>
+		</td>
+		<td width="57" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			3,290</p>
+		</td>
+		<td width="74" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			0.5</p>
+		</td>
+		<td width="50" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			X</p>
+		</td>
+		<td width="49" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			 
+			</p>
+		</td>
+		<td width="50" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			X</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="82" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			randmatstat</p>
+		</td>
+		<td width="46" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			14,544</p>
+		</td>
+		<td width="69" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			83,200</p>
+		</td>
+		<td width="57" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			160,000</p>
+		</td>
+		<td width="74" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			0.2</p>
+		</td>
+		<td width="50" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			X</p>
+		</td>
+		<td width="49" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			 
+			</p>
+		</td>
+		<td width="50" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			 
+			</p>
+		</td>
+	</tr>
+</table>
+<p> 
+</p>
+<p>This table shows that optimized Python code is faster than Julia
+for the first 6 examples, and slower for the last 2.  Note that for
+Fibonacci I used the recursive code to be fair.  
+</p>
+<p>I do not think that these micro benchmarks provide a definite
+answer about which language is fastest.  For instance, the
+randmatstat example deals with 5x5 matrices.  Using Numpy arrays for
+that is an overkill.  One should benchmark with way larger matrices. 
+</p>
+<p>I believe that one should benchmark languages on more complex
+code.  A good example is given in <a href="https://web.archive.org/web/20190402091508/http://tullo.ch/articles/python-vs-julia/">Python
+vs Julia - an example from machine learning.  </a>In that article,
+Julia seems to outperform Cython.  If I have time I'll give it a try
+with Numba.</p>
+<p>Anyway, it is fair to say that on the micro benchmark, Python
+performance matches Julia performance when the right tools are used. 
+Conversely, we can also say that Julia's performance matches that of
+compiled Python.  This in itself is interesting given Julia does it
+without any need to annotate or modify the code.</p>
+<h2 class="western" style="margin-top: 0cm; margin-bottom: 0cm">Takeway</h2>
+<p>Let's pause for a moment.  We have seen a number of tools that
+should be used when Python code performance is critical:</p>
+<ul>
+	<li><p>Profiling with line_profiler. 
+	</p>
+	<li><p>Writing better Python code to avoid unnecessary computation. 
+	</p>
+	<li><p>Using vectorized operations and broadcasting with Numpy. 
+	</p>
+	<li><p>Compiling with Cython or Numba. 
+	</p>
+</ul>
+<p>Use these tools to get a feel of where they are useful.  At the
+same time, use these tools wisely.  Profile your code so that you can
+focus on where optimization is worth it.  Indeed, rewriting code to
+make it faster can sometime obfuscate it or make it less versatile. 
+Therefore, only do this when the resulting speedup is worth it.  
+Donald Knuth once captured nicely this advice :</p>
+<p><em>” We should forget about small efficiencies, say about 97%
+of the time: premature optimization is the root of all evil.”</em></p>
+<p>Note however that Knuth's quote does not mean optimization isn't
+worth it, see for instance <a href="https://web.archive.org/web/20190402091508/http://www.joshbarczak.com/blog/?p=580">Stop
+Misquoting Donald Knuth!</a> and <a href="https://web.archive.org/web/20190402091508/http://joeduffyblog.com/2010/09/06/the-premature-optimization-is-evil-myth/">The
+'premature optimization is evil' myth</a>. 
+</p>
+<p>Python code can, and should be, optimized when and where it makes
+sense.</p>
+<p>Let me conclude with a list of interesting articles discussing the
+tools I used and more:</p>
+<ul>
+	<li><p><a href="https://web.archive.org/web/20190402091508/http://scikit-learn.org/stable/developers/performance.html">How
+	to optimize for speed</a> A short optimization guide by scipy team. 
+	It also discusses memory profiling. 
+	</p>
+	<li><p><a href="https://web.archive.org/web/20190402091508/http://www.huyng.com/posts/python-performance-analysis/">A
+	guide to analyzing Python performance</a>.  Short intro to various
+	profilers. 
+	</p>
+	<li><p><a href="https://web.archive.org/web/20190402091508/https://jakevdp.github.io/blog/2013/06/15/numba-vs-cython-take-2/" target="_blank">Numba
+	vs. Cython: Take 2</a>, <a href="https://web.archive.org/web/20190402091508/https://jakevdp.github.io/blog/2013/08/28/understanding-the-fft/">Understanding
+	the FFT Algorithm</a>,  and <a href="https://web.archive.org/web/20190402091508/https://jakevdp.github.io/blog/2015/02/24/optimizing-python-with-numpy-and-numba/">Optimizing
+	Python in the Real World: NumPy, Numba, and the NUFFT</a> .  Three
+	interesting posts from Jake Vanderplas.  In the latter, he shows how
+	Python plus Numba can yield code only 30% slower than highly
+	optimized Fortran code. 
+	</p>
+	<li><p><a href="https://web.archive.org/web/20190402091508/http://pandas.pydata.org/pandas-docs/stable/enhancingperf.html">Enhancing
+	Performance</a> in pandas documentation.  A useful guide on how to
+	make pandas code faster. 
+	</p>
+	<li><p><a href="https://web.archive.org/web/20190402091508/http://docs.cython.org/src/quickstart/cythonize.html?highlight=cpdef">Faster
+	code via static typing</a> and <a href="https://web.archive.org/web/20190402091508/http://docs.cython.org/0.14/src/tutorial/numpy.html">Using
+	Cython with NumPy</a> in Cython documentation. 
+	</p>
+	<li><p><a href="https://web.archive.org/web/20190402091508/http://eng.climate.com/2015/04/09/numba-vs-cython-how-to-choose/?utm_content=buffer222ae&amp;utm_medium=social&amp;utm_source=twitter.com&amp;utm_campaign=buffer" target="_blank">Numba
+	vs Cython: How to Choose</a> .  Title says it all. 
+	</p>
+	<li><p><a href="https://web.archive.org/web/20190402091508/https://www.ibm.com/developerworks/community/blogs/jfp/entry/Python_Is_Not_C_Take_Two?lang=en" target="_blank">Python
+	Is Not C: Take Two</a>.  
+	</p>
+</ul>
+<p><strong>Update on August 2, 2016.</strong>  A reader, Ismael V.C.
+pointed me to the memoize function of Julia, and I updated the post
+accordingly.</p>
+<p><strong>Update on december 16, 2015.</strong> Python 3.4 has a
+built-in cache that can greatly speed up Fibonacci() function.  I
+updated the post to show its use.</p>
+<p><strong>Update on December 17, 2015.</strong>  Added running times
+for Julia 0.4.2 on the same machine where Python was run. 
+</p>
+<p><strong>Update on Feb 2, 2016.</strong>  Added the code <a href="https://web.archive.org/web/20190402091508/https://gist.github.com/jfpuget/b53f1e15a37aba5944ad">on
+github</a> and on <a href="https://web.archive.org/web/20190402091508/http://nbviewer.jupyter.org/gist/jfpuget/b53f1e15a37aba5944ad">nbviewer</a>.,
+and updated timings with Python 3.5.1.</p>
+<p><strong>Update on March 6, 2016.</strong>  Improved parse int code
+using Numpy.</p>
+<p> 
+</p>
+<p><br/>
+<br/>
+<font face="Georgia, Arial, sanserif"><i>Tags:  <a href="https://web.archive.org/web/20190402091508/https://www.ibm.com/developerworks/community/blogs/jfp?tags=numpy&amp;lang=en">numpy</a>
+<a href="https://web.archive.org/web/20190402091508/https://www.ibm.com/developerworks/community/blogs/jfp?tags=numba&amp;lang=en">numba</a>
+<a href="https://web.archive.org/web/20190402091508/https://www.ibm.com/developerworks/community/blogs/jfp?tags=julia&amp;lang=en">julia</a>
+<a href="https://web.archive.org/web/20190402091508/https://www.ibm.com/developerworks/community/blogs/jfp?tags=python&amp;lang=en">python</a>
+<a href="https://web.archive.org/web/20190402091508/https://www.ibm.com/developerworks/community/blogs/jfp?tags=cython&amp;lang=en">cython</a>
+</i></font>
+</p>
+</body>
+</html>
