@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>JMGETCODE</title>
+  </head>
+
+  <body bgcolor="#fdf5e6">
+<pre>
+<b>*** JMFFT - émulation des FFTs de la SciLib de CRAY - (c) CNRS/IDRIS ***</b>
+
+<b>NOM</b>
+
+     JMGETCODE - Permet d'obtenir le code de retour du dernier sous-programme JMFFT appelé
+
+<b>SYNTAXE</b>
+
+     CALL JMGETCODE(irc)
+
+<b>IMPLEMENTATION</b>
+
+     Il s'agit d'un sous-programme de service de JMFFT.
+
+<b>DESCRIPTION</b>
+
+     Au retour de l'appel, la variable <tt>irc</tt> contient le code de retour
+     du dernier sous-programme JMFFT appelé.
+
+     S'il est nul, c'est que tout s'est bien passé. Sinon, c'est qu'une erreur
+     a été détectée.
+
+     Comme par défaut JMFFT arrête l'exécution en cas d'erreur, pour que
+     l'utilisation de <tt>JMGETCODE</tt> ait un intérêt il faut que l'on
+     ait appelé auparavant <tt>JMSETERREUR</tt> avec l'argument <tt>.false.</tt>
+
+<b>ARGUMENTS</b>
+
+     irc   Variable de type INTEGER
+           Sa valeur d'entrée n'est pas utilisée
+	   En sortie, contient le code de retour demandé
+
+<b>EXEMPLES</b>
+
+     Le programme suivant contient une erreur : l'utilisateur a fourni
+     une première dimension trop petite pour le tableau Y.
+
+           INTEGER, PARAMETER :: LDX = 129, NX1 = 128, NX2 = 256
+           INTEGER, PARAMETER :: LDY = 64,  NY1 =  64, NY2 = 256
+           REAL(KIND=8), DIMENSION(LDX, NX2)        :: X
+           COMPLEX(KIND=8), DIMENSION(LDY, NY2)     :: Y
+           REAL(KIND=8), DIMENSION(512*NX2)         :: WORK
+           REAL(KIND=8), DIMENSION(100+2*(NX1+NX2)) :: TABLE
+           ! ... (Definition de X)
+           CALL SCFFT2D(0, 128, 256, 1.d0, X, 129, Y, 64, TABLE, WORK, 0)
+           CALL SCFFT2D(1, 128, 256, 1.d0, X, 129, Y, 64, TABLE, WORK, 0)
+           ! ... (Impression de Y)
+
+     A l'exécution, le programme s'arrête après le premier appel à SCFFT2D
+     avec le message suivant :
+
+           JMFFT Erreur dans SCFFT2D : ldy doit etre &gt;= n/2+1 ( 64 65 )
+           STOP 1
+
+     Voici une variante du même programme où on contrôle l'exécution :
+     (HANDLER est un sous-programme personnel destine a traiter ces exceptions)
+
+           INTEGER, PARAMETER :: LDX = 129, NX1 = 128, NX2 = 256
+           INTEGER, PARAMETER :: LDY = 64,  NY1 =  64, NY2 = 256
+           REAL(KIND=8), DIMENSION(LDX, NX2)        :: X
+           COMPLEX(KIND=8), DIMENSION(LDY, NY2)     :: Y
+           REAL(KIND=8), DIMENSION(512*NX2)         :: WORK
+           REAL(KIND=8), DIMENSION(100+2*(NX1+NX2)) :: TABLE
+           INTEGER                                  :: IRC
+           CHARACTER(LEN=80)                        :: MESSAGE
+           ! ... (Definition de X)
+           CALL JMSETERREUR(.false.)
+           CALL SCFFT2D(0, 128, 256, 1.d0, X, 129, Y, 64, TABLE, WORK, 0)
+           CALL JMGETCODE(IRC)
+           IF (IRC .NE. 0) THEN
+             CALL JMGETMESSAGE(IRC,MESSAGE)
+             PRINT *,'Code',IRC,', ',TRIM(MESSAGE)
+             CALL HANDLER()
+           END IF
+           CALL SCFFT2D(1, 128, 256, 1.d0, X, 129, Y, 64, TABLE, WORK, 0)
+           ! ... (Impression de Y)
+
+     A l'exécution, ce programme écrira le message d'erreur suivant :
+
+           Code 16 , ldy doit etre &gt;= n/2+1
+
+     puis entrera dans le sous-programme HANDLER.
+
+<b>VOIR AUSSI</b>
+
+     JMSETERREUR, JMGETMESSAGE
+</pre>
+
+<font color="#000066">&copy; CNRS-IDRIS 2013</font>
+
+</body>
+</html>

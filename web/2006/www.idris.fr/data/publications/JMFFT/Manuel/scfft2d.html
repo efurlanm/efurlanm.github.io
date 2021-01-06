@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>CSFFT2D</title>
+  </head>
+
+  <body bgcolor="#fdf5e6">
+
+<pre>
+<b>*** JMFFT 8.1 - émulation des FFTs de la SciLib de CRAY - (c) CNRS/IDRIS ***</b>
+
+<b>NOM</b>
+
+     SCFFT2D, CSFFT2D -	Applique une transformée de Fourier rapide (FFT) à deux
+                        dimensions (2D) réelle-complexe ou complexe-réelle.
+
+<b>SYNTAXE</b>
+
+     CALL SCFFT2D (isign, n1, n2, scale, x, ldx, y, ldy, table,	work, isys)
+
+     CALL CSFFT2D (isign, n1, n2, scale, x, ldx, y, ldy, table,	work, isys)
+
+<b>IMPLEMENTATION</b>
+
+     Ces sous-programmes émulent les sous-programmes de même nom de la SCILIB de
+     CRAY. Tous les arguments réels ou complexes doivent être déclarés
+     en double précision.
+
+<b>DESCRIPTION</b>
+
+     SCFFT2D calcule la FFT 2D d'une matrice réelle X et enregistre le
+     résultat dans la matrice complexe Y.
+     CSFFT2D calcule la FFT 2D inverse correspondante.
+
+     Soient deux tabeaux X et Y dimensionnés de la façon suivante :
+
+	  REAL(KIND=8), DIMENSION(0:ldx-1, 0:n2-1)    :: X
+	  COMPLEX(KIND=8), DIMENSION(0:ldy-1, 0:n2-1) :: Y
+
+     où, ldx &gt;= n1 et ldy &gt;= n1/2 + 1.
+
+     SCFFT2D applique la formule suivante :
+
+			     n2-1 n1-1
+	 Y(k1, k2) = scale * Sum  Sum [	X(j1, j2)*w1**(j1*k1)*w2**(j2*k2) ]
+			     j2=0 j1=0
+
+	 pour k1	= 0, ..., n1/2 + 1
+	      k2	= 0, ..., n2-1
+
+	 où,
+	     w1	= exp(isign*2*pi*i/n1)
+	     w2	= exp(isign*2*pi*i/n2)
+	     i	= + sqrt(-1)
+	     pi	= 3.14159...,
+	     isign = +1	ou -1
+
+
+     En général, si une FFT est appliquée avec des valeurs particulières de
+     isign et scale, alors son inverse est calculée avec les valeurs -isign
+     et 1/(n1*n2*scale).
+
+     En particulier, avec les valeurs isign = +1 et scale = 1.0, la FFT
+     inverse se calcule en prenant isign = -1 et scale = 1.0/(n1*n2).
+
+     SCFFT2D calcule la transformée réelle-complexe dans la première dimension
+     suivie par celle complexe-complexe dans la deuxième dimension.
+
+     CSFFT2D effectue la FFT inverse correspondante à celle obtenue avec
+     SCFFT2D. Pour se faire, il calcule la transformée complexe-complexe dans
+     la seconde dimension suivie par celle complexe-réelle dans la première
+     dimension.
+
+<b>ARGUMENTS</b>
+
+     isign     Scalaire du type INTEGER. (entrée)
+
+	       Indique si la table des coefficients doit être initialisée ou s'il faut
+	       appliquer une FFT ou son inverse.
+
+	       Si isign = 0, le sous-programme initialise le tableau table et
+	       retourne sa valeur. Dans ce cas, seuls les arguments isign, n1, n2
+	       et table sont vérifés et utilisés.
+
+               Si isign = +1 ou -1, la FFT ou son inverse est appliquée.
+
+     n1	       Scalaire du type INTEGER. (entrée).
+
+	       Nombre de transformée dans la première dimension.
+
+               Une restriction de JMFFT fait que n1 ou n2 doit être un nombre pair.
+
+     n2	       Scalaire du type INTEGER. (entrée).
+
+	       Nombre de transformée dans la deuxième dimension.
+
+               Une restriction de JMFFT fait que n1 ou n2 doit être un nombre pair.
+
+     scale     Scalaire du type REAL(KIND=8). (entrée)
+
+	       Facteur d'échelle.  Chaque élément du vecteur y est multiplié par
+	       scale une fois la FFT effectuée ainsi qu'il est spécifié dans la
+	       formule ci-dessus.
+
+     x	       SCFFT2D:	 tableau du type REAL(KIND=8) de dimension (0:ldx-1, 0:n2-1).
+	       (entrée)
+	       CSFFT2D:	 tableau du type COMPLEXE(KIND=8) de dimension (0:ldx-1, 0:n2-1).
+	       (entrée)
+
+	       Tableau contenant les valeurs à transformer.
+
+     ldx       Scalaire du type INTEGER. (entrée).
+
+	       Nombre de lignes du tableau x tel qu'il est déclaré dans le
+	       programme appelant.
+	       SCFFT2D:	 ldx &gt;=	max(n1,	1).
+	       CSFFT2D:	 ldx &gt;=	max(n1/2 + 1, 1).
+
+     y         SCFFT2D: tableau du type COMPLEXE(KIND=8) de dimension 
+               (0:ldy-1,0:n2-1). (sortie)
+               CSFFT2D: tableau du type REAL(KIND=8) de dimension (0:ldy-1, 0:n2-1).
+               (sortie)
+
+	       Tableau contenant en sortie les valeurs transformées.
+
+               On peut ré-utiliser le tableau d'entrée x. Dans ce cas,
+	       SCFFT2D:	 ldx = 2*ldy.
+	       CSFFT2D:	 ldy = 2*ldx.
+
+     ldy       Scalaire du type INTEGER. (entrée).
+
+	       Nombre de lignes dans le tableau y tel qu'il a été déclaré dans
+	       le programme appelant.
+
+	       SCFFT2D:	 ldy &gt;=	max(n1/2 + 1, 1).
+	       CSFFT2D:	 ldy &gt;=	max(n1 + 2, 1).
+
+	       Pendant la transformée complexe-réelle, deux éléments
+	       supplémentaires sont nécessaires dans la première dimension
+	       (c'est pourquoi, ldy &gt;= n1 + 2 plutôt que ldy &gt;= n1).  Ces
+	       éléments servent à stocker certaines valeurs pendant une phase
+	       intermédiare de calcul. En sortie, ces éléments possèdent des valeurs
+	       quelconques.
+
+     table     Tableau du type REAL(KIND=8) de dimension 100 + 2*(n1 + n2).
+               (entrée ou sortie)
+
+	       Tableau contenant la table des coefficients et des fonctions
+	       trigonométriques.
+
+	       Si isign = 0, le sous-programme initialise table (table est en
+	       sortie seulement).
+
+	       Si isign = +1 ou -1, table est supposé être déja initialisé
+	       (table est en entrée seulement).
+
+     work      Tableau du type REAL(KIND=8) de dimension 512*max(n1, n2).
+	       Tableau de travail.
+
+               Note : Cette dimension peut être augmentée ou diminuée, à
+               condition d'en informer JMFFT en appelant le sous-programme
+               JMSETNWORK.
+
+     isys      Scalaire du type INTEGER. (entrée)
+             
+	       Cet argument n'est pas utilisé. Il est conservé pour des raisons
+	       de compatibilité avec la SCILIB de CRAY.
+
+<b>EXEMPLES</b>
+
+     <b>Exemple 1</b>  initialise le tableau TABLE dans le but d'appliquer
+     ultérieurement une FFT de dimensions (128,256). Dans ce cas, seuls les
+     arguments ISIGN, N1, N2 et TABLE sont utilisés.
+
+           INTEGER, PARAMETER                         :: N1=128, N2=256
+	   REAL(KIND=8), DIMENSION(100 + 2*(N1 + N2)) :: TABLE
+	   CALL	SCFFT2D	(0, N1, N2, 0.d0, DUMMY, 1, DUMMY, 1, TABLE, DUMMY, 0)
+
+     <b>Exemple 2</b> : X est une matrice réelle dont les dimensions sont
+     (0:128, 0:255), et Y est une matrice complexe de dimensions (0:64, 0:255).
+     Nous appliquons une FFT sur les 128 premiers éléments de chaque colonne.
+     Le tableau TABLE est supposé être initialisé.
+
+	   REAL(KIND=8), DIMENSION(0:128, 0:255)        :: X
+	   COMPLEX(KIND=8), DIMENSION(0:64, 0:255)      :: Y
+	   REAL(KIND=8), DIMENSION(100 + 2*(128 + 256)) :: TABLE
+	   REAL(KIND=8), DIMENSION(512*256)             :: WORK
+	   ...
+	   CALL	SCFFT2D(0, 128,	256, 1.d0, X, 129, Y, 65, TABLE, WORK, 0)
+	   CALL	SCFFT2D(1, 128,	256, 1.d0, X, 129, Y, 65, TABLE, WORK, 0)
+
+     <b>Exemple 3</b> : idem que l'exemple 2 en calculant cette fois-ci la FFT inverse
+     de Y et en enregistrant le résultat dans X.  Le facteur d'échelle scale
+     vaut 1/(128*255). Nous supposons que le tableau TABLE ait été initialisé
+     auparavant.
+
+	   CALL	CSFFT2D(-1, 128, 256, 1.d0/(128.d0*256.d0), Y, 65, &amp;
+	                X, 129, TABLE, WORK, 0)
+
+     <b>Exemple 4</b>  nous effectuons ici un calcul analogue à celui de l'exemple 2
+     en supposant toutefois que les indices des tableaux X et Y démarrent à 1
+     et non plus à 0.
+
+	   REAL(KIND=8), DIMENSION(129, 256)   :: X
+	   COMPLEX(KIND=8), DIMENSION(65, 256) :: Y
+	   ...
+	   CALL	SCFFT2D(0, 128,	256, 1.d0, X, 129, Y, 65, TABLE, WORK, 0)
+	   CALL	SCFFT2D(1, 128,	256, 1.d0, X, 129, Y, 65, TABLE, WORK, 0)
+
+     <b>Exemple 5</b> : calcul semblable à l'exemple 4 sauf qu'ici, pour une économie
+     de place mémoire, nous mettons en équivalence X et Y . Nous supposons que
+     le tableau TABLE ait été initialisé auparavant.
+
+	   REAL(KIND=8), DIMENSION(130, 256)   :: X
+	   ...
+	   CALL	SCFFT2D(1, 128,	256, 1.d0, X, 130, Y, 65, TABLE, WORK, 0)
+
+<b>VOIR AUSSI</b>
+
+     CCFFT, CCFFT2D, CCFFT3D, CCFFTM, SCFFT, SCFFT3D, SCFFTM, JMSETNWORK
+</pre>
+
+<p>
+<hr size="1">
+<div align="center">
+<h6><b>&copy; CNRS - IDRIS</b></h6>
+</div>
+
+</body>
+</html>
+
