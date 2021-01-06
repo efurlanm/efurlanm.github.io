@@ -6,12 +6,12 @@
 
   <body bgcolor="#fdf5e6">
 <pre>
-<b>*** JMFFT 8.1 - émulation des FFTs de la SciLib de CRAY - (c) CNRS/IDRIS ***</b>
+<b>*** JMFFT 8.1 - Ã©mulation des FFTs de la SciLib de CRAY - (c) CNRS/IDRIS ***</b>
 
 <b>NOM</b>
 
      JMSETNWORK - Permet d'informer les sous-programmes 2D et 3D de JMFFT
-     de la quantité d'espace de travail dont ils peuvent disposer
+     de la quantitÃ© d'espace de travail dont ils peuvent disposer
 
 <b>SYNTAXE</b>
 
@@ -24,45 +24,45 @@
 <b>DESCRIPTION</b>
 
      Dans la SCILIB, les sous-programmes 2D et 3D sont un peu particuliers
-     vis-à-vis de la taille du tableau de travail WORK. Alors que tous
+     vis-Ã -vis de la taille du tableau de travail WORK. Alors que tous
      les autres sous-programmes exigent que le tableau WORK ait une dimension
      suffisante pour le traitement en une seule passe, les sous-programmes
      2D et 3D demandent seulement que le tableau WORK ait une dimension
-     suffisante pour le traitement en éventuellement plusieurs passes
-     de 128 transformées de Fourier. Ceci est plus économique en mémoire et
-     préserve les performances puisque la vectorisation se fait sur ce nombre
-     de transformées et que 128 est une valeur optimale pour la longueur des
+     suffisante pour le traitement en Ã©ventuellement plusieurs passes
+     de 128 transformÃ©es de Fourier. Ceci est plus Ã©conomique en mÃ©moire et
+     prÃ©serve les performances puisque la vectorisation se fait sur ce nombre
+     de transformÃ©es et que 128 est une valeur optimale pour la longueur des
      vecteurs sur C90.
 
-     Sur d'autres architectures ce choix peut être loin de la valeur
-     optimale des longueurs de vecteurs, et il est donc intéressant de
+     Sur d'autres architectures ce choix peut Ãªtre loin de la valeur
+     optimale des longueurs de vecteurs, et il est donc intÃ©ressant de
      pouvoir augmenter cette longueur en fournissant un tableau de
      travail de dimension plus grande.
 
-     Malheureusement, même si on surdimensionne ce tableau, il n'existe
-     pas dans la SciLib de mécanisme pour permettre à l'utilisateur de
-     signaler qu'il a choisi une valeur différente de la valeur imposée
-     par la procédure.
+     Malheureusement, mÃªme si on surdimensionne ce tableau, il n'existe
+     pas dans la SciLib de mÃ©canisme pour permettre Ã  l'utilisateur de
+     signaler qu'il a choisi une valeur diffÃ©rente de la valeur imposÃ©e
+     par la procÃ©dure.
 
-     C'est précisément le rôle de JMSETNWORK. Si on a surdimensionné le
-     tableau WORK, et si on a fourni à JMFFT la valeur de la dimension
-     déclarée via l'appel à JMSETNWORK, JMFFT utilisera l'intégralité
-     du tableau de travail, ce qui pourra permettre d'améliorer les
+     C'est prÃ©cisÃ©ment le rÃ´le de JMSETNWORK. Si on a surdimensionnÃ© le
+     tableau WORK, et si on a fourni Ã  JMFFT la valeur de la dimension
+     dÃ©clarÃ©e via l'appel Ã  JMSETNWORK, JMFFT utilisera l'intÃ©gralitÃ©
+     du tableau de travail, ce qui pourra permettre d'amÃ©liorer les
      performances vectorielles.
 
-     Sachant que la valeur standard de la SciLib correspond à une
-     longueur de vectorisation de 128, il est donc facile d'en déduire
-     la dimension idéale du tableau WORK. Si par exemple sur la machine
-     utilisée la longueur optimale des vecteurs est de 1024, soit 8 fois
+     Sachant que la valeur standard de la SciLib correspond Ã  une
+     longueur de vectorisation de 128, il est donc facile d'en dÃ©duire
+     la dimension idÃ©ale du tableau WORK. Si par exemple sur la machine
+     utilisÃ©e la longueur optimale des vecteurs est de 1024, soit 8 fois
      plus grand que sur C90, il suffira de multiplier par 8 la dimension
      requise par la SciLib pour atteindre cette longueur de vectorisation
-     idéale.
+     idÃ©ale.
 
 <b>ARGUMENTS</b>
 
      nwork Variable ou constante de type INTEGER
-           En entrée, il contient la valeur à fournir.
-	   Non modifié en sortie.
+           En entrÃ©e, il contient la valeur Ã  fournir.
+	   Non modifiÃ© en sortie.
 
 <b>EXEMPLES</b>
 

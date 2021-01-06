@@ -5,11 +5,11 @@
   </head>
   <body bgcolor="#fdf5e6">
 <pre>
-<b>*** JMFFT 8.1 - émulation des FFTs de la SciLib de CRAY - (c) CNRS/IDRIS ***</b>
+<b>*** JMFFT 8.1 - Ã©mulation des FFTs de la SciLib de CRAY - (c) CNRS/IDRIS ***</b>
 
 <b>NOM</b>
 
-     CCFFT - Applique une transformée de Fourier rapide (FFT) complexe-complexe.
+     CCFFT - Applique une transformÃ©e de Fourier rapide (FFT) complexe-complexe.
 
 <b>SYNTAXE</b>
 
@@ -17,35 +17,35 @@
 
 <b>IMPLEMENTATION</b>
 
-     Ce sous-programme émule le sous-programme de même nom de la SCILIB de
-     CRAY. Tous les arguments réels ou complexes doivent être déclarés
-     en double précision.
+     Ce sous-programme Ã©mule le sous-programme de mÃªme nom de la SCILIB de
+     CRAY. Tous les arguments rÃ©els ou complexes doivent Ãªtre dÃ©clarÃ©s
+     en double prÃ©cision.
 
 <b>DESCRIPTION</b>
 
      CCFFT calcule la FFT du vecteur complexe x, et retourne le
-     résultat dans le vector complexe y.
+     rÃ©sultat dans le vector complexe y.
 
-     Soient deux tabeaux X et Y dimensionnés de la façon suivante :
+     Soient deux tabeaux X et Y dimensionnÃ©s de la faÃ§on suivante :
 
 	  COMPLEX(KIND=8), DIMENSION(0:N-1) :: X, Y
 
-     Le résultat Y représente la FFT du vecteur X, si nous appliquons la
+     Le rÃ©sultat Y reprÃ©sente la FFT du vecteur X, si nous appliquons la
      formule suivante :
 
 			 n-1
 	  Y(k) = scale * Sum [ X(j)*w**(isign*j*k) ] ; k = 0, ..., n-1
 			 j=0
 
-	  où
+	  oÃ¹
 
 	  w = exp(2*pi*i/n),
 	  i = +	sqrt(-1),
 	  pi = 3.14159...,
 	  isign	= +1 ou	-1
 
-     En général, si une FFT est appliquée avec des valeurs particulières de
-     isign et scale, alors son inverse est calculée avec les valeurs -isign
+     En gÃ©nÃ©ral, si une FFT est appliquÃ©e avec des valeurs particuliÃ¨res de
+     isign et scale, alors son inverse est calculÃ©e avec les valeurs -isign
      et 1/(n*scale).
 
      En particulier, avec les valeurs isign = +1 et scale = 1.0, la FFT
@@ -53,70 +53,70 @@
 
 <b>ARGUMENTS</b>
 
-     isign   Scalaire du type INTEGER. (entrée)
+     isign   Scalaire du type INTEGER. (entrÃ©e)
 
-	     Indique si la table des coefficients doit être initialisée ou s'il faut
+	     Indique si la table des coefficients doit Ãªtre initialisÃ©e ou s'il faut
 	     appliquer une FFT ou son inverse.
 
 	     Si isign = 0, le sous-programme initialise le tableau table et
 	     retourne sa valeur. Dans ce cas, seuls les arguments isign, n et
-	     table sont vérifés et utilisés.
+	     table sont vÃ©rifÃ©s et utilisÃ©s.
 
-	     Si isign = +1 ou -1, la FFT ou son inverse est appliquée.
+	     Si isign = +1 ou -1, la FFT ou son inverse est appliquÃ©e.
 
-     n	     Scalaire du type INTEGER. (entrée).
+     n	     Scalaire du type INTEGER. (entrÃ©e).
 
-	     Longueur de la FFT (Nombre d'éléments du tableau x). n &gt;= 2.
+	     Longueur de la FFT (Nombre d'Ã©lÃ©ments du tableau x). n &gt;= 2.
 
-     scale   Scalaire du type REAL(KIND=8). (entrée)
+     scale   Scalaire du type REAL(KIND=8). (entrÃ©e)
 
-	     Facteur d'échelle.  Chaque élément du vecteur y est multiplié par
-	     scale une fois la FFT effectuée ainsi qu'il est spécifié dans la
+	     Facteur d'Ã©chelle.  Chaque Ã©lÃ©ment du vecteur y est multipliÃ© par
+	     scale une fois la FFT effectuÃ©e ainsi qu'il est spÃ©cifiÃ© dans la
 	     formule ci-dessus.
 
      x       Tableau du type COMPLEX(KIND=8) de dimension
-             (0:n-1). (entrée)
+             (0:n-1). (entrÃ©e)
 
-	     Tableau contenant la valeurs des éléments à transformer.
+	     Tableau contenant la valeurs des Ã©lÃ©ments Ã  transformer.
 
      y       Tableau du type COMPLEX(KIND=8) de dimension (0:n-1). (sortie).
 
-	     Tableau contenant en sortie les valeurs transformées. On peut 
-             utiliser le tableau d'entrée x.
+	     Tableau contenant en sortie les valeurs transformÃ©es. On peut 
+             utiliser le tableau d'entrÃ©e x.
 
-     table   Tableau du type REAL(KIND=8) de dimension 100 + 8*n. (entrée ou
+     table   Tableau du type REAL(KIND=8) de dimension 100 + 8*n. (entrÃ©e ou
              sortie).
 
 	     Tableau contenant la table des coefficients et des fonctions
-	     trigonométriques.
+	     trigonomÃ©triques.
 
 	     Si isign = 0, le sous-programme initialise table (table est en
 	     sortie seulement).
 
-	     Si isign = +1 ou -1, table est supposé être déja initialisé
-	     (table est en entrée seulement).
+	     Si isign = +1 ou -1, table est supposÃ© Ãªtre dÃ©ja initialisÃ©
+	     (table est en entrÃ©e seulement).
 
      work    Tableau du type REAL(KIND=8) de dimension 8*n.
 
 	     Tableau de travail.
 
-     isys    Scalaire du type INTEGER. (entrée)
+     isys    Scalaire du type INTEGER. (entrÃ©e)
              
-	     Cet argument n'est pas utilisé. Il est conservé pour des raisons
-	     de compatibilité avec la SCILIB de CRAY.
+	     Cet argument n'est pas utilisÃ©. Il est conservÃ© pour des raisons
+	     de compatibilitÃ© avec la SCILIB de CRAY.
 
 <b>EXEMPLES</b>
 
      <b>Exemple 1</b> : initialise le tableau TABLE dans le but d'appliquer
-     ultérieurement une FFT de dimension n=1024. Dans ce cas, seuls les
-     arguments ISIGN, N et TABLE sont utilisés.
+     ultÃ©rieurement une FFT de dimension n=1024. Dans ce cas, seuls les
+     arguments ISIGN, N et TABLE sont utilisÃ©s.
 
 	  REAL(KIND=8), DIMENSION(100 + 8*1024) :: TABLE
 	  CALL CCFFT(0,	1024, 0.d0, DUMMY, DUMMY, TABLE, DUMMY, 0)
 
      <b>Exemple 2</b> : X et Y sont des tableaux complexes de dimension (0:1023). Ici
-     on applique une FFT sur X et on enregistre le résultat dans Y. Il est
-     impératif d'initialiser TABLE, comme il est indiqué dans l'exemple 1
+     on applique une FFT sur X et on enregistre le rÃ©sultat dans Y. Il est
+     impÃ©ratif d'initialiser TABLE, comme il est indiquÃ© dans l'exemple 1
      avant d'effectuer la FFT.
 
 	  COMPLEX(KIND=8), DIMENSION(0:1023)    :: X, Y
@@ -125,23 +125,23 @@
 	  CALL CCFFT(0,	1024, 1.d0, X, Y, TABLE, WORK, 0)
 	  CALL CCFFT(1,	1024, 1.d0, X, Y, TABLE, WORK, 0)
 
-     <b>Exemple 3</b> : on complète l'exemple 2 pour réaliser une FFT inverse de
-     Y dont le résultat est enregisté dans X.  Le facteur d'échelle SCALE vaut
-     1/1024.  On suppose que le tableau TABLE ait été initialisé auparavant.
+     <b>Exemple 3</b> : on complÃ¨te l'exemple 2 pour rÃ©aliser une FFT inverse de
+     Y dont le rÃ©sultat est enregistÃ© dans X.  Le facteur d'Ã©chelle SCALE vaut
+     1/1024.  On suppose que le tableau TABLE ait Ã©tÃ© initialisÃ© auparavant.
 
 	  CALL CCFFT(-1, 1024, 1.d0/1024.d0, Y, X, TABLE, WORK, 0)
 
      <b>Exemple 4</b> : ici on effectue le meme calcul que dans l'exemple 2. La seule
-     différence se trouve dans la valeur des indices inférieurs des tableaux X
-     et Y qui démarrent à 1 au lieu de 0.
+     diffÃ©rence se trouve dans la valeur des indices infÃ©rieurs des tableaux X
+     et Y qui dÃ©marrent Ã  1 au lieu de 0.
 
 	  COMPLEX(KIND=8), DIMENSION(1024) :: X, Y
 	  CALL CCFFT(0,	1024, 1.d0, X, Y, TABLE, WORK, 0)
 	  CALL CCFFT(1,	1024, 1.d0, X, Y, TABLE, WORK, 0)
 
-     <b>Exemple 5</b> : idem que l'exemple 4. Cependant, pour réaliser une économie de
-     place mémoire, le résultat est enregistré dans le vecteur X (on suppose
-     que le tableau TABLE ait été initialisé auparavant).
+     <b>Exemple 5</b> : idem que l'exemple 4. Cependant, pour rÃ©aliser une Ã©conomie de
+     place mÃ©moire, le rÃ©sultat est enregistrÃ© dans le vecteur X (on suppose
+     que le tableau TABLE ait Ã©tÃ© initialisÃ© auparavant).
 
 	  COMPLEX(KIND=8), DIMENSION(1024) :: X
 	  CALL CCFFT(1,	1024, 1.d0, X, X, TABLE, WORK, 0)
