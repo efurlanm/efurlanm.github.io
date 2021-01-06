@@ -6,12 +6,12 @@
 
   <body bgcolor="#fdf5e6">
 <pre>
-<b>*** JMFFT - émulation des FFTs de la SciLib de CRAY - (c) CNRS/IDRIS ***</b>
+<b>*** JMFFT - Ã©mulation des FFTs de la SciLib de CRAY - (c) CNRS/IDRIS ***</b>
 
 <b>NOM</b>
 
-     RFFTMLT - Applique une Transformée de Fourier rapide (FFT)
-               complexe-réelle ou réelle-complexe à un ensemble donné de vecteurs.
+     RFFTMLT - Applique une TransformÃ©e de Fourier rapide (FFT)
+               complexe-rÃ©elle ou rÃ©elle-complexe Ã  un ensemble donnÃ© de vecteurs.
 
 <b>SYNTAXE</b>
 
@@ -21,14 +21,14 @@
 
 <b>IMPLEMENTATION</b>
 
-     Ces sous-programmes émulent les sous-programmes de même nom de la SCILIB de
-     CRAY. Tous les arguments réels ou complexes doivent être déclarés en
-     double précision.
+     Ces sous-programmes Ã©mulent les sous-programmes de mÃªme nom de la SCILIB de
+     CRAY. Tous les arguments rÃ©els ou complexes doivent Ãªtre dÃ©clarÃ©s en
+     double prÃ©cision.
 
 <b>DESCRIPTION</b>
 
-     Quand isign=-1, RFFTMLT applique une FFT réelle-complexe à un ensemble
-     donné de vecteurs. Pour chacun des m vecteurs réels x(j,m) j = 0,1,...,n-1,
+     Quand isign=-1, RFFTMLT applique une FFT rÃ©elle-complexe Ã  un ensemble
+     donnÃ© de vecteurs. Pour chacun des m vecteurs rÃ©els x(j,m) j = 0,1,...,n-1,
      RFFTMLT calcule le vecteur complexe y(k,m) k = 0,1,...,n/2 tel que :
 
 				    n-1
@@ -36,63 +36,63 @@
 				    j=0
 
 	  pour	    k =	0,1,...,n/2,
-	  où,    w(n) = exp((2*pi*i)/n).
+	  oÃ¹,    w(n) = exp((2*pi*i)/n).
 
-     Quand isign = +1, RFFTMLT applique une FFT complexe-réelle (FFT
+     Quand isign = +1, RFFTMLT applique une FFT complexe-rÃ©elle (FFT
      inverse). pour chacun des m vecteur complexe y(k,m) k = 0,1,...,n/2,
-     RFFTMLT calcule le vecteur réel x(j,m) j = 0,1,...,n-1 tel que :
+     RFFTMLT calcule le vecteur rÃ©el x(j,m) j = 0,1,...,n-1 tel que :
 
 		       n-1
 	     x(j,m) =  Sum  y(k,m) (w(n)**(j*k))
 		       k=0
 
      pour       j = 0,1,...,n-1
-     où,     w(n) = exp((2*pi*i)/n)
+     oÃ¹,     w(n) = exp((2*pi*i)/n)
 
 <b>ARGUMENTS</b>
 
-     x	   Tableau du type REAL(KIND=8) de dimension (0:n+1, lot). (entrée/sortie)
-           En entrée, il contient les éléments à transformer.
-	   En sortie, il contient les éléments transformés.
-	   La première dimension doit être au moins égale à n+2.
+     x	   Tableau du type REAL(KIND=8) de dimension (0:n+1, lot). (entrÃ©e/sortie)
+           En entrÃ©e, il contient les Ã©lÃ©ments Ã  transformer.
+	   En sortie, il contient les Ã©lÃ©ments transformÃ©s.
+	   La premiÃ¨re dimension doit Ãªtre au moins Ã©gale Ã  n+2.
 
      work  Tableau du type REAL(KIND==8) de dimension 2*n*lot.
 	   Espace de travail.
 
-     trigs Tableau du type REAL(KIND==8) de dimension 2*n. (entrée) Il
+     trigs Tableau du type REAL(KIND==8) de dimension 2*n. (entrÃ©e) Il
            contient la table des sinus et cosinus. Le sous-programme suivant
-           initialise les deux tableaux trigs et ifax à la fois :
+           initialise les deux tableaux trigs et ifax Ã  la fois :
 
 		CALL FFTFAX(n, ifax, trigs)
 
-     ifax  Tableau du type INTEGER de dimension 19.  (entrée)
+     ifax  Tableau du type INTEGER de dimension 19.  (entrÃ©e)
 	   Il contient la liste des facteurs premiers de n.
-	   Il est initialisé à l'appel du sous-programme FFTFAX (voir ci-dessus).
+	   Il est initialisÃ© Ã  l'appel du sous-programme FFTFAX (voir ci-dessus).
 
-     inc1x Scalaire du type INTEGER.  (entrée)
-           Le pas de déplacement en nombre d'éléments réels dans chaque
-           vecteur à transformer.
+     inc1x Scalaire du type INTEGER.  (entrÃ©e)
+           Le pas de dÃ©placement en nombre d'Ã©lÃ©ments rÃ©els dans chaque
+           vecteur Ã  transformer.
 
-     inc2x Scalaire du type INTEGER.  (entrée)
-	   Le déplacement entre les premiers éléments de deux vecteurs consécutifs.
+     inc2x Scalaire du type INTEGER.  (entrÃ©e)
+	   Le dÃ©placement entre les premiers Ã©lÃ©ments de deux vecteurs consÃ©cutifs.
 
-     n	   Scalaire du type INTEGER. (entrée)
-	   Longueur de chaque vecteur à transformer. n &gt;= 2.
-	   n doit être un nombre paire.
+     n	   Scalaire du type INTEGER. (entrÃ©e)
+	   Longueur de chaque vecteur Ã  transformer. n &gt;= 2.
+	   n doit Ãªtre un nombre paire.
 
-	   Toute valeur non valide de n conduit le sous-programme FFTFAX à retourner
+	   Toute valeur non valide de n conduit le sous-programme FFTFAX Ã  retourner
 	   un code d'erreur ifax(1)=-99.
 
-     lot   Scalaire du type INTEGER. (entrée)
-	   Le nombre de vecteurs à transformer.
+     lot   Scalaire du type INTEGER. (entrÃ©e)
+	   Le nombre de vecteurs Ã  transformer.
 
-     isign Scalaire du type INTEGER. (entrée)
-	   -1 --&gt; applique une FFT réelle-complexe.
-	   +1 --&gt; applique une FFT  complexe-réelle (FFT inverse).
+     isign Scalaire du type INTEGER. (entrÃ©e)
+	   -1 --&gt; applique une FFT rÃ©elle-complexe.
+	   +1 --&gt; applique une FFT  complexe-rÃ©elle (FFT inverse).
 
 <b>EXEMPLES</b>
 
-     Le programme suivant montre les séquences d'appels à FFTFAX et RFFTMLT
+     Le programme suivant montre les sÃ©quences d'appels Ã  FFTFAX et RFFTMLT
      pour calculer la FFT du tableau A :
 
 	  INTEGER, PARAMETER :: n = 16, lot = 2, inc = 1, jump = inc*(n+2)

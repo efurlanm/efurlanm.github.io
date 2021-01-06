@@ -6,11 +6,11 @@
 
   <body bgcolor="#fdf5e6">
 <pre>
-<b>*** JMFFT - émulation des FFTs de la SciLib de CRAY - (c) CNRS/IDRIS ***</b>
+<b>*** JMFFT - Ã©mulation des FFTs de la SciLib de CRAY - (c) CNRS/IDRIS ***</b>
 
 <b>NOM</b>
 
-     CCFFT3D - Applique une transformée de Fourier rapide (FFT) à trois
+     CCFFT3D - Applique une transformÃ©e de Fourier rapide (FFT) Ã  trois
                dimensions (3D) complexe-complexe.
 
 <b>SYNTAXE</b>
@@ -20,16 +20,16 @@
 
 <b>IMPLEMENTATION</b>
 
-     Ce sous-programme émule le sous-programme de même nom de la SCILIB de
-     CRAY. Tous les arguments réels ou complexes doivent être déclarés
-     en double précision.
+     Ce sous-programme Ã©mule le sous-programme de mÃªme nom de la SCILIB de
+     CRAY. Tous les arguments rÃ©els ou complexes doivent Ãªtre dÃ©clarÃ©s
+     en double prÃ©cision.
 
 <b>DESCRIPTION</b>
 
-     CCFFT3D calcule la FFT du tableau complexe X et retourne le résultat dans
+     CCFFT3D calcule la FFT du tableau complexe X et retourne le rÃ©sultat dans
      le tableau complexe Y.
 
-     Soient deux tabeaux X et Y dimensionnés de la façon suivante :
+     Soient deux tabeaux X et Y dimensionnÃ©s de la faÃ§on suivante :
 
 	  COMPLEX(KIND=8), DIMENSION(0:n1-1, 0:n2-1, 0:n3-1) :: X
 	  COMPLEX(KIND=8), DIMENSION(0:n1-1, 0:n2-1, 0:n3-1) :: Y
@@ -44,7 +44,7 @@
 	 k2 = 0,	..., n2	- 1,
 	 k3 = 0,	..., n3	- 1,
 
-    où,
+    oÃ¹,
 	w1 = exp(isign*2*pi*i/n1),
 	w2 = exp(isign*2*pi*i/n2),
 	w3 = exp(isign*2*pi*i/n3),
@@ -52,8 +52,8 @@
 	pi = 3.14159...
 	isign =	+1 ou -1
 
-     En général, si une FFT est appliquée avec des valeurs particulières de
-     isign et scale, alors son inverse est calculée avec les valeurs -isign
+     En gÃ©nÃ©ral, si une FFT est appliquÃ©e avec des valeurs particuliÃ¨res de
+     isign et scale, alors son inverse est calculÃ©e avec les valeurs -isign
      et 1/(n1*n2*n3*scale).
 
      En particulier, avec les valeurs isign = +1 et scale = 1.0, la FFT
@@ -61,86 +61,86 @@
 
 <b>ARGUMENTS</b>
 
-     isign   Scalaire du type INTEGER. (entrée)
-	     Indique si la table des coefficients doit être initialisée ou s'il faut
+     isign   Scalaire du type INTEGER. (entrÃ©e)
+	     Indique si la table des coefficients doit Ãªtre initialisÃ©e ou s'il faut
 	     appliquer une FFT ou son inverse.
 
 	     Si isign = 0, le sous-programme initialise le tableau table et
 	     retourne sa valeur. Dans ce cas, seuls les arguments isign, n1, n2, n3
-	     et table sont vérifés et utilisés.
+	     et table sont vÃ©rifÃ©s et utilisÃ©s.
 
-     n1	     Scalaire du type INTEGER. (entrée).
-	     Nombre de transformée dans la première dimension.
+     n1	     Scalaire du type INTEGER. (entrÃ©e).
+	     Nombre de transformÃ©e dans la premiÃ¨re dimension.
 
-     n2	     Scalaire du type INTEGER. (entrée).
-	     Nombre de transformée dans la deuxième dimension.
+     n2	     Scalaire du type INTEGER. (entrÃ©e).
+	     Nombre de transformÃ©e dans la deuxiÃ¨me dimension.
 
-     n3	     Scalaire du type INTEGER. (entrée).
-	     Nombre de transformée dans la troisième dimension.
+     n3	     Scalaire du type INTEGER. (entrÃ©e).
+	     Nombre de transformÃ©e dans la troisiÃ¨me dimension.
 
-     scale   Scalaire du type REAL(KIND=8). (entrée)
-	     Facteur d'échelle.  Chaque élément du vecteur y est multiplié par
-	     scale une fois la FFT effectuée, ainsi qu'il est spécifié dans la
+     scale   Scalaire du type REAL(KIND=8). (entrÃ©e)
+	     Facteur d'Ã©chelle.  Chaque Ã©lÃ©ment du vecteur y est multipliÃ© par
+	     scale une fois la FFT effectuÃ©e, ainsi qu'il est spÃ©cifiÃ© dans la
 	     formule ci-dessus.
 
-     x	     Tableau du type COMPLEX(KIND=8) de dimension (0:ldx1-1,0:ldx2-1,0:n3-1). (entrée)
-	     Tableau contenant la valeurs des éléments à transformer.
+     x	     Tableau du type COMPLEX(KIND=8) de dimension (0:ldx1-1,0:ldx2-1,0:n3-1). (entrÃ©e)
+	     Tableau contenant la valeurs des Ã©lÃ©ments Ã  transformer.
 
-     ldx1    Scalaire du type INTEGER. (entrée).
-	     Nombre d'éléments dans la première dimension du tableau x tel
-	     qu'il est déclaré dans l'unité appelante. ldx1 &gt;= max(n1, 1).
+     ldx1    Scalaire du type INTEGER. (entrÃ©e).
+	     Nombre d'Ã©lÃ©ments dans la premiÃ¨re dimension du tableau x tel
+	     qu'il est dÃ©clarÃ© dans l'unitÃ© appelante. ldx1 &gt;= max(n1, 1).
 
-     ldx2    Scalaire du type INTEGER. (entrée).
-	     Nombre d'éléments dans la deuxième dimension du tableau x tel
-	     qu'il est déclaré dans l'unité appelante. ldx2 &gt;= max(n2, 1)
+     ldx2    Scalaire du type INTEGER. (entrÃ©e).
+	     Nombre d'Ã©lÃ©ments dans la deuxiÃ¨me dimension du tableau x tel
+	     qu'il est dÃ©clarÃ© dans l'unitÃ© appelante. ldx2 &gt;= max(n2, 1)
 
      y	     Tableau du type COMPLEX(KIND=8) de dimension (0:ldy1-1,0:ldy2-1,0:n3-1). (sortie)
-	     Tableau contenant en sortie les valeurs transformées. On peut
-	     utiliser le tableau d'entrée x. Dans ce cas, ldx1 = ldy1 et
+	     Tableau contenant en sortie les valeurs transformÃ©es. On peut
+	     utiliser le tableau d'entrÃ©e x. Dans ce cas, ldx1 = ldy1 et
 	     ldx2 = ldy2.
 
-     ldy1    Scalaire du type INTEGER  (entrée).
-	     Nombre d'éléments déclaré dans la première dimension du tableau
-	     y tel qu'il est déclaré dans l'unité appelante. ldy1 &gt;= max(n1, 1)
+     ldy1    Scalaire du type INTEGER  (entrÃ©e).
+	     Nombre d'Ã©lÃ©ments dÃ©clarÃ© dans la premiÃ¨re dimension du tableau
+	     y tel qu'il est dÃ©clarÃ© dans l'unitÃ© appelante. ldy1 &gt;= max(n1, 1)
 
-     ldy2    Scalaire du type INTEGER. (entrée).
-	     Nombre d'éléments déclaré dans la deuxième dimension du tableau
-	     y. tel qu'il est déclaré dans l'unité appelante. ldy2 &gt;= max(n2, 1).
+     ldy2    Scalaire du type INTEGER. (entrÃ©e).
+	     Nombre d'Ã©lÃ©ments dÃ©clarÃ© dans la deuxiÃ¨me dimension du tableau
+	     y. tel qu'il est dÃ©clarÃ© dans l'unitÃ© appelante. ldy2 &gt;= max(n2, 1).
 
-     table   Tableau du type REAL(KIND=8) de dimension 100 + 2*(n1 + n2 + n3). (entrée ou sortie)
+     table   Tableau du type REAL(KIND=8) de dimension 100 + 2*(n1 + n2 + n3). (entrÃ©e ou sortie)
 	     Tableau contenant la table des coefficients et des fonctions
-	     trigonométriques.
+	     trigonomÃ©triques.
 
 	     Si isign = 0, le sous-programme initialise table (table est en
 	     sortie seulement).
 
-	     Si isign = +1 ou -1, table est supposé être déja initialisé
-	     (table est en entrée seulement).
+	     Si isign = +1 ou -1, table est supposÃ© Ãªtre dÃ©ja initialisÃ©
+	     (table est en entrÃ©e seulement).
 
      work    Tableau du type REAL(KIND=8) de dimension 512*max(n1, n2, n3).
 	     Tableau de travail.
 
-             Note : Cette dimension peut être augmentée ou diminuée, à
+             Note : Cette dimension peut Ãªtre augmentÃ©e ou diminuÃ©e, Ã 
              condition d'en informer JMFFT en appelant le sous-programme
              JMSETNWORK.
 
-     isys    Scalaire du type INTEGER. (entrée)
-	     Cet argument n'est pas utilisé. Il est conservé pour des raisons
-	     de compatibilité avec la SCILIB de CRAY.  
+     isys    Scalaire du type INTEGER. (entrÃ©e)
+	     Cet argument n'est pas utilisÃ©. Il est conservÃ© pour des raisons
+	     de compatibilitÃ© avec la SCILIB de CRAY.  
 
 <b>EXEMPLES</b>
 
      <b>Exemple 1</b> : initialise le tableau TABLE dans le but d'appliquer
-     ultérieurement une FFT de dimensions (128,128,128). Dans ce cas, seuls les
-     arguments ISIGN, N1, N2, N3 et TABLE sont utilisés.
+     ultÃ©rieurement une FFT de dimensions (128,128,128). Dans ce cas, seuls les
+     arguments ISIGN, N1, N2, N3 et TABLE sont utilisÃ©s.
 
            INTEGER, PARAMETER                              :: N1=128, N2=128, N3=128
 	   REAL(KIND=8), DIMENSION(100 + 2*(N1 + N2 + N3)) :: TABLE
 	   CALL	CCFFT3D	(0, N1, N2, N3, 0.d0, DUMMY, 1, 1, DUMMY, 1, 1, TABLE, DUMMY, 0)
 
-     <b>Exemple 2</b> : X et Y sont des tableaux déclarés du type complexe et de
+     <b>Exemple 2</b> : X et Y sont des tableaux dÃ©clarÃ©s du type complexe et de
      dimensions (0:128,0:128,0:128). Nous appliquons une FFT sur les 128 premiers
-     éléments de chaque dimension. Le tableau TABLE est supposé être initialisé.
+     Ã©lÃ©ments de chaque dimension. Le tableau TABLE est supposÃ© Ãªtre initialisÃ©.
 
 	   COMPLEX(KIND=8), DIMENSION(0:128, 0:128, 0:128)    :: X
 	   COMPLEX(KIND=8), DIMENSION(0:128, 0:128, 0:128)    :: Y
@@ -153,16 +153,16 @@
                         129, 129, TABLE, WORK, 0)
 
      <b>Exemple 3</b> : ici nous poursuivons l'exemple 2 en effectuant la FFT inverse
-     de Y et en enregistrant le résultat dans X.  Le facteur d'échelle est ici
-     égale à 1/(128*128*128). Nous supposons que le tableau TABLE ait été
-     initialisé auparavant.
+     de Y et en enregistrant le rÃ©sultat dans X.  Le facteur d'Ã©chelle est ici
+     Ã©gale Ã  1/(128*128*128). Nous supposons que le tableau TABLE ait Ã©tÃ©
+     initialisÃ© auparavant.
 
 	   CALL	CCFFT3D(-1, 128, 128, 128, 1.d0/(128.d0**3), Y, 129, 129, &amp;
 	                X, 129, 129, TABLE, WORK, 0)
 
-     <b>Exemple 4</b>:	 nous effectuons ici un calcul analogue à celui de l'exemple 2
-     en supposant toutefois que les indices des tableaux X et Y démarrent à 1
-     et non plus à 0.
+     <b>Exemple 4</b>:	 nous effectuons ici un calcul analogue Ã  celui de l'exemple 2
+     en supposant toutefois que les indices des tableaux X et Y dÃ©marrent Ã  1
+     et non plus Ã  0.
 
 	   COMPLEX(KIND=8), DIMENSION(129, 129, 129) :: X
 	   COMPLEX(KIND=8), DIMENSION(129, 129, 129) :: Y
@@ -172,9 +172,9 @@
 	   CALL	CCFFT3D(1, 128,	128, 128, 1.d0, X, 129, 129,  &amp;
 	                Y, 129, 129, TABLE, WORK, 0)
 
-     <b>Exemple 5</b> :	calcul semblable à l'exemple 4 sauf qu'ici nous utilisons X à
-     la fois en entrée et en sortie. Nous supposons que le tableau TABLE ait
-     été initialisé auparavant.
+     <b>Exemple 5</b> :	calcul semblable Ã  l'exemple 4 sauf qu'ici nous utilisons X Ã 
+     la fois en entrÃ©e et en sortie. Nous supposons que le tableau TABLE ait
+     Ã©tÃ© initialisÃ© auparavant.
 
 	   COMPLEX(KIND=8), DIMENSION(129, 129, 129) :: X
 	   ...

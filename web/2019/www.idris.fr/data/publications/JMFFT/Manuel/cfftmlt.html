@@ -6,12 +6,12 @@
 
   <body bgcolor="#fdf5e6">
 <pre>
-<b>*** JMFFT - émulation des FFTs de la SciLib de CRAY - (c) CNRS/IDRIS ***</b>
+<b>*** JMFFT - Ã©mulation des FFTs de la SciLib de CRAY - (c) CNRS/IDRIS ***</b>
 
 <b>NOM</b>
 
-     CFFTMLT - Applique une Transformée de Fourier rapide (FFT)
-               complexe-complexe à un ensemble donné de vecteurs.
+     CFFTMLT - Applique une TransformÃ©e de Fourier rapide (FFT)
+               complexe-complexe Ã  un ensemble donnÃ© de vecteurs.
 
 <b>SYNTAXE</b>
 
@@ -21,13 +21,13 @@
 
 <b>IMPLEMENTATION</b>
 
-     Ces sous-programmes émulent les sous-programmes de même nom de la SCILIB de
-     CRAY. Tous les arguments réels ou complexes doivent être déclarés en
-     double précision.
+     Ces sous-programmes Ã©mulent les sous-programmes de mÃªme nom de la SCILIB de
+     CRAY. Tous les arguments rÃ©els ou complexes doivent Ãªtre dÃ©clarÃ©s en
+     double prÃ©cision.
 
 <b>DESCRIPTION</b>
 
-     CFFTMLT applique une FFT complexe-complexe a un ensemble donné de
+     CFFTMLT applique une FFT complexe-complexe a un ensemble donnÃ© de
      vecteurs selon la formule suivante :
 
 				 n-1 
@@ -36,50 +36,50 @@
 
      pour k = 0,1,...,n-1
 
-     Ce calcul s'applique aux n vecteurs fournis en entrée.
+     Ce calcul s'applique aux n vecteurs fournis en entrÃ©e.
 
 <b>ARGUMENTS</b>
 
-     ar	   Tableau du type REAL(KIND=8) de dimension n*lot.  (entrée/sortie)
-	   En entrée, il contient la partie réelle des données à transformer.
-	   En sortie, il contient la partie réelle transformée.
+     ar	   Tableau du type REAL(KIND=8) de dimension n*lot.  (entrÃ©e/sortie)
+	   En entrÃ©e, il contient la partie rÃ©elle des donnÃ©es Ã  transformer.
+	   En sortie, il contient la partie rÃ©elle transformÃ©e.
 
-     ai	   Tableau du type REAL(KIND=8) de dimension n*lot.  (entrée/sortie)
-	   En entrée, il contient la partie imaginaire des données à transformer.
-	   En sortie, il contient la partie imaginaire transformée.
+     ai	   Tableau du type REAL(KIND=8) de dimension n*lot.  (entrÃ©e/sortie)
+	   En entrÃ©e, il contient la partie imaginaire des donnÃ©es Ã  transformer.
+	   En sortie, il contient la partie imaginaire transformÃ©e.
 
      work  Tableau du type REAL(KIND=8) de dimension 4*n*lot.
            Espace de travail.
 
-     trigs Tableau du type REAL(KIND=8) de dimension 2*n. (entrée) Il doit
-           être initialisé afin de contenir la table des sinus et cosinus. Le
-           sous-programme suivant permet d'initialiser les tableaux trigs et ifax à
+     trigs Tableau du type REAL(KIND=8) de dimension 2*n. (entrÃ©e) Il doit
+           Ãªtre initialisÃ© afin de contenir la table des sinus et cosinus. Le
+           sous-programme suivant permet d'initialiser les tableaux trigs et ifax Ã 
            la fois :
 
 		     CALL CFTFAX (n,ifax,trigs)
 
-     ifax  Tableau du type INTEGER de dimension 19.  (entrée)
-	   Il doit être initialisé grâce au sous-programme ci-dessous afin
+     ifax  Tableau du type INTEGER de dimension 19.  (entrÃ©e)
+	   Il doit Ãªtre initialisÃ© grÃ¢ce au sous-programme ci-dessous afin
            de contenir une liste de facteurs de n.
 
-     inc   Scalaire du type INTEGER.  (entrée)
-	   Le pas entre deux élements d'un vecteur.
+     inc   Scalaire du type INTEGER.  (entrÃ©e)
+	   Le pas entre deux Ã©lements d'un vecteur.
 
-     jump  Scalaire du type INTEGER. (entrée)
-           Le pas entre deux vecteurs consécutifs.  inc et jump s'appliquent
-           aussi bien à la partie réelle qu'à la partie imaginaire.
+     jump  Scalaire du type INTEGER. (entrÃ©e)
+           Le pas entre deux vecteurs consÃ©cutifs.  inc et jump s'appliquent
+           aussi bien Ã  la partie rÃ©elle qu'Ã  la partie imaginaire.
 
-     n	   Scalaire du type INTEGER.  (entrée)
-	   Longueur de chaque vecteur à transformer. n &gt;= 0.
+     n	   Scalaire du type INTEGER.  (entrÃ©e)
+	   Longueur de chaque vecteur Ã  transformer. n &gt;= 0.
 	   Toute valeur non valide de n conduit le sous-programme CFTFAX
-	   à retourner un code d'erreur ifax(1)=-99.
+	   Ã  retourner un code d'erreur ifax(1)=-99.
 
-     lot   Scalaire du type INTEGER.  (entrée)
-	   Le nombre de vecteurs à transformer.
+     lot   Scalaire du type INTEGER.  (entrÃ©e)
+	   Le nombre de vecteurs Ã  transformer.
 
-     isign Scalaire du type INTEGER. (entrée)
-	   +1 --&gt; transformée de Fourier
-	   -1 --&gt; transformée de Fourier inverse
+     isign Scalaire du type INTEGER. (entrÃ©e)
+	   +1 --&gt; transformÃ©e de Fourier
+	   -1 --&gt; transformÃ©e de Fourier inverse
 
 <b>VOIR AUSSI</b>
 

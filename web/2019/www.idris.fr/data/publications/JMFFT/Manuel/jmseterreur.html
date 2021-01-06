@@ -6,11 +6,11 @@
 
   <body bgcolor="#fdf5e6">
 <pre>
-<b>*** JMFFT - émulation des FFTs de la SciLib de CRAY - (c) CNRS/IDRIS ***</b>
+<b>*** JMFFT - Ã©mulation des FFTs de la SciLib de CRAY - (c) CNRS/IDRIS ***</b>
 
 <b>NOM</b>
 
-     JMSETERREUR - Permet de contrôler le comportement de JMFFT en cas d'erreur
+     JMSETERREUR - Permet de contrÃ´ler le comportement de JMFFT en cas d'erreur
 
 <b>SYNTAXE</b>
 
@@ -22,24 +22,24 @@
 
 <b>DESCRIPTION</b>
 
-     La valeur .true. correspond au comportement par défaut : en cas
-     d'erreur JMFFT imprime un message d'erreur et arrête le programme
+     La valeur .true. correspond au comportement par dÃ©faut : en cas
+     d'erreur JMFFT imprime un message d'erreur et arrÃªte le programme
      par une instruction STOP.
 
-     Avec la valeur .false., en cas d'erreur l'exécution continue. Il
-     appartient donc à l'utilisateur de tester le code de retour des appels
-     à JMFFT et de prendre les actions qui s'imposent.
+     Avec la valeur .false., en cas d'erreur l'exÃ©cution continue. Il
+     appartient donc Ã  l'utilisateur de tester le code de retour des appels
+     Ã  JMFFT et de prendre les actions qui s'imposent.
 
 <b>ARGUMENTS</b>
 
      flag  Variable ou constante de type LOGICAL
-           En entrée, il contient la valeur à fournir.
-	   Non modifié en sortie.
+           En entrÃ©e, il contient la valeur Ã  fournir.
+	   Non modifiÃ© en sortie.
 
 <b>EXEMPLES</b>
 
      Le programme suivant contient une erreur : l'utilisateur a fourni
-     une première dimension trop petite pour le tableau Y.
+     une premiÃ¨re dimension trop petite pour le tableau Y.
 
            INTEGER, PARAMETER :: LDX = 129, NX1 = 128, NX2 = 256
            INTEGER, PARAMETER :: LDY = 64,  NY1 =  64, NY2 = 256
@@ -52,14 +52,14 @@
            CALL SCFFT2D(1, 128, 256, 1.d0, X, 129, Y, 64, TABLE, WORK, 0)
            ! ... (Impression de Y)
 
-     A l'exécution, le programme s'arrête après le premier appel à SCFFT2D
+     A l'exÃ©cution, le programme s'arrÃªte aprÃ¨s le premier appel Ã  SCFFT2D
      avec le message suivant :
 
            JMFFT Erreur dans SCFFT2D : ldy doit etre &gt;= n/2+1 ( 64 65 )
            STOP 1
 
-     Voici une variante du même programme où on contrôle l'exécution :
-     (HANDLER est un sous-programme personnel destiné à traiter ces exceptions)
+     Voici une variante du mÃªme programme oÃ¹ on contrÃ´le l'exÃ©cution :
+     (HANDLER est un sous-programme personnel destinÃ© Ã  traiter ces exceptions)
 
            INTEGER, PARAMETER :: LDX = 129, NX1 = 128, NX2 = 256
            INTEGER, PARAMETER :: LDY = 64,  NY1 =  64, NY2 = 256
@@ -81,7 +81,7 @@
            CALL SCFFT2D(1, 128, 256, 1.d0, X, 129, Y, 64, TABLE, WORK, 0)
            ! ... (Impression de Y)
 
-     A l'exécution, ce programme écrira le message d'erreur suivant :
+     A l'exÃ©cution, ce programme Ã©crira le message d'erreur suivant :
 
            Code 16 , ldy doit etre &gt;= n/2+1
 

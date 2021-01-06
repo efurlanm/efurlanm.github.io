@@ -6,11 +6,11 @@
 
   <body bgcolor="#fdf5e6">
 <pre>
-<b>*** JMFFT - émulation des FFTs de la SciLib de CRAY - (c) CNRS/IDRIS ***</b>
+<b>*** JMFFT - Ã©mulation des FFTs de la SciLib de CRAY - (c) CNRS/IDRIS ***</b>
 
 <b>NOM</b>
 
-     CCFFTM - Applique une Transformée de Fourier rapide (FFT) multiple
+     CCFFTM - Applique une TransformÃ©e de Fourier rapide (FFT) multiple
               complexe-complexe.
 
 <b>SYNTAXE</b>
@@ -19,16 +19,16 @@
 
 <b>IMPLEMENTATION</b>
 
-     Ce sous-programme émule le sous-programme de même nom de la SCILIB de
-     CRAY. Tous les arguments réels ou complexes doivent être déclarés
-     en double précision.
+     Ce sous-programme Ã©mule le sous-programme de mÃªme nom de la SCILIB de
+     CRAY. Tous les arguments rÃ©els ou complexes doivent Ãªtre dÃ©clarÃ©s
+     en double prÃ©cision.
 
 <b>DESCRIPTION</b>
 
      CCFFTM calcule la FFT de chaque colonne de la matrice complexe X, et retourne
-     le résultat dans une colonne de la matrice complexe Y.
+     le rÃ©sultat dans une colonne de la matrice complexe Y.
 
-     Soient deux tableaux X et Y dimensionnés de la façon suivante :
+     Soient deux tableaux X et Y dimensionnÃ©s de la faÃ§on suivante :
 
 	  COMPLEX(KIND=8), DIMENSION(0:ldx-1, 0:lot-1) :: X
 	  COMPLEX(KIND=8), DIMENSION(0:ldy-1, 0:lot-1) :: Y
@@ -43,15 +43,15 @@
 			    j=0
 	  pour k = 0, ..., n-1
 	       L = 0, ..., lot-1
-	  où,
+	  oÃ¹,
 	      w	= exp(2*pi*i/n),
 	      i	= + sqrt(-1),
 	      pi = 3.14159...,
 	      isign = +1 ou -1
-	      lot = nombre de colonne à transformer
+	      lot = nombre de colonne Ã  transformer
 
-     En général, si une FFT est appliquée avec des valeurs particulières de
-     isign et scale, alors son inverse est calculée avec les valeurs -isign
+     En gÃ©nÃ©ral, si une FFT est appliquÃ©e avec des valeurs particuliÃ¨res de
+     isign et scale, alors son inverse est calculÃ©e avec les valeurs -isign
      et 1/(n*scale).
 
      En particulier, avec les valeurs isign = +1 et scale = 1.0, la FFT
@@ -59,84 +59,84 @@
 
 <b>ARGUMENTS</b>
 
-     isign   Scalaire du type INTEGER. (entrée)
+     isign   Scalaire du type INTEGER. (entrÃ©e)
 
-	     Indique si la table des coefficients doit être initialisée ou s'il faut
+	     Indique si la table des coefficients doit Ãªtre initialisÃ©e ou s'il faut
 	     appliquer une FFT ou son inverse.
 
 	     Si isign = 0, le sous-programme initialise le tableau table et
 	     retourne sa valeur. Dans ce cas, seuls les arguments isign, n et
-	     table sont vérifés et utilisés.
+	     table sont vÃ©rifÃ©s et utilisÃ©s.
 
-             Si isign = +1 ou -1, la FFT ou son inverse est appliquée.
+             Si isign = +1 ou -1, la FFT ou son inverse est appliquÃ©e.
 
-     n	     Scalaire du type INTEGER. (entrée).
+     n	     Scalaire du type INTEGER. (entrÃ©e).
 
-	     Longueur de chaque colonne à transformer.
-             C'est aussi la première dimension des matrices x et y. n &gt; 0.
+	     Longueur de chaque colonne Ã  transformer.
+             C'est aussi la premiÃ¨re dimension des matrices x et y. n &gt; 0.
 
-     lot     Scalaire du type INTEGER. (entrée).
-	     Nombre de transmormée à calculer.
-	     C'est aussi la deuxième dimension des matrices x et y. lot &gt; 0.
+     lot     Scalaire du type INTEGER. (entrÃ©e).
+	     Nombre de transmormÃ©e Ã  calculer.
+	     C'est aussi la deuxiÃ¨me dimension des matrices x et y. lot &gt; 0.
 
-     scale   Scalaire du type REAL(KIND=8). (entrée)
+     scale   Scalaire du type REAL(KIND=8). (entrÃ©e)
 
-	     Facteur d'échelle.  Chaque élément du vecteur y est multiplié par
-	     scale une fois la FFT effectuée ainsi qu'il est spécifié dans la
+	     Facteur d'Ã©chelle.  Chaque Ã©lÃ©ment du vecteur y est multipliÃ© par
+	     scale une fois la FFT effectuÃ©e ainsi qu'il est spÃ©cifiÃ© dans la
 	     formule ci-dessus.
 
-     x	     Tableau du type COMPLEX(KIND=8) de dimension (0:ldx-1, 0:lot-1). (entrée)
+     x	     Tableau du type COMPLEX(KIND=8) de dimension (0:ldx-1, 0:lot-1). (entrÃ©e)
 	     
-             Tableau contenant la valeurs des éléments à transformer.
+             Tableau contenant la valeurs des Ã©lÃ©ments Ã  transformer.
 
-     ldx     Scalaire du type INTEGER. (entrée).
+     ldx     Scalaire du type INTEGER. (entrÃ©e).
 
-	     Nombre de lignes déclarés dans le tableau x. ldx &gt;= max(n, 1).
+	     Nombre de lignes dÃ©clarÃ©s dans le tableau x. ldx &gt;= max(n, 1).
 
      y	     Tableau du type COMPLEX(KIND=8) de dimension (0:ldy-1, 0:lot-1). (sortie)
 
-	     Tableau contenant en sortie les valeurs transformées. On peut 
-             utiliser le tableau d'entrée x. Dans ce cas, ldx = ldy.
+	     Tableau contenant en sortie les valeurs transformÃ©es. On peut 
+             utiliser le tableau d'entrÃ©e x. Dans ce cas, ldx = ldy.
 
-     ldy     Scalaire du type INTEGER. (entrée).
+     ldy     Scalaire du type INTEGER. (entrÃ©e).
 
-	     Nombre de lignes déclarés dans le tableau y. ldx &gt;= max(n, 1).
+	     Nombre de lignes dÃ©clarÃ©s dans le tableau y. ldx &gt;= max(n, 1).
 
 
-     table   Tableau du type REAL(KIND=8) de dimension 100 + 2*n. (entrée ou sortie)
+     table   Tableau du type REAL(KIND=8) de dimension 100 + 2*n. (entrÃ©e ou sortie)
 
 	     Tableau contenant la table des coefficients et des fonctions
-	     trigonométriques.
+	     trigonomÃ©triques.
 
 	     Si isign = 0, le sous-programme initialise table (table est en
 	     sortie seulement).
 
-	     Si isign = +1 ou -1, table est supposé être déja initialisé
-	     (table est en entrée seulement).
+	     Si isign = +1 ou -1, table est supposÃ© Ãªtre dÃ©ja initialisÃ©
+	     (table est en entrÃ©e seulement).
 
      work    Tableau du type REAL(KIND=8) de dimension 4*lot*n.
 
 	     Tableau de travail.
 
-     isys    Scalaire du type INTEGER. (entrée)
+     isys    Scalaire du type INTEGER. (entrÃ©e)
 
-             Cet argument n'est pas utilisé. Il est conservé pour des raisons
-	     de compatibilité avec la SCILIB de CRAY.
+             Cet argument n'est pas utilisÃ©. Il est conservÃ© pour des raisons
+	     de compatibilitÃ© avec la SCILIB de CRAY.
 
 <b>EXEMPLES</b>
 
      <b>Exemple 1</b> : initialise le tableau TABLE dans le but d'appliquer
-     ultérieurement une FFT de dimension N=128. Dans ce cas, seuls les
-     arguments ISIGN, N et TABLE sont utilisés.
+     ultÃ©rieurement une FFT de dimension N=128. Dans ce cas, seuls les
+     arguments ISIGN, N et TABLE sont utilisÃ©s.
 
 	   REAL(KIND=8), DIMENSION(100 + 2*128) :: TABLE
 	   CALL	CCFFTM(0, 128, 0, 0.d0, DUMMY, 1, DUMMY, 1, TABLE, DUMMY, 0)
 
-     <b>Exemple 2</b> : X et Y sont des tableaux déclarés du type complexe et de
+     <b>Exemple 2</b> : X et Y sont des tableaux dÃ©clarÃ©s du type complexe et de
      dimensions (0:128,0:55).  Nous appliquons une FFT sur les 128
-     premiers éléments de chaque colonne.  Nous réalisons une FFT sur les 50
-     premières colonnes de X. Le résultat sera enregistré dans les 50
-     premières colonnes de Y. Avant d'appliquer la FFT, nous initialisons le
+     premiers Ã©lÃ©ments de chaque colonne.  Nous rÃ©alisons une FFT sur les 50
+     premiÃ¨res colonnes de X. Le rÃ©sultat sera enregistrÃ© dans les 50
+     premiÃ¨res colonnes de Y. Avant d'appliquer la FFT, nous initialisons le
      tableau TABLE comme dans l'exemple 1.
 
 	   COMPLEX(KIND=8), DIMENSION(0:128, 0:55) :: X
@@ -148,15 +148,15 @@
 	   CALL	CCFFTM(1, 128, 50, 1.d0, X, 129, Y, 129, TABLE, WORK, 0)
 
      <b>Exemple 3</b> : ici nous poursuivons l'exemple 2 en affectuant la FFT inverse
-     de Y et en enregistrant le résultat dans X.  Le facteur d'échelle est
-     ici égale à 1/128.  Nous supposons que le tableau TABLE ait été initialisé
+     de Y et en enregistrant le rÃ©sultat dans X.  Le facteur d'Ã©chelle est
+     ici Ã©gale Ã  1/128.  Nous supposons que le tableau TABLE ait Ã©tÃ© initialisÃ©
      auparavant.
 
 	   CALL	CCFFTM(-1, 128,	50, 1.d0/128.d0, Y, 129, X, 129, TABLE,WORK,0)
 
-     <b>Exemple 4</b> : nous effectuons ici un calcul analogue à celui de l'exemple 2
-     en supposant toutefois que les indices des tableaux X et Y démarrent à 1
-     et non plus à 0.
+     <b>Exemple 4</b> : nous effectuons ici un calcul analogue Ã  celui de l'exemple 2
+     en supposant toutefois que les indices des tableaux X et Y dÃ©marrent Ã  1
+     et non plus Ã  0.
 
 	   COMPLEX(KIND=8), DIMENSION(129, 55) :: X
 	   COMPLEX(KIND=8), DIMENSION(129, 55) :: Y
@@ -164,9 +164,9 @@
 	   CALL	CCFFTM(0, 128, 50, 1.d0, X, 129, Y, 129, TABLE, WORK, 0)
 	   CALL	CCFFTM(1, 128, 50, 1.d0, X, 129, Y, 129, TABLE, WORK, 0)
 
-     <b>Exemple 5</b> : calcul semblable à l'exemple 4 sauf qu'ici nous utilisons X à
-     la fois en entrée et en sortie. Nous supposons que le tableau TABLE ait
-     été initialisé auparavant.
+     <b>Exemple 5</b> : calcul semblable Ã  l'exemple 4 sauf qu'ici nous utilisons X Ã 
+     la fois en entrÃ©e et en sortie. Nous supposons que le tableau TABLE ait
+     Ã©tÃ© initialisÃ© auparavant.
 
 	   COMPLEX(KIND=8), DIMENSION(129, 55) :: X
 	   ...

@@ -6,12 +6,12 @@
 
   <body bgcolor="#fdf5e6">
 <pre>
-<b>*** JMFFT - émulation des FFTs de la SciLib de CRAY - (c) CNRS/IDRIS ***</b>
+<b>*** JMFFT - Ã©mulation des FFTs de la SciLib de CRAY - (c) CNRS/IDRIS ***</b>
 
 <b>NOM</b>
 
-     SCFFTM, CSFFTM - Applique une transformée de Fourier rapide (FFT)
-                      réelle-complexe ou complexe-réelle multiple.
+     SCFFTM, CSFFTM - Applique une transformÃ©e de Fourier rapide (FFT)
+                      rÃ©elle-complexe ou complexe-rÃ©elle multiple.
 
 <b>SYNTAXE</b>
 
@@ -21,22 +21,22 @@
 
 <b>IMPLEMENTATION</b>
 
-     Ces sous-programmes émulent les sous-programmes de même nom de la SCILIB de
-     CRAY. Tous les arguments réels ou complexes doivent être déclarés
-     en double précision.
+     Ces sous-programmes Ã©mulent les sous-programmes de mÃªme nom de la SCILIB de
+     CRAY. Tous les arguments rÃ©els ou complexes doivent Ãªtre dÃ©clarÃ©s
+     en double prÃ©cision.
 
 <b>DESCRIPTION</b>
 
-     SCFFTM calcule la FFT de chaque colonne du tableau réel x et retourne le
-     résultat dans une colonne du tableau complexe y.
-     CSFFTM calcule la FFT inverse complexe-réelle correspondante.
+     SCFFTM calcule la FFT de chaque colonne du tableau rÃ©el x et retourne le
+     rÃ©sultat dans une colonne du tableau complexe y.
+     CSFFTM calcule la FFT inverse complexe-rÃ©elle correspondante.
 
-     Soient deux tabeaux X et Y dimensionnés de la façon suivante :
+     Soient deux tabeaux X et Y dimensionnÃ©s de la faÃ§on suivante :
 
 	  REAL(KIND=8), DIMENSION(0:ldx-1, 0:m-1)    :: X
 	  COMPLEX(KIND=8), DIMENSION(0:ldy-1, 0:m-1) :: Y
 
-     où, ldx &gt;= n et ldy &gt;= n/2 + 1.
+     oÃ¹, ldx &gt;= n et ldy &gt;= n/2 + 1.
 
       Selon la formule suivante, la colonne L du tableau Y est la FFT
      de la colonne L du tableau X :
@@ -47,132 +47,132 @@
 
      pour k = 0,..., n/2
 	  L = 0,..., m-1
-     où,
+     oÃ¹,
 	 w = exp(2*pi*i/n),
 	 i = + sqrt(-1)
 	 pi = 3.14159...,
 	 isign = +1 ou -1,
-	 m = nombre de colonne à transformer
+	 m = nombre de colonne Ã  transformer
 
-     En général, si l'on calcule une FFT en utilisant SCFFTM avec des valeurs
-     particulières de isign et scale, alors son inverse est calculée en
+     En gÃ©nÃ©ral, si l'on calcule une FFT en utilisant SCFFTM avec des valeurs
+     particuliÃ¨res de isign et scale, alors son inverse est calculÃ©e en
      appelant CSFFTM avec les valeurs -isign et 1/(n*scale).
 
-     En particulier, avec les valeurs isign = +1 et scale = 1.0 fournis à
+     En particulier, avec les valeurs isign = +1 et scale = 1.0 fournis Ã 
      SCFTTM, la FFT inverse se calcule avec CSFTTM en prenant isign = -1 et
      scale = 1.0/n
 
 <b>ARGUMENTS</b>
 
-     isign   Scalaire du type INTEGER. (entrée)
+     isign   Scalaire du type INTEGER. (entrÃ©e)
 
-	     Indique si la table des coefficients doit être initialisée ou s'il faut
+	     Indique si la table des coefficients doit Ãªtre initialisÃ©e ou s'il faut
 	     appliquer une FFT ou son inverse.
 
 	     Si isign = 0, le sous-programme initialise le tableau table et
 	     retourne sa valeur. Dans ce cas, seuls les arguments isign, n et
-	     table sont vérifés et utilisés.
+	     table sont vÃ©rifÃ©s et utilisÃ©s.
 
-             Si isign = +1 ou -1 la FFT ou son inverse est appliquée.
+             Si isign = +1 ou -1 la FFT ou son inverse est appliquÃ©e.
 
-     n	     Scalaire du type INTEGER. (entrée).
+     n	     Scalaire du type INTEGER. (entrÃ©e).
 
-	     Longueur de la FFT (Nombre d'éléments du tableau x). n &gt; 0.
+	     Longueur de la FFT (Nombre d'Ã©lÃ©ments du tableau x). n &gt; 0.
 
-             Une restriction de JMFFT fait que n ou m doit être un
+             Une restriction de JMFFT fait que n ou m doit Ãªtre un
              nombre pair.
 
-     m       Scalaire du type INTEGER. (entrée).
+     m       Scalaire du type INTEGER. (entrÃ©e).
 
-	     Nombre de transmormée à calculer.
-	     C'est aussi la deuxième dimension des matrices x et y. m &gt; 0.
+	     Nombre de transmormÃ©e Ã  calculer.
+	     C'est aussi la deuxiÃ¨me dimension des matrices x et y. m &gt; 0.
 
-             Une restriction de JMFFT fait que n ou m doit être un
+             Une restriction de JMFFT fait que n ou m doit Ãªtre un
              nombre pair.
 
-     scale   Scalaire du type REAL(KIND=8). (entrée)
+     scale   Scalaire du type REAL(KIND=8). (entrÃ©e)
 
-	     Facteur d'échelle.  Chaque élément du vecteur y est multiplié par
-	     scale une fois la FFT effectuée ainsi qu'il est spécifié dans la
+	     Facteur d'Ã©chelle.  Chaque Ã©lÃ©ment du vecteur y est multipliÃ© par
+	     scale une fois la FFT effectuÃ©e ainsi qu'il est spÃ©cifiÃ© dans la
 	     formule ci-dessus.
 
      x	     SCFFTM: Tableau du type REAL(KIND=8) de dimension (0:ldx-1, 0:m-1).
-             (entrée)
+             (entrÃ©e)
 	     CSFFTM: Tableau du type COMPLEX(KIND=8) de dimension (0:ldx-1, 0:m-1).
-             (entrée)
-	     Tableau contenant la valeurs des éléments à transformer.
+             (entrÃ©e)
+	     Tableau contenant la valeurs des Ã©lÃ©ments Ã  transformer.
              Voir la <a href="csfftm.html#NOTES">note</a> ci-dessous.
 
-     ldx     Scalaire du type INTEGER. (entrée).
+     ldx     Scalaire du type INTEGER. (entrÃ©e).
 
-	     Nombre de lignes déclarés dans le tableau x.
+	     Nombre de lignes dÃ©clarÃ©s dans le tableau x.
 	     SCFFTM:	ldx &gt;= max(n, 1).
 	     CSFFTM:	ldx &gt;= max(n/2 + 1, 1).
 
      y	     SCFFTM: Tableau du type COMPLEX(KIND=8) de dimension (0:ldy-1, 0:m-1). (sortie)
 	     CSFFTM: Tableau du type REAL(KIND=8) de dimension (0:ldy-1, 0:m-1). (sortie)
-	     Tableau contenant en sortie les valeurs transformées. On peut 
-             mettre en équivanlence  le tableau d'entrée x avec celui de sortie
-             y en observant toutefois la rêgle suivante : 
+	     Tableau contenant en sortie les valeurs transformÃ©es. On peut 
+             mettre en Ã©quivanlence  le tableau d'entrÃ©e x avec celui de sortie
+             y en observant toutefois la rÃªgle suivante : 
 
 	     SCFFTM:	ldx = 2*ldy.
 	     CSFFTM:	ldy = 2*ldx.
 
-     ldy     Scalaire du type INTEGER. (entrée).
+     ldy     Scalaire du type INTEGER. (entrÃ©e).
 
-	     Nombre de lignes déclarés dans le tableau y.
+	     Nombre de lignes dÃ©clarÃ©s dans le tableau y.
 	     SCFFTM:	ldy &gt;= max(n/2 + 1, 1).
 	     CSFFTM:	ldy &gt;= max(n, 1).
 
-     table   Tableau du type REAL(KIND=8) de dimension 100 + 2*n.  (entrée ou sortie)
+     table   Tableau du type REAL(KIND=8) de dimension 100 + 2*n.  (entrÃ©e ou sortie)
 
 	     Tableau contenant la table des coefficients et des fonctions
-	     trigonométriques.
+	     trigonomÃ©triques.
 
 	     Si isign = 0, le sous-programme initialise table (table est en
 	     sortie seulement).
 
-	     Si isign = +1 ou -1, table est supposé être déja initialisé
-	     (table est en entrée seulement).
+	     Si isign = +1 ou -1, table est supposÃ© Ãªtre dÃ©ja initialisÃ©
+	     (table est en entrÃ©e seulement).
 
      work    Tableau du type REAL(KIND=8) de dimension (2*n + 4)*m.
 
 	     Tableau de travail.
 
-     isys    Scalaire du type INTEGER. (entrée)
+     isys    Scalaire du type INTEGER. (entrÃ©e)
 
-             Cet argument n'est pas utilisé. Il est conservé pour des raisons
-	     de compatibilité avec la SCILIB de CRAY.  
+             Cet argument n'est pas utilisÃ©. Il est conservÃ© pour des raisons
+	     de compatibilitÃ© avec la SCILIB de CRAY.  
 
 <b><a name="NOTES">NOTES</a></b>
 
      Dans le cas de CSFFTM, le tableau X est un tableau complexe qui
-     doit de plus être hermitien.
+     doit de plus Ãªtre hermitien.
 
-     Dans la mesure où seulement une moitié du tableau est stockée
-     (la première dimension va de 0 à n/2 inclus), cette condition
-     se traduit simplement par le fait que x(0,j) doit être réel pour
-     tout j, 0 &lt;=j &lt;= m-1, et que, si n est pair, x(n/2,j) doit être
-     aussi réel pour tout j, 0 &lt;=j &lt;= m-1.
+     Dans la mesure oÃ¹ seulement une moitiÃ© du tableau est stockÃ©e
+     (la premiÃ¨re dimension va de 0 Ã  n/2 inclus), cette condition
+     se traduit simplement par le fait que x(0,j) doit Ãªtre rÃ©el pour
+     tout j, 0 &lt;=j &lt;= m-1, et que, si n est pair, x(n/2,j) doit Ãªtre
+     aussi rÃ©el pour tout j, 0 &lt;=j &lt;= m-1.
 
      En fait, CSFFTM force automatiquement ces conditions, en mettant
-     à 0 la partie imaginaire des termes concernés. Il n'y a donc
-     pas à s'en préoccuper.
+     Ã  0 la partie imaginaire des termes concernÃ©s. Il n'y a donc
+     pas Ã  s'en prÃ©occuper.
 
 <b>EXEMPLES</b>
 
      <b>Exemple 1</b> : initialise le tableau TABLE dans le but d'appliquer
-     ultérieurement une FFT de dimension N=128. Dans ce cas, seuls les
-     arguments ISIGN, N et TABLE sont utilisés.
+     ultÃ©rieurement une FFT de dimension N=128. Dans ce cas, seuls les
+     arguments ISIGN, N et TABLE sont utilisÃ©s.
 
 	   REAL(KIND=8), DIMENSION(100 + 2*128) :: TABLE
 	   CALL	SCFFTM(0, 128, 1, 0.d0, DUMMY, 1, DUMMY, 1, TABLE, DUMMY, 0)
 
-     <b>Exemple 2</b> : X est un tableau réel de dimension (0:128,0:55) et Y est
+     <b>Exemple 2</b> : X est un tableau rÃ©el de dimension (0:128,0:55) et Y est
      un tableau complexe de dimension (0:64,0:55). Nous appliquons une FFT sur
-     les 128 premiers éléments de chaque colonne. Nous réalisons une FFT sur
-     les 51 premières colonnes de X. Le résultat sera enregistré dans les 51
-     premières colonnes de Y. Avant d'appliquer la FFT, nous initialisons le
+     les 128 premiers Ã©lÃ©ments de chaque colonne. Nous rÃ©alisons une FFT sur
+     les 51 premiÃ¨res colonnes de X. Le rÃ©sultat sera enregistrÃ© dans les 51
+     premiÃ¨res colonnes de Y. Avant d'appliquer la FFT, nous initialisons le
      tableau TABLE comme dans l'exemple 1.
 
 	   REAL(KIND=8), DIMENSION(0:128, 0:55)    :: X
@@ -184,15 +184,15 @@
 	   CALL	SCFFTM(1, 128, 51, 1.d0, X, 129, Y, 65, TABLE, WORK, 0)
 
      <b>Exemple 3</b> : ici nous poursuivons l'exemple 2 en affectuant la FFT inverse
-     de Y et en enregistrant le résultat dans X.  Le facteur d'échelle est
-     ici égale à 1/128.  Nous supposons que le tableau TABLE ait été initialisé
+     de Y et en enregistrant le rÃ©sultat dans X.  Le facteur d'Ã©chelle est
+     ici Ã©gale Ã  1/128.  Nous supposons que le tableau TABLE ait Ã©tÃ© initialisÃ©
      auparavant.
 
 	   CALL	CSFFTM(-1, 128,	51, 1.d0/128.d0, Y, 65, X, 129, TABLE, WORK, 0)
 
-     <b>Exemple 4</b> : nous effectuons ici un calcul analogue à celui de l'exemple 2
-     en supposant toutefois que les indices des tableaux X et Y démarrent à 1
-     et non plus à 0.
+     <b>Exemple 4</b> : nous effectuons ici un calcul analogue Ã  celui de l'exemple 2
+     en supposant toutefois que les indices des tableaux X et Y dÃ©marrent Ã  1
+     et non plus Ã  0.
 
 	   REAL(KIND=8), DIMENSION(129, 56)   :: X
 	   COMPLEX(KIND=8), DIMENSION(65, 56) :: Y
@@ -200,9 +200,9 @@
 	   CALL	SCFFTM(0, 128, 51, 1.d0, X, 129, Y, 65, TABLE, WORK, 0)
 	   CALL	SCFFTM(1, 128, 51, 1.d0, X, 129, Y, 65, TABLE, WORK, 0)
 
-     <b>Exemple 5</b> : calcul semblable à l'exemple 4 sauf qu'ici nous mettons en
-     équivalence X et Y pour une économie de place mémoire. Nous supposons que
-     le tableau TABLE ait été initialisé auparavant.
+     <b>Exemple 5</b> : calcul semblable Ã  l'exemple 4 sauf qu'ici nous mettons en
+     Ã©quivalence X et Y pour une Ã©conomie de place mÃ©moire. Nous supposons que
+     le tableau TABLE ait Ã©tÃ© initialisÃ© auparavant.
 
 	   REAL	   X(130, 56)
 	   ...
