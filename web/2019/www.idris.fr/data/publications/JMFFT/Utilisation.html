@@ -1,6 +1,5 @@
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
     <title>Mode d'emploi</title>
 <!-- Revisions de ce document -->
 <!-- 1. 16/09/1998 Modification : Mise a jour des performances              -->
@@ -11,16 +10,16 @@
 <!-- 5.  30/10/1999 Modification : Documentation HTML                       -->
 <!-- 7. 19/06/2000 Modification : -Initialisation de variables.              -->
 <!--                              - Corrections bogues et doc. HTML.         -->
-<!--                              - Révison des sous-programmes              -->
+<!--                              - RÃ©vison des sous-programmes              -->
 <!--                                internes : jmcsm1dx, jmscm1dx.           -->
 <!--                              - Ajout des sous-programmes : jmgetsetstop,-->
 <!--                                jmgetstop, jmsetstop                     -->
 <!--                              - Version C de JMFFT                       -->
 <!-- 8. 13/05/2004 Ajout        : - FFT en cosinus et en sinus.              -->
-<!--                              - Make.inc.INTEL dans répertoire arch.     -->
-<!--               Modification : FFT réel-complexe et complexe-réel.        -->
+<!--                              - Make.inc.INTEL dans rÃ©pertoire arch.     -->
+<!--               Modification : FFT rÃ©el-complexe et complexe-rÃ©el.        -->
 <!-- 9. 07/07/2005 Corrections  : - FFT en cosinus et en sinus.              -->
-<!--                              - Programmes de tests associés à           --> 
+<!--                              - Programmes de tests associÃ©s Ã            --> 
 <!--                                ces sous-programmes.                     --> 
 
   </head>
@@ -38,22 +37,22 @@
 
 <h2> Introduction </h2> <p>
 
-JMFFT est une bibliothèque de sous-programmes de transformées de
-Fourier écrite par <a href="https://web.archive.org/web/20181025134244/mailto:jean-marie.teuler@lcp.u-psud.fr">Jean-Marie
-Teuler</a>, émulant la plupart des sous-programmes de transformées de
-Fourier de la bibliothèque Cray (la SCILIB).<p>
+JMFFT est une bibliothÃ¨que de sous-programmes de transformÃ©es de
+Fourier Ã©crite par <a href="https://web.archive.org/web/20181025134244/mailto:jean-marie.teuler@lcp.u-psud.fr">Jean-Marie
+Teuler</a>, Ã©mulant la plupart des sous-programmes de transformÃ©es de
+Fourier de la bibliothÃ¨que Cray (la SCILIB).<p>
 
 JMFFT offre les avantages suivants :
 <ul>
-  <li> JMFFT est très complète : elle couvre la plupart des sous-programmes
-    de la SCILIB CRAY, y compris certaines versions obsolètes,
-  <li> JMFFT est très portable.
-  <li> JMFFT est très simple à utiliser car elle émule exactement les
-    séquences d'appel de la SCILIB CRAY : mêmes arguments et mêmes dimensions.
-  <li> Bien que ceci n'ait pas été le souci majeur lors de sa conception,
+  <li> JMFFT est trÃ¨s complÃ¨te : elle couvre la plupart des sous-programmes
+    de la SCILIB CRAY, y compris certaines versions obsolÃ¨tes,
+  <li> JMFFT est trÃ¨s portable.
+  <li> JMFFT est trÃ¨s simple Ã  utiliser car elle Ã©mule exactement les
+    sÃ©quences d'appel de la SCILIB CRAY : mÃªmes arguments et mÃªmes dimensions.
+  <li> Bien que ceci n'ait pas Ã©tÃ© le souci majeur lors de sa conception,
     JMFFT est raisonnablement performante.
-  <li> JMFFT peut être assez facilement optimisée pour une architecture
-    donnée car tout le temps de calcul se passe dans un petit nombre de
+  <li> JMFFT peut Ãªtre assez facilement optimisÃ©e pour une architecture
+    donnÃ©e car tout le temps de calcul se passe dans un petit nombre de
     boucles d'environ 30 lignes.
 </ul><p>
 
@@ -66,16 +65,16 @@ On y trouvera les sous-programmes suivants :
   <tr> <td> <a href="Manuel/ccfftm.html">CCFFTM</a></td><td> 1D multiple complexe-complexe</td></tr>
   <tr> <td> <a href="Manuel/ccfft2d.html">CCFFT2D</a></td><td> 2D complexe-complexe</td></tr>
   <tr> <td> <a href="Manuel/ccfft3d.html">CCFFT3D</a></td><td> 3D complexe-complexe</td></tr>
-  <tr> <td> <a href="Manuel/scfft.html" target="JMFFT">SCFFT</a></td><td> 1D réel-complexe</td></tr>
-  <tr> <td> <a href="Manuel/scfftm.html" target="JMFFT">SCFFTM</a></td><td> 1D multiple réel-complexe</td></tr>
-  <tr> <td> <a href="Manuel/scfft2d.html" target="JMFFT">SCFFT2D</a></td><td> 2D réel-complexe</td></tr>
-  <tr> <td> <a href="Manuel/scfft3d.html" target="JMFFT">SCFFT3D</a></td><td> 3D réel-complexe</td></tr>
-  <tr> <td> <a href="Manuel/csfft.html" target="JMFFT">CSFFT</a></td><td> 1D complexe-réel</td></tr>
-  <tr> <td> <a href="Manuel/csfftm.html" target="JMFFT">CSFFTM</a></td><td> 1D multiple complexe-réel</td></tr>
-  <tr> <td> <a href="Manuel/csfft2d.html" target="JMFFT">CSFFT2D</a></td><td> 2D complexe-réel</td></tr>
-  <tr> <td> <a href="Manuel/csfft3d.html" target="JMFFT">CSFFT3D</a></td><td> 3D complexe-réel</td></tr>
+  <tr> <td> <a href="Manuel/scfft.html" target="JMFFT">SCFFT</a></td><td> 1D rÃ©el-complexe</td></tr>
+  <tr> <td> <a href="Manuel/scfftm.html" target="JMFFT">SCFFTM</a></td><td> 1D multiple rÃ©el-complexe</td></tr>
+  <tr> <td> <a href="Manuel/scfft2d.html" target="JMFFT">SCFFT2D</a></td><td> 2D rÃ©el-complexe</td></tr>
+  <tr> <td> <a href="Manuel/scfft3d.html" target="JMFFT">SCFFT3D</a></td><td> 3D rÃ©el-complexe</td></tr>
+  <tr> <td> <a href="Manuel/csfft.html" target="JMFFT">CSFFT</a></td><td> 1D complexe-rÃ©el</td></tr>
+  <tr> <td> <a href="Manuel/csfftm.html" target="JMFFT">CSFFTM</a></td><td> 1D multiple complexe-rÃ©el</td></tr>
+  <tr> <td> <a href="Manuel/csfft2d.html" target="JMFFT">CSFFT2D</a></td><td> 2D complexe-rÃ©el</td></tr>
+  <tr> <td> <a href="Manuel/csfft3d.html" target="JMFFT">CSFFT3D</a></td><td> 3D complexe-rÃ©el</td></tr>
   <tr> <td> <a href="Manuel/cfftmlt.html" target="JMFFT">CFFTMLT</a></td><td> 1D multiple complexe-complexe</td></tr>
-  <tr> <td> <a href="Manuel/rfftmlt.html" target="JMFFT">RFFTMLT</a></td><td> 1D multiple complexe-réel et réel-complexe</td></tr>
+  <tr> <td> <a href="Manuel/rfftmlt.html" target="JMFFT">RFFTMLT</a></td><td> 1D multiple complexe-rÃ©el et rÃ©el-complexe</td></tr>
   <tr> <td> <a href="Manuel/sinfftmlt.html" target="JMFFT">SINFFTMLT</a></td><td> 1D multiple en sinus</td></tr>
   <tr> <td> <a href="Manuel/cosfftmlt.html" target="JMFFT">COSFFTMLT</a></td><td> 1D multiple en cosinus</td></tr>
   <tr> <td> <a href="Manuel/cftfax.html" target="JMFFT">CFTFAX</a></td><td> Factorisation pour CFFTMLT</td></tr>
@@ -83,176 +82,176 @@ On y trouvera les sous-programmes suivants :
 </table>
 <p>
 
-Outre ces sous-programmes de premier niveau, il existe également des
-sous-programmes de second niveau, appelés par les précédents.<p>
+Outre ces sous-programmes de premier niveau, il existe Ã©galement des
+sous-programmes de second niveau, appelÃ©s par les prÃ©cÃ©dents.<p>
 
-Il existe également certains sous-programmes de <em>service</em> qui peuvent
-être intéressants à appeler :<p>
+Il existe Ã©galement certains sous-programmes de <em>service</em> qui peuvent
+Ãªtre intÃ©ressants Ã  appeler :<p>
 <table border align="CENTER">
   <tr> <td> Nom </td><td> Fonction</td></tr>
-  <tr> <td> <a href="Manuel/jmsetnwork.html">JMSETNWORK</a></td><td> Contrôle de l'espace de travail</td></tr>
-  <tr> <td> <a href="Manuel/jmseterreur.html">JMSETERREUR</a></td><td> Contrôle du comportement en cas d'erreur</td></tr>
-  <tr> <td> <a href="Manuel/jmgetcode.html">JMGETCODE</a></td><td> Récupération du code d'erreur</td></tr>
-  <tr> <td> <a href="Manuel/jmgetmessage.html">JMGETMESSAGE</a></td><td> Récupération du message d'erreur</td></tr>
+  <tr> <td> <a href="Manuel/jmsetnwork.html">JMSETNWORK</a></td><td> ContrÃ´le de l'espace de travail</td></tr>
+  <tr> <td> <a href="Manuel/jmseterreur.html">JMSETERREUR</a></td><td> ContrÃ´le du comportement en cas d'erreur</td></tr>
+  <tr> <td> <a href="Manuel/jmgetcode.html">JMGETCODE</a></td><td> RÃ©cupÃ©ration du code d'erreur</td></tr>
+  <tr> <td> <a href="Manuel/jmgetmessage.html">JMGETMESSAGE</a></td><td> RÃ©cupÃ©ration du message d'erreur</td></tr>
 </table><p>
-Pour une discussion de l'intérêt et de l'utilisation de ces sous-programmes,
+Pour une discussion de l'intÃ©rÃªt et de l'utilisation de ces sous-programmes,
 voir <a href="Utilisation.html#Controles">ci-dessous</a>.
 
 <h2> <a name="Restrictions"> Restrictions </a></h2>
 
   <ul>
 
-    <li> JMFFT peut <em>à priori</em> traiter des tableaux dimensionnés avec
+    <li> JMFFT peut <em>Ã  priori</em> traiter des tableaux dimensionnÃ©s avec
     n'importe quelle combinaison de nombres premiers. Ceci dit, la version
     fournie se limite aux combinaisons des nombres premiers suivants : 2, 3 et
-    5 d'une part (pour lesquels des sous-programmes particuliers sont écrits
+    5 d'une part (pour lesquels des sous-programmes particuliers sont Ã©crits
     pour des raisons de performance) puis une liste d'autres nombres premiers.
-    Cette liste est constituée des nombres premiers suivants : 7, 11, 13, 17,
-    19, 23 et 29. Il est possible assez facilement d'étendre cette liste. Il
+    Cette liste est constituÃ©e des nombres premiers suivants : 7, 11, 13, 17,
+    19, 23 et 29. Il est possible assez facilement d'Ã©tendre cette liste. Il
     suffit de modifer dans le sous-programme <tt>jmfact</tt> les instructions
     suivantes :
 <pre>
   integer, parameter :: npremiers = 7
   integer, dimension(0:npremiers-1) :: premiers = (/7,11,13,17,19,23,29/)
 </pre>
-      de façon à inclure les nombres premiers de son choix, et de recompiler
+      de faÃ§on Ã  inclure les nombres premiers de son choix, et de recompiler
       ce sous-programme.
       <p>
 
     <li> Une autre limitation, pour laquelle il n'existe malheureusement pas
-      de solution pour l'instant, porte sur les transformées réelles-complexes
-      et complexes-réelles. Celles-ci sont disponibles, mais exigent que l'une
+      de solution pour l'instant, porte sur les transformÃ©es rÃ©elles-complexes
+      et complexes-rÃ©elles. Celles-ci sont disponibles, mais exigent que l'une
       des dimensions au moins soit paire :
       <ul>
-        <li> en 1D, la dimension de la T.F. doit être paire
-        <li> en 2D, l'une des deux dimensions doit être paire
-        <li> en 3D, l'une des trois dimensions doit être paire
+        <li> en 1D, la dimension de la T.F. doit Ãªtre paire
+        <li> en 2D, l'une des deux dimensions doit Ãªtre paire
+        <li> en 3D, l'une des trois dimensions doit Ãªtre paire
         <li> en 1D multiple, la dimension de la T.F.
-          ou le nombre de T.F. doit être paire.
+          ou le nombre de T.F. doit Ãªtre paire.
       </ul>
       <p>
 
-    <li> Malgré le choix d'algorithmes très orientés vers la vectorisation,
-    les performances n'égalent pas encore celles des grandes bibliothèques,
-    notamment les bibliothèques constructeurs. Ceci dit, si quelqu'un veut s'y
-    mettre, sa tâche sera grandement facilitée par le fait que le temps de
-    calcul est concentré dans quelques sous-programmes : <tt>jmccm1d2</tt>
-    (base 2, inutilisée en principe), <tt>jmccm1d3</tt> (base 3),
+    <li> MalgrÃ© le choix d'algorithmes trÃ¨s orientÃ©s vers la vectorisation,
+    les performances n'Ã©galent pas encore celles des grandes bibliothÃ¨ques,
+    notamment les bibliothÃ¨ques constructeurs. Ceci dit, si quelqu'un veut s'y
+    mettre, sa tÃ¢che sera grandement facilitÃ©e par le fait que le temps de
+    calcul est concentrÃ© dans quelques sous-programmes : <tt>jmccm1d2</tt>
+    (base 2, inutilisÃ©e en principe), <tt>jmccm1d3</tt> (base 3),
     <tt>jmccm1d4</tt> (base 4), <tt>jmccm1d5</tt> (base 5) et
-    <tt>jmccm1dp</tt> (nombre premier général).
+    <tt>jmccm1dp</tt> (nombre premier gÃ©nÃ©ral).
       <p>
       
-    <li> Bien que la version Fortran soit écrite en Fortran 90, JMFFT ne tire
-    pas parti des nombreuses possibilités de ce langage, qui seraient pourtant
-    très intéressantes ici (allocation dynamique de mémoire, modules, tableaux
-    à profil implicite, arguments optionnels etc). La raison essentielle est
-    la compatibilité avec la SCILIB CRAY: il faut que l'utilisateur puisse
-    remplacer ses appels à la SCILIB directement par des appels à JMFFT sans
-    rien changer d'autre, ce qui exclut toute utilisation sophistiquée des
-    possiblités Fortran 90.
+    <li> Bien que la version Fortran soit Ã©crite en Fortran 90, JMFFT ne tire
+    pas parti des nombreuses possibilitÃ©s de ce langage, qui seraient pourtant
+    trÃ¨s intÃ©ressantes ici (allocation dynamique de mÃ©moire, modules, tableaux
+    Ã  profil implicite, arguments optionnels etc). La raison essentielle est
+    la compatibilitÃ© avec la SCILIB CRAY: il faut que l'utilisateur puisse
+    remplacer ses appels Ã  la SCILIB directement par des appels Ã  JMFFT sans
+    rien changer d'autre, ce qui exclut toute utilisation sophistiquÃ©e des
+    possiblitÃ©s Fortran 90.
       <p>
 
-    <li> JMFFT effectue un certain nombre de vérifications sur les arguments
-      qui lui sont transmis. Elle peut ainsi détecter des erreurs. Le problème
+    <li> JMFFT effectue un certain nombre de vÃ©rifications sur les arguments
+      qui lui sont transmis. Elle peut ainsi dÃ©tecter des erreurs. Le problÃ¨me
       est alors d'en informer l'utilisateur. Ce n'est pas si simple car la
       SciLib n'a pas inclus de code de retour parmi les arguments de ses
-      sous-programmes et que JMFFT, pour des raisons de compatibilité, n'a pas
-      pu en ajouter. Ceci dit, une solution a été trouvée pour contourner
+      sous-programmes et que JMFFT, pour des raisons de compatibilitÃ©, n'a pas
+      pu en ajouter. Ceci dit, une solution a Ã©tÃ© trouvÃ©e pour contourner
       cette lacune. Voir <a href="Utilisation.html#Controles">ci-dessous</a>.
 
   </ul>
 
-<h2> <a name="Controles"> Contrôle de JMFFT </a></h2>
+<h2> <a name="Controles"> ContrÃ´le de JMFFT </a></h2>
 
 Il existe dans JMFFT des sous-programmes de service qui permettent
-de contrôler son comportement.
+de contrÃ´ler son comportement.
 
 <ol>
 
-  <li> <tt>JMSETNWORK</tt><br> Ce sous-programme permet de contrôler plus
+  <li> <tt>JMSETNWORK</tt><br> Ce sous-programme permet de contrÃ´ler plus
   finement l'espace de travail dont disposeront les sous-programmes 2D et
-  3D. En effet, dans la SCILIB, le tableau de travail <tt>WORK</tt> doit être
-  dimensionné à <tt>512*MAX(N1,N2)</tt> en 2D et à <tt>512*MAX(N1,N2,N3)</tt>
+  3D. En effet, dans la SCILIB, le tableau de travail <tt>WORK</tt> doit Ãªtre
+  dimensionnÃ© Ã  <tt>512*MAX(N1,N2)</tt> en 2D et Ã  <tt>512*MAX(N1,N2,N3)</tt>
   en 3D. Avec une telle dimension, la longueur des boucles dans les
   sous-programmes de calcul est de 128, ce qui est optimal en effet sur les
-  C90. En revanche, une telle longueur de boucle est loin d'être optimale sur
+  C90. En revanche, une telle longueur de boucle est loin d'Ãªtre optimale sur
   un Fujitsu VPP300 ou sur un NEC SX-5 par exemple. <tt>JMSETNWORK</tt> permet de
-  fournir plus d'espace de travail à JMFFT, et donc d'obtenir de meilleures
-  performances. Son utilisation est très simple. Par exemple dans l'appel
+  fournir plus d'espace de travail Ã  JMFFT, et donc d'obtenir de meilleures
+  performances. Son utilisation est trÃ¨s simple. Par exemple dans l'appel
   suivant :
 <center>
 <pre>
   call jmsetnwork(4096)
 </pre>
 </center>
-    on fournit 4096 éléments d'espace de travail à JMFFT.<br>
+    on fournit 4096 Ã©lÃ©ments d'espace de travail Ã  JMFFT.<br>
     <b>Notes :</b>
     <ul>
-      <li> <b>Attention :</b> L'utilisateur doit bien veiller à la cohérence
-        entre la dimension fournie à JMFFT et le dimensionnement du tableau
+      <li> <b>Attention :</b> L'utilisateur doit bien veiller Ã  la cohÃ©rence
+        entre la dimension fournie Ã  JMFFT et le dimensionnement du tableau
         <tt>WORK</tt> dans son sous-programme appelant. <b>JMFFT ne dispose
-        d'aucun moyen pour connaître la dimension réelle de ce tableau</b>
-        (c'est d'ailleurs pour cela que dans le cas où l'utilisateur le
+        d'aucun moyen pour connaÃ®tre la dimension rÃ©elle de ce tableau</b>
+        (c'est d'ailleurs pour cela que dans le cas oÃ¹ l'utilisateur le
         surdimensionne, il doit en informer JMFFT en appelant
-        <tt>JMSETNWORK</tt>). En particulier, la dimension réelle du tableau
-        <tt>WORK</tt> doit toujours être supérieure ou égale à ce qu'attend
-        JMFFT (qu'il s'agisse de la valeur par défaut ou de la valeur qui
-        lui a été transmise via <tt>JMSETNWORK</tt>).
-      <li> Ce mécanisme a été prévu pour augmenter l'espace de travail
-        disponible, mais il peut également être utilisé pour le réduire
-        (au cas où on manquerait de ressources mémoire).
-      <li> Ce mécanisme n'est effectif que sur les sous-programmes 2D et 3D.
-      <li> Cet espace de travail sera utilisé dans toutes les sous-programmes 2D
+        <tt>JMSETNWORK</tt>). En particulier, la dimension rÃ©elle du tableau
+        <tt>WORK</tt> doit toujours Ãªtre supÃ©rieure ou Ã©gale Ã  ce qu'attend
+        JMFFT (qu'il s'agisse de la valeur par dÃ©faut ou de la valeur qui
+        lui a Ã©tÃ© transmise via <tt>JMSETNWORK</tt>).
+      <li> Ce mÃ©canisme a Ã©tÃ© prÃ©vu pour augmenter l'espace de travail
+        disponible, mais il peut Ã©galement Ãªtre utilisÃ© pour le rÃ©duire
+        (au cas oÃ¹ on manquerait de ressources mÃ©moire).
+      <li> Ce mÃ©canisme n'est effectif que sur les sous-programmes 2D et 3D.
+      <li> Cet espace de travail sera utilisÃ© dans toutes les sous-programmes 2D
         et 3D qui suivent, et restera en vigueur sauf si on appelle une nouvelle
         fois <tt>JMSETNWORK</tt>.
     </ul>
   <p>
 
   <li> <tt>JMSETERREUR</tt><br>
-    Les sous-programmes de JMFFT vérifient la cohérence des arguments
-    transmis. Lorsqu'ils détectent une incohérence, le comportement par défaut
-    est alors de tout arrêter en affichant un message d'erreur et en
-    déclenchant une instruction <tt>STOP</tt>. Ce comportement est imposé
-    par la compatibilité avec la SCILIB qui n'a prévu aucun argument de
+    Les sous-programmes de JMFFT vÃ©rifient la cohÃ©rence des arguments
+    transmis. Lorsqu'ils dÃ©tectent une incohÃ©rence, le comportement par dÃ©faut
+    est alors de tout arrÃªter en affichant un message d'erreur et en
+    dÃ©clenchant une instruction <tt>STOP</tt>. Ce comportement est imposÃ©
+    par la compatibilitÃ© avec la SCILIB qui n'a prÃ©vu aucun argument de
     type <em>code de retour</em>, comme celui que l'on trouve par exemple
-    dans NAG et IMSL. Ceci dit, on peut le modifier légèrement. Si on
+    dans NAG et IMSL. Ceci dit, on peut le modifier lÃ©gÃ¨rement. Si on
     effectue l'appel suivant :
 <center>
 <pre>
   call jmseterreur(.false.)
 </pre>
 </center>
-    en cas d'erreur l'exécution n'est pas interrompue. Voir ci-dessous les
-    deux sous-programmes qui permettent de vérifier si une erreur s'est
+    en cas d'erreur l'exÃ©cution n'est pas interrompue. Voir ci-dessous les
+    deux sous-programmes qui permettent de vÃ©rifier si une erreur s'est
     produite et si oui laquelle.
     <p>
 
   <li> <tt>JMGETCODE</tt><br>
-    Si l'on a effectué l'appel précédent, en cas d'erreur l'exécution se
-    poursuit. C'est donc à l'utilisateur de vérifier, après chaque appel
+    Si l'on a effectuÃ© l'appel prÃ©cÃ©dent, en cas d'erreur l'exÃ©cution se
+    poursuit. C'est donc Ã  l'utilisateur de vÃ©rifier, aprÃ¨s chaque appel
     de JMFFT, si une erreur s'est produite. Ceci peut se faire de la
-    façon suivante :
+    faÃ§on suivante :
 <center>
 <pre>
   call jmgetcode(irc)
 </pre>
 </center>
-    où <tt>irc</tt> est une variable entière qui contient le code de retour
-    du dernier appel à JMFFT. Si ce code est nul, c'est que tout s'est bien
-    passé. Sinon, une erreur a été détectée. Pour savoir laquelle, voir
+    oÃ¹ <tt>irc</tt> est une variable entiÃ¨re qui contient le code de retour
+    du dernier appel Ã  JMFFT. Si ce code est nul, c'est que tout s'est bien
+    passÃ©. Sinon, une erreur a Ã©tÃ© dÃ©tectÃ©e. Pour savoir laquelle, voir
     ci-dessous.
     <p>
 
   <li> <tt>JMGETMESSAGE</tt><br>
     Si une erreur s'est produite et que l'on a obtenu le code d'erreur
-    <tt>irc</tt> par appel de <tt>JMGETCODE</tt>, on peut récupérer le
+    <tt>irc</tt> par appel de <tt>JMGETCODE</tt>, on peut rÃ©cupÃ©rer le
     message d'erreur correspondant par l'appel suivant :
 <center>
 <pre>
   call jmgetmessage(irc, message)
 </pre>
 </center>
-    où <tt>message</tt> est une variable de type chaîne de caractères qui
+    oÃ¹ <tt>message</tt> est une variable de type chaÃ®ne de caractÃ¨res qui
     contiendra au retour le texte en clair du message d'erreur.
     <p>
 </ol>
