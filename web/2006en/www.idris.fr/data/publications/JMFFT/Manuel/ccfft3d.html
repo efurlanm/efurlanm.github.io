@@ -19,7 +19,7 @@
 <b>IMPLEMENTATION</b>
 
      This subroutine emulates the subroutine of the same name of the SCILIB of
-     CRAY. </font>All real or complex arguments must be declared
+     CRAY. All real or complex arguments must be declared
      in double precision.
 
 <b>DESCRIPTION</b>
@@ -29,26 +29,26 @@
 
      Consider two arrays X and Y dimensioned as follows:
 
-	  COMPLEX (KIND = 8), DIMENSION (0: n1-1, 0: n2-1, 0: n3-1) :: X
-	  COMPLEX (KIND = 8), DIMENSION (0: n1-1, 0: n2-1, 0: n3-1) :: Y
+        COMPLEX (KIND = 8), DIMENSION (0: n1-1, 0: n2-1, 0: n3-1) :: X
+        COMPLEX (KIND = 8), DIMENSION (0: n1-1, 0: n2-1, 0: n3-1) :: Y
 
      CCFFT3D applies the following formula:
 
-	                  n1-1 n2-1 n3-1
-    Y (k1, k2, k3) = scale * Sum Sum Sum [X (j1, j2, j3) * w1 ** (j1 * k1) * w2 ** (j2 * k2) * w3 ** (j3 * k3) ]
-	                  j1 = 0 j2 = 0 j3 = 0
+                           n1-1 n2-1 n3-1
+    Y (k1,k2,k3) = scale * Sum  Sum  Sum [X(j1,j2,j3)*w1**(j1*k1)*w2**(j2*k2)*w3**(j3*k3)]
+                           j1=0 j2=0 j3=0
 
     for k1 = 0, ..., n1 - 1,
-	 k2 = 0, ..., n2 - 1,
-	 k3 = 0, ..., n3 - 1,
+        k2 = 0, ..., n2 - 1,
+        k3 = 0, ..., n3 - 1,
 
     or,
-	w1 = exp (isign * 2 * pi * i / n1),
-	w2 = exp (isign * 2 * pi * i / n2),
-	w3 = exp (isign * 2 * pi * i / n3),
-	i = + sqrt (-1)
-	pi = 3.14159 ...
-	isign = +1 or -1
+        w1 = exp (isign * 2 * pi * i / n1),
+        w2 = exp (isign * 2 * pi * i / n2),
+        w3 = exp (isign * 2 * pi * i / n3),
+        i = + sqrt (-1)
+        pi = 3.14159 ...
+        isign = +1 or -1
 
      In general, if an FFT is applied with particular values ​​of
      isign and scale, then its inverse is calculated with the values ​​-isign
@@ -59,86 +59,86 @@
 
 <b>ARGUMENTS</b>
 
-     isign Scalar of type INTEGER. </font>(Entrance)
-	     Indicates whether the table of coefficients must be initialized or whether
-	     apply an FFT or its inverse.
+     isign   Scalar of type INTEGER. (input)
+             Indicates whether the table of coefficients must be initialized or whether
+             apply an FFT or its inverse.
 
-	     If isign = 0, the subroutine initializes the array table and
-	     returns its value. </font>In this case, only the arguments isign, n1, n2, n3
-	     and table are checked and used.
+             If isign = 0, the subroutine initializes the array table and
+             returns its value. In this case, only the arguments isign, n1, n2, n3
+             and table are checked and used.
 
-     n1 INTEGER type scalar. </font>(Entrance).
-	     Number of transforms in the first dimension.
+     n1      INTEGER type scalar. (input)
+             Number of transforms in the first dimension.
 
-     n2 INTEGER type scalar. </font>(Entrance).
-	     Number of transforms in the second dimension.
+     n2      INTEGER type scalar. (input)
+             Number of transforms in the second dimension.
 
-     n3 INTEGER type scalar. </font>(Entrance).
-	     Number of transforms in the third dimension.
+     n3      INTEGER type scalar. (input)
+             Number of transforms in the third dimension.
 
-     scale Scalar of type REAL (KIND = 8). </font>(Entrance)
-	     Scale factor. </font>Each element of the vector y is multiplied by
-	     scale once the FFT has been performed, as specified in the
-	     formula above.
+     scale   Scalar of type REAL (KIND = 8). (input)
+             Scale factor. Each element of the vector y is multiplied by
+             scale once the FFT has been performed, as specified in the
+             formula above.
 
-     x Table of the COMPLEX type (KIND = 8) of dimension (0: ldx1-1,0: ldx2-1,0: n3-1). </font>(Entrance)
-	     Array containing the values ​​of the elements to transform.
+     x       Table of the COMPLEX type (KIND = 8) of dimension (0: ldx1-1,0: ldx2-1,0: n3-1). (input)
+             Array containing the values ​​of the elements to transform.
 
-     ldx1 Scalar of the INTEGER type. </font>(Entrance).
-	     Number of elements in the first dimension of the array x tel
-	     that it is declared in the calling unit. </font>ldx1&gt; = max (n1, 1).
+     ldx1    Scalar of the INTEGER type. (input)
+             Number of elements in the first dimension of the array x tel
+             that it is declared in the calling unit. ldx1 &gt; = max (n1, 1).
 
-     ldx2 Scalar of type INTEGER. </font>(Entrance).
-	     Number of elements in the second dimension of the array x tel
-	     that it is declared in the calling unit. </font>ldx2&gt; = max (n2, 1)
+     ldx2    Scalar of type INTEGER. (input)
+             Number of elements in the second dimension of the array x tel
+             that it is declared in the calling unit. ldx2 &gt; = max (n2, 1)
 
-     y Table of the COMPLEX type (KIND = 8) of dimension (0: ldy1-1,0: ldy2-1,0: n3-1). </font>(exit)
-	     Array containing the transformed values ​​as output. </font>We can
-	     use the input array x. </font>In this case, ldx1 = ldy1 and
-	     ldx2 = ldy2.
+     y       Table of the COMPLEX type (KIND = 8) of dimension (0: ldy1-1,0: ldy2-1,0: n3-1). (output)
+             Array containing the transformed values ​​as output. We can
+             use the input array x. In this case, ldx1 = ldy1 and
+             ldx2 = ldy2.
 
-     ldy1 Scalar of type INTEGER (input).
-	     Number of elements declared in the first dimension of the array
-	     y as declared in the calling unit. </font>ldy1&gt; = max (n1, 1)
+     ldy1    Scalar of type INTEGER (input)
+             Number of elements declared in the first dimension of the array
+             y as declared in the calling unit. ldy1 &gt; = max (n1, 1)
 
-     ldy2 INTEGER type scalar. </font>(Entrance).
-	     Number of elements declared in the second dimension of the array
-	     y. </font>as declared in the calling unit. </font>ldy2&gt; = max (n2, 1).
+     ldy2    INTEGER type scalar. (input)
+             Number of elements declared in the second dimension of the array
+             y. as declared in the calling unit. ldy2 &gt; = max (n2, 1).
 
-     table Table of type REAL (KIND = 8) of dimension 100 + 2 * (n1 + n2 + n3). </font>(entry or exit)
-	     Table containing the table of coefficients and functions
-	     trigonometric.
+     table   Table of type REAL (KIND = 8) of dimension 100 + 2 * (n1 + n2 + n3). (input or output)
+             Table containing the table of coefficients and functions
+             trigonometric.
 
-	     If isign = 0, the subroutine initializes table (table is in
-	     output only).
+             If isign = 0, the subroutine initializes table (table is in
+             output only).
 
-	     If isign = +1 or -1, table is supposed to be already initialized
-	     (table is input only).
+             If isign = +1 or -1, table is supposed to be already initialized
+             (table is input only).
 
-     work Array of type REAL (KIND = 8) of dimension 512 * max (n1, n2, n3).
-	     Work table.
+     work    Array of type REAL (KIND = 8) of dimension 512 * max (n1, n2, n3).
+             Work table.
 
              Note: This dimension can be increased or decreased, to
              condition to inform JMFFT of it by calling the subroutine
              JMSETNWORK.
 
-     isys Scalar of type INTEGER. </font>(Entrance)
-	     This argument is not used. </font>It is kept for reasons
-	     compatibility with CRAY's SCILIB.  
+     isys    Scalar of type INTEGER. (input)
+             This argument is not used. It is kept for reasons
+             compatibility with CRAY's SCILIB.  
 
 <b>EXAMPLES</b>
 
      <b>Example 1</b> : initialize the TABLE array in order to apply
-     subsequently an FFT of dimensions (128,128,128). </font>In this case, only the
+     subsequently an FFT of dimensions (128,128,128). In this case, only the
      ISIGN, N1, N2, N3 and TABLE arguments are used.
 
            INTEGER, PARAMETER :: N1 = 128, N2 = 128, N3 = 128
-	   REAL (KIND = 8), DIMENSION (100 + 2 * (N1 + N2 + N3)) :: TABLE
-	   CALL CCFFT3D (0, N1, N2, N3, 0.d0, DUMMY, 1, 1, DUMMY, 1, 1, TABLE, DUMMY, 0)
+           REAL (KIND = 8), DIMENSION (100 + 2 * (N1 + N2 + N3)) :: TABLE
+           CALL CCFFT3D (0, N1, N2, N3, 0.d0, DUMMY, 1, 1, DUMMY, 1, 1, TABLE, DUMMY, 0)
 
      <b>Example 2</b> : X and Y are declared arrays of complex type and
-     dimensions (0: 128.0: 128.0: 128). </font>We apply an FFT on the first 128
-     elements of each dimension. </font>The TABLE array is assumed to be initialized.
+     dimensions (0: 128.0: 128.0: 128). We apply an FFT on the first 128
+     elements of each dimension. The TABLE array is assumed to be initialized.
 
 	   COMPLEX (KIND = 8), DIMENSION (0: 128, 0: 128, 0: 128) :: X
 	   COMPLEX (KIND = 8), DIMENSION (0: 128, 0: 128, 0: 128) :: Y
@@ -146,17 +146,17 @@
 	   REAL (KIND = 8), DIMENSION (512 * 128) :: WORK
 	   ...
 	   CALL CCFFT3D (0, 128, 128, 128, 1.d0, DUMMY, 1, 1, DUMMY, &amp;
-                        1, 1, TABLE, WORK, 0)
+                   1, 1, TABLE, WORK, 0)
 	   CALL CCFFT3D (1, 128, 128, 128, 1.d0, X, 129, 129, Y, &amp;
-                        129, 129, TABLE, WORK, 0)
+                   129, 129, TABLE, WORK, 0)
 
      <b>Example 3</b> : here we continue example 2 by performing the inverse FFT
      of Y and saving the result in X. The scale factor is here
-     equal to 1 / (128 * 128 * 128). </font>We assume that the TABLE array has been
+     equal to 1 / (128 * 128 * 128). We assume that the TABLE array has been
      initialized previously.
 
 	   CALL CCFFT3D (-1, 128, 128, 128, 1.d0 / (128.d0 ** 3), Y, 129, 129, &amp;
-	                X, 129, 129, TABLE, WORK, 0)
+	                 X, 129, 129, TABLE, WORK, 0)
 
      <b>Example 4</b> : here we perform a calculation similar to that of example 2
      assuming however that the indices of arrays X and Y start at 1
@@ -166,18 +166,18 @@
 	   COMPLEX (KIND = 8), DIMENSION (129, 129, 129) :: Y
 	   ...
 	   CALL CCFFT3D (0, 128, 128, 128, 1.d0, DUMMY, 1, 1, &amp;
-	                DUMMY, 1, 1, TABLE, WORK, 0)
+	                 DUMMY, 1, 1, TABLE, WORK, 0)
 	   CALL CCFFT3D (1, 128, 128, 128, 1.d0, X, 129, 129, &amp;
-	                Y, 129, 129, TABLE, WORK, 0)
+	                 Y, 129, 129, TABLE, WORK, 0)
 
      <b>Example 5</b> : calculation similar to example 4 except that here we use X to
-     both in and out. </font>We assume that the TABLE array has
+     both in and out. We assume that the TABLE array has
      been initialized before.
 
 	   COMPLEX (KIND = 8), DIMENSION (129, 129, 129) :: X
 	   ...
 	   CALL CCFFT3D (1, 128, 128, 128, 1.d0, X, 129, 129, &amp;
-	                X, 129, 129, TABLE, WORK, 0)
+	                 X, 129, 129, TABLE, WORK, 0)
 
 <b>SEE AS ​​WELL</b>
 

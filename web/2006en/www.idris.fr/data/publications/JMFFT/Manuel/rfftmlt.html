@@ -20,13 +20,13 @@
 <b>IMPLEMENTATION</b>
 
      These sub-programs emulate the sub-programs of the same name of the SCILIB of
-     CRAY. </font>All real or complex arguments must be declared in
+     CRAY. All real or complex arguments must be declared in
      double precision.
 
 <b>DESCRIPTION</b>
 
      When isign = -1, RFFTMLT applies a real-complex FFT to a set
-     given vectors. </font>For each of the m real vectors x (j, m) j = 0,1, ..., n-1,
+     given vectors. For each of the m real vectors x (j, m) j = 0,1, ..., n-1,
      RFFTMLT calculates the complex vector y (k, m) k = 0,1, ..., n / 2 such that:
 
 				    n-1
@@ -37,7 +37,7 @@
 	  where, w (n) = exp ((2 * pi * i) / n).
 
      When isign = +1, RFFTMLT applies a complex-real FFT (FFT
-     reverse). </font>for each of the m complex vector y (k, m) k = 0,1, ..., n / 2,
+     reverse). for each of the m complex vector y (k, m) k = 0,1, ..., n / 2,
      RFFTMLT calculates the real vector x (j, m) j = 0,1, ..., n-1 such that:
 
 		       n-1
@@ -49,19 +49,19 @@
 
 <b>ARGUMENTS</b>
 
-     x Table of type REAL (KIND = 8) of dimension (0: n + 1, lot). </font>(enter exit)
+     x Table of type REAL (KIND = 8) of dimension (0: n + 1, lot). (enter exit)
            As input, it contains the elements to be transformed.
 	   On output, it contains the transformed elements.
 	   The first dimension must be at least equal to n + 2.
-           The Hermitian complex transform -&gt; real (isign = 1)
+           The Hermitian complex transform - &gt; real (isign = 1)
            requires that the imaginary part of the first element
            and the last are zero at the input: x (1,:) = x (n + 1,:) = 0.
 
      work Table of type REAL (KIND == 8) of dimension 2 * n * lot.
 	   Workspace.
 
-     trigs Array of type REAL (KIND == 8) of dimension 2 * n. </font>(Entrance)
-           It contains the table of sines and cosines. </font>The subroutine
+     trigs Array of type REAL (KIND == 8) of dimension 2 * n. (input)
+           It contains the table of sines and cosines. The subroutine
            following initializes both trigs and ifax arrays at the same time:
 
 		CALL FFTFAX (n, ifax, trigs)
@@ -70,26 +70,26 @@
 	   It contains the list of prime factors of n.
 	   It is initialized when the FFTFAX subroutine is called (see above).
 
-     inc1x INTEGER type scalar. </font>(Entrance)
+     inc1x INTEGER type scalar. (input)
            The step of displacement in number of real elements in each
            vector to transform.
 
-     inc2x INTEGER type scalar. </font>(Entrance)
+     inc2x INTEGER type scalar. (input)
 	   The displacement between the first elements of two consecutive vectors.
 
-     n INTEGER type scalar. </font>(Entrance)
-	   Length of each vector to transform. </font>n&gt; = 2.
+     n INTEGER type scalar. (input)
+	   Length of each vector to transform. n &gt; = 2.
 	   n must be an even number.
 
 	   Any invalid value of n causes the FFTFAX subroutine to return
 	   an error code ifax (1) = - 99.
 
-     INTEGER type scalar lot. </font>(Entrance)
+     INTEGER type scalar lot. (input)
 	   The number of vectors to transform.
 
-     isign Scalar of type INTEGER. </font>(Entrance)
-	   -1 -&gt; apply a real-complex FFT.
-	   +1 -&gt; applies a complex-real FFT (inverse FFT).
+     isign Scalar of type INTEGER. (input)
+	   -1 - &gt; apply a real-complex FFT.
+	   +1 - &gt; applies a complex-real FFT (inverse FFT).
 
 <b>EXAMPLES</b>
 
@@ -101,12 +101,12 @@
           REAL (KIND = 8), DIMENSION (2 * n) :: trigs
           REAL (KIND = 8), DIMENSION (2 * n * lot) :: work
 	  INTEGER, DIMENSION (19) :: ifax
-	  . </font>. </font>.
+	  . . .
 	  CALL FFTFAX (n, ifax, trigs)
           a (2, :) = 0.
           a (n + 2, :) = 0.
 	  CALL RFFTMLT (a, work, trigs, ifax, inc, jump, n, lot, 1)
-	  . </font>. </font>.
+	  . . .
 
 <b>SEE AS ​​WELL</b>
 

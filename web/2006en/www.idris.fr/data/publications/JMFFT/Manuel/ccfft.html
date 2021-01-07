@@ -17,7 +17,7 @@
 <b>IMPLEMENTATION</b>
 
      This subroutine emulates the subroutine of the same name of the SCILIB of
-     CRAY. </font>All real or complex arguments must be declared
+     CRAY. All real or complex arguments must be declared
      in double precision.
 
 <b>DESCRIPTION</b>
@@ -33,7 +33,7 @@
      following formula:
 
 			 n-1
-	  Y (k) = scale * Sum [X (j) * w ** (isign * j * k)]; </font>k = 0, ..., n-1
+	  Y (k) = scale * Sum [X (j) * w ** (isign * j * k)] ; k = 0, ..., n-1
 			 j = 0
 
 	  or
@@ -52,38 +52,38 @@
 
 <b>ARGUMENTS</b>
 
-     isign Scalar of type INTEGER. </font>(Entrance)
+     isign Scalar of type INTEGER. (input)
 
 	     Indicates whether the table of coefficients must be initialized or whether
 	     apply an FFT or its inverse.
 
 	     If isign = 0, the subroutine initializes the array table and
-	     returns its value. </font>In this case, only the arguments isign, n and
+	     returns its value. In this case, only the arguments isign, n and
 	     table are checked and used.
 
 	     If isign = +1 or -1, the FFT or its inverse is applied.
 
-     n INTEGER type scalar. </font>(Entrance).
+     n INTEGER type scalar. (input)
 
-	     Length of the FFT (Number of elements of the array x). </font>n&gt; = 2.
+	     Length of the FFT (Number of elements of the array x). n &gt; = 2.
 
-     scale Scalar of type REAL (KIND = 8). </font>(Entrance)
+     scale Scalar of type REAL (KIND = 8). (input)
 
-	     Scale factor. </font>Each element of the vector y is multiplied by
+	     Scale factor. Each element of the vector y is multiplied by
 	     scale once the FFT has been performed as specified in the
 	     formula above.
 
      x Table of the COMPLEX type (KIND = 8) of dimension
-             (0: n-1). </font>(Entrance)
+             (0: n-1). (input)
 
 	     Array containing the values ​​of the elements to transform.
 
-     y Table of the COMPLEX type (KIND = 8) of dimension (0: n-1). </font>(exit).
+     y Table of the COMPLEX type (KIND = 8) of dimension (0: n-1). (output).
 
-	     Array containing the transformed values ​​as output. </font>We can
+	     Array containing the transformed values ​​as output. We can
              use the input array x.
 
-     table Table of type REAL (KIND = 8) of dimension 100 + 8 * n. </font>(entry or
+     table Table of type REAL (KIND = 8) of dimension 100 + 8 * n. (entry or
              exit).
 
 	     Table containing the table of coefficients and functions
@@ -99,21 +99,21 @@
 
 	     Work table.
 
-     isys Scalar of type INTEGER. </font>(Entrance)
+     isys Scalar of type INTEGER. (input)
              
-	     This argument is not used. </font>It is kept for reasons
+	     This argument is not used. It is kept for reasons
 	     compatibility with CRAY's SCILIB.
 
 <b>EXAMPLES</b>
 
      <b>Example 1</b> : initialize the TABLE array in order to apply
-     subsequently an FFT of dimension n = 1024. </font>In this case, only the
+     subsequently an FFT of dimension n = 1024. In this case, only the
      ISIGN, N and TABLE arguments are used.
 
 	  REAL (KIND = 8), DIMENSION (100 + 8 * 1024) :: TABLE
 	  CALL CCFFT (0, 1024, 0.d0, DUMMY, DUMMY, TABLE, DUMMY, 0)
 
-     <b>Example 2</b> : X and Y are complex arrays of dimension (0: 1023). </font>Here
+     <b>Example 2</b> : X and Y are complex arrays of dimension (0: 1023). Here
      we apply an FFT on X and we save the result in Y. It is
      imperative to initialize TABLE, as shown in Example 1
      before performing the FFT.
@@ -126,7 +126,7 @@
 
      <b>Example 3</b> : we complete example 2 to perform an inverse FFT of
      Y whose result is stored in X. The scale factor SCALE is equal to
-     1/1024. </font>It is assumed that the TABLE array has been initialized previously.
+     1/1024. It is assumed that the TABLE array has been initialized previously.
 
 	  CALL CCFFT (-1, 1024, 1.d0 / 1024.d0, Y, X, TABLE, WORK, 0)
 

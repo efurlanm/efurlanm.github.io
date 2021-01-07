@@ -22,7 +22,7 @@
 <b>IMPLEMENTATION</b>
 
      These sub-programs emulate the sub-programs of the same name of the SCILIB of
-     CRAY. </font>All real or complex arguments must be declared
+     CRAY. All real or complex arguments must be declared
      in double precision.
 
 <b>DESCRIPTION</b>
@@ -66,88 +66,88 @@
      followed by the complex-complex one in the second dimension.
 
      CSFFT3D performs the inverse FFT corresponding to that obtained with
-     SCFFT3D. </font>To do this, it calculates the complex-complex transform in
+     SCFFT3D. To do this, it calculates the complex-complex transform in
      the second dimension followed by the complex-real one in the first
      dimension.
 
 <b>ARGUMENTS</b>
 
-     isign Scalar of type INTEGER. </font>(Entrance)
+     isign Scalar of type INTEGER. (input)
 	       Indicates if the coefficient table must be initialized
 	       or whether to apply an FFT or its inverse.
 
 	       If isign = 0, the subroutine initializes the array table and
-	       returns its value. </font>In this case, only the arguments isign, n1, n2
+	       returns its value. In this case, only the arguments isign, n1, n2
 	       and table are checked and used.
 
                If isign = +1 or -1, the FFT or its inverse is applied.
 
-     n1 INTEGER type scalar. </font>(Entrance).
+     n1 INTEGER type scalar. (input)
 	       Number of transforms in the first dimension.
 
 	       A restriction of JMFFT causes n1 or n2 or n3 to
 	       be an even number.
 
-     n2 INTEGER type scalar. </font>(Entrance).
+     n2 INTEGER type scalar. (input)
 	       Number of transforms in the second dimension.
 
 	       A restriction of JMFFT causes n1 or n2 or n3 to
 	       be an even number.
 
-     n3 INTEGER type scalar. </font>(Entrance).
+     n3 INTEGER type scalar. (input)
 	       Number of transforms in the third dimension.
 
 	       A restriction of JMFFT causes n1 or n2 or n3 to
 	       be an even number.
 
-     scale Scalar of type REAL (KIND = 8). </font>(Entrance)
-	       Scale factor. </font>Each element of the vector y is multiplied by
+     scale Scalar of type REAL (KIND = 8). (input)
+	       Scale factor. Each element of the vector y is multiplied by
 	       scale once the FFT has been performed as specified in the
 	       formula above.
 
      x SCFFT3D: array of type REAL (KIND = 8) of dimension
-                         (0: ldx1-1, 0: ldx2-1, 0: n3-1). </font>(Entrance)
+                         (0: ldx1-1, 0: ldx2-1, 0: n3-1). (input)
 	       CSFFT3D: array of type COMPLEX (KIND = 8) of dimension
-                         (0: ldx1-1, 0: ldx2-1, 0: n3-1). </font>(Entrance)
+                         (0: ldx1-1, 0: ldx2-1, 0: n3-1). (input)
 
 	       Array containing the values ​​to transform.
 
-     ldx1 Scalar of the INTEGER type. </font>(Entrance).
+     ldx1 Scalar of the INTEGER type. (input)
 	       Number of elements in the first dimension of the array x tel
 	       that it is declared in the calling unit.
 
-	       SCFFT3D: ldx1&gt; = max (n1, 1).
-	       CSFFT3D: ldx1&gt; = max (n1 / 2 + 1, 1).
+	       SCFFT3D: ldx1 &gt; = max (n1, 1).
+	       CSFFT3D: ldx1 &gt; = max (n1 / 2 + 1, 1).
 
-     ldx2 Scalar of type INTEGER. </font>(Entrance).
+     ldx2 Scalar of type INTEGER. (input)
 	       Number of elements in the second dimension of the array x tel
-	       that it is declared in the calling unit. </font>ldx2&gt; = max (n2, 1).
+	       that it is declared in the calling unit. ldx2 &gt; = max (n2, 1).
 
      y SCFFT3D: array of the COMPLEX type (KIND = 8) of dimension
-               (0: ldy1-1, 0: ldy2-1, 0: n3-1). </font>(Entrance)
+               (0: ldy1-1, 0: ldy2-1, 0: n3-1). (input)
 	       CSFFT3D: array of type REAL (KIND = 8) of dimension
-               (0: ldy1-1, 0: ldy2-1, 0: n3-1). </font>(exit)
+               (0: ldy1-1, 0: ldy2-1, 0: n3-1). (output)
 
-     ldy1 Scalar of type INTEGER (input).
+     ldy1 Scalar of type INTEGER (input)
 	       Number of elements declared in the first dimension of the array
 	       y as declared in the calling unit.
 
-	       SCFFT3D: ldy1&gt; = max (n1 / 2 + 1, 1).
-	       CSFFT3D: ldy1&gt; = max (n1 + 2, 1).
+	       SCFFT3D: ldy1 &gt; = max (n1 / 2 + 1, 1).
+	       CSFFT3D: ldy1 &gt; = max (n1 + 2, 1).
 
                The complex-real transform requires two elements
                additional in the first dimension (this is why,
-               ldy1&gt; = n1 + 2 rather than ldy1&gt; = n1). </font>These elements are used to
+               ldy1 &gt; = n1 + 2 rather than ldy1 &gt; = n1). These elements are used to
                store certain values ​​during an intermediate phase of
-               calculation. </font>On output, these elements have values
+               calculation. On output, these elements have values
                any.
 
-     ldy2 INTEGER type scalar. </font>(Entrance).
+     ldy2 INTEGER type scalar. (input)
 	       Number of elements declared in the second dimension of the array
-	       y. </font>as declared in the calling unit. </font>ldy2&gt; = max (n2, 1).
+	       y. as declared in the calling unit. ldy2 &gt; = max (n2, 1).
 
      table Table of type REAL (KIND = 8) of dimension 100 + 2 * (n1 + n2 + n3).
-               (entry or exit)
+               (input or output)
 
 	       Table containing the table of coefficients and functions
 	       trigonometric.
@@ -165,14 +165,14 @@
                condition to inform JMFFT of it by calling the subroutine
                JMSETNWORK.
 
-     isys Scalar of type INTEGER. </font>(Entrance)
-	       This argument is not used. </font>It is kept for reasons
+     isys Scalar of type INTEGER. (input)
+	       This argument is not used. It is kept for reasons
 	       compatibility with CRAY's SCILIB.
 
 <b>EXAMPLES</b>
 
      <b>Example 1</b> : initialize the TABLE array in order to apply
-     subsequently an FFT of dimension (128,128,129). </font>In this case, only the
+     subsequently an FFT of dimension (128,128,129). In this case, only the
      ISIGN, N1, N2, N3 and TABLE arguments are used.
 
            INTEGER, PARAMETER :: N1 = 128, N2 = 128, N3 = 129
@@ -181,7 +181,7 @@
 	                 TABLE, DUMMY, 0)
 
      <b>Example 2</b> : X is a real array of dimension (0: 128, 0: 128, 0: 128).
-     Y is a complex array of dimension (0:64, 0: 128, 0: 128). </font>We
+     Y is a complex array of dimension (0:64, 0: 128, 0: 128). We
      apply an FFT on X and we store the result in Y.
      TABLE array is assumed to be initialized.
 
@@ -197,7 +197,7 @@
 
      <b>Example 3</b> : here we continue example 2 by performing the inverse FFT
      of Y and saving the result in X. The scale factor is here
-     equal to 1 / (128 * 128 * 129). </font>We assume that the TABLE array has been
+     equal to 1 / (128 * 128 * 129). We assume that the TABLE array has been
      initialized previously.
            
 	   CALL CSFFT3D (-1, 128, 128, 128, 1.d0 / (128.d0 * 128.d0 * 128.d0), Y, 65, &amp;

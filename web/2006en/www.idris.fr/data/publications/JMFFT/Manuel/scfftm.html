@@ -21,7 +21,7 @@
 <b>IMPLEMENTATION</b>
 
      These sub-programs emulate the sub-programs of the same name of the SCILIB of
-     CRAY. </font>All real or complex arguments must be declared
+     CRAY. All real or complex arguments must be declared
      in double precision.
 
 <b>DESCRIPTION</b>
@@ -35,7 +35,7 @@
 	  REAL (KIND = 8), DIMENSION (0: ldx-1, 0: lot-1) :: X
 	  COMPLEX (KIND = 8), DIMENSION (0: ldy-1, 0: lot-1) :: Y
 
-     where, ldx&gt; = n and ldy&gt; = n / 2 + 1.
+     where, ldx &gt; = n and ldy &gt; = n / 2 + 1.
 
       According to the following formula, column L of table Y is the FFT
      of column L of table X:
@@ -63,66 +63,66 @@
 
 <b>ARGUMENTS</b>
 
-     isign Scalar of type INTEGER. </font>(Entrance)
+     isign Scalar of type INTEGER. (input)
 
 	     Indicates whether the table of coefficients must be initialized or whether
 	     apply an FFT or its inverse.
 
 	     If isign = 0, the subroutine initializes the array table and
-	     returns its value. </font>In this case, only the arguments isign, n and
+	     returns its value. In this case, only the arguments isign, n and
 	     table are checked and used.
 
              If isign = +1 or -1 the FFT or its inverse is applied.
 
-     n INTEGER type scalar. </font>(Entrance).
+     n INTEGER type scalar. (input)
 
-	     Length of the FFT (Number of elements of the array x). </font>n&gt; 0.
+	     Length of the FFT (Number of elements of the array x). n &gt; 0.
 
              A restriction of JMFFT causes n or lot to be a
              even number.
 
-     INTEGER type scalar lot. </font>(Entrance).
+     INTEGER type scalar lot. (input)
 
 	     Number of transmormed to calculate.
-	     It is also the second dimension of the x and y matrices. </font>lot&gt; 0.
+	     It is also the second dimension of the x and y matrices. lot &gt; 0.
 
              A restriction of JMFFT causes n or lot to be a
              even number.
 
-     scale Scalar of type REAL (KIND = 8). </font>(Entrance)
+     scale Scalar of type REAL (KIND = 8). (input)
 
-	     Scale factor. </font>Each element of the vector y is multiplied by
+	     Scale factor. Each element of the vector y is multiplied by
 	     scale once the FFT has been performed as specified in the
 	     formula above.
 
      x SCFFTM: REAL type array (KIND = 8) of dimension (0: ldx-1, 0: lot-1).
-             (Entrance)
+             (input)
 	     CSFFTM: COMPLEX type array (KIND = 8) of dimension (0: ldx-1, 0: lot-1).
-             (Entrance)
+             (input)
 	     Array containing the values ​​of the elements to transform.
 
-     ldx Scalar of type INTEGER. </font>(Entrance).
+     ldx Scalar of type INTEGER. (input)
 
 	     Number of rows declared in table x.
-	     SCFFTM: ldx&gt; = max (n, 1).
-	     CSFFTM: ldx&gt; = max (n / 2 + 1, 1).
+	     SCFFTM: ldx &gt; = max (n, 1).
+	     CSFFTM: ldx &gt; = max (n / 2 + 1, 1).
 
-     y SCFFTM: COMPLEX type array (KIND = 8) of dimension (0: ldy-1, 0: lot-1). </font>(exit)
-	     CSFFTM: REAL type array (KIND = 8) of dimension (0: ldy-1, 0: lot-1). </font>(exit)
-	     Array containing the transformed values ​​as output. </font>We can
+     y SCFFTM: COMPLEX type array (KIND = 8) of dimension (0: ldy-1, 0: lot-1). (output)
+	     CSFFTM: REAL type array (KIND = 8) of dimension (0: ldy-1, 0: lot-1). (output)
+	     Array containing the transformed values ​​as output. We can
              equivocate the input array x with the output array
              y, however, observing the following rule: 
 
 	     SCFFTM: ldx = 2 * ldy.
 	     CSFFTM: ldy = 2 * ldx.
 
-     ldy Scalar of the INTEGER type. </font>(Entrance).
+     ldy Scalar of the INTEGER type. (input)
 
 	     Number of rows declared in array y.
-	     SCFFTM: ldy&gt; = max (n / 2 + 1, 1).
-	     CSFFTM: ldy&gt; = max (n, 1).
+	     SCFFTM: ldy &gt; = max (n / 2 + 1, 1).
+	     CSFFTM: ldy &gt; = max (n, 1).
 
-     table Table of type REAL (KIND = 8) of dimension 100 + 2 * n. </font>(entry or exit)
+     table Table of type REAL (KIND = 8) of dimension 100 + 2 * n. (input or output)
 
 	     Table containing the table of coefficients and functions
 	     trigonometric.
@@ -137,23 +137,23 @@
 
 	     Work table.
 
-     isys Scalar of type INTEGER. </font>(Entrance)
+     isys Scalar of type INTEGER. (input)
 
-             This argument is not used. </font>It is kept for reasons
+             This argument is not used. It is kept for reasons
 	     compatibility with CRAY's SCILIB.  
 
 <b>EXAMPLES</b>
 
      <b>Example 1</b> : initialize the TABLE array in order to apply
-     subsequently an FFT of dimension N = 128. </font>In this case, only the
+     subsequently an FFT of dimension N = 128. In this case, only the
      ISIGN, N and TABLE arguments are used.
 
 	   REAL (KIND = 8), DIMENSION (100 + 2 * 128) :: TABLE
 	   CALL SCFFTM (0, 128, 1, 0.d0, DUMMY, 1, DUMMY, 1, TABLE, DUMMY, 0)
 
      <b>Example 2</b> : X is a real array of dimension (0: 128,0: 55) and Y is
-     a complex array of dimension (0: 64,0: 55). </font>We apply an FFT on
-     the first 128 elements of each column. </font>We carry out an FFT on
+     a complex array of dimension (0: 64,0: 55). We apply an FFT on
+     the first 128 elements of each column. We carry out an FFT on
      the first 51 columns of X. The result will be recorded within 51
      first columns of Y. Before applying the FFT, we initialize the
      TABLE array as in Example 1.
@@ -168,7 +168,7 @@
 
      <b>Example 3</b> : here we continue example 2 by assigning the inverse FFT
      of Y and saving the result in X. The scale factor is
-     here equal to 1/128. </font>We assume that the TABLE array has been initialized
+     here equal to 1/128. We assume that the TABLE array has been initialized
      before.
 
 	   CALL CSFFTM (-1, 128, 51, 1.d0 / 128.d0, Y, 65, X, 129, TABLE, WORK, 0)
@@ -184,7 +184,7 @@
 	   CALL SCFFTM (1, 128, 51, 1.d0, X, 129, Y, 65, TABLE, WORK, 0)
 
      <b>Example 5</b> : calculation similar to example 4 except that here we put in
-     X and Y equivalence to save memory space. </font>We suppose that
+     X and Y equivalence to save memory space. We suppose that
      the TABLE array has been initialized previously.
 
 	   REAL X (130, 56)

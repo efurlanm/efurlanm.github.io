@@ -20,7 +20,7 @@
 <b>IMPLEMENTATION</b>
 
      These sub-programs emulate the sub-programs of the same name of the SCILIB of
-     CRAY. </font>All real or complex arguments must be declared in
+     CRAY. All real or complex arguments must be declared in
      double precision.
 
 <b>DESCRIPTION</b>
@@ -38,19 +38,19 @@
 
 <b>ARGUMENTS</b>
 
-     ar Array of type REAL (KIND = 8) of dimension n * lot. </font>(enter exit)
+     ar Array of type REAL (KIND = 8) of dimension n * lot. (enter exit)
 	   As input, it contains the real part of the data to be transformed.
 	   At the output, it contains the real transformed part.
 
-     ai Array of type REAL (KIND = 8) of dimension n * lot. </font>(enter exit)
+     ai Array of type REAL (KIND = 8) of dimension n * lot. (enter exit)
 	   As input, it contains the imaginary part of the data to be transformed.
 	   At the output, it contains the transformed imaginary part.
 
      work Table of type REAL (KIND = 8) of dimension 4 * n * lot.
            Workspace.
 
-     trigs Array of type REAL (KIND = 8) of dimension 2 * n. </font>(entry) He must
-           be initialized to contain the sine and cosine table. </font>The
+     trigs Array of type REAL (KIND = 8) of dimension 2 * n. (entry) He must
+           be initialized to contain the sine and cosine table. The
            following subroutine is used to initialize the trigs and ifax arrays to
            that time :
 
@@ -60,24 +60,24 @@
 	   It must be initialized using the subroutine below in order to
            to contain a list of factors of n.
 
-     inc INTEGER type scalar. </font>(Entrance)
+     inc INTEGER type scalar. (input)
 	   The step between two elements of a vector.
 
-     INTEGER type scalar jump. </font>(input) The step between two vectors
-           consecutive. </font>inc and jump apply to the real game as well as
+     INTEGER type scalar jump. (input) The step between two vectors
+           consecutive. inc and jump apply to the real game as well as
            the imaginary part.
 
-     n INTEGER type scalar. </font>(Entrance)
-	   Length of each vector to transform. </font>n&gt; = 0.
+     n INTEGER type scalar. (input)
+	   Length of each vector to transform. n &gt; = 0.
 	   Any invalid value of n causes the CFTFAX subroutine to return
 	   an error code ifax (1) = - 99.
 
-     INTEGER type scalar lot. </font>(Entrance)
+     INTEGER type scalar lot. (input)
 	   The number of vectors to transform.
 
-     isign Scalar of type INTEGER. </font>(Entrance)
-	   +1 -&gt; Fourier transform
-	   -1 -&gt; inverse Fourier transform
+     isign Scalar of type INTEGER. (input)
+	   +1 - &gt; Fourier transform
+	   -1 - &gt; inverse Fourier transform
 
 <b>SEE AS ​​WELL</b>
 

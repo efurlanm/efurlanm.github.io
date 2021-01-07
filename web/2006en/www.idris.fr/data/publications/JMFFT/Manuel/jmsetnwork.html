@@ -22,12 +22,12 @@
 <b>DESCRIPTION</b>
 
      In the SCILIB, the 2D and 3D subroutines are a bit particular
-     with respect to the size of the WORK table. </font>While all
+     with respect to the size of the WORK table. While all
      other subroutines require the WORK array to have a dimension
      sufficient for single-pass processing, subroutines
      2D and 3D only require that the WORK array have one dimension
      sufficient for processing in possibly several passes
-     of 128 Fourier transforms. </font>This is more economical in memory and
+     of 128 Fourier transforms. This is more economical in memory and
      preserves performance since vectorization is done on this number
      of transforms and that 128 is an optimal value for the length of
      vectors on C90.
@@ -42,7 +42,7 @@
      signal that he has chosen a value different from the imposed value
      by the procedure.
 
-     This is precisely the role of JMSETNWORK. </font>If we oversized the
+     This is precisely the role of JMSETNWORK. If we oversized the
      WORK array, and if we provided JMFFT with the value of the dimension
      declared via the call to JMSETNWORK, JMFFT will use the entire
      of the work table, which may improve the
@@ -50,7 +50,7 @@
 
      Knowing that the standard value of the SciLib corresponds to a
      vectorization length of 128, so it is easy to deduce
-     the ideal size of the WORK table. </font>If for example on the machine
+     the ideal size of the WORK table. If for example on the machine
      used the optimal length of the vectors is 1024, that is to say 8 times
      larger than on C90, it will suffice to multiply by 8 the dimension
      required by the SciLib to achieve this vectorization length
@@ -67,15 +67,15 @@
            INTEGER, PARAMETER :: M = 1024, N = 1024
            COMPLEX, DIMENSION (0: N-1.0: M-1) :: X
            REAL, DIMENSION (100 + 2 * (N + M)) :: TABLE
-           ! </font>Note: WORK is 8 times bigger than necessary
+           ! Note: WORK is 8 times bigger than necessary
            REAL, DIMENSION (4096 * MAX (N, M)) :: WORK
            INTEGER :: ISYS
            INTEGER :: I, J
-           ! </font>... (preparation of x)
+           ! ... (preparation of x)
            CALL JMSETNWORK (4096 * MAX (N, M))
            CALL CCFFT2D (0, N, M, 1.D0, X, N, X, N, TABLE, WORK, ISYS)
            CALL CCFFT2D (1, N, M, 1.D0, X, N, X, N, TABLE, WORK, ISYS)
-           ! </font>... (continuation of the program)
+           ! ... (continuation of the program)
 
 <b>SEE AS ​​WELL</b>
 

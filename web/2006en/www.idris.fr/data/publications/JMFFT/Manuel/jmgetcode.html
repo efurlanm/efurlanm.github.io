@@ -20,10 +20,10 @@
 
 <b>DESCRIPTION</b>
 
-     When the call returns, the <tt>irc</tt> variable </font>contains the return code
+     When the call returns, the <tt>irc</tt> variable contains the return code
      of the last JMFFT subroutine called.
 
-     If it sucks, then everything went well. </font>Otherwise, it's just an error
+     If it sucks, then everything went well. Otherwise, it's just an error
      has been detected.
 
      As by default, JMFFT stops execution in the event of an error, so that
@@ -47,15 +47,15 @@
            COMPLEX (KIND = 8), DIMENSION (LDY, NY2) :: Y
            REAL (KIND = 8), DIMENSION (512 * NX2) :: WORK
            REAL (KIND = 8), DIMENSION (100 + 2 * (NX1 + NX2)) :: TABLE
-           ! </font>... (Definition of X)
+           ! ... (Definition of X)
            CALL SCFFT2D (0, 128, 256, 1.d0, X, 129, Y, 64, TABLE, WORK, 0)
            CALL SCFFT2D (1, 128, 256, 1.d0, X, 129, Y, 64, TABLE, WORK, 0)
-           ! </font>... (Print of Y)
+           ! ... (Print of Y)
 
      At runtime, the program stops after the first call to SCFFT2D
      with the following message:
 
-           JMFFT Error in SCFFT2D: ldy must be&gt; = n / 2 + 1 (64 65)
+           JMFFT Error in SCFFT2D: ldy must be &gt; = n / 2 + 1 (64 65)
            STOP 1
 
      Here is a variant of the same program where we control the execution:
@@ -69,7 +69,7 @@
            REAL (KIND = 8), DIMENSION (100 + 2 * (NX1 + NX2)) :: TABLE
            INTEGER :: IRC
            CHARACTER (LEN = 80) :: MESSAGE
-           ! </font>... (Definition of X)
+           ! ... (Definition of X)
            CALL JMSETERROR (.false.)
            CALL SCFFT2D (0, 128, 256, 1.d0, X, 129, Y, 64, TABLE, WORK, 0)
            CALL JMGETCODE (IRC)
@@ -79,11 +79,11 @@
              CALL HANDLER ()
            END IF
            CALL SCFFT2D (1, 128, 256, 1.d0, X, 129, Y, 64, TABLE, WORK, 0)
-           ! </font>... (Print of Y)
+           ! ... (Print of Y)
 
      At runtime, this program will write the following error message:
 
-           Code 16, ldy must be&gt; = n / 2 + 1
+           Code 16, ldy must be &gt; = n / 2 + 1
 
      then will enter the HANDLER subroutine.
 

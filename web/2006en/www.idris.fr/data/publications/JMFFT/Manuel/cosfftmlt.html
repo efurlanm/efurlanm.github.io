@@ -19,7 +19,7 @@
 
 <b>IMPLEMENTATION</b>
 
-     These sub-programs are not part of SCILIB. </font>But as they
+     These sub-programs are not part of SCILIB. But as they
      are based on this, they were integrated into JMFFT.
      All real or complex arguments must be declared in
      double precision.
@@ -27,7 +27,7 @@
 <b>DESCRIPTION</b>
 
      COSFFTMLT applies a cosine FFT to a set
-     given vectors. </font>For each of the m real vectors x (j, i),
+     given vectors. For each of the m real vectors x (j, i),
      j = 1 ... m and i = 0 ... n,
      COSFFTMLT calculates the real vector y (j, i) such that:
 
@@ -39,7 +39,7 @@
 
 <b>ARGUMENTS</b>
 
-     x Table of type REAL (KIND = 8) of dimension (n + 2, m). </font>(enter exit)
+     x Table of type REAL (KIND = 8) of dimension (n + 2, m). (enter exit)
            As input, it contains the elements to be transformed.
            On output, it contains the transformed elements.
            The first dimension must be at least equal to n + 2.
@@ -50,7 +50,7 @@
      work Table of type REAL (KIND == 8) of dimension 2 * m * n + m * (n + 3).
            Workspace.
 
-     trigs Array of type REAL (KIND == 8) of dimension 4 * n. </font>(Entrance)
+     trigs Array of type REAL (KIND == 8) of dimension 4 * n. (input)
            It contains the table of sines and cosines.
            The following call initializes both arrays
            trigs and ifax both:
@@ -67,19 +67,19 @@
 
            It is generated when calling SINFFTFAX (see above)
 
-     inc INTEGER type scalar. </font>(Entrance)
+     inc INTEGER type scalar. (input)
            The step of displacement in number of real elements in each
            vector to transform.
 
-     INTEGER type scalar jump. </font>(Entrance)
+     INTEGER type scalar jump. (input)
            The displacement between the first elements of two vectors
            consecutive.
 
-     n INTEGER type scalar. </font>(Entrance)
-           Length of each vector to transform. </font>n&gt; = 2.
+     n INTEGER type scalar. (input)
+           Length of each vector to transform. n &gt; = 2.
            n must be an even number.
 
-     m INTEGER type scalar. </font>(Entrance)
+     m INTEGER type scalar. (input)
            The number of vectors to transform.
 
 <b>EXAMPLES</b>
@@ -93,10 +93,10 @@
           REAL (KIND = 8), DIMENSION (4 * n) :: trigs
           REAL (KIND = 8), DIMENSION (2 * m * n + m * (n + 3) :: work
           INTEGER, DIMENSION (19) :: ifax
-          . </font>. </font>.
+          . . .
           CALL COSFFTFAX (n, ifax, trigs)
           CALL COSFFTMLT (a, work, trigs, ifax, inc, jump, n, m)
-          . </font>. </font>.
+          . . .
 
 <b>NOTES</b>
 
