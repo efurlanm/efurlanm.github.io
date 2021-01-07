@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>CFFTMLT</title> 
+</head> 
+ <body bgcolor="#fdf5e6">
+  <pre><b>*** JMFFT 8.1 - emulation of CRAY SciLib FFTs - (c) CNRS / IDRIS ***</b>
+
+<b>LAST NAME</b>
+
+     CFFTMLT - Apply a Fast Fourier Transform (FFT)
+               complex-complex to a given set of vectors.
+
+<b>SYNTAX</b>
+
+     CALL CFTFAX (n, ifax, trigs)
+
+     CALL CFFTMLT (ar, ai, work, trigs, ifax, inc, jump, n, lot, isign)
+
+<b>IMPLEMENTATION</b>
+
+     These sub-programs emulate the sub-programs of the same name of the SCILIB of
+     CRAY. </font>All real or complex arguments must be declared in
+     double precision.
+
+<b>DESCRIPTION</b>
+
+     CFFTMLT applies a complex-complex FFT to a given set of
+     vectors according to the following formula:
+
+				 n-1 
+     (ar (inc * k + 1), ai (inc * k + 1)) = Sum exp (isign * iota * 2 * pi * j * k / n) (ar (inc * j + 1), ai (inc * d + 1))
+				 j = 0	  
+
+     for k = 0.1, ..., n-1
+
+     This calculation applies to the n vectors supplied as input.
+
+<b>ARGUMENTS</b>
+
+     ar Array of type REAL (KIND = 8) of dimension n * lot. </font>(enter exit)
+	   As input, it contains the real part of the data to be transformed.
+	   At the output, it contains the real transformed part.
+
+     ai Array of type REAL (KIND = 8) of dimension n * lot. </font>(enter exit)
+	   As input, it contains the imaginary part of the data to be transformed
+	   At the output, it contains the transformed imaginary part.
+
+     work Table of type REAL (KIND = 8) of dimension 4 * n * lot.
+           Workspace.
+
+     trigs Array of type REAL (KIND = 8) of dimension 2 * n. </font>(entry) He must
+           be initialized to contain the sine and cosine table. </font>The
+           following subroutine is used to initialize the trigs and ifax arrays to
+           that time :
+
+		     CALL CFTFAX (n, ifax, trigs)
+
+     ifax Table of type INTEGER of dimension 19. (input)
+	   It must be initialized using the subroutine below in order to
+           to contain a list of factors of n.
+
+     inc INTEGER type scalar. </font>(Entrance)
+	   The step between two elements of a vector.
+
+     INTEGER type scalar jump. </font>(Entrance)
+           The step between two consecutive vectors. </font>inc and jump apply
+           both the real part and the imaginary part.
+
+     n INTEGER type scalar. </font>(Entrance)
+	   Length of each vector to transform. </font>n&gt; = 0.
+	   Any invalid value of n leads the CFTFAX subroutine
+	   to return an error code ifax (1) = - 99.
+
+     INTEGER type scalar lot. </font>(Entrance)
+	   The number of vectors to transform.
+
+     isign Scalar of type INTEGER. </font>(Entrance)
+	   +1 -&gt; Fourier transform
+	   -1 -&gt; inverse Fourier transform
+
+<b>SEE AS ​​WELL</b>
+
+     CCFFTM, RFFTMLT
+</pre> 
+  <p> </p>
+  <hr size="1"> 
+  <div align="center"> 
+   <h6><b>© CNRS - IDRIS</b></h6> 
+  </div>   
+</body></html>

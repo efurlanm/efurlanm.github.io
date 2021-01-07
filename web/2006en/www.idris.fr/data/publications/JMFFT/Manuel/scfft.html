@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>CSFFT</title> 
+</head> 
+ <body bgcolor="#fdf5e6">
+  <pre><b>*** JMFFT 8.1 - emulation of CRAY SciLib FFTs - (c) CNRS / IDRIS ***</b>
+
+<b>LAST NAME</b>
+
+     SCFFT, CSFFT - Apply Fast Fourier Transform (FFT)
+                    real-complex or complex-real.
+
+<b>SYNTAX</b>
+
+     CALL SCFFT (isign, n, scale, x, y, table, work, isys)
+
+     CALL CSFFT (isign, n, scale, x, y, table, work, isys)
+
+<b>IMPLEMENTATION</b>
+
+     These sub-programs emulate the sub-programs of the same name of the SCILIB of
+     CRAY. </font>All real or complex arguments must be declared
+     in double precision.
+
+<b>DESCRIPTION</b>
+
+     SCFFT calculates the FFT of the real vector x, and returns the
+     result in the complex vector y.
+     CSFFT calculates the corresponding complex-real inverse FFT.
+
+     Consider two arrays X and Y dimensioned as follows:
+
+	  REAL (KIND = 8), DIMENSION (0: n-1) :: X
+	  COMPLEX (KIND = 8), DIMENSION (0: n / 2) :: Y
+
+     The result Y represents the FFT of the vector X, if we apply the
+     following formula:
+
+			 n-1
+	  Y (k) = scale * Sum [X (j) * w ** (isign * j * k)]; </font>k = 0, ..., n / 2
+			 j = 0
+
+
+	  or,
+	  w = exp (2 * pi * i / n),
+	  i = + sqrt (-1),
+	  pi = 3.14159 ...,
+	  isign = +1 or -1.
+
+     In general, if we calculate an FFT using SCFFT with values
+     particular of isign and scale, then its inverse is calculated by
+     calling CSFFT with the values ​​-isign and 1 / (n * scale).
+
+     In particular, with the values ​​isign = +1 and scale = 1.0 provided to
+     SCFTT, the inverse FFT is calculated with CSFTT by taking isign = -1 and
+     scale = 1.0 / n
+
+<b>ARGUMENTS</b>
+
+     isign Scalar of type INTEGER. </font>(Entrance)
+
+	     Indicates whether the table of coefficients must be initialized or whether
+	     apply an FFT or its inverse.
+
+	     If isign = 0, the subroutine initializes the array table and
+	     returns its value. </font>In this case, only the arguments isign, n and
+	     table are checked and used.
+
+     n INTEGER type scalar. </font>(Entrance).
+
+	     Length of the FFT (Number of elements of the array x). </font>n&gt; 2
+
+             A restriction of JMFFT means that this dimension must be a
+             even number.
+
+     scale Scalar of type REAL (KIND = 8). </font>(Entrance)
+
+	     Scale factor. </font>Each element of the vector y is multiplied by
+	     scale once the FFT has been performed as specified in the
+	     formula above.
+
+     x SCFFT: REAL type array (KIND = 8) of dimension (0: n-1). </font>(Entrance)
+	     CSFFT: COMPLEX type array (KIND = 8) of dimension (0: n / 2). </font>(Entrance)
+
+	     Array containing the values ​​of the elements to transform.
+
+     y SCFFT: COMPLEX type array (KIND = 8) of dimension (0: n / 2). </font>(exit)
+	     CSFFT: REAL type array (KIND = 8) of dimension (0: n-1). </font>(exit)
+
+	     Array containing the transformed values ​​as output.
+
+     table Array of type REAL (KIND = 8) of dimension (100 + 4 * n). </font>(entry or exit)
+	     
+             Table containing the table of coefficients and functions
+	     trigonometric.
+
+	     If isign = 0, the subroutine initializes table (table is in
+	     output only).
+
+	     If isign = +1 or -1, table is supposed to be already initialized
+	     (table is input only).
+
+     work Array of type REAL (KIND = 8) of dimension (4 + 4 * n).
+
+	     Work table.
+
+     isys Scalar of type INTEGER. </font>(Entrance)
+             
+	     This argument is not used. </font>It is kept for reasons
+	     compatibility with CRAY's SCILIB.  
+
+<b>EXAMPLES</b>
+
+     <b>Example 1</b> : initialize the TABLE array in order to apply
+     subsequently an FFT of dimension n = 1025. </font>In this case, only the
+     ISIGN, N and TABLE arguments are used.
+
+	  REAL (KIND = 8), DIMENSION (100 + 4 * 1025) :: TABLE
+	  CALL SCFFT (0, 1025, 0.d0, DUMMY, DUMMY, TABLE, DUMMY, 0)
+
+     <b>Example 2</b> : X is a real array of dimension (0: 1024) and Y is a
+     complex array of dimension (0: 512). </font>Here we apply an FFT on X and
+     we save the result in Y. It is imperative to initialize TABLE,
+     as shown in Example 1 before performing the FFT.
+
+	  REAL (KIND = 8), DIMENSION (0: 1023) :: X
+	  COMPLEX (KIND = 8), DIMENSION (0: 512) :: Y
+	  REAL (KIND = 8), DIMENSION (100 + 4 * 1024) :: TABLE
+	  REAL (KIND = 8), DIMENSION (4 * 1024 + 4) :: WORK
+	  CALL SCFFT (0, 1024, 1.d0, X, Y, TABLE, WORK, 0)
+	  CALL SCFFT (1, 1024, 1.d0, X, Y, TABLE, WORK, 0)
+
+     <b>Example 3</b> : we complete example 2 to perform an inverse FFT of
+     Y whose result is stored in X. The scale factor SCALE is equal to
+     1/1024. </font>It is assumed that the TABLE array has been initialized previously.
+
+	  CALL CSFFT (-1, 1024, 1.d0 / 1024.d0, Y, X, TABLE, WORK, 0)
+
+     <b>Example 4</b> : here we carry out the same calculation as in example 2. The only
+     difference is in the value of the lower indices of the X arrays
+     and Y which start at 1 instead of 0.
+
+	  REAL (KIND = 8), DIMENSION (1024) :: X
+	  COMPLEX (KIND = 8), DIMENSION (513) :: Y
+	  CALL SCFFT (0, 1024, 1.0, X, Y, TABLE, WORK, 0)
+	  CALL SCFFT (1, 1024, 1.0, X, Y, TABLE, WORK, 0)
+
+     <b>Example 5</b> : same as example 4. However, to save
+     memory, the result is saved in the vector X (we assume
+     that the TABLE array has been initialized previously). </font>Must therefore
+     oversize X so that it can contain Y.
+
+	  REAL (KIND = 8), DIMENSION (1026) :: X
+	  CALL SCFFT (1, 1024, 1.d0, X, X, TABLE, WORK, 0)
+
+<b>SEE AS ​​WELL</b>
+
+     CCFFT, CCFFTM, SCFFTM
+</pre> 
+  <p> </p>
+  <hr size="1"> 
+  <div align="center"> 
+   <h6><b>© CNRS - IDRIS</b></h6> 
+  </div>   
+</body></html>

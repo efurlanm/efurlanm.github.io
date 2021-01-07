@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+   <title>COSFFTMLT</title> 
+</head> 
+ <body bgcolor="#fdf5e6">
+  <pre><b>*** JMFFT 8.0 - emulation of CRAY SciLib FFTs - (c) CNRS / IDRIS ***</b>
+
+<b>LAST NAME</b>
+
+     COSFFTMLT - Apply a Fast Fourier Transform (FFT)
+                 in cosine to a given set of vectors.
+
+<b>SYNTAX</b>
+
+     CALL COSFFTFAX (n, ifax, trigs)
+
+     CALL COSFFTMLT (x, work, trigs, ifax, inc, jump, n, m)
+
+<b>IMPLEMENTATION</b>
+
+     These sub-programs are not part of SCILIB. </font>But as they
+     are based on this, they were integrated into JMFFT.
+     All real or complex arguments must be declared in
+     double precision.
+
+<b>DESCRIPTION</b>
+
+     COSFFTMLT applies a cosine FFT to a set
+     given vectors. </font>For each of the m real vectors x (j, i),
+     j = 1 ... m and i = 0 ... n,
+     COSFFTMLT calculates the real vector y (j, i) such that:
+
+                           n-1
+     y (j, i) = 1/2 x (j, 0) + Sum x (j, k) cos (k * i * pi / n) + 1/2 (-1 ** i) x (j, n )
+                           k = 1
+
+     for j = 1 ... m and i = 0 ... n.     
+
+<b>ARGUMENTS</b>
+
+     x Table of type REAL (KIND = 8) of dimension (n + 2, m). </font>(enter exit)
+           As input, it contains the elements to be transformed.
+           On output, it contains the transformed elements.
+           The first dimension must be at least equal to n + 2.
+
+           In fact, thanks to the use of the inc and jump arguments, the array
+           x can be sized differently.
+
+     work Table of type REAL (KIND == 8) of dimension 2 * m * n + m * (n + 3).
+           Workspace.
+
+     trigs Array of type REAL (KIND == 8) of dimension 4 * n. </font>(Entrance)
+           It contains the table of sines and cosines.
+           The following call initializes both arrays
+           trigs and ifax both:
+
+                CALL COSFFTFAX (n, ifax, trigs)
+
+           <b>Note:</b> The ifax and trigs arrays thus obtained can
+           also be used, without having to reset them,
+           in the subprograms CFFTMLT, RFFTMLT and also SINFFTMLT
+           (of course with the same value of n).
+
+     ifax Table of type INTEGER of dimension 19. (input)
+           It contains the list of prime factors of n.
+
+           It is generated when calling SINFFTFAX (see above)
+
+     inc INTEGER type scalar. </font>(Entrance)
+           The step of displacement in number of real elements in each
+           vector to transform.
+
+     INTEGER type scalar jump. </font>(Entrance)
+           The displacement between the first elements of two vectors
+           consecutive.
+
+     n INTEGER type scalar. </font>(Entrance)
+           Length of each vector to transform. </font>n&gt; = 2.
+           n must be an even number.
+
+     m INTEGER type scalar. </font>(Entrance)
+           The number of vectors to transform.
+
+<b>EXAMPLES</b>
+
+     The following program shows the sequence of calls to COSFFTFAX and COSFFTMLT
+     to calculate the FFT in cosine of table A:
+
+          INTEGER, PARAMETER :: n = 16, m = 2
+          INTEGER :: inc = m, jump = 1
+          REAL (KIND = 8), DIMENSION (m, n + 2) :: a
+          REAL (KIND = 8), DIMENSION (4 * n) :: trigs
+          REAL (KIND = 8), DIMENSION (2 * m * n + m * (n + 3) :: work
+          INTEGER, DIMENSION (19) :: ifax
+          . </font>. </font>.
+          CALL COSFFTFAX (n, ifax, trigs)
+          CALL COSFFTMLT (a, work, trigs, ifax, inc, jump, n, m)
+          . </font>. </font>.
+
+<b>NOTES</b>
+
+     The cosine transform is its own inverse, with the multiplicative factor
+     n / 2 close.
+
+</pre> 
+  <p> </p>
+  <hr size="1"> 
+  <div align="center"> 
+   <h6><b>© CNRS - IDRIS</b></h6> 
+  </div>  
+</body></html>

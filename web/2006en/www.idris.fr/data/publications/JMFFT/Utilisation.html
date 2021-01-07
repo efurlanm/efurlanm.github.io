@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML//EN">
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Manual</title> 
+  <!-- Revisions de ce document --> 
+  <!-- 1. 16/09/1998 Modification : Mise a jour des performances               --> 
+  <!-- 2. 21/09/1998 Modification : Introduction de JMSETNWORK                 --> 
+  <!-- 3.  7/01/1999 Modification : Performances en base 3                     --> 
+  <!-- 4.  1/07/1999 Modification : Base quelconque                            --> 
+  <!-- 5.  1/07/1999 Modification : Traitement d'erreurs                       --> 
+  <!-- 5. 30/10/1999 Modification : Documentation HTML                         --> 
+  <!-- 7. 19/06/2000 Modification : -Initialisation de variables.              --> 
+  <!--                              - Corrections bogues et doc. HTML.         --> 
+  <!--                              - Révison des sous-programmes              --> 
+  <!--                                internes : jmcsm1dx, jmscm1dx.           --> 
+  <!--                              - Ajout des sous-programmes : jmgetsetstop,--> 
+  <!--                                jmgetstop, jmsetstop                     --> 
+  <!--                              - Version C de JMFFT                       --> 
+  <!-- 8. 13/05/2004 Ajout        : - FFT en cosinus et en sinus.              --> 
+  <!--                              - Make.inc.INTEL dans répertoire arch.     --> 
+  <!--               Modification : FFT réel-complexe et complexe-réel.        --> 
+  <!-- 9. 07/07/2005 Corrections  : - FFT en cosinus et en sinus.              --> 
+  <!--                              - Programmes de tests associés à           --> 
+  <!--                                ces sous-programmes.                     --> 
+</head> 
+ <body bgcolor="#fdf5e6">
+  <table width="100%"> 
+   <tbody>
+    <tr> 
+     <td align="left"><img src="../../../images/idris-logo-01.jpg" height="47" width="113" vspace="10"></td> 
+     <td align="right"><img src="../../../images/cnrs-logo-03.gif" height="49" width="103" vspace="10"></td> 
+    </tr> 
+   </tbody>
+  </table> 
+  <table align="CENTER"> 
+   <tbody>
+    <tr>
+     <td><h1>Manual</h1></td>
+    </tr> 
+   </tbody>
+  </table> 
+  <div align="center">
+   <img src="../../../icones/lignebleue2.gif" height="3" width="790">
+  </div> 
+  <h2> Introduction </h2> 
+  <p>JMFFT is a library of Fourier transform subroutines written by <a href="mailto:jean-marie.teuler@lcp.u-psud.fr">Jean-Marie Teuler</a> , emulating most of the Fourier transform subroutines from the Cray library (the SCILIB).</p>
+  <p> JMFFT offers the following advantages: </p>
+  <ul> 
+   <li> JMFFT is very complete: it covers most of the SCILIB CRAY subroutines, including some obsolete versions, </li>
+   <li> JMFFT is very portable. </li>
+   <li>
+ JMFFT is very easy to use because it exactly emulates the call 
+sequences of the SCILIB CRAY: same arguments and same dimensions. </li>
+   <li> Although this was not the major concern during its design, JMFFT performs reasonably well. </li>
+   <li>
+ JMFFT can be optimized quite easily for a given architecture because 
+all the computational time is spent in a small number of loops of around
+ 30 rows. </li>
+  </ul>
+  <p> </p>
+  <h2> Content of JMFFT </h2> The following sub-programs will be found there: 
+  <table border="" align="CENTER"> 
+   <tbody>
+    <tr> 
+     <td> Last name </td>
+     <td> Function </td>
+    </tr>
+    <tr> 
+     <td> <a href="Manuel/ccfft.html">CCFFT</a></td>
+     <td> 1D complex-complex</td>
+    </tr> 
+    <tr> 
+     <td> <a href="Manuel/ccfftm.html">CCFFTM</a></td>
+     <td> 1D multiple complex-complex</td>
+    </tr> 
+    <tr> 
+     <td> <a href="Manuel/ccfft2d.html">CCFFT2D</a></td>
+     <td> 2D complex-complex</td>
+    </tr> 
+    <tr> 
+     <td> <a href="Manuel/ccfft3d.html">CCFFT3D</a></td>
+     <td> 3D complex-complex</td>
+    </tr> 
+    <tr> 
+     <td> <a href="Manuel/scfft.html" target="JMFFT">SCFFT</a></td>
+     <td> 1D real-complex</td>
+    </tr> 
+    <tr> 
+     <td> <a href="Manuel/scfftm.html" target="JMFFT">SCFFTM</a></td>
+     <td> 1D real-complex multiple</td>
+    </tr> 
+    <tr> 
+     <td> <a href="Manuel/scfft2d.html" target="JMFFT">SCFFT2D</a></td>
+     <td> Real-complex 2D</td>
+    </tr> 
+    <tr> 
+     <td> <a href="Manuel/scfft3d.html" target="JMFFT">SCFFT3D</a></td>
+     <td> Real-complex 3d</td>
+    </tr> 
+    <tr> 
+     <td> <a href="Manuel/csfft.html" target="JMFFT">CSFFT</a></td>
+     <td> 1D complex-real</td>
+    </tr> 
+    <tr> 
+     <td> <a href="Manuel/csfftm.html" target="JMFFT">CSFFTM</a></td>
+     <td> 1D multiple complex-real</td>
+    </tr> 
+    <tr> 
+     <td> <a href="Manuel/csfft2d.html" target="JMFFT">CSFFT2D</a></td>
+     <td> 2D complex-real</td>
+    </tr> 
+    <tr> 
+     <td> <a href="Manuel/csfft3d.html" target="JMFFT">CSFFT3D</a></td>
+     <td> Complex-real 3D</td>
+    </tr> 
+    <tr> 
+     <td> <a href="Manuel/cfftmlt.html" target="JMFFT">CFFTMLT</a></td>
+     <td> 1D multiple complex-complex</td>
+    </tr> 
+    <tr> 
+     <td> <a href="Manuel/rfftmlt.html" target="JMFFT">RFFTMLT</a></td>
+     <td> 1D multiple complex-real and real-complex</td>
+    </tr> 
+    <tr> 
+     <td> <a href="Manuel/sinfftmlt.html" target="JMFFT">SINFFTMLT</a></td>
+     <td> 1D multiple in sine</td>
+    </tr> 
+    <tr> 
+     <td> <a href="Manuel/cosfftmlt.html" target="JMFFT">COSFFTMLT</a></td>
+     <td> 1D multiple in cosine</td>
+    </tr> 
+    <tr> 
+     <td> <a href="Manuel/cftfax.html" target="JMFFT">CFTFAX</a></td>
+     <td> Factoring for CFFTMLT</td>
+    </tr> 
+    <tr> 
+     <td> <a href="Manuel/fftfax.html" target="JMFFT">FFTFAX</a></td>
+     <td> Factoring for RFFTMLT</td>
+    </tr> 
+   </tbody>
+  </table> 
+  <p> Besides these first level subroutines, there are also second level subroutines, called by the previous ones.</p>
+  <p>There are also some <em>service routines</em> that may be interesting to call:</p>
+  <p> </p>
+  <table border="" align="CENTER"> 
+   <tbody>
+    <tr> 
+     <td> Last name </td>
+     <td> Function</td>
+    </tr> 
+    <tr> 
+     <td> <a href="Manuel/jmsetnwork.html">JMSETNWORK</a></td>
+     <td> Workspace control</td>
+    </tr> 
+    <tr> 
+     <td> <a href="Manuel/jmseterreur.html">JMSETERROR</a></td>
+     <td> Check behavior in the event of an error</td>
+    </tr> 
+    <tr> 
+     <td> <a href="Manuel/jmgetcode.html">JMGETCODE</a></td>
+     <td> Retrieving the error code</td>
+    </tr> 
+    <tr> 
+     <td> <a href="Manuel/jmgetmessage.html">JMGETMESSAGE</a></td>
+     <td> Retrieving the error message</td>
+    </tr> 
+   </tbody>
+  </table>
+  <p>For a discussion of the value and use of these routines, see <a href="Utilisation.html#Controles">below</a> .</p>
+  <h2> <a name="Restrictions"> Restrictions </a></h2> 
+  <ul> 
+   <li>JMFFT can a <em>priori</em> process arrays sized with any combination of prime numbers. That
+ said, the version provided is limited to the combinations of the 
+following prime numbers: 2, 3 and 5 on the one hand (for which 
+particular subroutines are written for performance reasons) then a list 
+of other prime numbers. This list is made up of the following prime numbers: 7, 11, 13, 17, 19, 23 and 29. It is quite easy to extend this list. You just have to modify the following instructions in the <tt>jmfact</tt> subroutine :<pre>  integer, parameter :: nfirst = 7<font>
+  integer, dimension (0: nfirst-1) :: prime = (/ 7,11,13,17,19,23,29 /)<font>
+</pre> so as to include the prime numbers of its choice, and to recompile this subroutine. <p> </p></li>
+   <li>Another
+ limitation, for which there is unfortunately no solution for the 
+moment, concerns the real-complex and complex-real transforms. These are available, but require at least one of the dimensions to be even: 
+    <ul> 
+     <li> in 1D, the dimension of the TF must be even </li>
+     <li> in 2D, one of the two dimensions must be even </li>
+     <li> in 3D, one of the three dimensions must be even </li>
+     <li> in multiple 1D, the dimension of the TF or the number of TF must be even. </li>
+    </ul> <p> </p></li>
+   <li>Despite
+ the choice of algorithms very oriented towards vectorization, the 
+performances do not yet equal those of the large libraries, in 
+particular the manufacturer libraries. That said, if someone wants to 
+get started, their task will be greatly facilitated by the fact that the
+ computing time is concentrated in a few subroutines: <tt>jmccm1d2</tt> (base 2, unused in principle), <tt>jmccm1d3</tt> (base 3), <tt>jmccm1d4</tt> (base 4), <tt>jmccm1d5</tt> (base 5) and <tt>jmccm1dp</tt> (general prime number).<p> </p></li>
+   <li>Although
+ the Fortran version is written in Fortran 90, JMFFT does not take 
+advantage of the many possibilities of this language, which would 
+nevertheless be very interesting here (dynamic allocation of memory, 
+modules, tables with implicit profile, optional arguments, etc.). The 
+essential reason is the compatibility with the SCILIB CRAY: the user 
+must be able to replace his calls to the SCILIB directly by calls to 
+JMFFT without changing anything else, which excludes any sophisticated 
+use of the Fortran 90 possibilities.<p> </p></li>
+   <li>JMFFT performs a number of checks on the arguments passed to it. It can thus detect errors. The problem is then to inform the user. It
+ is not that simple because the SciLib did not include a return code 
+among the arguments of its subroutines and that JMFFT, for compatibility
+ reasons, could not add one. That said, a solution has been found to circumvent this gap. See <a href="Utilisation.html#Controles">below</a> .</li>
+  </ul> 
+  <h2> <a name="Controles"> Control of JMFFT </a></h2> There are service routines in JMFFT that control its behavior. 
+  <ol> 
+   <li> <tt>JMSETNWORK</tt><br> This subroutine allows you to control more finely the working space available to the 2D and 3D subroutines. In fact, in the SCILIB, the <tt>WORK</tt> table must be sized at <tt>512 * MAX (N1, N2)</tt> in 2D and at <tt>512 * MAX (N1, N2, N3)</tt> in 3D. With such a dimension, the length of the loops in the calculation subroutines is 128, which is indeed optimal on the C90s. On the other hand, such a loop length is far from being optimal on a Fujitsu VPP300 or on a NEC SX-5 for example. <tt>JMSETNWORK</tt> allows to provide more workspace to JMFFT, and thus to obtain better performances. Its use is very simple. For example in the following call: 
+    <center> 
+     <pre>  call jmsetnwork (4096)
+</pre> 
+    </center>4096 workspace items are provided to JMFFT. <br> <b>Notes:</b> 
+    <ul> 
+     <li> <b>Caution:</b> The user must take care of the coherence between the dimension supplied to JMFFT and the dimensioning of the <tt>WORK</tt> table in his calling subroutine. <b>JMFFT does not have any means to know the real dimension of this array</b> (this is also why if the user oversizes it, he must inform JMFFT of it by calling <tt>JMSETNWORK</tt> ). In particular, the actual dimension of the <tt>WORK</tt> array must always be greater than or equal to what JMFFT expects (whether it is the default value or the value passed to it through <tt>JMSETNWORK</tt> ).</li>
+     <li>
+ This mechanism was designed to increase the available workspace, but it
+ can also be used to reduce it (in case of running out of memory 
+resources). </li>
+     <li> This mechanism is only effective on the 2D and 3D subroutines. </li>
+     <li>This workspace will be used in all the 2D and 3D subroutines that follow, and will remain in effect unless we call <tt>JMSETNWORK</tt> again .</li>
+    </ul> <p> </p></li>
+   <li> <tt>JMSETERREUR</tt><br> The <tt>JMFFT</tt> subroutines check the consistency of the arguments transmitted. When they detect an inconsistency, the default behavior is to stop everything by displaying an error message and triggering a <tt>STOP</tt> statement . This behavior is imposed by the compatibility with the SCILIB which has not provided for any <em>return code</em> type argument , like the one found for example in NAG and IMSL. That said, we can modify it slightly. If we make the following call: 
+    <center> 
+     <pre>  call jmseterror (.false.)
+</pre> 
+    </center>in the event of an error, the execution is not interrupted. See below the two subroutines that allow you to check if an error has occurred and if so which one.<p> </p></li>
+   <li> <tt>JMGETCODE</tt><br> If the previous call has been made, in the event of an error the execution continues. It is therefore up to the user to check, after each call to JMFFT, whether an error has occurred. This can be done in the following way: 
+    <center> 
+     <pre>  call jmgetcode (irc)
+</pre> 
+    </center>where <tt>irc</tt> is an integer variable that contains the return code from the last call to JMFFT. If this code is null, then everything went well. Otherwise, an error has been detected. To find out which one, see below.<p> </p></li>
+   <li> <tt>JMGETMESSAGE</tt><br> If an error occurred and that one obtained the error code <tt>irc</tt> by call of <tt>JMGETCODE</tt> , one can recover the corresponding error message by the following call: 
+    <center> 
+     <pre>  call jmgetmessage (irc, message)
+</pre> 
+    </center>where <tt>message</tt> is a character string variable which will contain the clear text of the error message on return.<p> </p></li>
+  </ol> 
+  <br> 
+  <hr style="height:1px;" /> 
+  <h6><b>© CNRS - IDRIS, 20/11/2006 </b></h6>   
+</body></html>

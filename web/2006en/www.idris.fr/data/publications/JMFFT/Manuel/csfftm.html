@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>CSFFTM</title> 
+</head> 
+ <body bgcolor="#fdf5e6">
+  <pre><b>*** JMFFT 8.1 - emulation of CRAY SciLib FFTs - (c) CNRS / IDRIS ***</b>
+
+<b>LAST NAME</b>
+
+     SCFFTM, CSFFTM - Apply Fast Fourier Transform (FFT)
+                      real-complex or complex-real multiple.
+
+<b>SYNTAX</b>
+
+     CALL SCFFTM (isign, n, m, scale, x, ldx, y, ldy, table, work, isys)
+
+     CALL CSFFTM (isign, n, m, scale, x, ldx, y, ldy, table, work, isys)
+
+<b>IMPLEMENTATION</b>
+
+     These sub-programs emulate the sub-programs of the same name of the SCILIB of
+     CRAY. </font>All real or complex arguments must be declared
+     in double precision.
+
+<b>DESCRIPTION</b>
+
+     SCFFTM calculates the FFT of each column of the real table x and returns the
+     result in a column of the complex array y.
+     CSFFTM calculates the corresponding complex-real inverse FFT.
+
+     Consider two arrays X and Y dimensioned as follows:
+
+	  REAL (KIND = 8), DIMENSION (0: ldx-1, 0: m-1) :: X
+	  COMPLEX (KIND = 8), DIMENSION (0: ldy-1, 0: m-1) :: Y
+
+     where, ldx&gt; = n and ldy&gt; = n / 2 + 1.
+
+      According to the following formula, column L of table Y is the FFT
+     of column L of table X:
+
+			       n-1
+            Y (k, L) = scale * Sum [X (j, L) * w ** (isign * j * k)]
+			       j = 0
+
+     for k = 0, ..., n / 2
+	  L = 0, ..., m-1
+     or,
+	 w = exp (2 * pi * i / n),
+	 i = + sqrt (-1)
+	 pi = 3.14159 ...,
+	 isign = +1 or -1,
+	 m = number of columns to transform
+
+     In general, if one calculates an FFT using SCFFTM with values
+     particular of isign and scale, then its inverse is calculated by
+     calling CSFFTM with the values ​​-isign and 1 / (n * scale).
+
+     In particular, with the values ​​isign = +1 and scale = 1.0 provided to
+     SCFTTM, the inverse FFT is calculated with CSFTTM by taking isign = -1 and
+     scale = 1.0 / n
+
+<b>ARGUMENTS</b>
+
+     isign Scalar of type INTEGER. </font>(Entrance)
+
+	     Indicates whether the table of coefficients must be initialized or whether
+	     apply an FFT or its inverse.
+
+	     If isign = 0, the subroutine initializes the array table and
+	     returns its value. </font>In this case, only the arguments isign, n and
+	     table are checked and used.
+
+             If isign = +1 or -1 the FFT or its inverse is applied.
+
+     n INTEGER type scalar. </font>(Entrance).
+
+	     Length of the FFT (Number of elements of the array x). </font>n&gt; 0.
+
+             A restriction of JMFFT causes n or m to be a
+             even number.
+
+     m INTEGER type scalar. </font>(Entrance).
+
+	     Number of transmormed to calculate.
+	     It is also the second dimension of the x and y matrices. </font>m&gt; 0.
+
+             A restriction of JMFFT causes n or m to be a
+             even number.
+
+     scale Scalar of type REAL (KIND = 8). </font>(Entrance)
+
+	     Scale factor. </font>Each element of the vector y is multiplied by
+	     scale once the FFT has been performed as specified in the
+	     formula above.
+
+     x SCFFTM: REAL type array (KIND = 8) of dimension (0: ldx-1, 0: m-1).
+             (Entrance)
+	     CSFFTM: COMPLEX type array (KIND = 8) of dimension (0: ldx-1, 0: m-1).
+             (Entrance)
+	     Array containing the values ​​of the elements to transform.
+             See the <a href="Manuel/csfftm.html#NOTES">note</a> below.
+
+     ldx Scalar of type INTEGER. </font>(Entrance).
+
+	     Number of rows declared in table x.
+	     SCFFTM: ldx&gt; = max (n, 1).
+	     CSFFTM: ldx&gt; = max (n / 2 + 1, 1).
+
+     y SCFFTM: COMPLEX type array (KIND = 8) of dimension (0: ldy-1, 0: m-1). </font>(exit)
+	     CSFFTM: REAL type array (KIND = 8) of dimension (0: ldy-1, 0: m-1). </font>(exit)
+	     Array containing the transformed values ​​as output. </font>We can
+             equivocate the input array x with the output array
+             y, however, observing the following rule: 
+
+	     SCFFTM: ldx = 2 * ldy.
+	     CSFFTM: ldy = 2 * ldx.
+
+     ldy Scalar of the INTEGER type. </font>(Entrance).
+
+	     Number of rows declared in array y.
+	     SCFFTM: ldy&gt; = max (n / 2 + 1, 1).
+	     CSFFTM: ldy&gt; = max (n, 1).
+
+     table Table of type REAL (KIND = 8) of dimension 100 + 2 * n. </font>(entry or exit)
+
+	     Table containing the table of coefficients and functions
+	     trigonometric.
+
+	     If isign = 0, the subroutine initializes table (table is in
+	     output only).
+
+	     If isign = +1 or -1, table is supposed to be already initialized
+	     (table is input only).
+
+     work Array of type REAL (KIND = 8) of dimension (2 * n + 4) * m.
+
+	     Work table.
+
+     isys Scalar of type INTEGER. </font>(Entrance)
+
+             This argument is not used. </font>It is kept for reasons
+	     compatibility with CRAY's SCILIB.  
+
+<b><a name="NOTES">NOTES</a></b>
+
+     In the case of CSFFTM, table X is a complex table which
+     must also be Hermitian.
+
+     Since only half of the array is stored
+     (the first dimension goes from 0 to n / 2 inclusive), this condition
+     simply translates to the fact that x (0, j) must be real for
+     all j, 0 &lt;= j &lt;= m-1, and that, if n is even, x (n / 2, j) must be
+     also real for all j, 0 &lt;= j &lt;= m-1.
+
+     In fact, CSFFTM automatically forces these conditions, by setting
+     to 0 the imaginary part of the terms concerned. </font>So there is
+     not to worry about it.
+
+<b>EXAMPLES</b>
+
+     <b>Example 1</b> : initialize the TABLE array in order to apply
+     subsequently an FFT of dimension N = 128. </font>In this case, only the
+     ISIGN, N and TABLE arguments are used.
+
+	   REAL (KIND = 8), DIMENSION (100 + 2 * 128) :: TABLE
+	   CALL SCFFTM (0, 128, 1, 0.d0, DUMMY, 1, DUMMY, 1, TABLE, DUMMY, 0)
+
+     <b>Example 2</b> : X is a real array of dimension (0: 128,0: 55) and Y is
+     a complex array of dimension (0: 64,0: 55). </font>We apply an FFT on
+     the first 128 elements of each column. </font>We carry out an FFT on
+     the first 51 columns of X. The result will be recorded within 51
+     first columns of Y. Before applying the FFT, we initialize the
+     TABLE array as in Example 1.
+
+	   REAL (KIND = 8), DIMENSION (0: 128, 0:55) :: X
+	   COMPLEX (KIND = 8), DIMENSION (0:64, 0:55) :: Y
+	   REAL (KIND = 8), DIMENSION (100 + 2 * 128) :: TABLE
+	   REAL (KIND = 8), DIMENSION ((2 * 128 + 4) * 51) :: WORK
+	   ...
+	   CALL SCFFTM (0, 128, 51, 1.d0, X, 129, Y, 65, TABLE, WORK, 0)
+	   CALL SCFFTM (1, 128, 51, 1.d0, X, 129, Y, 65, TABLE, WORK, 0)
+
+     <b>Example 3</b> : here we continue example 2 by assigning the inverse FFT
+     of Y and saving the result in X. The scale factor is
+     here equal to 1/128. </font>We assume that the TABLE array has been initialized
+     before.
+
+	   CALL CSFFTM (-1, 128, 51, 1.d0 / 128.d0, Y, 65, X, 129, TABLE, WORK, 0)
+
+     <b>Example 4</b> : here we perform a calculation similar to that of example 2
+     assuming however that the indices of arrays X and Y start at 1
+     and no longer at 0.
+
+	   REAL (KIND = 8), DIMENSION (129, 56) :: X
+	   COMPLEX (KIND = 8), DIMENSION (65, 56) :: Y
+	   ...
+	   CALL SCFFTM (0, 128, 51, 1.d0, X, 129, Y, 65, TABLE, WORK, 0)
+	   CALL SCFFTM (1, 128, 51, 1.d0, X, 129, Y, 65, TABLE, WORK, 0)
+
+     <b>Example 5</b> : calculation similar to example 4 except that here we put in
+     X and Y equivalence to save memory space. </font>We suppose that
+     the TABLE array has been initialized previously.
+
+	   REAL X (130, 56)
+	   ...
+	   CALL SCFFTM (1, 128, 51, 1.d0, X, 130, X, 65, TABLE, WORK, 0)
+
+<b>SEE AS ​​WELL</b>
+
+     CCFFT, CCFFTM, SCFFT
+</pre> 
+  <p> </p>
+  <hr size="1"> 
+  <div align="center"> 
+   <h6><b>© CNRS - IDRIS</b></h6> 
+  </div>   
+</body></html>

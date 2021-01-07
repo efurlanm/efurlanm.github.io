@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML//EN">
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Installing the JMFFT library</title>
+</head>
+  <body bgcolor="#fdf5e6">
+  <table width="100%"> 
+   <tbody>
+    <tr> 
+     <td align="left"><img src="../../../images/idris-logo-01.jpg" height="47" width="113" vspace="10"></td> 
+     <td align="right"><img src="../../../images/cnrs-logo-03.gif" height="49" width="103" vspace="10"></td> 
+    </tr> 
+   </tbody>
+  </table> 
+  <table align="CENTER"> 
+   <tbody>
+    <tr>
+     <td><h1>Installation</h1></td>
+    </tr> 
+   </tbody>
+  </table> 
+  <div align="center">
+   <img src="../../../icones/lignebleue2.gif" height="3" width="790">
+  </div> 
+  <ul> 
+   <li> <a href="Version.html">Load sources from JMFFT</a> .<br> <br> </li>
+   <li> Unzip and deploy the jmfft-8.1.tar.gz file: <br> <pre>zcat jmfft-8.1.tar.gz | tar -xvf -</pre> </li>
+   <li>Install the libjmfft.a library. To
+ do so, execute the following commands in order, taking care to replace 
+the ARCH chain with the one corresponding to the architecture of the 
+target machine:<br> <br> 
+    <ol> 
+     <li> cd JMFFT-8.1 / arch </li>
+     <li> ln -s Make.inc.ARCH Make.inc </li>
+     <li> edit and configure the Make.inc file </li>
+     <li> cd .. </li>
+     <li> make </li>
+     <li>test all FFTs: cd test; ./test.sh</li>
+    </ol> </li>
+  </ul> 
+  <hr style="height:1px;" /> 
+  <h6><b>© CNRS - IDRIS, 20/11/2006 </b></h6>   
+</body></html>

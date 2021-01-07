@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>CSFFT2D</title> 
+</head> 
+ <body bgcolor="#fdf5e6">
+  <pre><b>*** JMFFT 8.1 - emulation of CRAY SciLib FFTs - (c) CNRS / IDRIS ***</b>
+
+<b>LAST NAME</b>
+
+     SCFFT2D, CSFFT2D - Apply a Fast Fourier Transform (FFT) to two
+                        real-complex or complex-real (2D) dimensions.
+
+<b>SYNTAX</b>
+
+     CALL SCFFT2D (isign, n1, n2, scale, x, ldx, y, ldy, table, work, isys)
+
+     CALL CSFFT2D (isign, n1, n2, scale, x, ldx, y, ldy, table, work, isys)
+
+<b>IMPLEMENTATION</b>
+
+     These sub-programs emulate the sub-programs of the same name of the SCILIB of
+     CRAY. </font>All real or complex arguments must be declared
+     in double precision.
+
+<b>DESCRIPTION</b>
+
+     SCFFT2D calculates the 2D FFT of a real matrix X and stores the
+     result in the complex matrix Y.
+     CSFFT2D calculates the corresponding inverse 2D FFT.
+
+     Consider two arrays X and Y dimensioned as follows:
+
+	  REAL (KIND = 8), DIMENSION (0: ldx-1, 0: n2-1) :: X
+	  COMPLEX (KIND = 8), DIMENSION (0: ldy-1, 0: n2-1) :: Y
+
+     where, ldx&gt; = n1 and ldy&gt; = n1 / 2 + 1.
+
+     SCFFT2D applies the following formula:
+
+			     n2-1 n1-1
+	 Y (k1, k2) = scale * Sum Sum [X (j1, j2) * w1 ** (j1 * k1) * w2 ** (j2 * k2)]
+			     j2 = 0 j1 = 0
+
+	 for k1 = 0, ..., n1 / 2 + 1
+	      k2 = 0, ..., n2-1
+
+	 or,
+	     w1 = exp (isign * 2 * pi * i / n1)
+	     w2 = exp (isign * 2 * pi * i / n2)
+	     i = + sqrt (-1)
+	     pi = 3.14159 ...,
+	     isign = +1 or -1
+
+
+     In general, if an FFT is applied with particular values ​​of
+     isign and scale, then its inverse is calculated with the values ​​-isign
+     and 1 / (n1 * n2 * scale).
+
+     In particular, with the values ​​isign = +1 and scale = 1.0, the FFT
+     inverse is calculated by taking isign = -1 and scale = 1.0 / (n1 * n2).
+
+     SCFFT2D calculates the real-complex transform in the first dimension
+     followed by the complex-complex one in the second dimension.
+
+     CSFFT2D performs the inverse FFT corresponding to that obtained with
+     SCFFT2D. </font>To do this, it calculates the complex-complex transform in
+     the second dimension followed by the complex-real one in the first
+     dimension.
+
+<b>ARGUMENTS</b>
+
+     isign Scalar of type INTEGER. </font>(Entrance)
+
+	       Indicates whether the table of coefficients must be initialized or whether
+	       apply an FFT or its inverse.
+
+	       If isign = 0, the subroutine initializes the array table and
+	       returns its value. </font>In this case, only the arguments isign, n1, n2
+	       and table are checked and used.
+
+               If isign = +1 or -1, the FFT or its inverse is applied.
+
+     n1 INTEGER type scalar. </font>(Entrance).
+
+	       Number of transforms in the first dimension.
+
+               A restriction of JMFFT causes n1 or n2 to be an even number.
+
+     n2 INTEGER type scalar. </font>(Entrance).
+
+	       Number of transforms in the second dimension.
+
+               A restriction of JMFFT causes n1 or n2 to be an even number.
+
+     scale Scalar of type REAL (KIND = 8). </font>(Entrance)
+
+	       Scale factor. </font>Each element of the vector y is multiplied by
+	       scale once the FFT has been performed as specified in the
+	       formula above.
+
+     x SCFFT2D: array of type REAL (KIND = 8) of dimension (0: ldx-1, 0: n2-1).
+	       (Entrance)
+	       CSFFT2D: array of COMPLEX type (KIND = 8) of dimension (0: ldx-1, 0: n2-1).
+	       (Entrance)
+
+	       Array containing the values ​​to transform.
+               See the <a href="Manuel/csfft2d.html#NOTES">note</a> below.
+
+     ldx Scalar of type INTEGER. </font>(Entrance).
+
+	       Number of rows in table x as declared in the
+	       calling program.
+	       SCFFT2D: ldx&gt; = max (n1, 1).
+	       CSFFT2D: ldx&gt; = max (n1 / 2 + 1, 1).
+
+     y SCFFT2D: array of the COMPLEX type (KIND = 8) of dimension 
+               (0: ldy-1.0: n2-1). </font>(exit)
+               CSFFT2D: array of type REAL (KIND = 8) of dimension (0: ldy-1, 0: n2-1).
+               (exit)
+
+	       Array containing the transformed values ​​as output.
+
+               We can re-use the input array x. </font>In that case,
+	       SCFFT2D: ldx = 2 * ldy.
+	       CSFFT2D: ldy = 2 * ldx.
+
+     ldy Scalar of the INTEGER type. </font>(Entrance).
+
+	       Number of rows in table y as declared in
+	       the calling program.
+
+	       SCFFT2D: ldy&gt; = max (n1 / 2 + 1, 1).
+	       CSFFT2D: ldy&gt; = max (n1 + 2, 1).
+
+	       During the complex-real transform, two elements
+	       additional are needed in the first dimension
+	       (this is why, ldy&gt; = n1 + 2 rather than ldy&gt; = n1). </font>These
+	       elements are used to store certain values ​​during a phase
+	       intermediate calculation. </font>On output, these elements have values
+	       any.
+
+     table Array of type REAL (KIND = 8) of dimension 100 + 2 * (n1 + n2).
+               (entry or exit)
+
+	       Table containing the table of coefficients and functions
+	       trigonometric.
+
+	       If isign = 0, the subroutine initializes table (table is in
+	       output only).
+
+	       If isign = +1 or -1, table is supposed to be already initialized
+	       (table is input only).
+
+     work Array of type REAL (KIND = 8) of dimension 512 * max (n1, n2).
+	       Work table.
+
+               Note: This dimension can be increased or decreased, to
+               condition to inform JMFFT of it by calling the subroutine
+               JMSETNWORK.
+
+     isys Scalar of type INTEGER. </font>(Entrance)
+             
+	       This argument is not used. </font>It is kept for reasons
+	       compatibility with CRAY's SCILIB.
+
+<b><a name="NOTES">NOTES</a></b>
+
+     In the case of CSFFT2D, array X is a complex array which
+     must also be Hermitian.
+
+     Since only half of the array is stored
+     (the first dimension goes from 0 to n1 / 2 inclusive), this condition is
+     translates to the fact that the one-dimensional subarray x (0, :),
+     as well as the sub-array x (n1 / 2, :) if n1 is even, must
+     to be Hermitians.
+
+     More precisely
+     - x (0,0) must be real,
+     - if n2 is even x (0, n2 / 2) also,
+     - if n1 is even x (n1 / 2,0) must be real,
+     - if n1 and n2 are even x (n1 / 2, n2 / 2) also,
+     - x (0, n2-j) must be the conjugate of x (0, j)
+        (with n2 / 2 + 1 &lt;= j &lt;= m-1)
+     - if n1 is even, x (n1 / 2, n2-j) must be the conjugate of x (n1 / 2, j)
+        (with n2 / 2 + 1 &lt;= j &lt;= m-1)
+
+     In fact, CSFFT2D automatically forces the conditions of
+     real terms, by setting to 0 the imaginary part of the terms
+     concerned. </font>So there is no need to worry about it.
+
+     On the other hand, CSFFT2D cannot force the conjugation conditions
+     because if for example the array x is such that x (0, n2-j) is not the
+     conjugate of x (0, j), CSFFT2D cannot choose between these two terms:
+     should we force x (0, n2-j) = conjg (x (0, j)) or
+     x (0, j) = conjg (x (0, n2-j))?
+     So it's up to the user to make sure their input table checks
+     well these conjugation conditions.
+
+<b>EXAMPLES</b>
+
+     <b>Example 1</b>   initializes the TABLE array in order to apply
+     subsequently an FFT of dimensions (128,256). </font>In this case, only the
+     ISIGN, N1, N2 and TABLE arguments are used.
+
+           INTEGER, PARAMETER :: N1 = 128, N2 = 256
+	   REAL (KIND = 8), DIMENSION (100 + 2 * (N1 + N2)) :: TABLE
+	   CALL SCFFT2D (0, N1, N2, 0.d0, DUMMY, 1, DUMMY, 1, TABLE, DUMMY, 0)
+
+     <b>Example 2</b> : X is a real matrix whose dimensions are
+     (0: 128, 0: 255), and Y is a complex matrix of dimensions (0:64, 0: 255).
+     We apply an FFT on the first 128 elements of each column.
+     The TABLE array is assumed to be initialized.
+
+	   REAL (KIND = 8), DIMENSION (0: 128, 0: 255) :: X
+	   COMPLEX (KIND = 8), DIMENSION (0:64, 0: 255) :: Y
+	   REAL (KIND = 8), DIMENSION (100 + 2 * (128 + 256)) :: TABLE
+	   REAL (KIND = 8), DIMENSION (512 * 256) :: WORK
+	   ...
+	   CALL SCFFT2D (0, 128, 256, 1.d0, X, 129, Y, 65, TABLE, WORK, 0)
+	   CALL SCFFT2D (1, 128, 256, 1.d0, X, 129, Y, 65, TABLE, WORK, 0)
+
+     <b>Example 3</b> : same as example 2, this time calculating the inverse FFT
+     of Y and saving the result in X. The scale factor scale
+     is 1 / (128 * 255). </font>We assume that the TABLE array has been initialized
+     before.
+
+	   CALL CSFFT2D (-1, 128, 256, 1.d0 / (128.d0 * 256.d0), Y, 65, &amp;
+	                X, 129, TABLE, WORK, 0)
+
+     <b>Example 4</b>   here we perform a calculation similar to that of example 2
+     assuming however that the indices of arrays X and Y start at 1
+     and no longer at 0.
+
+	   REAL (KIND = 8), DIMENSION (129, 256) :: X
+	   COMPLEX (KIND = 8), DIMENSION (65, 256) :: Y
+	   ...
+	   CALL SCFFT2D (0, 128, 256, 1.d0, X, 129, Y, 65, TABLE, WORK, 0)
+	   CALL SCFFT2D (1, 128, 256, 1.d0, X, 129, Y, 65, TABLE, WORK, 0)
+
+     <b>Example 5</b> : calculation similar to example 4 except that here, for a saving
+     of memory space, we equate X and Y. </font>We suppose that
+     the TABLE array has been initialized previously.
+
+	   REAL (KIND = 8), DIMENSION (130, 256) :: X
+	   ...
+	   CALL SCFFT2D (1, 128, 256, 1.d0, X, 130, Y, 65, TABLE, WORK, 0)
+
+<b>SEE AS ​​WELL</b>
+
+     CCFFT, CCFFT2D, CCFFT3D, CCFFTM, SCFFT, SCFFT3D, SCFFTM, JMSETNWORK
+</pre> 
+  <p> </p>
+  <hr size="1"> 
+  <div align="center"> 
+   <h6><b>© CNRS - IDRIS</b></h6> 
+  </div>   
+</body></html>
