@@ -1,0 +1,46 @@
+site_name: Eduardo Furlan
+site_author: Eduardo Furlan
+copyright: CC BY 4.0 License
+docs_dir: docs-src
+site_dir: docs
+site_url: ""
+use_directory_urls: false
+theme:
+    name: material
+    font: false
+    palette:
+# https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/    
+        primary: blue grey
+        accent: blue grey
+    features:
+        - header.autohide
+extra_javascript:
+    - javascripts/katex/katex.min.js
+    - javascripts/katex/contrib/auto-render.min.js
+    - javascripts/katex.js
+    - javascripts/mermaid/mermaid.min.js
+extra_css:
+    - javascripts/katex/katex.min.css
+    - css/extra.css
+plugins:
+    - offline
+markdown_extensions:
+    - pymdownx.superfences:
+        custom_fences:
+            - name: mermaid
+              class: mermaid
+              format: !!python/name:pymdownx.superfences.fence_code_format
+    - def_list
+    - md_in_html
+    - tables
+exclude_docs: |
+    .ipynb_checkpoints
+    .git
+nav:
+    - About me: index.md
+    - My research: research.md
+    - My MSc work: msc.md
+    - Teaching: teaching.md
+    - Repositories: repositories.md
+    - Links: links.md
+    - Zotero: zotero.md
