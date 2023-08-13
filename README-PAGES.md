@@ -1,0 +1,1 @@
+This repo contains the source code for my personal website [efurlanm.github.io](efurlanm.github.io), and also contains sources coming from several other projects. It uses the resources of GitHub Pages (pages.github.com), which is a static website hosting service, to host directly from this repo.
