@@ -40,7 +40,9 @@ nav:
     - About me: index.md
     - My research: research.md
     - My MSc work: msc.md
-    - Teaching: teaching.md
-    - Repositories: repositories.md
     - Links: links.md
+    - Repositories: repositories.md
+    - Teaching: teaching.md
     - Zotero: zotero.md
+    - sdm: sdm
+    - comp: comp
