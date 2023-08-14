@@ -24,6 +24,7 @@ extra_css:
     - css/extra.css
 plugins:
     - offline
+    - search
 markdown_extensions:
     - pymdownx.superfences:
         custom_fences:
@@ -41,8 +42,7 @@ nav:
     - My research: research.md
     - My MSc work: msc.md
     - Links: links.md
-    - Repositories: repositories.md
-    - Teaching: teaching.md
+    - Repositories: repo.md
+    - Teaching: teach.md
     - Zotero: zotero.md
-    - sdm: sdm
-    - comp: comp
+    

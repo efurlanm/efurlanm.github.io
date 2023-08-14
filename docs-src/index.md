@@ -61,7 +61,7 @@ Miranda, E. F., & Stephany, S. (2021b). Comparison of High-performance Computing
 
 <span style="hyphens: auto; text-align: justify;">
 
-I teach undergraduate classes in [engineering and computing courses](teaching.md), where I try to conduct classes in order to bring reflections on the practical experience of the profession, working on the relationship between the professional and academic performance of the student, stimulating critical thinking based on specialized literature, and encouraging the production of knowledge.
+I teach undergraduate classes in [engineering and computing courses](teach.md), where I try to conduct classes in order to bring reflections on the practical experience of the profession, working on the relationship between the professional and academic performance of the student, stimulating critical thinking based on specialized literature, and encouraging the production of knowledge.
 
 </span>
 
