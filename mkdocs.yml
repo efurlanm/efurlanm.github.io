@@ -1,6 +1,8 @@
 site_name: Eduardo Furlan
 site_author: Eduardo Furlan
 copyright: CC BY 4.0 License
+repo_name: efurlanm/
+repo_url: http://github.com/efurlanm/
 docs_dir: docs-src
 site_dir: docs
 # site_url: ""
