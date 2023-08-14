@@ -5,11 +5,11 @@ repo_name: efurlanm/
 repo_url: http://github.com/efurlanm/
 docs_dir: docs-src
 site_dir: docs
-# site_url: ""
+site_url: ""
 use_directory_urls: false
 theme:
     name: material
-    #font: false
+    font: false
     palette:
 # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/    
         primary: blue grey
@@ -24,9 +24,9 @@ extra_javascript:
 extra_css:
     - javascripts/katex/katex.min.css
     - css/extra.css
-#plugins:
-    #- offline
-    #- search
+plugins:
+    - offline
+    - search
 markdown_extensions:
     - pymdownx.superfences:
         custom_fences:
