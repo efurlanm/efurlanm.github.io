@@ -4,7 +4,7 @@
 
 * Digital Systems and Microprocessors
 * Compilers
-* Programming Language
+* Programming Languages
 
 ## Past courses
 
@@ -26,10 +26,8 @@
 * Fundamentals of Parallel and Distributed Programming
 * Computer Architecture and Organization
 * Digital Systems
-* Compilers
 * Formal Languages, Automata and Computability
 * Special Topics in Computer Science
-* Programming Languages
 * Programming Techniques
 
 I keep a repository containing my personal notes related to the courses: <https://github.com/efurlanm/teaching> (in Portuguese).
