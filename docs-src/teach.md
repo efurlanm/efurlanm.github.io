@@ -4,6 +4,7 @@
 
 * Digital Systems and Microprocessors
 * Compilers
+* Programming Language
 
 ## Past courses
 
@@ -36,6 +37,4 @@ Computing
 * Programming Languages
 * Programming Techniques
 
-
-
-Additional information and materials from units and classes can be found in the repo <https://github.com/efurlanm/teaching> (in Portuguese).
+I keep a repository containing my personal notes related to the courses: <https://github.com/efurlanm/teaching> (in Portuguese).
