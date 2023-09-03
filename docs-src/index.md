@@ -64,7 +64,7 @@ I teach undergraduate classes in [engineering and computing courses](teach.md), 
 
 <span style="hyphens: auto; text-align: justify;">
 
-I have 15+ years of experience in the sectors of packaging, machinery and equipment, automotive, and engineering projects. I worked in the fields: manufacturing engineering and final assembly in the automotive industry, project management for the manufacture of industrial machinery and equipment, industrial engineering and projects in the packaging industry, and in the execution of building inspections.
+I have 15+ years of experience in the packaging, machinery, equipment, automotive, and engineering design industries. I worked in the areas of production engineering and final assembly in the automotive industry, project management for the manufacture of industrial machinery and equipment, and industrial engineering and projects in the packaging industry.
 
 </span>
 
