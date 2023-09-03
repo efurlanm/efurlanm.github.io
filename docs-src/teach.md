@@ -8,8 +8,6 @@
 
 ## Past courses
 
-Engineering
-
 * Machine Design
 * Creativity and Innovation
 * Electrotechnical
@@ -23,9 +21,6 @@ Engineering
 * Reverse Logistic
 * Protection of the Electric Power System
 * Electrical Power Systems
-
-Computing
-
 * Object Oriented Languages
 * Object Oriented Programming
 * Fundamentals of Parallel and Distributed Programming
