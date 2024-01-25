@@ -5,6 +5,7 @@
 }
 
 
+
 /* ### TABLE ### */
 
 .md-typeset table:not([class]) {
@@ -23,6 +24,7 @@
 .md-typeset table:not([class]) th {
     background-color: #f8f8f8;
 }
+
 
 
 /* ### JUPYTER ### */

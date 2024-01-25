@@ -16,19 +16,15 @@ theme:
         accent: blue grey
     features:
         - header.autohide
-        - navigation.indexes
 plugins:
     - blog:
         post_readtime: false
-    - offline
+    - tags:
+        tags_file: blog/tags.md
     - search
-    - mkdocs-jupyter
 markdown_extensions:
-    - pymdownx.superfences:
-        custom_fences:
-            - name: mermaid
-              class: mermaid
-              format: !!python/name:pymdownx.superfences.fence_code_format
+    - pymdownx.arithmatex:
+        generic: true
     - def_list
     - md_in_html
     - tables
