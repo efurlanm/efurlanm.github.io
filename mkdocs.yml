@@ -16,6 +16,7 @@ theme:
         accent: blue grey
     features:
         - header.autohide
+        #- navigation.sections
 plugins:
     - blog:
         post_readtime: false

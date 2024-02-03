@@ -10,7 +10,7 @@ tags:
 
 # MicroCloud
 
-[MicroCloud](https://canonical.com/microcloud) is an interesting project that, through virtualization, quickly generates a cluster of computing nodes that require few resources, allowing you to use common hardware available at home to simulate a cluster, such as Raspberry Pi and Laptops. Lightweight virtualization allows several computers to be emulated by one host computer.
+[MicroCloud](https://canonical.com/microcloud) is an interesting project that, through lightweight virtualization and few host computers, allows you to quickly generate a cluster of several computing nodes, requiring few resources and allowing you to use common available hardware at home, such as Raspberry Pi and laptops.
 
 Its sufficiently small to function on a developer laptop. It can be utilized for safely experimenting with new technologies, simulating or testing complicated infrastructure processes, simulating how your workloads would operate in production, and creating lightweight, restricted disposable testing environments.
 
