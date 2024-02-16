@@ -2,12 +2,14 @@
 
 ## Current courses
 
-* Digital Systems and Microprocessors
-* Compilers
-* Programming Languages
+* Algorithms and Structured Programming
+* Advanced Algorithms and Data Structures
 
 ## Past courses
 
+* Digital Systems and Microprocessors
+* Compilers
+* Programming Languages
 * Machine Design
 * Creativity and Innovation
 * Electrotechnical
