@@ -1,6 +1,6 @@
-# Teaching duties
+# Teaching
 
-## Current courses
+## Current duties
 
 * Algorithms and Structured Programming
 * Advanced Algorithms and Data Structures

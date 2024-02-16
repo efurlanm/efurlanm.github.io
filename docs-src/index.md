@@ -1,7 +1,9 @@
 # About me
 
 <span style="float:right;margin-left:2em;">
+
 ![](img/avatar-256x192.jpg)
+
 </span>
 
 <span style="hyphens: auto; text-align: justify;">

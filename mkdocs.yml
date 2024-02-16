@@ -16,7 +16,7 @@ theme:
         accent: blue grey
     features:
         - header.autohide
-        #- navigation.sections
+#        - navigation.sections
 plugins:
     - blog:
         post_readtime: false
@@ -33,20 +33,10 @@ extra_javascript:
     - javascripts/katex/katex.min.js
     - javascripts/katex/contrib/auto-render.min.js
     - javascripts/katex.js
-    - javascripts/mermaid/mermaid.min.js
+#    - javascripts/mermaid/mermaid.min.js
 extra_css:
     - javascripts/katex/katex.min.css
     - css/extra.css
 exclude_docs: |
     .ipynb_checkpoints
     .git
-# Se usar nav fica tudo manual incluindo menus/indices do blog
-#nav:
-    #- About me: index.md
-    #- My research: research.md
-    #- My MSc work: msc.md
-    #- Links: links.md
-    #- Repositories: repo.md
-    #- Teaching: teach.md
-    #- Zotero: zotero.md
-    #- Blog: blog/index.md
