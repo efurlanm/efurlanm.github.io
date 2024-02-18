@@ -16,12 +16,12 @@ theme:
         accent: blue grey
     features:
         - header.autohide
-#        - navigation.sections
 plugins:
     - blog:
         post_readtime: false
-    - tags:
-        tags_file: blog/tags.md
+#    - tags:
+#        tags_file: blog/tags.md
+    - offline
     - search
 markdown_extensions:
     - pymdownx.arithmatex:
@@ -33,7 +33,6 @@ extra_javascript:
     - javascripts/katex/katex.min.js
     - javascripts/katex/contrib/auto-render.min.js
     - javascripts/katex.js
-#    - javascripts/mermaid/mermaid.min.js
 extra_css:
     - javascripts/katex/katex.min.css
     - css/extra.css

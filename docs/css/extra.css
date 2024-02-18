@@ -1,15 +1,21 @@
 /* ### CODE ### */
 
-.md-typeset code {
-    font-size: 13.4px;
+.md-typeset code:not([class]) {
+    font-size: .875em;
 }
 
+
+/* ### FIGCAPTION ### */
+
+.md-typeset figcaption:not([class]) {
+    font-size: .875em;
+}
 
 
 /* ### TABLE ### */
 
 .md-typeset table:not([class]) {
-    font-size: 16px;
+    font-size: .875em;
     line-height: 1;
     border: none;
     border-collapse: collapse;
@@ -26,14 +32,13 @@
 }
 
 
-
 /* ### JUPYTER ### */
 
 .jupyter-wrapper .jp-RenderedText {
-    --jp-code-font-size: 13px;
+    --jp-code-font-size: .875em;
 }
 
-.md-typeset h1 {
+.md-typeset h1:not([class]) {
     margin-top: calc(var(--jp-content-heading-margin-top));
     margin-bottom: calc(var(--jp-content-heading-margin-bottom));
 }
