@@ -1,3 +1,11 @@
+/* ### PARAGRAPH ### */
+
+.md-typeset p:not([class]) {
+    hyphens: auto;
+    text-align: justify;
+}
+
+
 /* ### CODE ### */
 
 .md-typeset code:not([class]) {
