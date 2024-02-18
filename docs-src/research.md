@@ -8,7 +8,9 @@ Below are some links of interest and related works, mine and those of other auth
 
 - Data-Driven Parameter Discovery of a One-Dimensional Burgers’ Equation Using a Physics-Informed Neural Network
     - This work evaluates the discovery of parameters of the Burgers’ equation through the use of PINN, for different hyperparameters and dataset sizes, seeking the best adjustment. The relative errors and processing times obtained are presented, running on the LNCC’s Santos Dumont supercomputer.
-    - Code repository: <https://github.com/efurlanm/425/tree/main/project>
+    - Article preprint sources: <https://github.com/efurlanm/425/tree/main/project/preprint/>
+    - Code repository: <https://github.com/efurlanm/425/tree/main/project/>
+    - Online version of the preprint: <https://efurlanm.github.io/425/>
 
 
 ## My repositories
