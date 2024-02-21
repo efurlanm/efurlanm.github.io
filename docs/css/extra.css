@@ -17,6 +17,10 @@
 
 .md-typeset figcaption:not([class]) {
     font-size: .875em;
+    font-style: normal;
+    hyphens: auto;
+    text-align: justify;
+    text-color: dimgray;
 }
 
 
