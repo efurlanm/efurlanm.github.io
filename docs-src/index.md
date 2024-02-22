@@ -28,14 +28,6 @@ My name is Eduardo Furlan and I am a PhD student at the [National Institute for 
 
 The researches use the [Santos Dumont supercomputer at LNCC](https://sdumont.lncc.br/), as part of the project [AMPEMI](https://sdumont.lncc.br/projects_view.php?pg=projects&status=ongoing).
 
-## Publications
-
-Miranda, E. F. (2022). Common MPI-based HPC Approaches in Python Evaluated for Selected Test Cases. Master’s Thesis, National Institute for Space Research (INPE). <http://urlib.net/ibi/QABCDSTQQW/46C4U9H>
-
-Miranda, E. F., & Stephany, S. (2021a). Common HPC Approaches in Python Evaluated for a Scientific Computing Test Case. Revista Cereus, 13(2), 84–98. <https://doi.org/10.18605/2175-7275/cereus.v13n2p84-98>
-
-Miranda, E. F., & Stephany, S. (2021b). Comparison of High-performance Computing Approaches in the Python Environment for a Five-point Stencil Test Problem. XV Brazilian E-Science Workshop, at XLI Congress of the Brazilian Computer Society (CSBC-2021), 33–40. <https://doi.org/10.5753/bresci.2021.15786>
-
 ## Teaching
 
 I teach undergraduate classes in [engineering and computing courses](teaching.md), where I try to conduct classes in order to bring reflections on the practical experience of the profession, working on the relationship between the professional and academic performance of the student, stimulating critical thinking based on specialized literature, and encouraging the production of knowledge.
