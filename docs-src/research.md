@@ -11,8 +11,8 @@ Below are some links of interest, related works, mine and other authors.
 
 Data-Driven Parameter Discovery of a One-Dimensional Burgers’ Equation Using a Physics-Informed Neural Network. This work evaluates the discovery of parameters of the Burgers’ equation through the use of PINN, for different hyperparameters and dataset sizes, seeking the best adjustment. The relative errors and processing times obtained are presented, running on the LNCC’s Santos Dumont supercomputer.
 
-- Preprint LaTex sources: <https://github.com/efurlanm/425/tree/main/project/preprint-latex>
-- Online version of the preprint: <https://efurlanm.github.io/425/>
+- Manuscript LaTeX sources: <https://github.com/efurlanm/425/tree/main/manuscript>
+- Online version of the manuscript: <https://efurlanm.github.io/425/>
 - Code repository: <https://github.com/efurlanm/425/tree/main/project/>
 - DOI: [10.5281/zenodo.10676770](https://zenodo.org/doi/10.5281/zenodo.10676770)
 
@@ -21,8 +21,8 @@ Data-Driven Parameter Discovery of a One-Dimensional Burgers’ Equation Using a
 
 Solution of a One-Dimensional Viscous Burgers' Equation Using a Physics-Informed Neural Network and a Gaussian Quadrature Method. This work compares the solutions of a one-dimensional viscous Burgers’ equation of a test problem using a Physics Informed Neural Network (PINN) and a numerical Gaussian Quadrature Method (GQM) method.
 
-- Preprint LaTex sources: <https://github.com/efurlanm/421/tree/main/project/preprint-latex>
-- Online version of the preprint: <https://efurlanm.github.io/421/>
+- Manuscript LaTeX sources: <https://github.com/efurlanm/421/tree/main/manuscript>
+- Online version of the manuscript: <https://efurlanm.github.io/421/>
 - Code repository: <https://github.com/efurlanm/421/tree/main/project>
 - DOI: [10.5281/zenodo.10676900](https://doi.org/10.5281/zenodo.10676900)
 
