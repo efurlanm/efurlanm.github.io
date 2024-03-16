@@ -1,14 +1,10 @@
 site_name: Eduardo Furlan
 site_author: Eduardo Furlan
 copyright: CC BY 4.0 License
-repo_name: efurlanm/
+repo_name: efurlanm
 repo_url: http://github.com/efurlanm/
 docs_dir: docs-src
 site_dir: docs
-# Add a link tag with the canonical URL to the head section of each HTML page
-#site_url: "" 
-# Additional e.g. "index.html" to the URL
-#use_directory_urls: false
 theme:
     name: material
 # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
@@ -25,6 +21,7 @@ plugins:
         post_readtime: false
 #    - tags:
 #        tags_file: blog/tags.md
+# 2024-03-16 There is a bug where mermaid will always be downloaded and installed, even if it is not used.
 markdown_extensions:
     - pymdownx.arithmatex:
         generic: true
