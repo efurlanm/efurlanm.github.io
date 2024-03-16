@@ -5,11 +5,12 @@ repo_name: efurlanm/
 repo_url: http://github.com/efurlanm/
 docs_dir: docs-src
 site_dir: docs
-site_url: ""
-use_directory_urls: false
+# Add a link tag with the canonical URL to the head section of each HTML page
+#site_url: "" 
+# Additional e.g. "index.html" to the URL
+#use_directory_urls: false
 theme:
     name: material
-    font: false
 # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
     palette:
         primary: blue grey
@@ -17,13 +18,21 @@ theme:
     features:
         - header.autohide
 plugins:
+    - offline
+    - privacy
+    - search
     - blog:
         post_readtime: false
 #    - tags:
 #        tags_file: blog/tags.md
-    - offline
-    - search
 markdown_extensions:
+    - pymdownx.arithmatex:
+        generic: true
+    - pymdownx.superfences:
+        custom_fences:
+            - name: mermaid
+              class: mermaid
+              format: !!python/name:pymdownx.superfences.fence_code_format
     - pymdownx.highlight:
         anchor_linenums: true
         line_spans: __span
@@ -31,15 +40,13 @@ markdown_extensions:
     - pymdownx.inlinehilite
     - pymdownx.snippets
     - pymdownx.superfences
-    - pymdownx.arithmatex:
-        generic: true
     - def_list
     - md_in_html
     - tables
 extra_javascript:
+    - javascripts/katex.js
     - javascripts/katex/katex.min.js
     - javascripts/katex/contrib/auto-render.min.js
-    - javascripts/katex.js
 extra_css:
     - javascripts/katex/katex.min.css
     - css/extra.css
