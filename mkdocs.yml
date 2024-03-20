@@ -30,8 +30,8 @@ exclude_docs: |
     .ipynb_checkpoints
     .git
 nav:
-    - 'index.md'
     - 'publications.md'
     - 'research.md'
+    - 'teaching.md'
     - 'links.md'
-    - 'about.md'
+    - 'index.md'
