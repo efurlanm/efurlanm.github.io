@@ -9,28 +9,23 @@ site_url: ''
 use_directory_urls: false
 theme:
     name: material
-# https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
     palette:
+# https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
         primary: blue grey
         accent: blue grey
     features:
         - header.autohide
 plugins:
     - search
+# 2024-03-16 There is a bug where mermaid will always be downloaded and installed, even if it is not used.
     - offline
     - privacy
-# 2024-03-16 There is a bug where mermaid will always be downloaded and installed, even if it is not used.
 markdown_extensions:
-    - pymdownx.inlinehilite
-    - pymdownx.snippets
-    - pymdownx.superfences
     - def_list
     - md_in_html
     - tables
 extra_css:
     - css/extra.css
-extra_javascript:
-  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
 exclude_docs: |
     .ipynb_checkpoints
     .git
