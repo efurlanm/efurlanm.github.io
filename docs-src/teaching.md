@@ -2,27 +2,29 @@
 
 ## Current duties
 
-* Algorithms and Structured Programming
 * Advanced Algorithms and Data Structures
+* Algorithms and Structured Programming
+* Operational Systems
+* Integrated Project I
 
 ## Past courses
 
-* Digital Systems and Microprocessors
-* Compilers
-* Programming Languages
 * Machine Design
-* Creativity and Innovation
+* Building Systems
+* Theory of Structures
 * Electrotechnical
+* Protection of the Electric Power System
+* Electrical Power Systems
 * Production Management
 * Project Management for Production
 * Industrial Organization and Automation
-* Transport Works
 * Strategic Production Planning
-* Building Systems
-* Theory of Structures
+* Transport Works
+* Creativity and Innovation
 * Reverse Logistic
-* Protection of the Electric Power System
-* Electrical Power Systems
+* Digital Systems and Microprocessors
+* Compilers
+* Programming Languages
 * Object Oriented Languages
 * Object Oriented Programming
 * Fundamentals of Parallel and Distributed Programming
@@ -32,4 +34,4 @@
 * Special Topics in Computer Science
 * Programming Techniques
 
-I keep a repository containing my personal notes related to the courses: <https://github.com/efurlanm/teaching> (in Portuguese).
+I maintain a repository containing my personal course-related notes: <https://github.com/efurlanm/teaching> (in Portuguese).
