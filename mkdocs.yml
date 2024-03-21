@@ -5,8 +5,6 @@ repo_name: efurlanm
 repo_url: http://github.com/efurlanm/
 docs_dir: docs-src
 site_dir: docs
-site_url: ''
-use_directory_urls: false
 theme:
     name: material
     palette:
@@ -15,11 +13,6 @@ theme:
         accent: blue grey
     features:
         - header.autohide
-plugins:
-    - search
-# 2024-03-16 There is a bug where mermaid will always be downloaded and installed, even if it is not used.
-    - offline
-    - privacy
 markdown_extensions:
     - def_list
     - md_in_html

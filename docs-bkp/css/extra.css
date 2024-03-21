@@ -1,0 +1,60 @@
+/* ### PARAGRAPH ### */
+
+.md-typeset p:not([class]) {
+    hyphens: auto;
+    text-align: justify;
+}
+
+
+/* ### CODE ### */
+
+.md-typeset code:not([class]) {
+    font-size: .875em;
+}
+
+
+/* ### FIGCAPTION ### */
+
+.md-typeset figcaption:not([class]) {
+    font-size: .875em;
+    font-style: normal;
+    hyphens: auto;
+    text-align: justify;
+    text-color: dimgray;
+}
+
+
+/* ### TABLE ### */
+
+.md-typeset table:not([class]) {
+    font-size: .875em;
+    line-height: 1;
+    border: none;
+    border-collapse: collapse;
+}
+
+.md-typeset table:not([class]) td,
+.md-typeset table:not([class]) th {
+    border: 1px solid var(--md-typeset-table-color);
+    vertical-align: middle;
+}
+
+.md-typeset table:not([class]) th {
+    background-color: #f8f8f8;
+}
+
+
+/* ### JUPYTER ### */
+
+.jupyter-wrapper .jp-RenderedText {
+    --jp-code-font-size: .875em;
+}
+
+.md-typeset h1:not([class]) {
+    margin-top: calc(var(--jp-content-heading-margin-top));
+    margin-bottom: calc(var(--jp-content-heading-margin-bottom));
+}
+
+.jp-RenderedHTMLCommon h1 {
+    margin: var(--jp-content-heading-margin-top) 0 var(--jp-content-heading-margin-bottom) 0;
+}
