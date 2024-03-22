@@ -11,3 +11,4 @@ My personal collection of random links I found interesting.
 * [Lectures by Walter Lewin at MIT (Youtube)](https://www.youtube.com/@lecturesbywalterlewin.they9259)
 * [Jeff Huang's page from the Brown University](http://jeffhuang.com/)
 * [Maziar Raissi's page from the University of Colorado Boulder](https://maziarraissi.github.io/)
+
