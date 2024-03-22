@@ -5,6 +5,7 @@ repo_name: efurlanm
 repo_url: http://github.com/efurlanm/
 docs_dir: docs-src
 site_dir: docs
+use_directory_urls: false  # need for inline html and dir navigation
 theme:
     name: material
     palette:
