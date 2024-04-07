@@ -20,26 +20,26 @@ I maintain a repository containing my personal course-related notes: <https://gi
 * Protection of the Electric Power System
 * Electrical Power Systems
 * Production Management
+* Digital Systems and Microprocessors
+* Digital Systems
 * Project Management for Production
 * Industrial Organization and Automation
 * Strategic Production Planning
 * Transport Works
-* Creativity and Innovation
 * Reverse Logistic
-* Digital Systems and Microprocessors
+* Creativity and Innovation
 
 ### Computing
 
-* Compilers
-* Programming Languages
-* Object Oriented Languages
-* Object Oriented Programming
 * Fundamentals of Parallel and Distributed Programming
 * Computer Architecture and Organization
-* Digital Systems
 * Formal Languages, Automata and Computability
-* Special Topics in Computer Science
+* Compilers
+* Programming Languages
 * Programming Techniques
+* Object Oriented Languages
+* Object Oriented Programming
+* Special Topics in Computer Science
 
 
 
