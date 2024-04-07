@@ -3,7 +3,7 @@
 
 ## 2023
 
-Miranda, E. F., Santos, L. B. L., & Stephany, S. (2023). Data-Driven Parameter Discovery of a One-Dimensional Burgers’ Equation Using a Physics-Informed Neural Network (Manuscript). <https://doi.org/10.5281/zenodo.10676770>
+Miranda, E. F., Santos, L. B. L., & Stephany, S. (2023). Data-Driven Parameter Discovery of a One-Dimensional Burgers’ Equation Using a Physics-Informed Neural Network (Manuscript). <https://zenodo.org/doi/10.5281/zenodo.10676770>
 
 
 ## 2022
@@ -12,9 +12,9 @@ Miranda, E. F. (2022). Common MPI-based HPC Approaches in Python Evaluated for S
 
 Miranda, E. F., & Stephany, S. (2022). Common MPI-Based Solutions for High-Performance Processing in Python Evaluated on Selected Test Cases (Presentation). <https://zenodo.org/doi/10.5281/zenodo.10676832>
 
-Miranda, E. F. (2022). Solution of a One-Dimensional Viscous Burgers' Equation Using a Physics-Informed Neural Network and a Gaussian Quadrature Method (Manuscript). <https://doi.org/10.5281/zenodo.10676900>
+Miranda, E. F. (2022). Solution of a One-Dimensional Viscous Burgers' Equation Using a Physics-Informed Neural Network and a Gaussian Quadrature Method (Manuscript). <https://zenodo.org/doi/10.5281/zenodo.10676900>
 
-Miranda, E. F. (2022). Comparison of CNN and MLP Artificial Neural Network Models for an Optical Character Recognition Test Case [Manuscript]. <https://doi.org/10.5281/zenodo.10676917>
+Miranda, E. F. (2022). Comparison of CNN and MLP Artificial Neural Network Models for an Optical Character Recognition Test Case [Manuscript]. <https://zenodo.org/doi/10.5281/zenodo.10676917>
 
 
 ## 2021
