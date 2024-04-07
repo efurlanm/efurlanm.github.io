@@ -20,6 +20,9 @@ markdown_extensions:
     - tables
 extra_css:
     - css/extra.css
+plugins:
+    - blog:
+        post_readtime: false
 exclude_docs: |
     .ipynb_checkpoints
     .git
@@ -29,3 +32,5 @@ nav:
     - 'teaching.md'
     - 'links.md'
     - 'index.md'
+    - Blog:
+        - blog/index.md
