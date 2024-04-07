@@ -1,16 +1,15 @@
 ---
-draft: false
 date: 2024-01-24
 categories:
   - INPE
-tags:
-  - Regulations
 ---
 
 # INPE General Regulations
 
-INPE's [General Regulations 2023](https://www.gov.br/inpe/pt-br/area-conhecimento/posgraduacao/regimentos) (in Portuguese) in searchable PDF format:
+<https://www.gov.br/inpe/pt-br/area-conhecimento/posgraduacao/regimentos> (in Portuguese)
 
-- [regimento_geral_2022-12-15.pdf](../pdf/regimento_geral_2022-12-15.pdf)
+INPE's General Regulations 2023 in searchable PDF format:
 
-The original PDF file containing INPE's [General Regulations 2023](https://www.gov.br/inpe/pt-br/area-conhecimento/posgraduacao/regimentos) (in Portuguese) has an annoying problem that is not searchable. I then used OCR software to make it searchable. The date of the document is 2022-12-15. The software used for OCR is [ocrmypdf](https://github.com/ocrmypdf/OCRmyPDF).
+- [regimento_geral_2022-12-15.pdf](../pdf/regimento_geral_2022-12-15.pdf) (in Portuguese)
+
+The original PDF file containing INPE's General Regulations 2023 has an annoying problem that is not searchable. I then used OCR software to make it searchable. The date of the document is 2022-12-15. The software used for OCR is [ocrmypdf](https://github.com/ocrmypdf/OCRmyPDF).
