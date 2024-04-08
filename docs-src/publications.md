@@ -14,7 +14,7 @@ Miranda, E. F., & Stephany, S. (2022). Common MPI-Based Solutions for High-Perfo
 
 Miranda, E. F. (2022). Solution of a One-Dimensional Viscous Burgers' Equation Using a Physics-Informed Neural Network and a Gaussian Quadrature Method (Manuscript). <https://zenodo.org/doi/10.5281/zenodo.10676900>
 
-Miranda, E. F. (2022). Comparison of CNN and MLP Artificial Neural Network Models for an Optical Character Recognition Test Case [Manuscript]. <https://zenodo.org/doi/10.5281/zenodo.10676917>
+Miranda, E. F. (2022). Comparison of CNN and MLP Artificial Neural Network Models for an Optical Character Recognition Test Case (Manuscript). <https://zenodo.org/doi/10.5281/zenodo.10676917>
 
 
 ## 2021
@@ -23,4 +23,4 @@ Miranda, E. F., & Stephany, S. (2021). Comparison of High-performance Computing 
 
 Miranda, E. F., & Stephany, S. (2021). Common HPC Approaches in Python Evaluated for a Scientific Computing Test Case. Revista Cereus, 13(2), 84–98. <https://doi.org/10.18605/2175-7275/cereus.v13n2p84-98>
 
-Miranda, E. F., & Stephany, S. (2021). Comparison of high-performance computing approaches in the Python environment for a five-point stencil case study (Presentation). XV Brazilian e-Science Workshop (BreSci), Online. <https://zenodo.org/doi/10.5281/zenodo.10672456>
+Miranda, E. F., & Stephany, S. (2021). Comparison of high-performance computing approaches in the Python environment for a five-point stencil case study. XV Brazilian e-Science Workshop (BreSci), Online  (Presentation). <https://zenodo.org/doi/10.5281/zenodo.10672456>
