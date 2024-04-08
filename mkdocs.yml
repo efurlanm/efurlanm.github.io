@@ -9,9 +9,11 @@ use_directory_urls: false  # need for inline html and dir navigation
 theme:
     name: material
     palette:
-# https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
-        primary: blue grey
-        accent: blue grey
+#https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
+        # primary: blue grey
+        # accent: blue grey
+        primary: white
+        accent: white
     features:
         - header.autohide
 markdown_extensions:
