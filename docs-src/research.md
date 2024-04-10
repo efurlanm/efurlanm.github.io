@@ -4,7 +4,7 @@ My current postgraduate research project is related to Machine Learning (ML) and
 
 The researches use the [Santos Dumont supercomputer at LNCC](https://sdumont.lncc.br/), as part of the project [AMPEMI](https://sdumont.lncc.br/projects_view.php?pg=projects&status=ongoing).
 
-Below are some links of interest, related works, mine and other authors.
+Below are some links of interest to related works, mine and other authors.
 
 
 ## 1D Burgers PINN Discovery
@@ -48,9 +48,9 @@ This research project ran from 2019 to 2022 and resulted in three publications a
 
 I maintain repositories at <https://github.com/efurlanm> with different subjects, such as:
 
+* ml: repo dedicated to machine learning and also other random topics.
 * 239, 351, etc. : repos containing several different activities from disciplines I took at INPE
 * msc22, bs21, tama21: repos related to my publications during the course at INPE
-* hpc: repo with subjects related to High Performance Processing (HPC), including related courses taken at INPE
-* ml: repo with subjects related to Machine Learning
-* teaching: repo dedicated to the materials of the disciplines I teach
+* hpc: repo with subjects related to High Performance Computing (HPC)
 * f90, ldi: repos targeted at computer programming languages
+* teaching: repo dedicated to the materials of the disciplines I teach
