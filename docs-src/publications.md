@@ -8,7 +8,7 @@ Miranda, E. F., Santos, L. B. L., & Stephany, S. (2023). Data-Driven Parameter D
 
 ## 2022
 
-Miranda, E. F. (2022). Common MPI-based HPC Approaches in Python Evaluated for Selected Test Cases (Master’s Thesis, National Institute for Space Research - INPE). <http://urlib.net/ibi/QABCDSTQQW/46C4U9H> .
+Miranda, E. F. (2022). Common MPI-based HPC Approaches in Python Evaluated for Selected Test Cases (Master’s Thesis, National Institute for Space Research - INPE). URI: <http://urlib.net/ibi/QABCDSTQQW/46C4U9H> .
 
 Miranda, E. F., & Stephany, S. (2022). Common MPI-Based Solutions for High-Performance Processing in Python Evaluated on Selected Test Cases [Presentation]. DOI: [10.5281/zenodo.10676832](https://zenodo.org/doi/10.5281/zenodo.10676832) .
 

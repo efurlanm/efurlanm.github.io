@@ -22,16 +22,16 @@ extra_css:
     - css/extra.css
 plugins:
     - search
-    - blog:
-        post_readtime: false
+    # - blog:
+    #     post_readtime: false
 exclude_docs: |
     .ipynb_checkpoints
     .git
 nav:
-    - 'publications.md'
     - 'research.md'
     - 'teaching.md'
+    - 'publications.md'
     - 'links.md'
+    # - Blog:
+    #     - blog/index.md
     - 'index.md'
-    - Blog:
-        - blog/index.md
