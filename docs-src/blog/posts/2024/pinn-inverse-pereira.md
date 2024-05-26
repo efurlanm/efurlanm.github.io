@@ -1,7 +1,7 @@
 ---
 slug: pinn-inverse-pereira
 date: 2024-05-13
-draft: false
+draft: true
 categories:
   - INPE
   - PINN
@@ -12,7 +12,7 @@ categories:
 João Pereira - IMPA<br>
 *2024-05-13*<br>
 
-My personal notes about the seminar. <br>
+My personal notes about the seminar <br>
 
 <https://www.youtube.com/watch?v=9vwQbrAx8D0> <br>
 
