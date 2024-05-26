@@ -18,7 +18,12 @@ markdown_extensions:
     - def_list
     - md_in_html
     - tables
+extra_javascript:
+    - javascripts/katex.js
+    - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js
+    - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js
 extra_css:
+    - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css
     - css/extra.css
 plugins:
     - search
