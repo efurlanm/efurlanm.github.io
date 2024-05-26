@@ -9,17 +9,12 @@ categories:
 
 # Using PINN for Inverse Problems
 
-João Pereira - IMPA
+João Pereira - IMPA<br>
+*2024-05-13*<br>
 
-*2024-05-13*
+My personal notes about the seminar. <br>
 
-<br>
-
-My personal notes about the seminar.
-
-<https://www.youtube.com/watch?v=9vwQbrAx8D0>
-
-<br>
+<https://www.youtube.com/watch?v=9vwQbrAx8D0> <br>
 
 - The various PDEs can be seen as a simple linear combination
 
