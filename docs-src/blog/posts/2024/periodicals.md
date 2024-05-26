@@ -9,7 +9,9 @@ tags:
 
 # Periodicals from CAPES
 
-I did a quick search on the CAPES website: <https://www-periodicos-capes-gov-br.ezl.periodicos.capes.gov.br/index.php/acervo/lista-a-z-periodicos.html>
+I did a quick search on the CAPES website:
+
+<https://www-periodicos-capes-gov-br.ezl.periodicos.capes.gov.br/index.php/acervo/lista-a-z-periodicos.html>
 
 <!-- more -->
 

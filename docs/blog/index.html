@@ -553,6 +553,29 @@
   
   
     <li class="md-nav__item">
+      <a href="category/pinn.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PINN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
       <a href="category/publication.html" class="md-nav__link">
         
   
@@ -657,6 +680,71 @@
       <header class="md-typeset">
         <h1 id="my-personal-blog">My Personal Blog</h1>
       </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-05-13 00:00:00">May 13, 2024</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/inpe.html" class="md-meta__link">INPE</a>, 
+              <a href="category/pinn.html" class="md-meta__link">PINN</a></li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="using-pinn-for-inverse-problems"><a class="toclink" href="2024/05/13/pinn-inverse-pereira.html">Using PINN for Inverse Problems</a></h2>
+<p>João Pereira - IMPA</p>
+<p><em>2024-05-13</em></p>
+<p><br></p>
+<p>My personal notes about the seminar.</p>
+<p><a href="https://www.youtube.com/watch?v=9vwQbrAx8D0">https://www.youtube.com/watch?v=9vwQbrAx8D0</a></p>
+<p><br></p>
+<ul>
+<li>The various PDEs can be seen as a simple linear combination</li>
+</ul>
+<p><img alt="" src="2024/img/2024-05-25-14-34-20-image.png" /></p>
+<ul>
+<li>
+<p>The problem is to determine the PDE that best represents the data</p>
+</li>
+<li>
+<p>Initially, a set of possible derivative terms is estimated</p>
+</li>
+</ul>
+<p><img alt="" src="2024/img/2024-05-25-14-35-33-image.png" /></p>
+<ul>
+<li>
+<p>Let $p_1, …, p_k$ be sample random points in the domain</p>
+</li>
+<li>
+<p>If $u$ is a solution of the PDE</p>
+</li>
+</ul>
+<p>$a_1 u + a_2 u_{xx} + a_3 uu_x + a_4 u_{xxx} + a_5 u_t = 0$</p>
+<ul>
+<li>For all $p_1, …, p_k$</li>
+</ul>
+<p>$a_1 u (p_k) + a_2 u_{xx} (p_k) + a_3 u (p_k) u_x(p_k) + a_4 u_{xxx} (p_k) + a_5 u_t (p_k) = 0 $</p>
+<ul>
+<li>In matrix form:</li>
+</ul>
+<p>$\left[\begin{array}{c c c c} u(p_1) &amp; u_{x x}(p_1) &amp; u(p_1)u_x(p_1)&amp; u_{x x x}(p_1) &amp; u_t(p_1) \\ \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots  \\ u(p_k) &amp; u_{x x}(p_k) &amp; u(p_k)u_x(p_k) &amp; u_{x x x}(p_k) &amp; u_t(p_k) \end{array} \right]
+\left[\begin{array}{c} a_1 \\ \vdots \\ a_5 \end{array} \right]=0$</p>
+<ul>
+<li></li>
+</ul>
+    
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">
@@ -799,7 +887,8 @@
   </header>
   <div class="md-post__content md-typeset">
     <h2 id="periodicals-from-capes"><a class="toclink" href="2024/02/06/periodicals-from-capes.html">Periodicals from CAPES</a></h2>
-<p>I did a quick search on the CAPES website: <a href="https://www-periodicos-capes-gov-br.ezl.periodicos.capes.gov.br/index.php/acervo/lista-a-z-periodicos.html">https://www-periodicos-capes-gov-br.ezl.periodicos.capes.gov.br/index.php/acervo/lista-a-z-periodicos.html</a></p>
+<p>I did a quick search on the CAPES website:</p>
+<p><a href="https://www-periodicos-capes-gov-br.ezl.periodicos.capes.gov.br/index.php/acervo/lista-a-z-periodicos.html">https://www-periodicos-capes-gov-br.ezl.periodicos.capes.gov.br/index.php/acervo/lista-a-z-periodicos.html</a></p>
 
     
       <nav class="md-post__action">
@@ -934,36 +1023,6 @@
   </div>
 </article>
       
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2023-08-24 00:00:00">August 24, 2023</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="category/publication.html" class="md-meta__link">Publication</a></li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="zotero"><a class="toclink" href="2023/08/24/zotero.html">Zotero</a></h2>
-<p><a href="https://www.zotero.org/">https://www.zotero.org/</a></p>
-<p>I use Zotero in my daily life to do my research. Zotero is a free and open source reference manager for bibliographic data and research materials. It features integration with web browsers, word processors, Google Docs, generation of in-text citations, footnotes and bibliographies, and has a built-in PDF reader with annotation capabilities. It was originally created at the <a href="https://en.wikipedia.org/wiki/Center_for_History_and_New_Media">Center for History and New Media</a> at <a href="https://en.wikipedia.org/wiki/George_Mason_University">George Mason University</a>.</p>
-<ul>
-<li>Zotero on Wikipedia: <a href="https://pt.wikipedia.org/wiki/Zotero">https://pt.wikipedia.org/wiki/Zotero</a></li>
-<li>How To Use Zotero (A Complete Beginner's Guide): <a href="https://youtu.be/JG7Uq_JFDzE">https://youtu.be/JG7Uq_JFDzE</a></li>
-</ul>
-    
-  </div>
-</article>
-      
       
         
           
@@ -971,7 +1030,7 @@
 
 
 <nav class="md-pagination">
-  
+  <span class="md-pagination__current">1</span> <a class="md-pagination__link" href="page/2/index.html">2</a>
 </nav>
         
       

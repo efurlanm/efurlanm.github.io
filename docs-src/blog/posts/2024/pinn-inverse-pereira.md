@@ -1,7 +1,7 @@
 ---
 slug: pinn-inverse-pereira
 date: 2024-05-13
-draft: true
+draft: false
 categories:
   - INPE
   - PINN
