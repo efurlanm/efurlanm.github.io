@@ -11,10 +11,8 @@
       
       
       
-        <link rel="prev" href="../../02/22/parallel-spectral-numerical-methods.html">
+        <link rel="prev" href="../13/pinn-inverse-pereira.html">
       
-      
-        <link rel="next" href="../../05/13/pinn-inverse-pereira.html">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>LNCC SDumont supercomputer upgrade - Eduardo Furlan</title>
+        <title>Neural Network Optimization - Eduardo Furlan</title>
       
     
     
@@ -76,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lncc-sdumont-supercomputer-upgrade" class="md-skip">
+        <a href="#neural-network-optimization" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LNCC SDumont supercomputer upgrade
+              Neural Network Optimization
             
           </span>
         </div>
@@ -720,7 +718,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2024-04-07 00:00:00" class="md-ellipsis">April 7, 2024</time>
+                        <time datetime="2024-05-24 00:00:00" class="md-ellipsis">May 24, 2024</time>
                       </div>
                     </li>
                     
@@ -731,7 +729,7 @@
                           <span class="md-ellipsis">
                             in
                             
-                              <a href="../../../category/hpc.html">HPC</a></span>
+                              <a href="../../../category/nn.html">NN</a></span>
                         </div>
                       </li>
                     
@@ -753,11 +751,21 @@
   
 
 
-<h1 id="lncc-sdumont-supercomputer-upgrade">LNCC SDumont supercomputer upgrade</h1>
-<p><a href="https://agenciabrasil.ebc.com.br/geral/noticia/2024-04/supercomputador-mais-potente-do-pais-tera-capacidade-aumentada">https://agenciabrasil.ebc.com.br/geral/noticia/2024-04/supercomputador-mais-potente-do-pais-tera-capacidade-aumentada</a> (in Portuguese)</p>
-<p>The National Scientific Computing Laboratory (LNCC) and Eviden/Atos signed a new contract worth us$ 19.4 million, which will allow the machine to go from the current 5.1 Petaflop/s to 17 Petaflop/s of capacity. The technology will be based on the BullSequana XH3000 architecture, and with the expansion it will be the most powerful supercomputer in Latin America dedicated to academic studies.</p>
+<h1 id="neural-network-optimization">Neural Network Optimization</h1>
+<p>My personal notes on Matthew Stewart's "Neural Network Optimization" post from June 27, 2019<br />
+<a href="https://towardsdatascience.com/neural-network-optimization-7ca72d4db3e0">https://towardsdatascience.com/neural-network-optimization-7ca72d4db3e0</a></p>
+<!-- more -->
+
+<p>Optimization</p>
+<p>The equation below represents the average gradient of the loss function with respect to the model parameters, computed over all training samples</p>
+<p>$$g={\frac{1}{m}}\sum_{i}\nabla_{\theta}L(f(x^{(i)};\theta),y^{(i)})$$</p>
+<p>where:</p>
 <ul>
-<li>LNCC SDumont website (in Portuguese): <a href="https://sdumont.lncc.br/">https://sdumont.lncc.br/</a></li>
+<li>$g$ is the gradient of the loss function with respect to the model parameters $\theta$. The gradient vector is a vector that points in the direction of the steepest increase in a function.</li>
+<li>$m$ is the total number of training samples in the dataset. It’s the denominator in the expression, indicating that we’re averaging the gradients over all samples.</li>
+<li>$\sum_{i}$ indicates that we’re summing over all training samples. The index $i$ ranges from $1$ to $m$.</li>
+<li>$\nabla_\theta$ is the gradient operator with respect to the model parameters $\theta$. It computes the partial derivatives of the loss function with respect to each parameter.</li>
+<li>$L(f(x^{(i)};\theta),y^{(i)})$ represents the loss function evaluated for the $i$-th training sample. It measures the discrepancy between the predicted output $f(x^{(i)};\theta)$ and the actual target $y^{(i)}$.</li>
 </ul>
 
 

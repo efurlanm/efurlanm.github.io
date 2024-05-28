@@ -9,8 +9,6 @@ categories:
 
 # Using PINN for Inverse Problems
 
-*2024-05-13*
-
 My personal notes about [the seminar](https://www.youtube.com/live/9vwQbrAx8D0) by [João Pereira - IMPA](http://w3.impa.br/~jpereira/)  at the [National Scientific Computing Laboratory (LNCC)](https://www.gov.br/lncc/pt-br).
 
 <!-- more -->

@@ -15,3 +15,8 @@ Some related links I found interesting (mostly in Portuguese):
 - 2015 Simple presentation including some photos of the physical construction of the facilities: <https://www.slideshare.net/RobsondaCosta2/supercomputador-sdumont-top500org-146-2015>
 
 - 2016 Presentation. First SDumont architecture when it was first deployed: <https://sdumont.lncc.br/media/01_General_overview_of_SANTOS_DUMONT_architecture.pdf>
+
+
+More info:
+
+- <http://eviden.com/insights/press-releases/eviden-expands-lncc-santos-dumont-supercomputer-capacity-fourfold-to-meet-growing-needs-of-academic-community/>
