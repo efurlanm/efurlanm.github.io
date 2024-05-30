@@ -9,9 +9,27 @@ categories:
 
 # Using PINN for Inverse Problems
 
-My personal notes about [the seminar](https://www.youtube.com/live/9vwQbrAx8D0) by [João Pereira - IMPA](http://w3.impa.br/~jpereira/)  at the [National Scientific Computing Laboratory (LNCC)](https://www.gov.br/lncc/pt-br).
+*Last edited: 2024-05-28*
+
+My personal notes about the seminar [Using Physics-informed Neural Networks for Inverse Problems](https://www.youtube.com/live/9vwQbrAx8D0) by [João Pereira - IMPA](http://w3.impa.br/~jpereira/) at [National Scientific Computing Laboratory (LNCC)](https://www.gov.br/lncc/pt-br) on 2024-05-13.
 
 <!-- more -->
+
+Presentation generated from the video: [PINN-Presentation-Pereira.pdf](../pdf/PINN-Presentation-Pereira.pdf) (in Portuguese)
+
+The seminar mainly deals with two published articles, and also a third that has not yet been published:
+
+Hasan, A., Pereira, J. M., Ravier, R., Farsiu, S., & Tarokh, V. (2019). Learning Partial Differential Equations from Data Using Neural Networks. <http://arxiv.org/abs/1910.10262>
+
+Hasan, A., M. Pereira, J., Farsiu, S., & Tarokh, V. (2022). Identifying Latent Stochastic Differential Equations. IEEE Transactions on Signal Processing, 70, 89–104. <https://doi.org/10.1109/TSP.2021.3131723>
+
+Bizzi, A., L. Nissenbaum, Pereira, J. M. (In Preparation) Neural Conjugate Flows: a Physics-Informed Architecture with Differential Flow Structure.
+
+- Code:
+    - <http://github.com/alluly/pde-estimation>
+    - <http://github.com/alluly/ident-latent-sde>
+
+## PINN
 
 - The various PDEs can be seen as a simple linear combination
 
@@ -89,4 +107,16 @@ $ \| a \|_2 = \sqrt{a_1^2 + \cdots + a_n^2} $
   
   ![](img/2024-05-26-20-38-04-image.png)
 
-- Minimizing $\mathcal{L}_{PDE} (\theta,a)$ in terms of $\theta$ enforces that the NN is a solution to the  PDE being learned.
+- Minimizing $\mathcal{L}_{PDE} (\theta,a)$ in terms of $\theta$ enforces that the ANN is a solution to the  PDE being learned.
+
+
+
+## Stochastic PINN
+
+- (in construction)
+
+
+## Links of interest
+
+- I WANT SCIENCE. [Artificial Intelligence and Physics: Solving Inverse Problems with Neural Networks](https://www.gov.br/lncc/pt-br/assuntos/noticias/ultimas-noticias-1/quero-quero-ciencia-inteligencia-artificial-e-fisica-solucionando-problemas-inversos-com-redes-neurais) (in Portuguese).
+- [Schedule of the event](https://sites.google.com/view/erad-sp2023/programa%C3%A7%C3%A3o) where the lecture was given (in Portuguese).

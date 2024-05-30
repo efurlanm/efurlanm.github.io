@@ -507,6 +507,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../category/ann.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ANN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
       <a href="../../../category/hpc.html" class="md-nav__link">
         
   
@@ -535,29 +558,6 @@
   
   <span class="md-ellipsis">
     INPE
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../category/nn.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    NN
   </span>
   
 
@@ -710,6 +710,34 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2024-01-25 00:00:00">January 25, 2024</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../../category/virtualization.html" class="md-meta__link">Virtualization</a></li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="microcloud"><a class="toclink" href="../../../2024/01/25/microcloud.html">MicroCloud</a></h2>
+<p>MicroCloud is an interesting project that, through lightweight virtualization and few host computers, allows you to quickly generate a cluster of several computing nodes, requiring few resources and allowing you to use common available hardware at home, such as Raspberry Pi and laptops.</p>
+<p><a href="https://canonical.com/microcloud">https://canonical.com/microcloud</a></p>
+<p>Its sufficiently small to function on a developer laptop. It can be utilized for safely experimenting with new technologies, simulating or testing complicated infrastructure processes, simulating how your workloads would operate in production, and creating lightweight, restricted disposable testing environments.</p>
+<p>It is a simple method to start an LXD cluster with high availability. It makes use of <em>snap</em> packages, has the ability to automatically configure LXD and Ceph on a group of servers, and uses mDNS to find other servers on the network automatically. This allows you to run a single command on one machine to build an entire cluster.</p>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2024-01-24 00:00:00">January 24, 2024</time></li>
         
           <li class="md-meta__item">
@@ -724,12 +752,16 @@
   </header>
   <div class="md-post__content md-typeset">
     <h2 id="inpe-general-regulations"><a class="toclink" href="../../../2024/01/24/inpe-general-regulations.html">INPE General Regulations</a></h2>
-<p><a href="https://www.gov.br/inpe/pt-br/area-conhecimento/posgraduacao/regimentos">https://www.gov.br/inpe/pt-br/area-conhecimento/posgraduacao/regimentos</a> (in Portuguese)</p>
-<p>INPE's General Regulations 2023 in searchable PDF format:</p>
+<p>INPE's General Regulations 2024 (approved on 09/04/2023) in searchable PDF format:</p>
 <ul>
-<li><a href="../../../pdf/regimento_geral_2022-12-15.pdf">regimento_geral_2022-12-15.pdf</a> (in Portuguese)</li>
+<li><a href="../../../pdf/Regimento_Geral_20230904.pdf">Regimento_Geral_20230904.pdf</a> (in Portuguese)</li>
 </ul>
-<p>The original PDF file containing INPE's General Regulations 2023 has an annoying problem that is not searchable. I then used OCR software to make it searchable. The date of the document is 2022-12-15. The software used for OCR is <a href="https://github.com/ocrmypdf/OCRmyPDF">ocrmypdf</a>.</p>
+<p>The <a href="https://www.gov.br/inpe/pt-br/area-conhecimento/posgraduacao/regimentos">original PDF file</a> containing INPE's General Regulations 2024 has an annoying problem that is not searchable and is not possible to select text. What I used to fix it was:</p>
+<pre><code>$ pdfsandwich -lang por &lt;in.pdf&gt; -o &lt;out.pdf&gt;
+$ gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.7 -q -o &lt;out.pdf&gt; &lt;in.pdf&gt;
+$ ocrmypdf -l=por -s -O=3 --jbig2-lossy --output-type=pdf &lt;in.pdf&gt; &lt;out.pdf&gt;
+$ qpdf --linearize &lt;in.pdf&gt; &lt;out.pdf&gt;
+</code></pre>
     
   </div>
 </article>

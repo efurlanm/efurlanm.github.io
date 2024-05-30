@@ -6,10 +6,15 @@ categories:
 
 # INPE General Regulations
 
-<https://www.gov.br/inpe/pt-br/area-conhecimento/posgraduacao/regimentos> (in Portuguese)
+INPE's General Regulations 2024 (approved on 09/04/2023) in searchable PDF format:
 
-INPE's General Regulations 2023 in searchable PDF format:
+- [Regimento_Geral_20230904.pdf](../pdf/Regimento_Geral_20230904.pdf) (in Portuguese)
 
-- [regimento_geral_2022-12-15.pdf](../pdf/regimento_geral_2022-12-15.pdf) (in Portuguese)
+The [original PDF file](<https://www.gov.br/inpe/pt-br/area-conhecimento/posgraduacao/regimentos>) containing INPE's General Regulations 2024 has an annoying problem that is not searchable and is not possible to select text. What I used to fix it was:
 
-The original PDF file containing INPE's General Regulations 2023 has an annoying problem that is not searchable. I then used OCR software to make it searchable. The date of the document is 2022-12-15. The software used for OCR is [ocrmypdf](https://github.com/ocrmypdf/OCRmyPDF).
+```
+$ pdfsandwich -lang por <in.pdf> -o <out.pdf>
+$ gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.7 -q -o <out.pdf> <in.pdf>
+$ ocrmypdf -l=por -s -O=3 --jbig2-lossy --output-type=pdf <in.pdf> <out.pdf>
+$ qpdf --linearize <in.pdf> <out.pdf>
+```

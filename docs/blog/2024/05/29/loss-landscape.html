@@ -11,10 +11,8 @@
       
       
       
-        <link rel="prev" href="../13/pinn-inverse-pereira.html">
+        <link rel="prev" href="../24/nn-optimization.html">
       
-      
-        <link rel="next" href="../29/loss-landscape.html">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>Neural Network Optimization - Eduardo Furlan</title>
+        <title>Loss Landscape - Eduardo Furlan</title>
       
     
     
@@ -76,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#neural-network-optimization" class="md-skip">
+        <a href="#loss-landscape" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Neural Network Optimization
+              Loss Landscape
             
           </span>
         </div>
@@ -720,7 +718,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2024-05-24 00:00:00" class="md-ellipsis">May 24, 2024</time>
+                        <time datetime="2024-05-29 00:00:00" class="md-ellipsis">May 29, 2024</time>
                       </div>
                     </li>
                     
@@ -753,21 +751,18 @@
   
 
 
-<h1 id="neural-network-optimization">Neural Network Optimization</h1>
-<p>My personal notes on Matthew Stewart's "Neural Network Optimization" post from June 27, 2019<br />
-<a href="https://towardsdatascience.com/neural-network-optimization-7ca72d4db3e0">https://towardsdatascience.com/neural-network-optimization-7ca72d4db3e0</a></p>
+<h1 id="loss-landscape">Loss Landscape</h1>
+<p>Very nice WebGL application to visualize the loss landscape for some common ANN. Currently features the models Resnet-20 (short/no-short), Resnet-56 (short/no-short), Vgg 16 and DenseNet 121.</p>
+<p><a href="http://www.telesens.co/loss-landscape-viz/viewer.html">http://www.telesens.co/loss-landscape-viz/viewer.html</a></p>
 <!-- more -->
 
-<p>Optimization</p>
-<p>The equation below represents the average gradient of the loss function with respect to the model parameters, computed over all training samples</p>
-<p>$$g={\frac{1}{m}}\sum_{i}\nabla_{\theta}L(f(x^{(i)};\theta),y^{(i)})$$</p>
-<p>where:</p>
+<p>More info:</p>
 <ul>
-<li>$g$ is the gradient of the loss function with respect to the model parameters $\theta$. The gradient vector is a vector that points in the direction of the steepest increase in a function.</li>
-<li>$m$ is the total number of training samples in the dataset. It’s the denominator in the expression, indicating that we’re averaging the gradients over all samples.</li>
-<li>$\sum_{i}$ indicates that we’re summing over all training samples. The index $i$ ranges from $1$ to $m$.</li>
-<li>$\nabla_\theta$ is the gradient operator with respect to the model parameters $\theta$. It computes the partial derivatives of the loss function with respect to each parameter.</li>
-<li>$L(f(x^{(i)};\theta),y^{(i)})$ represents the loss function evaluated for the $i$-th training sample. It measures the discrepancy between the predicted output $f(x^{(i)};\theta)$ and the actual target $y^{(i)}$.</li>
+<li><a href="http://www.telesens.co/2019/01/16/neural-network-loss-visualization">http://www.telesens.co/2019/01/16/neural-network-loss-visualization</a></li>
+<li><a href="http://arxiv.org/abs/1712.09913">http://arxiv.org/abs/1712.09913</a></li>
+<li><a href="http://mathformachines.com/posts/visualizing-the-loss-landscape">http://mathformachines.com/posts/visualizing-the-loss-landscape</a></li>
+<li><a href="http://github.com/tomgoldstein/loss-landscape">http://github.com/tomgoldstein/loss-landscape</a></li>
+<li><a href="http://github.com/marcellodebernardi/loss-landscapes">http://github.com/marcellodebernardi/loss-landscapes</a></li>
 </ul>
 
 

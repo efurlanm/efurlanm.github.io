@@ -499,6 +499,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../category/ann.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ANN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
       <a href="../../../category/hpc.html" class="md-nav__link">
         
   
@@ -527,29 +550,6 @@
   
   <span class="md-ellipsis">
     INPE
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../category/nn.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    NN
   </span>
   
 
@@ -754,12 +754,16 @@
 
 
 <h1 id="inpe-general-regulations">INPE General Regulations</h1>
-<p><a href="https://www.gov.br/inpe/pt-br/area-conhecimento/posgraduacao/regimentos">https://www.gov.br/inpe/pt-br/area-conhecimento/posgraduacao/regimentos</a> (in Portuguese)</p>
-<p>INPE's General Regulations 2023 in searchable PDF format:</p>
+<p>INPE's General Regulations 2024 (approved on 09/04/2023) in searchable PDF format:</p>
 <ul>
-<li><a href="../../../pdf/regimento_geral_2022-12-15.pdf">regimento_geral_2022-12-15.pdf</a> (in Portuguese)</li>
+<li><a href="../../../pdf/Regimento_Geral_20230904.pdf">Regimento_Geral_20230904.pdf</a> (in Portuguese)</li>
 </ul>
-<p>The original PDF file containing INPE's General Regulations 2023 has an annoying problem that is not searchable. I then used OCR software to make it searchable. The date of the document is 2022-12-15. The software used for OCR is <a href="https://github.com/ocrmypdf/OCRmyPDF">ocrmypdf</a>.</p>
+<p>The <a href="https://www.gov.br/inpe/pt-br/area-conhecimento/posgraduacao/regimentos">original PDF file</a> containing INPE's General Regulations 2024 has an annoying problem that is not searchable and is not possible to select text. What I used to fix it was:</p>
+<pre><code>$ pdfsandwich -lang por &lt;in.pdf&gt; -o &lt;out.pdf&gt;
+$ gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.7 -q -o &lt;out.pdf&gt; &lt;in.pdf&gt;
+$ ocrmypdf -l=por -s -O=3 --jbig2-lossy --output-type=pdf &lt;in.pdf&gt; &lt;out.pdf&gt;
+$ qpdf --linearize &lt;in.pdf&gt; &lt;out.pdf&gt;
+</code></pre>
 
 
 

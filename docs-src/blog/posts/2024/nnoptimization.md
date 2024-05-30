@@ -3,7 +3,7 @@ slug: nn-optimization
 date: 2024-05-24
 draft: false
 categories:
-  - NN
+  - ANN
 ---
 
 # Neural Network Optimization
