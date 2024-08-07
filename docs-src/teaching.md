@@ -4,42 +4,40 @@ I maintain a repository containing my personal course-related notes: <https://gi
 
 ## Current duties
 
-* Advanced Algorithms and Data Structures
-* Algorithms and Structured Programming
-* Operational Systems
-* Integrated Project I
+* Computer Architecture and Organization
+* Computational Logic and Mathematics
+* Industrial Communication Networks
+* Integrated Project II
 
 ## Past courses
 
-### Engineering
-
-* Machine Design
+* Advanced Algorithms and Data Structures
+* Algorithms and Structured Programming
 * Building Systems
-* Theory of Structures
-* Electrotechnical
-* Protection of the Electric Power System
-* Electrical Power Systems
-* Production Management
-* Digital Systems and Microprocessors
-* Digital Systems
-* Project Management for Production
-* Industrial Organization and Automation
-* Strategic Production Planning
-* Transport Works
-* Reverse Logistic
-* Creativity and Innovation
-
-### Computing
-
-* Fundamentals of Parallel and Distributed Programming
-* Computer Architecture and Organization
-* Formal Languages, Automata and Computability
 * Compilers
-* Programming Languages
-* Programming Techniques
+* Computer Architecture and Organization
+* Creativity and Innovation
+* Digital Systems
+* Digital Systems and Microprocessors
+* Electrical Power Systems
+* Electrotechnical
+* Formal Languages, Automata and Computability
+* Fundamentals of Parallel and Distributed Programming
+* Industrial Organization and Automation
+* Integrated Project I
+* Machine Design
 * Object Oriented Languages
 * Object Oriented Programming
+* Operational Systems
+* Production Management
+* Programming Languages
+* Programming Techniques
+* Project Management for Production
+* Protection of the Electric Power System
+* Reverse Logistic
 * Special Topics in Computer Science
-
+* Strategic Production Planning
+* Theory of Structures
+* Transport Works
 
 
