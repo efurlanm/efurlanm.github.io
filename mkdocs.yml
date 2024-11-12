@@ -8,8 +8,8 @@ docs_dir: docs-src
 site_dir: docs
 theme:
     name: material
+    # squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
     palette:
-#https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
         primary: white
         accent: white
     features:
@@ -20,10 +20,10 @@ markdown_extensions:
     - tables
 extra_javascript:
     - javascripts/katex.js
-    - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js
-    - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js
+    - https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js
+    - https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js
 extra_css:
-    - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css
+    - https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css
     - css/extra.css
 plugins:
     - search
@@ -34,9 +34,14 @@ exclude_docs: |
     .git
 nav:
     - 'research.md'
-    - 'teaching.md'
     - 'publications.md'
+    - 'teaching.md'
     - 'links.md'
     - Blog:
         - blog/index.md
     - 'index.md'
+
+
+
+# - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js
+# - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js
