@@ -3,7 +3,6 @@ site_author: Eduardo Furlan
 copyright: CC BY 4.0 License
 repo_name: efurlanm
 repo_url: http://github.com/efurlanm/
-use_directory_urls: false  # need for inline html and dir navigation
 docs_dir: docs-src
 site_dir: docs
 theme:
@@ -26,7 +25,7 @@ extra_css:
     - https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css
     - css/extra.css
 plugins:
-    - search
+    - offline
     - blog:
         post_readtime: false
 exclude_docs: |
@@ -40,8 +39,3 @@ nav:
     - Blog:
         - blog/index.md
     - 'index.md'
-
-
-
-# - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js
-# - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js

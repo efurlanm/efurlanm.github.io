@@ -7,7 +7,7 @@ I maintain a repository containing my personal course-related notes: <https://gi
 * Computer Architecture and Organization
 * Computational Logic and Mathematics
 * Industrial Communication Networks
-* Integrated Project II
+* Integrated Project
 
 ## Past courses
 
