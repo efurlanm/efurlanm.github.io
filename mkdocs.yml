@@ -26,6 +26,7 @@ extra_css:
     - css/extra.css
 plugins:
     - offline
+    - search
     - blog:
         post_readtime: false
 exclude_docs: |
