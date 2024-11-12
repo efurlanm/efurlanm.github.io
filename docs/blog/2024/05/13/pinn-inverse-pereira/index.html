@@ -11,21 +11,25 @@
       
       
       
+        <link rel="prev" href="../../../04/07/sdumont-upgrade/">
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+        <link rel="next" href="../../24/nn-optimization/">
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
-        <title>Eduardo Furlan</title>
+        <title>Using PINN for Inverse Problems - Eduardo Furlan</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.0253249f.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,9 +50,9 @@
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
     
-      <link rel="stylesheet" href="/css/extra.css">
+      <link rel="stylesheet" href="../../../../../css/extra.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#using-pinn-for-inverse-problems" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -83,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="Eduardo Furlan" class="md-header__button md-logo" aria-label="Eduardo Furlan" data-md-component="logo">
+    <a href="../../../../.." title="Eduardo Furlan" class="md-header__button md-logo" aria-label="Eduardo Furlan" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -103,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Using PINN for Inverse Problems
             
           </span>
         </div>
@@ -181,7 +190,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -190,7 +201,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Eduardo Furlan" class="md-nav__button md-logo" aria-label="Eduardo Furlan" data-md-component="logo">
+    <a href="../../../../.." title="Eduardo Furlan" class="md-nav__button md-logo" aria-label="Eduardo Furlan" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -220,7 +231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/research/" class="md-nav__link">
+      <a href="../../../../../research/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -240,7 +251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/publications/" class="md-nav__link">
+      <a href="../../../../../publications/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -260,7 +271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/teaching/" class="md-nav__link">
+      <a href="../../../../../teaching/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -280,7 +291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/links/" class="md-nav__link">
+      <a href="../../../../../links/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -297,17 +308,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -321,7 +334,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Blog
@@ -332,12 +345,14 @@
                 
   
   
+    
+  
   
     
   
   
-    <li class="md-nav__item">
-      <a href="/blog/" class="md-nav__link">
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -395,7 +410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/archive/2024/" class="md-nav__link">
+      <a href="../../../../archive/2024/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -418,7 +433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/archive/2023/" class="md-nav__link">
+      <a href="../../../../archive/2023/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -484,7 +499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/category/ann/" class="md-nav__link">
+      <a href="../../../../category/ann/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -507,7 +522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/category/hpc/" class="md-nav__link">
+      <a href="../../../../category/hpc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -530,7 +545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/category/inpe/" class="md-nav__link">
+      <a href="../../../../category/inpe/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -553,7 +568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/category/pinn/" class="md-nav__link">
+      <a href="../../../../category/pinn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -576,7 +591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/category/publication/" class="md-nav__link">
+      <a href="../../../../category/publication/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -599,7 +614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/category/virtualization/" class="md-nav__link">
+      <a href="../../../../category/virtualization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -635,7 +650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -656,6 +671,8 @@
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -665,6 +682,43 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pinn" class="md-nav__link">
+    <span class="md-ellipsis">
+      PINN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stochastic-pinn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stochastic PINN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links-of-interest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Links of interest
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -673,14 +727,225 @@
             
           
           
-            <div class="md-content" data-md-component="content">
-              <article class="md-content__inner md-typeset">
-                
-  <h1>404 - Not found</h1>
-
-              </article>
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
             </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2024-05-13 00:00:00" class="md-ellipsis">May 13, 2024</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/inpe/">INPE</a>, 
+                              <a href="../../../../category/pinn/">PINN</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
           
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+
+  
+  
+
+
+<h1 id="using-pinn-for-inverse-problems">Using PINN for Inverse Problems</h1>
+<p><em>Last edited: 2024-05-28</em></p>
+<p>My personal notes about the seminar <a href="https://www.youtube.com/live/9vwQbrAx8D0">Using Physics-informed Neural Networks for Inverse Problems</a> by <a href="http://w3.impa.br/~jpereira/">João Pereira - IMPA</a> at <a href="https://www.gov.br/lncc/pt-br">National Scientific Computing Laboratory (LNCC)</a> on 2024-05-13.</p>
+<!-- more -->
+
+<p>Presentation generated from the video: <a href="../../../../pdf/PINN-Presentation-Pereira.pdf">PINN-Presentation-Pereira.pdf</a> (in Portuguese)</p>
+<p>The seminar mainly deals with two published articles, and also a third that has not yet been published:</p>
+<p>Hasan, A., Pereira, J. M., Ravier, R., Farsiu, S., &amp; Tarokh, V. (2019). Learning Partial Differential Equations from Data Using Neural Networks. <a href="http://arxiv.org/abs/1910.10262">http://arxiv.org/abs/1910.10262</a></p>
+<p>Hasan, A., M. Pereira, J., Farsiu, S., &amp; Tarokh, V. (2022). Identifying Latent Stochastic Differential Equations. IEEE Transactions on Signal Processing, 70, 89–104. <a href="https://doi.org/10.1109/TSP.2021.3131723">https://doi.org/10.1109/TSP.2021.3131723</a></p>
+<p>Bizzi, A., L. Nissenbaum, Pereira, J. M. (In Preparation) Neural Conjugate Flows: a Physics-Informed Architecture with Differential Flow Structure.</p>
+<ul>
+<li>Code:<ul>
+<li><a href="http://github.com/alluly/pde-estimation">http://github.com/alluly/pde-estimation</a></li>
+<li><a href="http://github.com/alluly/ident-latent-sde">http://github.com/alluly/ident-latent-sde</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="pinn">PINN</h2>
+<ul>
+<li>The various PDEs can be seen as a simple linear combination</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Equation</th>
+<th>PDE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wave (1D)</td>
+<td>$u_{tt} - u_{xx} = 0$</td>
+</tr>
+<tr>
+<td>Heat (1D)</td>
+<td>$u_{t} - u_{xx} = 0$</td>
+</tr>
+<tr>
+<td>Helmholtz (2D)</td>
+<td>$u_{xx} + u_{yy} + u= 0$</td>
+</tr>
+<tr>
+<td>Burgers (1D)</td>
+<td>$u_{t} + uu_{x} = 0$</td>
+</tr>
+<tr>
+<td>Korteweg-de Vries</td>
+<td>$u_{t} - 6uu_{x} + u_{xxx}= 0$</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>The problem is to determine the PDE that best represents the data</p>
+</li>
+<li>
+<p>Initially, a set of possible derivative terms is estimated</p>
+</li>
+</ul>
+<p><img alt="" src="../../../img/2024-05-25-14-35-33-image.png" /></p>
+<ul>
+<li>
+<p>Let $p_1, …, p_k$ be sample random points in the domain</p>
+</li>
+<li>
+<p>If $u$ is a solution of the PDE</p>
+</li>
+</ul>
+<p>$a_1 u + a_2 u_{xx} + a_3 uu_x + a_4 u_{xxx} + a_5 u_t = 0$</p>
+<ul>
+<li>For all $p_1, …, p_k$</li>
+</ul>
+<p>$a_1 u (p_k) + a_2 u_{xx} (p_k) + a_3 u (p_k) u_x(p_k) + a_4 u_{xxx} (p_k) + a_5 u_t (p_k) = 0 $</p>
+<ul>
+<li>In matrix form:</li>
+</ul>
+<p>$\underbrace{
+\left[
+\begin{array}{c c c c} u(p_1) &amp; u_{x x}(p_1) &amp; u(p_1)u_x(p_1)&amp; u_{x x x}(p_1) &amp; u_t(p_1) \\ 
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\ 
+u(p_k) &amp; u_{x x}(p_k) &amp; u(p_k)u_x(p_k) &amp; u_{x x x}(p_k) &amp; u_t(p_k)
+\end{array} 
+\right]
+}_{\mathcal{M}_u(p)}
+\left[
+\begin{array}{c}
+a_1 \\ \vdots \\ a_5 
+\end{array} 
+\right]=0$</p>
+<ul>
+<li>The vector $a = (a_1, ..., a_5)$ is in the null space of $\mathcal{M}_u(p)$</li>
+<li>In matrix form: $\mathcal{M}_u(p) a = 0$</li>
+<li>The <em>null space vector</em> is a singular vector with singular value 0</li>
+<li>The <strong>null space vector</strong> (also known as the <strong>null vector</strong>) refers to the zero vector in the context of linear algebra</li>
+<li>The null space vector is simply the zero vector itself: <strong>0</strong></li>
+<li>It is the unique vector that belongs to the null space of any matrix</li>
+<li>When we say <em>null space vector</em>, we are referring to the specific vector <strong>v</strong> that satisfies the condition <strong>Av = 0</strong> for a given matrix <strong>A</strong></li>
+<li>Let's think about optimization</li>
+<li>Calculate the smallest singular value using the min-max principle</li>
+</ul>
+<p>$ \underset{ a }{ \min } \quad | \mathcal{M}_u(p) a |_2^2 $</p>
+<p>subject to $ \quad | a |_2 = 1 \quad $ (Euclidean norm)</p>
+<p>$ | a |_2 = \sqrt{a_1^2 + \cdots + a_n^2} $</p>
+<ul>
+<li>
+<p>Bringing together the losses</p>
+</li>
+<li>
+<p>Fitting the neural network $\hat{u}(\cdot;\theta)$</p>
+</li>
+</ul>
+<p><img alt="" src="../../../img/2024-05-26-20-25-08-image.png" /></p>
+<ul>
+<li>Learning the PDE</li>
+</ul>
+<p><img alt="" src="../../../img/2024-05-26-20-27-33-image.png" /></p>
+<ul>
+<li>Encourage law sparsity</li>
+</ul>
+<p><img alt="" src="../../../img/2024-05-26-20-29-05-image.png" /></p>
+<ul>
+<li>Training</li>
+</ul>
+<p><img alt="" src="../../../img/2024-05-26-20-38-04-image.png" /></p>
+<ul>
+<li>Minimizing $\mathcal{L}_{PDE} (\theta,a)$ in terms of $\theta$ enforces that the ANN is a solution to the  PDE being learned.</li>
+</ul>
+<h2 id="stochastic-pinn">Stochastic PINN</h2>
+<ul>
+<li>(in construction)</li>
+</ul>
+<h2 id="links-of-interest">Links of interest</h2>
+<ul>
+<li>I WANT SCIENCE. <a href="https://www.gov.br/lncc/pt-br/assuntos/noticias/ultimas-noticias-1/quero-quero-ciencia-inteligencia-artificial-e-fisica-solucionando-problemas-inversos-com-redes-neurais">Artificial Intelligence and Physics: Solving Inverse Problems with Neural Networks</a> (in Portuguese).</li>
+<li><a href="https://sites.google.com/view/erad-sp2023/programa%C3%A7%C3%A3o">Schedule of the event</a> where the lecture was given (in Portuguese).</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
@@ -715,12 +980,12 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["header.autohide"], "search": "/assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["header.autohide"], "search": "../../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
-        <script src="/javascripts/katex.js"></script>
+        <script src="../../../../../javascripts/katex.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
       

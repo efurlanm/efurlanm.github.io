@@ -25,7 +25,7 @@ extra_css:
     - https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css
     - css/extra.css
 plugins:
-    - offline
+    #- offline
     - search
     - blog:
         post_readtime: false
