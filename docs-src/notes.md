@@ -1,4 +1,11 @@
-# Links
+# Notes
+
+
+
+
+
+
+## Links
 
 My personal collection of random links I found interesting.
 

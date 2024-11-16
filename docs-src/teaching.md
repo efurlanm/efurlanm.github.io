@@ -1,6 +1,6 @@
 # Teaching
 
-I maintain a repository containing my personal course-related notes: <https://github.com/efurlanm/teaching> (in Portuguese).
+Courses are taught using the Portuguese language.
 
 ## Current duties
 
@@ -40,4 +40,6 @@ I maintain a repository containing my personal course-related notes: <https://gi
 * Theory of Structures
 * Transport Works
 
+
+I maintain a repository containing my personal course-related notes: <https://github.com/efurlanm/teaching>.
 

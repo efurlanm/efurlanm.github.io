@@ -1,8 +1,9 @@
 site_name: Eduardo Furlan
 site_author: Eduardo Furlan
+site_url: https://efurlanm.github.io/
 copyright: CC BY 4.0 License
 repo_name: efurlanm
-repo_url: http://github.com/efurlanm/
+repo_url: https://github.com/efurlanm/
 docs_dir: docs-src
 site_dir: docs
 theme:
@@ -13,6 +14,7 @@ theme:
         accent: white
     features:
         - header.autohide
+        - navigation.instant
 markdown_extensions:
     - def_list
     - md_in_html
@@ -34,9 +36,8 @@ exclude_docs: |
     .git
 nav:
     - 'research.md'
-    - 'publications.md'
     - 'teaching.md'
-    - 'links.md'
+    - 'notes.md'
     - Blog:
         - blog/index.md
     - 'index.md'
