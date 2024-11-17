@@ -29,7 +29,7 @@ The researches use the [Santos Dumont supercomputer at LNCC](https://sdumont.lnc
 
 ## Teaching
 
-I teach undergraduate classes in [engineering and computing courses](teaching.md), where I try to conduct classes in order to bring reflections on the practical experience of the profession, working on the relationship between the professional and academic performance of the student, stimulating critical thinking based on specialized literature, and encouraging the production of knowledge.
+I teach undergraduate classes in [engineering and computing courses](teaching/index.md), where I try to conduct classes in order to bring reflections on the practical experience of the profession, working on the relationship between the professional and academic performance of the student, stimulating critical thinking based on specialized literature, and encouraging the production of knowledge.
 
 ## Industrial experience
 

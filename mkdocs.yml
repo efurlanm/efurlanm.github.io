@@ -35,9 +35,9 @@ exclude_docs: |
     .ipynb_checkpoints
     .git
 nav:
-    - 'research.md'
-    - 'teaching.md'
-    - 'notes.md'
+    - research.md
+    - teaching/index.md
+    - notes.md
     - Blog:
         - blog/index.md
-    - 'index.md'
+    - index.md
