@@ -9,11 +9,13 @@ My name is Eduardo Furlan and I am a PhD student at the [National Institute for 
 
 ## Updates
 
-* February 2023: I started my PhD at INPE.
-* March 2022: I graduated from my MSc.
-* July 2021: Paper accepted to BreSci.
-* June 2021: Paper accepted to Revista Cereus.
-* February 2019: I started my MSc at INPE.
+* Aug 2023: Approved in the Exam Proposal at INPE.
+* May 2023: Approved in the Qualification Proposal at INPE.
+* Feb 2023: I started my PhD at INPE.
+* Mar 2022: I graduated from my MSc.
+* Jul 2021: Paper accepted at BreSci.
+* Jun 2021: Paper accepted at *Revista Cereus*.
+* Feb 2019: I started my MSc at INPE.
 
 ## Research interests
 
