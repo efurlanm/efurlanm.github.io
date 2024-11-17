@@ -1,6 +1,6 @@
 # Projeto Integrado
 
-1º e 2º sem. 2024
+1º e 2º sem 2024
 
 ## Ementa
 

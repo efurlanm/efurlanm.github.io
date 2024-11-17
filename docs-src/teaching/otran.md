@@ -1,6 +1,6 @@
 # Obras de Transporte
 
-2018.1
+1º sem 2018
 
 ## Ementa
 
@@ -16,8 +16,8 @@ Introdução aos Sistemas de Transportes. Modalidades de Transportes. Transporte
 
 ## Repositório
 
-Material de apoio
+<https://github.com/efurlanm/teaching/tree/main/otran/>
 
-<https://github.com/efurlanm/teaching/tree/main/otran>
+<br><br><p><small>Last edited: 2024-11-17</small></p>
 
 

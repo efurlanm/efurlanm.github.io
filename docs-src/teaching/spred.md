@@ -1,6 +1,6 @@
 # Sistemas Prediais
 
-2019.1
+1º sem 2019
 
 ## Ementa
 
@@ -12,6 +12,6 @@ Uso da eletricidade. Instalações elétricas, de telefone e de intercomunicaç�
 
 ## Repositório
 
-Material de apoio
+<https://github.com/efurlanm/teaching/tree/main/spred/>
 
-<https://github.com/efurlanm/teaching/tree/main/spred>
+<br><br><p><small>Last edited: 2024-11-17</small></p>

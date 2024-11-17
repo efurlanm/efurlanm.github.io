@@ -1,6 +1,6 @@
 # Sistemas Elétricos de Potência
 
-2022.2
+2º sem 2022
 
 ## Ementa
 
@@ -36,6 +36,6 @@
 
 ## Repositório
 
-Material de apoio
+<https://github.com/efurlanm/teaching/tree/main/sep/>
 
-<https://github.com/efurlanm/teaching/tree/main/sep>
+<br><br><p><small>Last edited: 2024-11-17</small></p>

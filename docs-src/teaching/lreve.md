@@ -1,6 +1,6 @@
 # Logística Reversa
 
-2019.1
+1º sem 2019
 
 ## Ementa
 
@@ -12,6 +12,6 @@ Estudo dos conceitos e fundamentos da Logística Reversa. A Logística Reversa e
 
 ## Repositório
 
-Material de apoio
+<https://github.com/efurlanm/teaching/tree/main/lreve/>
 
-<https://github.com/efurlanm/teaching/tree/main/lreve>
+<br><br><p><small>Last edited: 2024-11-17</small></p>

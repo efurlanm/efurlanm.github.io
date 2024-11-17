@@ -45,7 +45,7 @@ Computing
 * Object Oriented Programming ([poo](poo.md))
 * Operational Systems ([so](so.md))
 * Programming Languages ([lprog](lprog.md))
-* Programming Techniques ([tprog](tprog.md)
+* Programming Techniques ([tprog](tprog.md))
 * Special Topics in Computer Science ([tespe](tespe.md))
 
 

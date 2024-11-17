@@ -1,13 +1,15 @@
 # Criatividade e Inovação
 
-Fundamentos da Inovação e Criatividade: Técnicas e exercícios que potencializam a criatividade e inovação em produtos e serviços. 
-O processo de gestão criativo e de inovação na empresa. Características da pessoa criativa e inovadora. Como estimular a inovação e a criatividade na empresa
+2º sem 2020, 1º sem 2019, e 1º sem 2018
 
+## Ementa
+
+Fundamentos da Inovação e Criatividade: Técnicas e exercícios que potencializam a criatividade e inovação em produtos e serviços. 
+O processo de gestão criativo e de inovação na empresa. Características da pessoa criativa e inovadora. Como estimular a inovação e a criatividade na empresa.
 
 ## Bibliografia
 
 PEARSON. *Criatividade e Inovação*. São Paulo, Pearson Prentice Hall, 2011
-
 
 ### Ferramentas computacionais na engenharia civil
 
@@ -20,8 +22,6 @@ PEARSON. *Criatividade e Inovação*. São Paulo, Pearson Prentice Hall, 2011
 - [Análise Dinâmica De Arcos Utilizando O Método Dos Elementosfinitos Generalizados](https://acervodigital.ufpr.br/bitstream/handle/1884/61417/R%20-%20D%20-%20RAMON%20MACEDO%20CORREA.pdf)
 - [Proposta De Integração Entre Os Dados Do Cadastro Imobiliário Urbano E Do Registro De Imóveis](https://acervodigital.ufpr.br/bitstream/handle/1884/53261/R%20-%20D%20-%20CAIO%20DOS%20ANJOS%20PAIVA.pdf)
 
-
-
 ### Robótica na engenharia civil
 
 - [Construção civil global adere à robótica](https://www.cimentoitambe.com.br/massa-cinzenta/construcao-civil-global-adere-a-robotica/)
@@ -29,9 +29,11 @@ PEARSON. *Criatividade e Inovação*. São Paulo, Pearson Prentice Hall, 2011
 - [Sistema De Monitoramento De Vibração Estrutural Baseado Em IOT](http://lyceumonline.usf.edu.br/salavirtual/documentos/3100.pdf)
 - [Automação do Processo de Mapeamento de Rotas de Ciclistas: Testes com um GPS Arduino](https://www.researchgate.net/publication/333351193_Automacao_do_Processo_de_Mapeamento_de_Rotas_de_Ciclistas_Testes_com_um_GPS_Arduino)
 
+## Repositório
 
+<https://github.com/efurlanm/teaching/tree/main/cinov/>
 
-
+<br><br><p><small>Last edited: 2024-11-17</small></p>
 
 
 

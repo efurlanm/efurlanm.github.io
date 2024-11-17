@@ -1,10 +1,8 @@
 # Sistemas Digitais e Microprocessadores
 
-*Última modificação: 2023-08-23*
+2º sem 2023
 
-Este repositório contém minhas notas pessoais
-
-## Assuntos principais
+## Ementa
 
 - Circuitos digitais e álgebra booleana
   - Bases numéricas e códigos
@@ -29,7 +27,7 @@ Este repositório contém minhas notas pessoais
 - PEDRONI, V. *Digital electronics and design with VHDL*. USA: Morgan Kaufmann, 2008. ISBN 978-0080557557
 - PEDRONI, V. *Eletrônica digital moderna e VHDL*. 1ª edição. Rio de Janeiro, RJ: GEN LTC, 2010. ISBN 978-8535234657 (Tradução do original em Inglês) 
 
-## Videos de interesse
+## Vídeos de interesse
 
 - UNIVESP. [Introdução a Conceitos de Computação - Sistemas de numeração e conversão de bases](https://youtu.be/5Fcbp4nRWsk). (U1S1)
 - UNIVESP. [Circuitos Lógicos - Álgebra Booleana](https://youtu.be/cklFKRutr2k). (U1S2)
@@ -53,3 +51,9 @@ Este repositório contém minhas notas pessoais
 - BRASIL ESCOLA. *Relatório*. <https://youtu.be/s_ogx2xROb0>
 - DOS REIS, A. D. *Elaboração de Projeto*. <https://youtu.be/S-4tSLwc_yU>
 - SCHULTZ, C. *GanttProject*. <https://www.youtube.com/@xxultz/search?query=ganttproject> (Software para Cronograma)
+
+## Repositório
+
+<https://github.com/efurlanm/teaching/tree/main/sdm/>
+
+<br><br><p><small>Last edited: 2024-11-17</small></p>

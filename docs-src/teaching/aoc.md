@@ -1,8 +1,8 @@
 # Arquitetura e Organização de Computadores
 
-2024.2 e 2018.2
+2º sem 2024 e 2º sem 2018
 
-## Ementa 2024.2
+## Ementa 2º sem 2024
 
 - Fundamentos de Sistemas Computacionais
     - Conceitos básicos de arquitetura e organização de computadores
@@ -17,7 +17,7 @@
 - Sistemas numéricos: conceitos, simbologia e representação de base numérica
     - Sistemas numéricos: conceitos, simbologia e representação de base numérica
     - Conversão entre bases numéricas: decimal
-    - Conversão entre bases numéricas: Binário
+    - Conversão entre bases numéricas: binário
     - Conversão entre bases numéricas: octal
 - Álgebra Booleana e Lógica Digital
     - Introdução à álgebra booleana
@@ -25,7 +25,7 @@
     - Portas lógicas
     - Introdução a circuitos
 
-## Ementa 2018.2
+## Ementa 2º sem 2018
 
 Evolução histórica das arquiteturas de computadores. Fundamentos de aritmética computacional. Caracterização da organização de sistemas de computação e detalhamento de subsistemas – memória, processador, dispositivos de entrada e saída de dados e barramentos. Estudo de um conjunto de instruções e modos de endereçamento utilizados por um sistema de computação. Caracterização de arquiteturas de computadores. Conceituação de Arquiteturas Paralelas.
 
@@ -36,6 +36,6 @@ Evolução histórica das arquiteturas de computadores. Fundamentos de aritméti
 
 ## Repositório
 
-Material de apoio: <https://github.com/efurlanm/teaching/tree/main/aoc/>
+<https://github.com/efurlanm/teaching/tree/main/aoc/>
 
 <br><br><p><small>Last edited: 2024-11-17</small></p>

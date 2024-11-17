@@ -1,6 +1,6 @@
 # Projeto de Máquinas
 
-2023.1
+1º sem 2023
 
 ## Ementa
 
@@ -50,6 +50,6 @@ Dentre os objetivos do projeto final da disciplina, estão:
 
 ## Repositório
 
-Material de apoio
+<https://github.com/efurlanm/teaching/tree/main/pmaq/>
 
-<https://github.com/efurlanm/teaching/tree/main/pmaq>
+<br><br><p><small>Last edited: 2024-11-17</small></p>

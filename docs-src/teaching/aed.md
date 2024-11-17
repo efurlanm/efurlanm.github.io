@@ -1,12 +1,12 @@
 # Algoritmos e Estrutura de Dados Avançado
 
-*2024-02-01*
+1º sem 2024
+
+## Ementa
 
 Revisão sobre Estrutura de Dados. Linguagens de máquina e linguagem de montagem Assembly. Análise de Complexidade Assintótica. Noções básicas de Ordenação: InsertionSort, MergeSort, Quicksort e Heapsort. Filas de prioridade. Heaps esquerdistas e heaps binomiais. Estruturas de dicionário: acesso direto, transformação de chave, funções Hash. Colisões e Transbordamento. Hashing para Arquivos Extensíveis. Estruturas balanceadas e auto-ajustáveis. Árvore AVL, Vermelho-Preto, B, B+ e de espalhamento. Estruturas multidimensionais. Estruturas de dados aplicadas em banco de dados espaciais. Árvore Point-Quad e Polygon-Quad. Árvore R. Tries. Trie R-Way. Trie Ternária. Árvore PATRICIA. Arquivos Invertidos. Compressão de Textos em Linguagem Natural, Codificação RLE. Codificação de Huffman Usando Bytes, Huffman Adaptativo, Codificação de Lempel-Ziv.
 
 ## Referências
-
-<!-- Zotero -->
 
 - Adaptive Huffman coding. (2023). In Wikipedia. https://en.wikipedia.org/w/index.php?title=Adaptive_Huffman_coding
 - Algoritmos e Estruturas de Dados 2. (n.d.). Retrieved February 21, 2024, from https://www.youtube.com/playlist?list=PL5TPkym335qz6i9AYI5CMuxIXRO03JtWj
@@ -64,3 +64,8 @@ Revisão sobre Estrutura de Dados. Linguagens de máquina e linguagem de montage
 - Vitter, J. S. (2001). External memory algorithms and data structures: Dealing with massive data. ACM Computing Surveys, 33(2), 209–271. https://doi.org/10.1145/384192.384193
 - Ziviani, N. (2014). Compressão de Textos. Universidade Federal de Minas Gerais, UFMG. https://homepages.dcc.ufmg.br/~nivio/cursos/ri14/transp/text-compression.pdf
 
+## Repositório
+
+<https://github.com/efurlanm/teaching/tree/main/aed/>
+
+<br><br><p><small>Last edited: 2024-11-17</small></p>

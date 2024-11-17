@@ -1,6 +1,6 @@
 # Lógica e Matemática Computacional
 
-2024.2
+2º sem 2024
 
 ## Ementa
 
@@ -34,6 +34,6 @@
 
 ## Repositório
 
-Material de apoio
+<https://github.com/efurlanm/teaching/tree/main/lmc/>
 
-<https://github.com/efurlanm/teaching/tree/main/lmc>
+<br><br><p><small>Last edited: 2024-11-17</small></p>

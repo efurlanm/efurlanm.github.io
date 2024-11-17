@@ -1,30 +1,25 @@
 # Linguagem Orientada a Objetos
 
-*Última edição: 2023-07-28*
+1º sem 2023 e 2º sem 2022
+
+## Ementa
 
 - Conceitos do desenvolvimento orientado a objetos
-  
-  - Classes e objetos, aplicações, métodos, instâncias e atributos
-  - Objetos, procedimentos e argumentos, funções e estruturas de controle
-  - Métodos, variáveis, parâmetros, propriedades
-
+    - Classes e objetos, aplicações, métodos, instâncias e atributos
+    - Objetos, procedimentos e argumentos, funções e estruturas de controle
+    - Métodos, variáveis, parâmetros, propriedades
 - Estruturas do desenvolvimento orientado a objetos
-  
-  - Atributos, métodos estáticos, construtores, sobrecarga e sobreposição
-  - Estruturas de decisão, controle e repetição
-  - Encapsulamento, herança, modificadores de acesso, e polimorfismo
-
+    - Atributos, métodos estáticos, construtores, sobrecarga e sobreposição
+    - Estruturas de decisão, controle e repetição
+    - Encapsulamento, herança, modificadores de acesso, e polimorfismo
 - Desenvolvimento de classes abstratas, exceções e interfaces orientada a objetos
-  
-  - Exceções, criação de tipos, asserções, classes abstratas, herança
-  - Interfaces
-  - Interface gráfica com usuário
-
+    - Exceções, criação de tipos, asserções, classes abstratas, herança
+    - Interfaces
+    - Interface gráfica com usuário
 - Aplicações orientada a objetos
-  
-  - *Arrays* unidimensionais e multidimensionais, *String*, e *StringBuffer*
-  - Conexão com banco de dados *MySql*, *NoSql*, *MongoDB*
-  - *Threads*, concorrência, sincronização, e exceções
+    - *Arrays* unidimensionais e multidimensionais, *String*, e *StringBuffer*
+    - Conexão com banco de dados *MySql*, *NoSql*, *MongoDB*
+    - *Threads*, concorrência, sincronização, e exceções
 
 ## Bibliografia
 
@@ -32,15 +27,15 @@
 - ANDRIJAUSKAS, F. Programação orientada a objetos II. Londrina: Editora e Distribuidora Educacional S.A, 2018. ISBN 978-85-522-1166-2
 - SANTOS, R. Introdução à programação orientada a objetos usando java. [S. l.]: Elsevier Brasil, 2013. ISBN 978-85-352-8429-4
 - Alice
-  - ORACLE. *Getting Started with Java Using Alice 3*. https://www.oracle.com/webfolder/technetwork/tutorials/OracleAcademy/Alice3SelfStudyV2/index.html
-  - Carnegie Mellon University. *Alice Website*. https://www.alice.org/
-  - BARNUM, B. *This playlist contains a series of Alice 3 programming tutorials*. https://www.youtube.com/playlist?list=PLmpmyPywZ440OmMec0WWu6jqdqCXMd8Td
-  - FILITTO, D. *Introdução a lógica de programação orientada a objetos utilizando a ferramenta Alice*. https://www.youtube.com/playlist?list=PLfvOpw8k80WpEULuLEIZIJFakzJ8WUBAC
+    - ORACLE. *Getting Started with Java Using Alice 3*. https://www.oracle.com/webfolder/technetwork/tutorials/OracleAcademy/Alice3SelfStudyV2/index.html
+    - Carnegie Mellon University. *Alice Website*. https://www.alice.org/
+    - BARNUM, B. *This playlist contains a series of Alice 3 programming tutorials*. https://www.youtube.com/playlist?list=PLmpmyPywZ440OmMec0WWu6jqdqCXMd8Td
+    - FILITTO, D. *Introdução a lógica de programação orientada a objetos utilizando a ferramenta Alice*. https://www.youtube.com/playlist?list=PLfvOpw8k80WpEULuLEIZIJFakzJ8WUBAC
 - Greenfoot
-  - ORACLE. *Getting Started with Java Using Greenfoot*. https://www.oracle.com/webfolder/technetwork/tutorials/OracleAcademy/GreenfootSelfStudyV1/obe.html (2023-01-30)
-  - University of Kent in Canterbury. *Greenfoot Website*. https://www.greenfoot.org
-  - CHANNEL GREENFOOT. https://www.youtube.com/@18km
-  - TORRES, A. *Introdução à Criação de Jogos com JAVA utilizando o Greenfoot*. https://youtu.be/y2uQb8JbnRI
+    - ORACLE. *Getting Started with Java Using Greenfoot*. https://www.oracle.com/webfolder/technetwork/tutorials/OracleAcademy/GreenfootSelfStudyV1/obe.html (2023-01-30)
+    - University of Kent in Canterbury. *Greenfoot Website*. https://www.greenfoot.org
+    - CHANNEL GREENFOOT. https://www.youtube.com/@18km
+    - TORRES, A. *Introdução à Criação de Jogos com JAVA utilizando o Greenfoot*. https://youtu.be/y2uQb8JbnRI
 
 ## Videos de interesse
 
@@ -73,3 +68,9 @@
 ## Material da disciplina
 
 - [Pasta compartilhada no Google Drive](https://drive.google.com/drive/folders/1wlkBIcKHDTdjmopo-5cJ-stTVTWylWlV)
+
+## Repositório
+
+<https://github.com/efurlanm/teaching/tree/main/loo/>
+
+<br><br><p><small>Last edited: 2024-11-17</small></p>

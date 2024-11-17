@@ -1,6 +1,6 @@
 # Redes de Comunicação Industrial
 
-2º sem. 2024
+2º sem 2024
 
 ## Ementa
 

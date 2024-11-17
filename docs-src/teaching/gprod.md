@@ -1,6 +1,6 @@
 # Gestão da Produção
 
-2018.2
+2º sem 2018
 
 ## Ementa
 
@@ -12,6 +12,6 @@ Introdução à administração da produção e logística. Funções Gerenciais
 
 ## Repositório
 
-Material de apoio
+<https://github.com/efurlanm/teaching/tree/main/gprod/>
 
-<https://github.com/efurlanm/teaching/tree/main/gprod>
+<br><br><p><small>Last edited: 2024-11-17</small></p>

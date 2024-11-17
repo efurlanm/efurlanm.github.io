@@ -1,6 +1,6 @@
 # Teoria das Estruturas
 
-2020.1
+1º sem 2020
 
 ## Ementa
 
@@ -46,6 +46,6 @@ Programa Gráfico-Interativo para Ensino de Comportamento de Estruturas
 
 ## Repositório
 
-Material de apoio
+<https://github.com/efurlanm/teaching/tree/main/testr/>
 
-<https://github.com/efurlanm/teaching/tree/main/testr>
+<br><br><p><small>Last edited: 2024-11-17</small></p>

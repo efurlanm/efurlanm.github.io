@@ -1,6 +1,6 @@
 # Planejamento Estratégico da Produção
 
-2019.1
+1º sem 2019
 
 ## Ementa
 
@@ -14,6 +14,6 @@ Aspectos gerais dos sistemas de produção. Planejamento estratégico de produç
 
 ## Repositório
 
-Material de apoio
+<https://github.com/efurlanm/teaching/tree/main/pestr/>
 
-<https://github.com/efurlanm/teaching/tree/main/pestr>
+<br><br><p><small>Last edited: 2024-11-17</small></p>

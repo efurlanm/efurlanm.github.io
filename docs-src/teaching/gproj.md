@@ -1,6 +1,6 @@
 # Gestão de Projetos para Produção
 
-2018.2
+2º sem 2018
 
 ## Ementa
 
@@ -12,6 +12,6 @@ Demonstrar a aplicação dos conceitos e métodos do gerenciamento de projetos e
 
 ## Repositório
 
-Material de apoio
+<https://github.com/efurlanm/teaching/tree/main/gproj/>
 
-<https://github.com/efurlanm/teaching/tree/main/gproj>
+<br><br><p><small>Last edited: 2024-11-17</small></p>

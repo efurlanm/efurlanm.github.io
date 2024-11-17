@@ -1,6 +1,6 @@
 # Eletrotécnica Aplicada
 
-2017.2
+2º sem 2017
 
 ## Ementa
 
@@ -12,6 +12,6 @@ Elementos de circuitos de corrente contínua, lei de Ohm, potência em corrente 
 
 ## Repositório
 
-Material de apoio
+<https://github.com/efurlanm/teaching/tree/main/eapli/>
 
-<https://github.com/efurlanm/teaching/tree/main/eapli>
+<br><br><p><small>Last edited: 2024-11-17</small></p>

@@ -1,5 +1,9 @@
 # Programação Orientada a Objetos II
 
+1º sem 2023
+
+## Ementa
+
 - Programação orientada a eventos com interfaces gráficas e banco de dados relacional
     - Desenvolvimento de interfaces gráficas na linguagem Java
     - Programação em Java usando orientação a eventos
@@ -17,13 +21,10 @@
     - Introdução ao desenvolvimento em Java usando mongoDB
     - Desenvolvimento em Java usando mongoDB
 
-
 ## Bibliografia
 
 - ANDRIJAUSKAS, F. Programação orientada a objetos II. Londrina: Editora e Distribuidora Educacional S.A, 2018. ISBN 978-85-522-1166-2
 - SANTOS, R. Introdução à programação orientada a objetos usando java. [S. l.]: Elsevier Brasil, 2013. ISBN 978-85-352-8429-4
-
-
 
 ## *Links* de interesse
 
@@ -34,7 +35,6 @@
 - MAY, F. Dicas Para Apresentar Trabalho Escolar. https://youtu.be/Xokn9aWLD08
 - SCHULTZ, C. GanttProject. www.youtube.com/@xxultz/search?query=ganttproject
 
-
 ## Projeto final da disciplina
 
 Dentre os objetivos do projeto final da disciplina, estão:
@@ -43,3 +43,9 @@ Dentre os objetivos do projeto final da disciplina, estão:
 - Articular o desempenho profissional e acadêmico do discente
 - Estímular o raciocínio crítico, com base em literatura atualizada
 - Incentivar a produção de conhecimento
+
+## Repositório
+
+<https://github.com/efurlanm/teaching/tree/main/poo/>
+
+<br><br><p><small>Last edited: 2024-11-17</small></p>

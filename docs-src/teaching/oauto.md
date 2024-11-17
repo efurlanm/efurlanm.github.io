@@ -1,6 +1,6 @@
 # Organização Industrial e Automação
 
-2017.2
+2º sem 2017
 
 ## Ementa
 
@@ -15,6 +15,6 @@ Conceitos de organização e de empresas. Métodos de planejamento e controle. I
 
 ## Repositório
 
-Material de apoio
+<https://github.com/efurlanm/teaching/tree/main/oauto/>
 
-<https://github.com/efurlanm/teaching/tree/main/oauto>
+<br><br><p><small>Last edited: 2024-11-17</small></p>

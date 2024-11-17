@@ -1,6 +1,6 @@
 # Compiladores
 
-2020.2 e 2023.2
+2º sem 2023 e 2º sem 2020
 
 ## Ementa
 
@@ -67,23 +67,23 @@ Contendo informações úteis sobre compiladores
 ## Ferramentas
 
 - Compilador educativo Verto
-  - <http://www.cinted.ufrgs.br/renoteold/nov2005/artigosrenote/a19_verto.pdf>
-  - <http://www.cinted.ufrgs.br/renoteold/nov2005/apresentacoes/ap19_verto.pdf>
-  - <http://verto.sourceforge.net>
+    - <http://www.cinted.ufrgs.br/renoteold/nov2005/artigosrenote/a19_verto.pdf>
+    - <http://www.cinted.ufrgs.br/renoteold/nov2005/apresentacoes/ap19_verto.pdf>
+    - <http://verto.sourceforge.net>
 - Máquina Hipotética Cesar
-  - <http://www.inf.ufrgs.br/arq/wiki/doku.php?id=cesar>
-  - <https://pt.wikipedia.org/wiki/M%C3%A1quinas_hipot%C3%A9ticas_da_Universidade_Federal_do_Rio_Grande_do_Sul>
+    - <http://www.inf.ufrgs.br/arq/wiki/doku.php?id=cesar>
+    - <https://pt.wikipedia.org/wiki/M%C3%A1quinas_hipot%C3%A9ticas_da_Universidade_Federal_do_Rio_Grande_do_Sul>
 - Computador hipotético HIPO
-  - <https://www.ime.usp.br/~vwsetzer/HIPO/hipo-descr.html>
-  - <https://www.ime.usp.br/~vwsetzer/HIPO/using-the-HIPO-simulator.html>
-  - <https://seijihariki.github.io/HIPO-simulator>
-  - <https://github.com/seijihariki/HIPO-simulator>
-  - <https://www.ime.usp.br/~jstern/miscellanea/MaterialDidatico/hipo.htm>
-  - <https://www.ime.usp.br/~jstern/software/hipo/Hipo.pdf>
-  - [Exemplo de código (hipo.md)](hipo.md)
+    - <https://www.ime.usp.br/~vwsetzer/HIPO/hipo-descr.html>
+    - <https://www.ime.usp.br/~vwsetzer/HIPO/using-the-HIPO-simulator.html>
+    - <https://seijihariki.github.io/HIPO-simulator>
+    - <https://github.com/seijihariki/HIPO-simulator>
+    - <https://www.ime.usp.br/~jstern/miscellanea/MaterialDidatico/hipo.htm>
+    - <https://www.ime.usp.br/~jstern/software/hipo/Hipo.pdf>
+    - [Exemplo de código (hipo.md)](hipo.md)
 - Compilador online interativo que permite inserir código fonte, e ver o código objeto gerado
-  - Compiler Explorer: <https://godbolt.org/>
-  - penguinTrace: <https://penguintrace.org/intro/>
+    - Compiler Explorer: <https://godbolt.org/>
+    - penguinTrace: <https://penguintrace.org/intro/>
 
 ## Vídeos de interesse
 
@@ -92,14 +92,14 @@ Contendo informações úteis sobre compiladores
 - TECHNOLOGIKÁ. A diferença entre compilador e interpretador. <https://youtu.be/aJww2aXJtc4>
 - FERREIRA, E. W. T. Compiladores: Construção do Analisador Léxico. <https://youtu.be/pud18CZ81VE>
 - Prof. Ricardo Luís de Azevedo da Rocha. Linguagens e Compiladores. UNIVESP.
-  - Apresentação. <https://youtu.be/lfGqYLYXdSY>
-  - Conceitos de Linguagens de Programação e Análise Léxica. <https://youtu.be/kazE4zPRsxc>
-  - Conceitos de Análise Sintática e Análise Sintática Descendente. <https://youtu.be/JQ92w5oDyb0>
-  - Análise Sintática Ascendente. <https://youtu.be/JUoEAhciEnU>
-  - Tradução dirigida por sintaxe. <https://youtu.be/_kGAgukarkk>
-  - Código intermediário. <https://youtu.be/Asj7JNZmxb4>
-  - Ambientes de execução. <https://youtu.be/jZJEi7Wb6_o>
-  - Geração de código, noções de otimização. <https://youtu.be/oVi91pFqHlQ>
+    - Apresentação. <https://youtu.be/lfGqYLYXdSY>
+    - Conceitos de Linguagens de Programação e Análise Léxica. <https://youtu.be/kazE4zPRsxc>
+    - Conceitos de Análise Sintática e Análise Sintática Descendente. <https://youtu.be/JQ92w5oDyb0>
+    - Análise Sintática Ascendente. <https://youtu.be/JUoEAhciEnU>
+    - Tradução dirigida por sintaxe. <https://youtu.be/_kGAgukarkk>
+    - Código intermediário. <https://youtu.be/Asj7JNZmxb4>
+    - Ambientes de execução. <https://youtu.be/jZJEi7Wb6_o>
+    - Geração de código, noções de otimização. <https://youtu.be/oVi91pFqHlQ>
 
 ## Pascal
 
@@ -131,6 +131,6 @@ Contendo informações úteis sobre compiladores
 
 ## Repositório
 
-Material de apoio: <https://github.com/efurlanm/teaching/tree/main/comp>
+<https://github.com/efurlanm/teaching/tree/main/comp/>
 
 <br><br><p><small>Last edited: 2024-11-17</small></p>
