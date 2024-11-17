@@ -36,6 +36,6 @@ Evolução histórica das arquiteturas de computadores. Fundamentos de aritméti
 
 ## Repositório
 
-Material de apoio
+Material de apoio: <https://github.com/efurlanm/teaching/tree/main/aoc/>
 
-<https://github.com/efurlanm/teaching/tree/main/aoc>
+<br><br><p><small>Last edited: 2024-11-17</small></p>

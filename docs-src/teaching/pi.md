@@ -12,6 +12,6 @@ Contextualização acerca do Projeto Integrado. Introdução ao PMI, guia PMBOK 
 
 ## Repositório
 
-Material de apoio
+Material de apoio:<https://github.com/efurlanm/teaching/tree/main/pi/>
 
-<https://github.com/efurlanm/teaching/tree/main/pi>
+<br><br><p><small>Last edited: 2024-11-17</small></p>

@@ -51,9 +51,9 @@ Computing
 
 I maintain a repository containing my personal course-related notes: <https://github.com/efurlanm/teaching>.
 
-## Teaching material (in Portuguese)
+## Teaching material
 
-Material related to publications.
+Material related to publications (in Portuguese).
 
 ### 2024 27º EAC conference
 
@@ -102,7 +102,9 @@ Website: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2023>
 * SOUZA, L. D. A.; SILVA, E. J. A. V. D.; SANTOS, L. S. D.; SAMO, K.; NARDINI, D. A.; KIMURA, H. T.; MIRANDA, E. F. Utilização do Microcontrolador Arduino para a Construção de um Robô Seguidor de Linha. 2023. Disponível em: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2023#trab22099>.
 
 
-### 2023 classroom material publication
+### 2023 classroom material
+
+Material publicated
 
 * Miranda, E. F. (2023a). Análise de falhas e cálculo de esforços. <http://repositorio.pgsskroton.com/handle/123456789/59641>
 * Miranda, E. F. (2023b). Análise dimensional e estrutural. <http://repositorio.pgsskroton.com/handle/123456789/59642>
@@ -117,3 +119,4 @@ Website: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2023>
 * Miranda, E. F. (2023k). Projeto de elementos de transmissão. <http://repositorio.pgsskroton.com/handle/123456789/59646>
 * Miranda, E. F. (2023l). Prototipagem. <http://repositorio.pgsskroton.com/handle/123456789/59643>
 
+<br><br><p><small>Last edited: 2024-11-17</small></p>

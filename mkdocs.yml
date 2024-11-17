@@ -32,12 +32,13 @@ plugins:
     - blog:
         post_readtime: false
 exclude_docs: |
-    .ipynb_checkpoints
-    .git
+    .*
+not_in_nav: |
+    teaching/
 nav:
     - research.md
     - teaching/index.md
     - notes.md
     - Blog:
         - blog/index.md
-    - index.md
+    - Home: index.md
