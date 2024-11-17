@@ -1,6 +1,6 @@
 # Projeto Integrado
 
-2024.1 e 2024.2
+1º e 2º sem. 2024
 
 ## Ementa
 
@@ -12,6 +12,6 @@ Contextualização acerca do Projeto Integrado. Introdução ao PMI, guia PMBOK 
 
 ## Repositório
 
-Material de apoio:<https://github.com/efurlanm/teaching/tree/main/pi/>
+<https://github.com/efurlanm/teaching/tree/main/pi/>
 
 <br><br><p><small>Last edited: 2024-11-17</small></p>
