@@ -18,18 +18,18 @@ Qualification and Proposal Exam. Comparison of the accuracy and processing time 
 
 Data-Driven Parameter Discovery of a One-Dimensional Burgers’ Equation Using a Physics-Informed Neural Network. This work evaluates the discovery of parameters of the Burgers’ equation through the use of PINN, for different hyperparameters and dataset sizes, seeking the best adjustment. The relative errors and processing times obtained are presented, running on the LNCC’s Santos Dumont supercomputer.
 
-- Manuscript LaTeX sources: <https://github.com/efurlanm/425/tree/main/manuscript/>
-- HTML version of the manuscript: <https://efurlanm.github.io/425/>
-- Repository: <https://github.com/efurlanm/425/tree/main/project/>
+- Manuscript LaTeX sources: <https://github.com/efurlanm/425/tree/main/manuscript>
+- HTML version of the manuscript: <https://efurlanm.github.io/425>
+- Repository: <https://github.com/efurlanm/425/tree/main/project>
 - DOI: [10.5281/zenodo.10676770](https://zenodo.org/doi/10.5281/zenodo.10676770)
 
 ## PINN GQM 1D Burgers'
 
 Solution of a One-Dimensional Viscous Burgers' Equation Using a Physics-Informed Neural Network and a Gaussian Quadrature Method. This work compares the solutions of a one-dimensional viscous Burgers’ equation of a test problem using a Physics Informed Neural Network (PINN) and a numerical Gaussian Quadrature Method (GQM) method.
 
-- Manuscript LaTeX sources: <https://github.com/efurlanm/421/tree/main/manuscript/>
-- HTML version of the manuscript: <https://efurlanm.github.io/421/>
-- Repository: <https://github.com/efurlanm/421/tree/main/project/>
+- Manuscript LaTeX sources: <https://github.com/efurlanm/421/tree/main/manuscript>
+- HTML version of the manuscript: <https://efurlanm.github.io/421>
+- Repository: <https://github.com/efurlanm/421/tree/main/project>
 - DOI: [10.5281/zenodo.10676900](https://doi.org/10.5281/zenodo.10676900)
 
 ## My MSc work
@@ -39,8 +39,8 @@ This research project ran from 2019 to 2022 and resulted in three publications a
 - Miranda, E. F. (2022). Common MPI-based HPC Approaches in Python Evaluated for Selected Test Cases. Master’s Thesis, National Institute for Space Research (INPE). <http://urlib.net/ibi/QABCDSTQQW/46C4U9H> .
   
   - Thesis presentation: <https://youtu.be/B_xOG9C04xs> (in Portuguese)
-  - Repository: <https://github.com/efurlanm/msc22/>
-  - More information: <https://efurlanm.github.io/msc22/>
+  - Repository: <https://github.com/efurlanm/msc22>
+  - More information: <https://efurlanm.github.io/msc22>
 
 - Miranda, E. F., & Stephany, S. (2021). Comparison of High-performance Computing Approaches in the Python Environment for a Five-point Stencil Test Problem. XV Brazilian E-Science Workshop, at XLI Congress of the Brazilian Computer Society (CSBC-2021), 33–40. DOI: [10.5753/bresci.2021.15786](https://doi.org/10.5753/bresci.2021.15786) .
   
