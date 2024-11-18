@@ -14,7 +14,7 @@ Material published by me, as part of the Machine Design course.
 
 --8<-- "pub-pmaq-2023h2.md"
 
-## Publication of my research
+## Publications from my research
 
 Publications dedicated to my academic research.
 
