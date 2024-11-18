@@ -49,8 +49,8 @@ Conhecer o funcionamento do compilador é importante para poder extrair o máxim
 
 ### TCCs
 
-- [TOMAZELLI, G. *Implementação de um compilador para uma linguagem de programação com geração de código Microsoft .NET Intermediate Language*. 2004.](http://campeche.inf.furb.br/tccs/2004-I/2004-1giancarlotomazellivf.pdf)
-- [BERGSTEN, N. A. L. *Um compilador Portugol-assembly para microcontrolador*. 2012.](http://www.ecomp.uefs.br/data/tcc/UM%20COMPILADOR%20PORTUGOL-ASSEMBLY%20PARA%20MICROCONTROLADOR.pdf)
+- TOMAZELLI, G. [Implementação de um compilador para uma linguagem de programação com geração de código Microsoft .NET Intermediate Language](http://campeche.inf.furb.br/tccs/2004-I/2004-1giancarlotomazellivf.pdf). 2004.
+- BERGSTEN, N. A. L. [Um compilador Portugol-assembly para microcontrolador](http://www.ecomp.uefs.br/data/tcc/UM%20COMPILADOR%20PORTUGOL-ASSEMBLY%20PARA%20MICROCONTROLADOR.pdf). 2012.
 
 ## Sites de Professores
 
@@ -80,7 +80,7 @@ Contendo informações úteis sobre compiladores
     - <https://github.com/seijihariki/HIPO-simulator>
     - <https://www.ime.usp.br/~jstern/miscellanea/MaterialDidatico/hipo.htm>
     - <https://www.ime.usp.br/~jstern/software/hipo/Hipo.pdf>
-    - [Exemplo de código (hipo.md)](hipo.md)
+    - [Exemplo de código HIPO](hipo.md)
 - Compilador online interativo que permite inserir código fonte, e ver o código objeto gerado
     - Compiler Explorer: <https://godbolt.org/>
     - penguinTrace: <https://penguintrace.org/intro/>

@@ -1,31 +1,37 @@
 # Computador hipotético HIPO
 
+Interpretador baseado na Web para o computador educacional HIPO.
+
+- <https://github.com/seijihariki/HIPO-simulator/>
+- <https://seijihariki.github.io/HIPO-simulator/#/>
+
+
 ## Exemplo de código
 
     01      CEA Zero
-	        CAE Sum
+            CAE Sum
        Back Lei Num
-         	Imp Num
-         	CEA Num
-         	DNe End
-         	CEA Sum
-         	Som Num
-         	CAE Sum
-         	Des Back
+            Imp Num
+            CEA Num
+            DNe End
+            CEA Sum
+            Som Num
+            CAE Sum
+            Des Back
        End  Imp Sum
-         	Par 00
+            Par 00
     30 Zero 00
-    40 Sum  00
-    45 Num  00
+    40 Sum 00
+    45 Num 00
 
-## Input
+## Entrada
 
     10
     20
     30
     -1
 
-## Output
+## Saída
 
     10
     20
@@ -35,4 +41,4 @@
     
 ## Printscreen do simulador
 
-![Imagem 946x726 pixels](img/hipo.png)
+![Simulador](img/hipo.png)

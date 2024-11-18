@@ -3,6 +3,18 @@
 My random notes on technology, research and scientific computing.
 
 
+## My repositories
+
+I maintain repositories at <https://github.com/efurlanm> with different subjects, such as:
+
+* ml: repo dedicated to machine learning and also other random topics.
+* 239, 351, etc. : repos containing several different activities from disciplines I took at INPE
+* msc22, bs21, tama21: repos related to my publications during the course at INPE
+* hpc: repo with subjects related to High Performance Computing (HPC)
+* f90, ldi: repos targeted at computer programming languages
+* teaching: repo dedicated to the materials of the disciplines I teach
+
+
 ## Bookmarks
 
 Collection of links I found interesting:
