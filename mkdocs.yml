@@ -14,8 +14,11 @@ theme:
         accent: white
     features:
         - header.autohide
-        - navigation.instant
+        #- navigation.instant
 markdown_extensions:
+    - pymdownx.snippets:
+        base_path: docs-src/include
+        check_paths: true
     - def_list
     - md_in_html
     - tables
@@ -35,6 +38,7 @@ exclude_docs: |
     .*
 not_in_nav: |
     teaching/
+    include/
 nav:
     - research.md
     - teaching/index.md

@@ -1,8 +1,4 @@
-# Publications
-
-The following items are student publications, developed as part of the classroom activities developed in the courses I teach (in Portuguese). At the bottom of the page, in the [Other publications](#other-publications) section, there are links to publications of classroom materials, publications related to academic research, and others.
-
-## H2 2024 27º EAC conference
+### H2 2024 27º EAC conference
 
 Conference web site: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2024>
 
@@ -15,7 +11,7 @@ Conference web site: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2024
 * SOUZA, Y. A. R. D.; MACHADO, T. S.; MIRANDA, E. F. DESENVOLVIMENTO E IMPACTO DE UM APLICATIVO DE SUSTENTABILIDADE PARA INCENTIVAR PRÁTICAS ECOLÓGICAS NO COTIDIANO. Encontro de Atividades Científicas, n. 27, 2024. Disponível em: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2024#trab26646>.
 * TAMBERI, G. G.; RIBEIRO, M. H. J.; NASCIMENTO, M. C. A. D.; VOGIANTZIS, N.; ARRUDA, A. H. L.; SILVA, G. E. D. PROJETO INTEGRADO 2° SEMESTRE - FACULDADE ANHANGUERA. Encontro de Atividades Científicas, n. 27, 2024. Disponível em: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2024#trab26315>.
 
-## H2 2024 publications
+### H2 2024 publications
 
 * BARBOSA, B. F.; ARAUJO, C. Q. D.; RAMOS, J. V. A. P.; ALVES, L. K.; FURTADO, P. H. D. S. Desenvolvimento de Mecânicas Básicas para um RPG 2D. 1 nov. 2024. DOI 10.5281/zenodo.14025670. Disponível em: <https://zenodo.org/records/14025671>.
 * NASCIMENTO, E. M. D. S.; SOUZA, G. C. D.; ALMEIDA, K. S. D.; SCARANELLO, L.; CERQUEIRA, N.; PEDRO EDUARDO ALVES DA SILVA; RAISSA CAVALCANTI LIMA; TAMIRES DA SILVA BEZERRA. Hora Marcada - PHP. 7 nov. 2024. DOI 10.5281/zenodo.14053068. Disponível em: <https://zenodo.org/records/14053069>.
@@ -32,14 +28,15 @@ Conference web site: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2024
 * MIGUEL, M. Happy Dogs: Facilitando a Vida dos Donos de Cães. 25 set. 2024. DOI 10.5281/zenodo.13839897. Disponível em: <https://zenodo.org/records/13839898>.
 * SOUZA, A. A. T.; SOUZA, G. S. de. Projeto do programa gerenciamento de estacionamento. 6 nov. 2024. DOI 10.5281/zenodo.14047981. Disponível em: <https://zenodo.org/records/14047982>.
 
-## H1 2024 publications
+### H1 2024 publications
 
+* AZUL, E. S. Site de Pesquisas de TI. 2024. DOI 10.5281/zenodo.10914369. Disponível em: <https://zenodo.org/records/10914369>.
 * BORTOLOTTO, M.; CESAR, R. Python e MySQL. 27 mar. 2024. DOI 10.5281/zenodo.10888698. Disponível em: <https://zenodo.org/records/10888698>.
 * JONATHAN, E.; KIMURA, H.; MIRANDA, E. F. IMPLEMENTAÇÃO DE UM ALGORITMO DE ORDENAÇÃO RÁPIDA EM JAVASCRIPT. 27 maio 2024. DOI 10.5281/zenodo.11327516. Disponível em: <https://zenodo.org/records/11327516>.
 * JONATHAN, E.; MIRANDA, E. F.; KIMURA, H. IMPLEMENTAÇÃO DE UM ALGORITMO DE ORDENAÇÃO RÁPIDA EM PYTHON. 2 abr. 2024. DOI 10.5281/zenodo.10905998. Disponível em: <https://zenodo.org/records/10905998>.
 * SANTOS,  soares. Algoritmo de compressão de dados Huffman. 2024. DOI 10.5281/zenodo.11053066. Disponível em: <https://zenodo.org/records/11053066>.
 
-## H2 2023 26º EAC conference
+### H2 2023 26º EAC conference
 
 Conference web site: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2023>
 
@@ -52,12 +49,3 @@ Conference web site: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2023
 * SILVA, J. V. B. D.; MIRANDA, E. F. Carrinho Educativo Controlado por Bluetooth e Aplicativo. 2023. Disponível em: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2023#trab22444>.
 * SOUZA, L. D. A.; KIMURA, H. T.; NARDINI, D. A.; SANTOS, L. S. D.; POMA, K. G. S.; SILVA, E. J. A. V. D.; MIRANDA, E. F. Fases da Compilação na Utilização do Arduino Uno. 2023. Disponível em: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2023#trab23575>.
 * SOUZA, L. D. A.; SILVA, E. J. A. V. D.; SANTOS, L. S. D.; SAMO, K.; NARDINI, D. A.; KIMURA, H. T.; MIRANDA, E. F. Utilização do Microcontrolador Arduino para a Construção de um Robô Seguidor de Linha. 2023. Disponível em: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2023#trab22099>.
-
-## Other publications
-
-- [H2 2023 classroom material](pmaq.md#material-de-sala-de-aula) - material published by me, as part of the Machine Design course.
-- [Research page](../research.md#publications) - publications dedicated to my academic research.
-
-
-
-<br><br><p><small>Last edited: 2024-11-17</small></p>

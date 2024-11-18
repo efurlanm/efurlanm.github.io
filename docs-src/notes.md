@@ -28,4 +28,3 @@ Collection of links I found interesting:
 * [Lectures by Walter Lewin at MIT (Youtube)](https://www.youtube.com/@lecturesbywalterlewin.they9259)
 * [Jeff Huang's page at Brown University](http://jeffhuang.com/)
 * [Maziar Raissi's page at University of Colorado Boulder](https://maziarraissi.github.io/)
-
