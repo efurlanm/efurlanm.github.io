@@ -14,7 +14,7 @@ theme:
         accent: white
     features:
         - header.autohide
-        #- navigation.instant
+        - navigation.instant
 markdown_extensions:
     - pymdownx.snippets:
         base_path: docs-src/include
