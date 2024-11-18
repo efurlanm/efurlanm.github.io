@@ -47,3 +47,6 @@ São José dos Campos, SP 12210-000
 ## Contact
 
 ✉ ![](img/email.svg)
+
+
+<br><br><p><small>Last edited: 2024-11-18</small></p>
