@@ -55,8 +55,8 @@ Conference web site: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2023
 
 ## Other publications
 
-- [H2 2023 classroom material](../pmaq/#material-de-sala-de-aula) - material published by me, as part of the Machine Design course.
-- [Research page](../../research/#publications) - publications dedicated to my academic research.
+- [H2 2023 classroom material](pmaq.md#material-de-sala-de-aula) - material published by me, as part of the Machine Design course.
+- [Research page](../research.md#publications) - publications dedicated to my academic research.
 
 
 
