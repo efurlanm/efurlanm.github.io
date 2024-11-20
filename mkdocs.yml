@@ -12,28 +12,27 @@ theme:
     palette:
         primary: white
         accent: white
+    font: false
     features:
         - header.autohide
-        - navigation.instant
+plugins:
+    - search
+    - blog:
+        post_readtime: false
 markdown_extensions:
-    - pymdownx.snippets:
-        base_path: docs-src/include
-        check_paths: true
     - def_list
     - md_in_html
     - tables
+    - pymdownx.snippets:
+        check_paths: true
+        base_path: docs-src/include
+extra_css:
+    - css/extra.css
+    - https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css
 extra_javascript:
     - javascripts/katex.js
     - https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js
     - https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js
-extra_css:
-    - https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css
-    - css/extra.css
-plugins:
-    #- offline
-    - search
-    - blog:
-        post_readtime: false
 exclude_docs: |
     .*
 not_in_nav: |
@@ -43,7 +42,6 @@ nav:
     - research.md
     - teaching/index.md
     - notes.md
-    - projects.md
     - Blog:
         - blog/index.md
     - Home: index.md
