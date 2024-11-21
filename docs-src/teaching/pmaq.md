@@ -28,7 +28,7 @@
 
 ### Material de sala de aula
 
---8<-- "pub-pmaq-2023h2.md"
+--8<-- "inc-pub-pmaq-2023h2.md"
 
 ## *Links* de interesse
 

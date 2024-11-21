@@ -1,6 +1,6 @@
 ### H2 2024 27º EAC conference
 
-Conference web site: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2024>
+Conference website: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2024>.
 
 * CRUZ, P. D. S.; NASCIMENTO, J. N. D.; SANTOS, E. D. C. D.; ARAUJO, I. E. O. D.; FLORES, W. R. B.; CLAVA, G. D. V.; SOUZA, L. S. B.; MIRANDA, E. F. SISTEMA DE GESTÃO DE VENDAS. Encontro de Atividades Científicas, n. 27, 2024. Disponível em: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2024#trab26892>.
 * MOTA, W. M. D.; MIRANDA, E. F. EMPOWERU. Encontro de Atividades Científicas, n. 27, 2024. Disponível em: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2024#trab26383>.
@@ -11,7 +11,7 @@ Conference web site: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2024
 * SOUZA, Y. A. R. D.; MACHADO, T. S.; MIRANDA, E. F. DESENVOLVIMENTO E IMPACTO DE UM APLICATIVO DE SUSTENTABILIDADE PARA INCENTIVAR PRÁTICAS ECOLÓGICAS NO COTIDIANO. Encontro de Atividades Científicas, n. 27, 2024. Disponível em: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2024#trab26646>.
 * TAMBERI, G. G.; RIBEIRO, M. H. J.; NASCIMENTO, M. C. A. D.; VOGIANTZIS, N.; ARRUDA, A. H. L.; SILVA, G. E. D. PROJETO INTEGRADO 2° SEMESTRE - FACULDADE ANHANGUERA. Encontro de Atividades Científicas, n. 27, 2024. Disponível em: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2024#trab26315>.
 
-### H2 2024 publications
+### H2 2024 preprints
 
 * BARBOSA, B. F.; ARAUJO, C. Q. D.; RAMOS, J. V. A. P.; ALVES, L. K.; FURTADO, P. H. D. S. Desenvolvimento de Mecânicas Básicas para um RPG 2D. 1 nov. 2024. DOI 10.5281/zenodo.14025670. Disponível em: <https://zenodo.org/records/14025671>.
 * NASCIMENTO, E. M. D. S.; SOUZA, G. C. D.; ALMEIDA, K. S. D.; SCARANELLO, L.; CERQUEIRA, N.; PEDRO EDUARDO ALVES DA SILVA; RAISSA CAVALCANTI LIMA; TAMIRES DA SILVA BEZERRA. Hora Marcada - PHP. 7 nov. 2024. DOI 10.5281/zenodo.14053068. Disponível em: <https://zenodo.org/records/14053069>.
@@ -28,7 +28,7 @@ Conference web site: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2024
 * MIGUEL, M. Happy Dogs: Facilitando a Vida dos Donos de Cães. 25 set. 2024. DOI 10.5281/zenodo.13839897. Disponível em: <https://zenodo.org/records/13839898>.
 * SOUZA, A. A. T.; SOUZA, G. S. de. Projeto do programa gerenciamento de estacionamento. 6 nov. 2024. DOI 10.5281/zenodo.14047981. Disponível em: <https://zenodo.org/records/14047982>.
 
-### H1 2024 publications
+### H1 2024 preprints
 
 * AZUL, E. S. Site de Pesquisas de TI. 2024. DOI 10.5281/zenodo.10914369. Disponível em: <https://zenodo.org/records/10914369>.
 * BORTOLOTTO, M.; CESAR, R. Python e MySQL. 27 mar. 2024. DOI 10.5281/zenodo.10888698. Disponível em: <https://zenodo.org/records/10888698>.
@@ -38,7 +38,7 @@ Conference web site: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2024
 
 ### H2 2023 26º EAC conference
 
-Conference web site: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2023>
+Conference website: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2023>.
 
 * BARONE, H. M.; CONCEICAO, L. M. D.; FERREIRA, L. de A.; AMORIM, L. O. D.; OLIVEIRA, G. L. D.; FERNANDES, R. E. D. S.; BARRETO, V. N. D. A.; MIRANDA, E. F. Programação e Desenvolvimento de Banco de Dados. 2023. Disponível em: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2023#trab22921>.
 * FILENO, J. D. S.; SILVA, G. C.; SANTOS, E. D. R.; MARCOLINO, A. S. D. A.; LIDUINO, T. D. J.; FACCI, R.; GARCIA, G. M. D. P.; MIRANDA, E. F. Passo a Passo da Criação de um Robô com Placa de Arduino. 2023. Disponível em: <https://eac.pgsscogna.com.br/anais/edicao-ano.php?ano=2023#trab22061>.

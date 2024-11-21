@@ -4,19 +4,12 @@ Courses are taught using the Portuguese language.
 
 ## Current duties
 
-Engineering
-
-* Industrial Communication Networks ([rci](rci.md))
-
-Computing
-
-* Computer Architecture and Organization ([aoc](aoc.md))
-* Computational Logic and Mathematics ([lmc](lmc.md))
-* Integrated Project ([pi](pi.md))
+* [Industrial Communication Networks](rci.md)
+* [Computer Architecture and Organization](aoc.md)
+* [Computational Logic and Mathematics](lmc.md)
+* [Integrated Project](pi.md)
 
 ## Past courses
-
-Engineering
 
 * [Building Systems](spred.md)
 * [Electrical Power Systems](sep.md)
@@ -30,9 +23,6 @@ Engineering
 * [Strategic Production Planning](pestr.md)
 * [Theory of Structures](testr.md)
 * [Transport Works](otran.md)
-
-Computing
-
 * [Advanced Algorithms and Data Structures](aed.md)
 * [Algorithms and Structured Programming](ape.md)
 * [Compilers](comp.md)
@@ -51,9 +41,9 @@ Computing
 
 ## Publications
 
-* [Publications by courses](pub-cour.md) - publications that are part of the classroom activities of the courses (in Portuguese).
+* [Course publications](pub-courses.md) - publications that were generated as part of the activities of the courses taught.
 
-* [All Publications (long listing)](pub-all.md) - collection of all publications, including courses publications, teaching material publications, and publications related to my research activities.
+* [All Publications ](pub-all.md) (long listing) - collection of all publications, including courses, teaching material, and related to my research.
 
 
-<br><br><p><small>Last edited: 2024-11-18</small></p>
+<br><br><br><small>Last edited: 2024-11-21</small>

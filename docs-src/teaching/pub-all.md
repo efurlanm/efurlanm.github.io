@@ -1,24 +1,24 @@
 # All publications
 
-Long listing of all publications including course publications, my classroom materials publications, and my academic research-related publications.
+Long listing of all publications including from courses, my classroom materials, and my academic research-related.
 
-## Publications by courses
+## Courses
 
-Publications, developed as part of the classroom activities developed in the courses I teach.
+Publications developed as part of the classroom activities developed in the courses I teach (in Portuguese).
 
---8<-- "pub-courses.md"
+--8<-- "inc-pub-courses.md"
 
 ## H2 2023 classroom material
 
-Material published by me, as part of the Machine Design course.
+Teaching material published by me, as part of the Machine Design course.
 
---8<-- "pub-pmaq-2023h2.md"
+--8<-- "inc-pub-pmaq-2023h2.md"
 
 ## Publications from my research
 
-Publications dedicated to my academic research.
+Publications from my academic postgraduate research at INPE.
 
---8<-- "pub-research.md"
+--8<-- "inc-pub-research-abnt.md"
 
 
-<br><br><p><small>Last edited: 2024-11-18</small></p>
+<br><br><br><small>Last edited: 2024-11-21</small>
