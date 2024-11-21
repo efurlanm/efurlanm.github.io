@@ -8,7 +8,7 @@ At INPE, my current postgraduate research focuses on high performance computing 
 
 ## Publications
 
-Publications related to my postgraduate course. There is also a [file containing the references in BibLaTeX format](../include/inc-pub-research.bib).
+Publications related to my postgraduate course. There is also a [file containing the references in BibLaTeX format](include/inc-pub-research.bib).
 
 --8<-- "inc-pub-research.md"
 
