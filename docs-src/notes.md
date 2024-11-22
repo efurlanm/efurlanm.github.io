@@ -23,13 +23,13 @@ Collection of links I found interesting.
 
 This section lists some random works that were developed both for personal use and for activities carried out in postgraduate studies and also for courses that I teach. Works related to research activities are on my [research](research.md) page. The following items are not ordered.
 
-* [Fortran](https://efurlanm.github.io/fortran/) - documentation and repository containing my personal notes on Fortran programming language and related topics.
+* [Fortran](https://efurlanm.github.io/fortran/) - repository containing my personal notes on Fortran programming language and related topics.
 
 * [HPC](https://github.com/efurlanm/hpc/) - repository dedicated to my personal notes on Cluster, High Performance Computing (HPC), Parallel Processing, Containers, applications and related topics.
 
 * [ML](https://github.com/efurlanm/ml/) - repository containing my personal notes  on Machine Learning and related topics.
 
-* [LDI](https://github.com/efurlanm/ldi/) - repository containing my personal notes on programming language design and implementation, and related topics.
+* [LDI](https://efurlanm.github.io/ldi/) - repository containing my personal notes on programming language design and implementation, and related topics.
 
 * [PD1B24](https://github.com/efurlanm/pd1b24) - repository containing code, data, manuscripts, and other files used in my research on PIML for the Qualifying and Proposal Exams.
 
