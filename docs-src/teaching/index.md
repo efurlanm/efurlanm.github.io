@@ -43,7 +43,7 @@ Courses are taught using the Portuguese language.
 
 * [Course publications](pub-courses.md) - publications that were generated as part of the activities of the courses taught.
 
-* [All Publications ](pub-all.md) (long listing) - collection of all publications, including courses, teaching material, and related to my research.
+* [All Publications ](pub-all.md) (long listing) - collection of all publications, including courses, teaching material, and my research.
 
 
 <br><br><br><small>Last edited: 2024-11-23</small>

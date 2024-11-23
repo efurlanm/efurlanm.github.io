@@ -35,6 +35,9 @@ extra_javascript:
     - https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js
 exclude_docs: |
     .*
+not_in_nav: |
+    teaching/
+    include/
 nav:
     - research.md
     - teaching/index.md
