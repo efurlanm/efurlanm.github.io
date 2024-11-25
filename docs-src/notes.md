@@ -7,9 +7,7 @@ Notes on research, technology, scientific computing, and engineering.
 
 This section lists some random works that were developed both for personal use and for activities carried out in postgraduate studies and also for courses that I teach. Works related to research activities are on my [research](research.md) page. The following items are not ordered.
 
-- [Fortran](https://efurlanm.github.io/fortran/) - repository containing my personal notes on Fortran programming language and related topics.
-
-- [LDI](https://efurlanm.github.io/ldi/) - repository containing my personal notes on programming language design and implementation, and related topics.
+- [Fortran](https://github.com/efurlanm/fortran/) - repository containing my personal notes on Fortran programming language and related topics.
 
 - [HPC](https://github.com/efurlanm/hpc/) - repository dedicated to my personal notes on Cluster, High Performance Computing (HPC), Parallel Processing, Containers, applications and related topics.
 
@@ -25,26 +23,37 @@ This section lists some random works that were developed both for personal use a
 
 - [TAMA21](https://github.com/efurlanm/tama21/) - repository containing examples of HPC approaches in Python environment for a 5-point stencil testing problem, executed on the Santos Dumont (SD) supercomputer and also on Google Colab (GC).
 
+- [CNN & MLP](https://github.com/efurlanm/351/) - repository containing my notes on the CAP 351 course, and also the manuscript generated from the work, entitled "Comparison of CNN and MLP artificial neural network models, for an optical character recognition test case" (in Portuguese).
+
 - The repositories 
-[239](https://github.com/efurlanm/239/),&nbsp;
-[351](https://github.com/efurlanm/351/),&nbsp; 
-[359](https://github.com/efurlanm/359/),&nbsp;
-[372](https://github.com/efurlanm/372/),&nbsp;
-[378](https://github.com/efurlanm/378/),&nbsp;
-[379](https://github.com/efurlanm/379/),&nbsp;
-[382](https://github.com/efurlanm/382/),&nbsp;
-​​[390](https://github.com/efurlanm/390/),&nbsp;
-[394](https://github.com/efurlanm/394/),&nbsp;
-[399](https://github.com/efurlanm/399/),&nbsp;
-[418](https://github.com/efurlanm/418/),&nbsp;
-[421](https://github.com/efurlanm/421/), and&nbsp;
-[425](https://github.com/efurlanm/425/) contain several different activities related to the courses I took at INPE.
+[239](https://github.com/efurlanm/239/),
+[351](https://github.com/efurlanm/351/),
+[359](https://github.com/efurlanm/359/),
+[372](https://github.com/efurlanm/372/),
+[378](https://github.com/efurlanm/378/),
+[379](https://github.com/efurlanm/379/),
+[382](https://github.com/efurlanm/382/),
+​​[390](https://github.com/efurlanm/390/),
+[394](https://github.com/efurlanm/394/),
+[399](https://github.com/efurlanm/399/),
+[418](https://github.com/efurlanm/418/),
+[421](https://github.com/efurlanm/421/), and
+[425](https://github.com/efurlanm/425/)
+contain several different activities related to the courses I took at INPE.
 
 - [Single-file HTML document template](https://github.com/efurlanm/john-doe/) - my version of Gregory Cadars' John Doe template, which is a document format contained in a single HTML file. [Document sample](https://efurlanm.github.io/john-doe/).
 
 - [mermaid-tw5](https://github.com/efurlanm/mermaid-tw5) and [katex-tw5](https://github.com/efurlanm/katex-tw5) - repositories containing my work on top of TiddlyWik (TW), which is a tool for producing documents (e-books, wikis, etc.) using a single HTML file. In Mermaid-TW5, I try to keep the Mermaid library at a version that seems to work best for the application, and in the case of Katex-TW5, I try to keep the KaTeX library up to date.
 
-- [Building a Compiler](https://drive.google.com/file/d/1qfuIVFNaU6OoOBferHHqT4ZyE85Nl-Tx)by Setzer&Melo (PDF, in Portuguese) - conversion to digital format of an excellent book, both for personal use, and use in the classes I teach, especially in the [Compilers](https://github.com/efurlanm/teaching/tree/main/comp/) course. The book is available at [the author's webpage](https://www.ime.usp.br/~vwsetzer/).
+- [Building a Compiler (in Portuguese: "A Construção de um Compilador")](https://archive.org/details/a-construcao-de-um-compilador-r1.2/), by Setzer&Melo (PDF, in Portuguese) - conversion to digital format of an excellent book, both for personal use, and use in the classes I teach, especially in the [Compilers](https://github.com/efurlanm/teaching/tree/main/comp/) course. The book is available at [the author's webpage](https://www.ime.usp.br/~vwsetzer/).
+
+
+## Language Design and Implementation
+
+I maintain separate onlined ocumentation of my personal notes on programming language design and implementation and related topics.
+
+* Website: <http://efurlanm.github.io/ldi/>
+* Repository: <https://github.com/efurlanm/ldi/>
 
 
 ## Bookmarks
@@ -63,4 +72,15 @@ Collection of links I found interesting.
 - [Jason Blevins' page, Professor at Ohio State University](https://jblevins.org/).
 
 
-<br><br><br><small>Last edited: 2024-11-23</small>
+## Listing of my online HTML documents
+
+List of online HTML documents that I produced and are available on Github.
+
+- Personal [[Website](https://efurlanm.github.io/)] [[Repository](https://github.com/efurlanm/efurlanm.github.io/)]
+- PINN & GQM [[Manuscript](https://efurlanm.github.io/421/)] [[Repository](https://github.com/efurlanm/421/)]
+- PINN Burger's [[Manuscript](https://efurlanm.github.io/425/)] [[Repository](https://github.com/efurlanm/425/)]
+- Stencil [[Manuscript](https://efurlanm.github.io/bs21/)] [[Repository](https://github.com/efurlanm/bs21/)]
+- Language Design [[Website](https://efurlanm.github.io/ldi/)] [[Repository](https://github.com/efurlanm/ldi/)]
+
+
+<br><br><br><small>Last edited: 2024-11-25</small>
