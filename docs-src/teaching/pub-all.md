@@ -6,6 +6,12 @@ Long listing of all publications including from courses, my classroom materials,
 
 Publications developed as part of the classroom activities developed in the courses I teach (in Portuguese).
 
+There are also files containing the references in BibTeX format:
+
+- [Courses](../include/inc-pub-courses.bib).
+- [Clasroom material](../include/inc-pub-pmaq-2023h2.bib).
+- [Research](../include/inc-pub-research.bib).
+
 --8<-- "inc-pub-courses.md"
 
 ## H2 2023 classroom material

@@ -44,24 +44,23 @@ This section lists some random works that were developed both for personal use a
 
 - [mermaid-tw5](https://github.com/efurlanm/mermaid-tw5) and [katex-tw5](https://github.com/efurlanm/katex-tw5) - repositories containing my work on top of TiddlyWik (TW), which is a tool for producing documents (e-books, wikis, etc.) using a single HTML file. In Mermaid-TW5, I try to keep the Mermaid library at a version that seems to work best for the application, and in the case of Katex-TW5, I try to keep the KaTeX library up to date.
 
-- [Building a Compiler](https://drive.google.com/file/d/1qfuIVFNaU6OoOBferHHqT4ZyE85Nl-Tx), by Setzer&Melo (in Portuguese) - conversion to digital format of an excellent book, both for personal use, and use in the classes I teach, especially in the [Compilers](https://github.com/efurlanm/teaching/tree/main/comp/) course. The book is available at [the author's webpage](https://www.ime.usp.br/~vwsetzer/).
+- [Building a Compiler](https://drive.google.com/file/d/1qfuIVFNaU6OoOBferHHqT4ZyE85Nl-Tx)by Setzer&Melo (PDF, in Portuguese) - conversion to digital format of an excellent book, both for personal use, and use in the classes I teach, especially in the [Compilers](https://github.com/efurlanm/teaching/tree/main/comp/) course. The book is available at [the author's webpage](https://www.ime.usp.br/~vwsetzer/).
 
 
 ## Bookmarks
 
 Collection of links I found interesting.
 
-- [Stephan Stephany's page at INPE](http://www.lac.inpe.br/~stephan/)
-- [Celso Mendes's page at INPE](http://www.lac.inpe.br/~celso/)
-- [Rafael Santos's page at INPE](http://www.lac.inpe.br/~rafael.santos/)
-- [Valdemar Setzer's page at USP](http://www.ime.usp.br/~vwsetzer/)
-- [Marcio Delamaro's page at USP](http://conteudo.icmc.usp.br/pessoas/delamaro/)
-- [Tomasz Kowaltowski's page at UNICAMP](http://www.ic.unicamp.br/~tomasz/)
-- [Lectures by Walter Lewin at MIT](https://www.youtube.com/@lecturesbywalterlewin.they9259) (Youtube video)
-- [Jeff Huang's page, Professor at Brown University](http://jeffhuang.com/)
-- [Maziar Raissi's page at University of Colorado Boulder](https://dl4sci-school.lbl.gov/maziar-raissi)
-- [Jason Blevins' page, Professor at Ohio State University](https://jblevins.org/)
-
+- [Stephan Stephany's page at INPE](http://www.lac.inpe.br/~stephan/).
+- [Celso Mendes's page at INPE](http://www.lac.inpe.br/~celso/).
+- [Rafael Santos's page at INPE](http://www.lac.inpe.br/~rafael.santos/).
+- [Valdemar Setzer's page at USP](http://www.ime.usp.br/~vwsetzer/).
+- [Marcio Delamaro's page at USP](http://conteudo.icmc.usp.br/pessoas/delamaro/).
+- [Tomasz Kowaltowski's page at UNICAMP](http://www.ic.unicamp.br/~tomasz/).
+- [Lectures by Walter Lewin at MIT](https://www.youtube.com/@lecturesbywalterlewin.they9259). (Youtube video)
+- [Jeff Huang's page, Professor at Brown University](http://jeffhuang.com/).
+- [Maziar Raissi's page at University of Colorado Boulder](https://dl4sci-school.lbl.gov/maziar-raissi).
+- [Jason Blevins' page, Professor at Ohio State University](https://jblevins.org/).
 
 
 <br><br><br><small>Last edited: 2024-11-23</small>

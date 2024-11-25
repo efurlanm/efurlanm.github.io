@@ -24,10 +24,10 @@ My name is Eduardo Furlan and I am a PhD student at the [National Institute for 
 
 ## Projects
 
-* ANN and PDE. Solving partial differential equations (PDE) using artificial neural networks (ANN). [[more info]](research.md)
-* Python and Fortran on HPC. Application of new technologies in HPC including machine learning. [[more info]](research.md)
+* ANN and PDE. Solving partial differential equations (PDE) using artificial neural networks (ANN).
+* Python on HPC. Use of recent HPC capabilities in solving scientific problems, including machine learning.
 
-The researches use the [Santos Dumont supercomputer at LNCC](https://sdumont.lncc.br/), as part of the project [AMPEMI](https://sdumont.lncc.br/projects_view.php?pg=projects&status=ongoing).
+More information can be found on the [research page](research.md).
 
 ## Teaching
 
@@ -39,10 +39,9 @@ I have 15+ years of experience in the packaging, machinery, automotive, and engi
 
 ## Address
 
-National Institute for Space Research (INPE)  
+[National Institute for Space Research (INPE)](https://www.gov.br/inpe/pt-br/area-conhecimento/posgraduacao)  
 1758 Astronautas Avenue  
 São José dos Campos, SP 12210-000  
-<https://www.gov.br/inpe/pt-br/area-conhecimento/posgraduacao>
 
 ## Contact
 

@@ -8,7 +8,7 @@ categories:
 
 # Neural Network Optimization
 
-My personal notes on Matthew Stewart's "Neural Network Optimization" post from June 27, 2019  
+Good post by Matthew Stewart's "Neural Network Optimization" from June 27, 2019.  
 <https://towardsdatascience.com/neural-network-optimization-7ca72d4db3e0>
 
 <!-- more -->

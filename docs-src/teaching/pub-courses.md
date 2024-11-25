@@ -5,7 +5,7 @@ The following items are student publications, developed as part of the classroom
 
 ## Manuscripts
 
-There also is a [file containing the references in BibLaTeX format](../include/inc-pub-courses.bib) (only the course publications).
+There also is a [file containing the references in BibTeX format](../include/inc-pub-courses.bib) for the course publications.
 
 --8<-- "inc-pub-courses.md"
 
