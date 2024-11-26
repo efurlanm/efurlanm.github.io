@@ -17,8 +17,8 @@ theme:
         - header.autohide
 plugins:
     - search
-    - blog:
-        post_readtime: false
+    #- blog:
+        #post_readtime: false
 markdown_extensions:
     - def_list
     - md_in_html
@@ -42,6 +42,6 @@ nav:
     - research.md
     - teaching/index.md
     - notes.md
-    - Blog:
-        - blog/index.md
+    #- Blog:
+        #- blog/index.md
     - index.md

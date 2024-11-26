@@ -13,6 +13,8 @@ This section lists some random works that were developed both for personal use a
 
 - [ML](https://github.com/efurlanm/ml/) - repository containing my personal notes on Machine Learning and related topics.
 
+- [LDI](http://efurlanm.github.io/ldi/) - I maintain separate online documentation of my personal notes on programming language and related topics.
+
 - [PD1B24](https://github.com/efurlanm/pd1b24/) - repository containing code, data, manuscripts, and other files used in my research on PIML for the Qualifying and Proposal Exams.
 
 - [PINN Data-Driven Parameter Discovery](https://github.com/efurlanm/425/tree/main/project/) - repository containing data, sources, and the manuscript *Data-Driven Parameter Discovery of a One-Dimensional Burgers’ Equation Using a Physics-Informed Neural Network*. There is an [online HTML version of the manuscript](https://efurlanm.github.io/425/).
@@ -45,15 +47,7 @@ contain several different activities related to the courses I took at INPE.
 
 - [mermaid-tw5](https://github.com/efurlanm/mermaid-tw5) and [katex-tw5](https://github.com/efurlanm/katex-tw5) - repositories containing my work on top of TiddlyWik (TW), which is a tool for producing documents (e-books, wikis, etc.) using a single HTML file. In Mermaid-TW5, I try to keep the Mermaid library at a version that seems to work best for the application, and in the case of Katex-TW5, I try to keep the KaTeX library up to date.
 
-- [Building a Compiler (in Portuguese: "A Construção de um Compilador")](https://archive.org/details/a-construcao-de-um-compilador-r1.2/), by Setzer&Melo (PDF, in Portuguese) - conversion to digital format of an excellent book, both for personal use, and use in the classes I teach, especially in the [Compilers](https://github.com/efurlanm/teaching/tree/main/comp/) course. The book is available at [the author's webpage](https://www.ime.usp.br/~vwsetzer/).
-
-
-## Language Design and Implementation
-
-I maintain separate onlined ocumentation of my personal notes on programming language design and implementation and related topics.
-
-* Website: <http://efurlanm.github.io/ldi/>
-* Repository: <https://github.com/efurlanm/ldi/>
+- [Book "A Construção de um Compilador" (Building a Compiler)](https://efurlanm.github.io/ldi/compconstr/), by Setzer&Melo (in Portuguese) - conversion to digital format of an excellent book, both for personal use, and use in the classes I teach, especially in the [Compilers](https://github.com/efurlanm/teaching/tree/main/comp/) course. The book is available at [the author's webpage](https://www.ime.usp.br/~vwsetzer/).
 
 
 ## Bookmarks
