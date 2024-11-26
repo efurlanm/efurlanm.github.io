@@ -1,4 +1,4 @@
-# About me
+# About
 
 <img src="img/avatar-200x150.jpg"
      style="float:right;margin-left:1em">
