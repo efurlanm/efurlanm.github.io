@@ -3,7 +3,7 @@
 
 ## Current
 
-At INPE, my current postgraduate research focuses on high performance computing (HPC) and machine learning (ML), specifically on the application of artificial neural networks (NN) to the simulation of physical processes. The research uses the supercomputer [Santos Dumont](https://sdumont.lncc.br/) of LNCC, as part of the project [AMPEMI](https://sdumont.lncc.br/projects_view.php?pg=projects&status=ongoing). The main repository is: <https://github.com/efurlanm/radnn> .
+At INPE, my current postgraduate research focuses on high performance computing (HPC) and machine learning (ML), specifically in the application of artificial neural networks (NN) to solve scientific problems, such as physical simulation. The research uses the supercomputer [Santos Dumont](https://sdumont.lncc.br/) of LNCC, as part of the project [AMPEMI](https://sdumont.lncc.br/projects_view.php?pg=projects&status=ongoing). The current research repository is: <https://github.com/efurlanm/radnn> .
 
 
 ## Publications
