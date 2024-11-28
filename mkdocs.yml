@@ -4,7 +4,7 @@ site_url: https://efurlanm.github.io/
 copyright: CC BY 4.0 License
 repo_name: efurlanm
 repo_url: https://github.com/efurlanm/
-docs_dir: docs-src
+docs_dir: src
 site_dir: docs
 theme:
     name: material
@@ -25,7 +25,7 @@ markdown_extensions:
     - tables
     - pymdownx.snippets:
         check_paths: true
-        base_path: docs-src/include
+        base_path: src/include
 extra_css:
     - css/extra.css
     - https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css

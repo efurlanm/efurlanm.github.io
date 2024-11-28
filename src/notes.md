@@ -5,15 +5,15 @@ Notes on research, technology, scientific computing, and engineering.
 
 ## Works
 
-This section lists some random works that were developed both for personal use and for activities carried out in postgraduate studies and also for courses that I teach. Works related to research activities are on my [research](research.md) page. The following items are not ordered.
-
-- [Fortran](https://github.com/efurlanm/fortran/) - repository containing my personal notes on Fortran programming language and related topics.
+This section lists some random works that were developed for personal use, for activities carried out in postgraduate studies, and also for courses that I teach. Works related to research activities are on my [research](research.md) page. The following items are not ordered.
 
 - [HPC](https://github.com/efurlanm/hpc/) - repository dedicated to my personal notes on Cluster, High Performance Computing, Parallel Processing, Containers, applications and related topics.
 
 - [ML](https://github.com/efurlanm/ml/) - repository containing my personal notes on Machine Learning and related topics.
 
 - [LDI](http://efurlanm.github.io/ldi/) - I maintain separate online documentation of my personal notes on programming language and related topics.
+
+- [Fortran](https://github.com/efurlanm/fortran/) - repository containing my personal notes on Fortran programming language and related topics.
 
 - [PD1B24](https://github.com/efurlanm/pd1b24/) - repository containing code, data, manuscripts, and other files used in my research on PIML for the Qualifying and Proposal Exams.
 
@@ -47,7 +47,7 @@ contain several different activities related to the courses I took at INPE.
 
 - [mermaid-tw5](https://github.com/efurlanm/mermaid-tw5) and [katex-tw5](https://github.com/efurlanm/katex-tw5) - repositories containing my work on top of TiddlyWik (TW), which is a tool for producing documents (e-books, wikis, etc.) using a single HTML file. In Mermaid-TW5, I try to keep the Mermaid library at a version that seems to work best for the application, and in the case of Katex-TW5, I try to keep the KaTeX library up to date.
 
-- [Book "A Construção de um Compilador" (Building a Compiler)](https://efurlanm.github.io/ldi/compconstr/), by Setzer&Melo (in Portuguese) - conversion to digital format of an excellent book, both for personal use, and use in the classes I teach, especially in the [Compilers](https://github.com/efurlanm/teaching/tree/main/comp/) course.
+- [Book "A Construção de um Compilador" (Building a Compiler)](https://efurlanm.github.io/ldi/buildcomp/), by Setzer&Melo (in Portuguese) - conversion to digital format of an excellent book, both for personal use, and use in the classes I teach, especially in the [Compilers](https://github.com/efurlanm/teaching/tree/main/comp/) course.
 
 
 ## Bookmarks
@@ -77,4 +77,4 @@ List of HTML documents and online pages produced by me, available on Github.
 - Stencil [[Manuscript](https://efurlanm.github.io/bs21/)] [[Repository](https://github.com/efurlanm/bs21/)]
 
 
-<br><br><br><small>Last edited: 2024-11-25</small>
+<br><br><br><small>Last edited: 2024-11-27</small>
