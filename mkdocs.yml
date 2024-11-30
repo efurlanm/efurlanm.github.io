@@ -38,6 +38,7 @@ exclude_docs: |
 not_in_nav: |
     teaching/
     include/
+    fortran/
 nav:
     - research.md
     - teaching/index.md
