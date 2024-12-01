@@ -15,35 +15,23 @@ This section lists some random works that were developed for personal use, for a
 
 - [PD1B24](https://github.com/efurlanm/pd1b24/) - repository containing code, data, manuscripts, and other files used in my research on PIML for the Qualifying and Proposal Exams.
 
+- [MSC22](https://github.com/efurlanm/msc22/) - repository containing the material generated during my master's research.
+
 - [PINN Data-Driven Parameter Discovery](https://github.com/efurlanm/425/tree/main/project/) - repository containing my work on data-driven parameter discovery of a 1D Burgers' equation using a physics-informed neural network. There is also an [online HTML version of the manuscript](https://efurlanm.github.io/425/).
 
 - [PINN GQM](https://github.com/efurlanm/421/tree/main/project/) - repository containing my work related to solving the Burgers' equation using two methods, physics-informed neural network and Gaussian quadrature. There is also an [online HTML version of the manuscript](https://efurlanm.github.io/421/).
 
-- [MSC22](https://github.com/efurlanm/msc22/) - repository containing the material generated during my master's research.
+- [Stencil HPC](https://github.com/efurlanm/bs21/) - comparison of high-performance computing approaches in the Python environment for a five-point Stencil test problem. There is also an [online HTML version of the manuscript](https://efurlanm.github.io/bs21/).
 
-- [TAMA21](https://github.com/efurlanm/tama21/) - repository containing examples of HPC approaches in Python environment for a 5-point stencil testing problem, executed on the Santos Dumont (SD) supercomputer and also on Google Colab (GC).
+- [TAMA21](https://github.com/efurlanm/tama21/) - repository containing a work developed for presentations in courses, on examples of HPC approaches in a Python environment for a 5-point stencil testing problem, executed on the Santos Dumont supercomputer and also on Google Colab.
 
 - [CNN & MLP](https://github.com/efurlanm/351/) - repository containing my notes on the CAP 351 course, and also the manuscript generated from the work, entitled "Comparison of CNN and MLP artificial neural network models, for an optical character recognition test case" (in Portuguese).
 
-- The repositories 
-[239](https://github.com/efurlanm/239/),
-[351](https://github.com/efurlanm/351/),
-[359](https://github.com/efurlanm/359/),
-[372](https://github.com/efurlanm/372/),
-[378](https://github.com/efurlanm/378/), 
-[379](https://github.com/efurlanm/379/), 
-[382](https://github.com/efurlanm/382/), 
-​​[390](https://github.com/efurlanm/390/), 
-[394](https://github.com/efurlanm/394/), 
-[399](https://github.com/efurlanm/399/), 
-[418](https://github.com/efurlanm/418/), 
-[421](https://github.com/efurlanm/421/), and 
-[425](https://github.com/efurlanm/425/) 
-contain several different activities related to the courses I took at INPE.
+- The repositories [239](https://github.com/efurlanm/239/), [351](https://github.com/efurlanm/351/), [359](https://github.com/efurlanm/359/), [372](https://github.com/efurlanm/372/), [378](https://github.com/efurlanm/378/), [379](https://github.com/efurlanm/379/), [382](https://github.com/efurlanm/382/), ​​[390](https://github.com/efurlanm/390/), [394](https://github.com/efurlanm/394/), [399](https://github.com/efurlanm/399/), [418](https://github.com/efurlanm/418/), [421](https://github.com/efurlanm/421/), and [425](https://github.com/efurlanm/425/) contain several different activities related to the courses I took at INPE.
 
-- [Single-file HTML document template](https://github.com/efurlanm/john-doe/) - my version of Gregory Cadars' John Doe template, which is a document format contained in a single HTML file.
+- [mermaid-tw5](https://github.com/efurlanm/mermaid-tw5) and [katex-tw5](https://github.com/efurlanm/katex-tw5) - repositories containing my work on top of [TiddlyWiki](https://tiddlywiki.com/), which is a tool for producing documents (e-books, wikis, etc.) using a single HTML file.
 
-- [mermaid-tw5](https://github.com/efurlanm/mermaid-tw5) and [katex-tw5](https://github.com/efurlanm/katex-tw5) - repositories containing my work on top of TiddlyWik (TW), which is a tool for producing documents (e-books, wikis, etc.) using a single HTML file. In Mermaid-TW5, I try to keep the Mermaid library at a version that seems to work best for the application, and in the case of Katex-TW5, I try to keep the KaTeX library up to date.
+- [Single-file HTML template](https://github.com/efurlanm/john-doe/) - my version of Gregory Cadars' John Doe template, which is a document format contained in a single HTML file.
 
 - [Book "A Construção de um Compilador" (Building a Compiler)](https://efurlanm.github.io/ldi/buildcomp/), by Setzer&Melo (in Portuguese) - conversion to digital format of an excellent book, both for personal use, and use in the classes I teach, especially in the [Compilers](https://github.com/efurlanm/teaching/tree/main/comp/) course.
 
@@ -64,15 +52,15 @@ Collection of links I found interesting.
 - [Jason Blevins' page, Professor at Ohio State University](https://jblevins.org/).
 
 
-## My online documents
+## My online pages
 
-List of HTML documents and online pages produced by me, available on Github.
+Listing of my online HTML pages and repositories, available on Github.
 
 - Personal Page [[Website](https://efurlanm.github.io/)] [[Repository](https://github.com/efurlanm/efurlanm.github.io/)]
-- Language Design [[Website](https://efurlanm.github.io/ldi/)] [[Repository](https://github.com/efurlanm/ldi/)]
-- PINN & GQM [[Manuscript](https://efurlanm.github.io/421/)] [[Repository](https://github.com/efurlanm/421/)]
-- PINN Burger's [[Manuscript](https://efurlanm.github.io/425/)] [[Repository](https://github.com/efurlanm/425/)]
-- Stencil [[Manuscript](https://efurlanm.github.io/bs21/)] [[Repository](https://github.com/efurlanm/bs21/)]
+- Language Page [[Website](https://efurlanm.github.io/ldi/)] [[Repository](https://github.com/efurlanm/ldi/)]
+- PINN Discovery [[Manuscript](https://efurlanm.github.io/425/)] [[Repository](https://github.com/efurlanm/425/)]
+- PINN GQM [[Manuscript](https://efurlanm.github.io/421/)] [[Repository](https://github.com/efurlanm/421/)]
+- Stencil HPC [[Manuscript](https://efurlanm.github.io/bs21/)] [[Repository](https://github.com/efurlanm/bs21/)]
 
 
-<br><br><br><small>Last edited: 2024-11-27</small>
+<br><br><br><small>Last edited: 2024-11-30</small>

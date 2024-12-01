@@ -17,15 +17,6 @@ theme:
         - header.autohide
 plugins:
     - search
-    #- blog:
-        #post_readtime: false
-markdown_extensions:
-    - def_list
-    - md_in_html
-    - tables
-    - pymdownx.snippets:
-        check_paths: true
-        base_path: src/include
 extra_css:
     - css/extra.css
     - https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css
@@ -33,16 +24,20 @@ extra_javascript:
     - javascripts/katex.js
     - https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js
     - https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js
+markdown_extensions:
+    - def_list
+    - md_in_html
+    - tables
+    - pymdownx.snippets:
+        check_paths: true
+        base_path: src/include
 exclude_docs: |
     .*
 not_in_nav: |
     teaching/
     include/
-    fortran/
 nav:
     - research.md
     - teaching/index.md
     - notes.md
-    #- Blog:
-        #- blog/index.md
     - index.md
