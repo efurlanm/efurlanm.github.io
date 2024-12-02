@@ -15,3 +15,14 @@ The following links point to repositories containing my personal notes and assig
 * [Numerical Methods I (CAP 418)](https://github.com/efurlanm/418/)
 * [Deep Learning (CAP 421)](https://github.com/efurlanm/421/)
 * [Advanced Topics in Environmental Modeling (CAP 425)](https://github.com/efurlanm/425/)
+
+
+# Seminars at INPE
+
+Some seminars that I participated as part of the course at INPE
+
+(in construction)
+
+* 2022-06-23 Challenges in Engineering Secure Software Systems, by Joanna Cecilia da Silva Santos
+* 2022-05-19 Use of complex networks in automatic detection, diagnosis and classification of Alzheimer's disease, by Andriana Susana Lopes de Oliveira Campaigno.
+* 2022-05-12 MONAN: A new paradigm of focus and organization for the advance of the numerical prediction of time, climate and environment in Brazil, by Saulo R. Freitas.
