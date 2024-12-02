@@ -23,7 +23,7 @@ This section lists some random works that were developed for personal use, for a
 
 - [ML](https://github.com/efurlanm/ml/) - repository containing my personal notes on Machine Learning and related topics.
 
-- [LDI](http://efurlanm.github.io/ldi/) - web page with my personal notes on programming languages and related topics.
+- [Home](http://efurlanm.github.io/home/) - web page with my personal notes on computing and related topics.
 
 - [CNN & MLP](https://github.com/efurlanm/351/) - repository containing my notes on the CAP 351 course, and also the manuscript generated from the work, entitled "Comparison of CNN and MLP artificial neural network models, for an optical character recognition test case" (in Portuguese).
 

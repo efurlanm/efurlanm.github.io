@@ -36,6 +36,7 @@ exclude_docs: |
 not_in_nav: |
     teaching/
     include/
+    courses.md
 nav:
     - research.md
     - teaching/index.md
