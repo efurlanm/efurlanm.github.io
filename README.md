@@ -1,6 +1,6 @@
-# My personal website
+# My portfolio sources
 
-Welcome to the repository containing the sources of my personal website.
+Welcome to the repository containing the sources of my portfolio.
 
 - <http://efurlanm.github.io/>
 
