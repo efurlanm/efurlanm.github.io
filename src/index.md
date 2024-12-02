@@ -5,7 +5,7 @@
 
 My name is Eduardo Furlan and I am a PhD student at the [National Institute for Space Research](http://antigo.inpe.br/posgraduacao/) (INPE), in the [Postgraduate Program in Applied Computing](http://antigo.inpe.br/posgraduacao/cap/) (CAP). My research field is High Performance Computing (HPC), advised by [Stephan Stephany](http://www.lac.inpe.br/~stephan/) and [Roberto Souto](https://www.lncc.br/colaborador/Roberto_Pinto_Souto). I received my MSc in Applied Computing from INPE in 2022. The focus of my research is the solution of advanced scientific and engineering problems using [HPC](https://en.wikipedia.org/wiki/High-performance_computing). I also teach undergraduate courses, and I have 15+ years of experience in the industrial engineering field.
 
-[Lattes](http://lattes.cnpq.br/3103925764927851/) | [ORCID](http://orcid.org/0000-0003-1200-794X/) | [Google Scholar](https://scholar.google.com/citations?user=U0dQLgcAAAAJ) | [Linkedin](http://www.linkedin.com/in/eduardofurlanm/) |  [Github](http://github.com/efurlanm)
+[Lattes](http://lattes.cnpq.br/3103925764927851/) | [ORCID](http://orcid.org/0000-0003-1200-794X/) | [Google Scholar](https://scholar.google.com/citations?user=U0dQLgcAAAAJ) | [Linkedin](https://www.linkedin.com/in/eduardofurlanm) |  [Github](http://github.com/efurlanm)
 
 ## Updates
 
