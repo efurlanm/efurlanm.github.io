@@ -23,6 +23,8 @@ Some seminars that I participated as part of the course at INPE
 
 (in construction)
 
-* 2022-06-23 Challenges in Engineering Secure Software Systems, by Joanna C. da S. Santos.
-* 2022-05-19 Use of complex networks in automatic detection, diagnosis and classification of Alzheimer's disease, by Andriana Susana L. de O. Campaigno.
-* 2022-05-12 MONAN: A new paradigm of focus and organization for the advance of the numerical prediction of time, climate and environment in Brazil, by Saulo R. Freitas.
+* Campaigno, A. S. L. de O. (2022). Use of complex networks in automatic detection, diagnosis and classification of Alzheimer’s disease [Seminar].
+* Freitas, S. R. (2022). MONAN: A new paradigm of focus and organization for the advance of the numerical prediction of time, climate and environment in Brazil [Seminar].
+* Gheyi, R. (2022). Testing Refactoring Implementations [Seminar].
+* Krug, T. (2022). What does science predict for the future of the climate? [Seminar].
+* Santos, J. C. da S. (2022). Challenges in Engineering Secure Software Systems [Seminar].

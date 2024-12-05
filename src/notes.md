@@ -5,7 +5,7 @@ Notes on research, technology, scientific computing, and engineering.
 
 ## Works
 
-This section lists some random works that were developed for personal use, for activities carried out in postgraduate studies, and also for courses that I teach. Works related to research activities are on my [research](./research.md) page. The following items are not ordered.
+This section includes some of the work I have completed for my own use, for postgraduate coursework, and for my classes. My [research](./research.md) page contains works pertaining to my research activity. I also keep sporadic personal [notes](http://efurlanm.github.io/home/) on a different website. The following items are not ordered.
 
 - [PD1B24](https://github.com/efurlanm/pd1b24/) - repository containing code, data, manuscripts, and other files used in my research on PIML for the Qualifying and Proposal Exams.
 
@@ -22,8 +22,6 @@ This section lists some random works that were developed for personal use, for a
 - [HPC](https://github.com/efurlanm/hpc/) - repository dedicated to my personal notes on Cluster, High Performance Computing, Parallel Processing, Containers, applications and related topics.
 
 - [ML](https://github.com/efurlanm/ml/) - repository containing my personal notes on Machine Learning and related topics.
-
-- [Home](http://efurlanm.github.io/home/) - web page with my personal notes on computing and related topics.
 
 - [CNN & MLP](https://github.com/efurlanm/351/) - repository containing my notes on the CAP 351 course, and also the manuscript generated from the work, entitled "Comparison of CNN and MLP artificial neural network models, for an optical character recognition test case" (in Portuguese).
 
@@ -62,5 +60,12 @@ Listing of my online HTML pages and repositories.
 - PINN GQM [[Online Manuscript](https://efurlanm.github.io/421/)] [[Repository](https://github.com/efurlanm/421/)]
 - Stencil HPC [[Online Manuscript](https://efurlanm.github.io/bs21/)] [[Repository](https://github.com/efurlanm/bs21/)]
 
+### Alsjf cosur
+
+Alsjf cosur
+
+#### Alsjf cosur
+
+Alsjf cosur
 
 <br><br><br><small>Last edited: 2024-12-02</small>
