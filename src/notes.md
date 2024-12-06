@@ -29,7 +29,7 @@ This section includes some of the work I have completed for my own use, for post
 
 - [mermaid-tw5](https://github.com/efurlanm/mermaid-tw5) and [katex-tw5](https://github.com/efurlanm/katex-tw5) - repositories containing my work on top of [TiddlyWiki](https://tiddlywiki.com/), which is a tool for producing  documents (e-books, wikis, etc.) using a single HTML file.
 
-- [Single-file HTML template](https://github.com/efurlanm/john-doe/) - my version of Gregory Cadars' John Doe template, which is a document format contained in a single HTML file.
+- [Single-file HTML template](https://github.com/efurlanm/john-doe/) - repository containing my version of Gregory Cadar's John Doe Template, which is a document format contained in a single HTML file. Must be edited directly in HTML.
 
 - [Book "A Construção de um Compilador" (Building a Compiler)](https://efurlanm.github.io/ldi/buildcomp/), by Setzer&Melo (in Portuguese) - conversion to PDF format of an excellent book, both for personal use, and use in the classes I teach, especially in the [Compilers](https://github.com/efurlanm/teaching/tree/main/comp/) course.
 
@@ -52,20 +52,13 @@ Collection of links I found interesting.
 
 ## My online pages
 
-Listing of my online HTML pages and repositories.
+Listing of my online HTML pages.
 
-- Personal Page [[Webpage](https://efurlanm.github.io/)] [[Repository](https://github.com/efurlanm/efurlanm.github.io/)]
-- Language Page [[Webpage](https://efurlanm.github.io/ldi/)] [[Repository](https://github.com/efurlanm/ldi/)]
+- Perfil [[Webpage](https://efurlanm.github.io/)] [[Repository](https://github.com/efurlanm/efurlanm.github.io/)]
 - PINN Discovery [[Online Manuscript](https://efurlanm.github.io/425/)] [[Repository](https://github.com/efurlanm/425/)]
 - PINN GQM [[Online Manuscript](https://efurlanm.github.io/421/)] [[Repository](https://github.com/efurlanm/421/)]
 - Stencil HPC [[Online Manuscript](https://efurlanm.github.io/bs21/)] [[Repository](https://github.com/efurlanm/bs21/)]
 
-### Alsjf cosur
 
-Alsjf cosur
 
-#### Alsjf cosur
-
-Alsjf cosur
-
-<br><br><br><small>Last edited: 2024-12-02</small>
+<br><br><br><small>Last edited: 2024-12-06</small>
