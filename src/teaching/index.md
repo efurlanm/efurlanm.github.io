@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Teaching
 
 Courses are taught using the Portuguese language.

@@ -13,4 +13,11 @@ Publications related to my postgraduate course. There is also a [file containing
 --8<-- "inc-pub-research.md"
 
 
-<br><br><br><small>Last edited: 2024-11-26</small>
+## Manuscripts
+
+Manuscripts related to my postgraduate course. There is also a [file containing the references in BibTeX format](include/inc-pub-manuscript.bib).
+
+--8<-- "inc-pub-manuscript.md"
+
+
+<br><br><br><small>Last edited: 2024-12-08</small>

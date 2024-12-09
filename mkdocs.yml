@@ -1,9 +1,20 @@
+# Last edited: 2024-12-08
+# This is a work in progress and, so, subject to constant change.
+# **********************************************************************
+# *  I couldn't get it to work offline on Android without a webserver  *
+# **********************************************************************
 site_name: Eduardo Furlan
 site_author: Eduardo Furlan
-site_url: https://efurlanm.github.io/
+site_url: ""  # https://efurlanm.github.io/
+site_description: Eduardo Furlan's Page
 copyright: CC BY 4.0 License
+
+# Repository
 repo_name: efurlanm
 repo_url: https://github.com/efurlanm/
+
+# Configuration
+use_directory_urls: false  # to browse locally
 docs_dir: src
 site_dir: docs
 theme:
@@ -12,18 +23,25 @@ theme:
     palette:
         primary: white
         accent: white
-    font: false
+    font: false  # no external fonts
+    favicon: img/favicon.ico
     features:
-        - header.autohide
+       - header.autohide
+    #logo: img/home.svg
 plugins:
-    - search
-extra_css:
-    - css/extra.css
-    - https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css
+    #- search
+    - offline
+    - privacy
+#extra:
+    #generator: false
+    #homepage: []
 extra_javascript:
     - javascripts/katex.js
-    - https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js
-    - https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js
+    - javascripts/katex/katex.min.js
+    - javascripts/katex/contrib/auto-render.min.js
+extra_css:
+    - javascripts/katex/katex.min.css
+    - css/extra.css
 markdown_extensions:
     - def_list
     - md_in_html
@@ -31,14 +49,26 @@ markdown_extensions:
     - pymdownx.snippets:
         check_paths: true
         base_path: src/include
+    - pymdownx.arithmatex:
+        generic: true  # used with katex
 exclude_docs: |
     .*
 not_in_nav: |
     teaching/
     include/
     courses.md
+    cheatsheet.md
 nav:
     - research.md
     - teaching/index.md
     - notes.md
     - index.md
+
+
+# ## NOTES ##
+#
+# MKDOCS INSTALL
+# pip install --user mkdocs mkdocs-material mkdocs-macros-plugin
+#
+# MKDOCS.YML EXAMPLE
+# https://github.com/squidfunk/mkdocs-material/blob/master/mkdocs.yml
