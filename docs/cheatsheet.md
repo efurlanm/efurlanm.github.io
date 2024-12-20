@@ -1,5 +1,3 @@
-Oi, mundo!
-
 # Python-Markdown cheatsheet (hd1)
 
 ## Python-Markdown (hd2)
