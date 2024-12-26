@@ -1,0 +1,84 @@
+/* Font size, in 'em', relative to 16px.
+ px  em
+ 10  0.625
+ 12  0.75
+ 14  0.875
+ 16  1
+ 18  1.125
+ 20  1.25
+ 22  1.375
+ 24  1.5
+ 28  1.75
+ 30  1.875 */
+
+/* https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#custom-colors */
+/* src/assets/stylesheets/main/_colors.scss */
+:root {
+  --font-size-small: .875em;
+}
+
+/* ### P, LI ### */
+.md-typeset p:not([class]),
+.md-typeset li:not([class]) {
+    hyphens: auto;
+    text-align: justify;
+}
+
+
+/* ### CODE ### */
+.md-typeset code:not([class]) {
+    font-size: var(--font-size-smal);
+}
+
+
+/* ### DT ### */
+.md-typeset dt:not([class]) {
+  font-size: var(--font-size-smal);
+  font-weight: bold;
+}
+
+
+/* ### FIGCAPTION ### */
+.md-typeset figcaption:not([class]) {
+    font-size: var(--font-size-smal);
+    font-style: normal;
+    hyphens: auto;
+    text-align: justify;
+    text-color: dimgray;
+}
+
+
+/* ### TABLE ### */
+.md-typeset table:not([class]) {
+    font-size: var(--font-size-smal);
+    line-height: 1;
+    border: none;
+    border-collapse: collapse;
+}
+.md-typeset table:not([class]) td,
+.md-typeset table:not([class]) th {
+    border: 1px solid var(--md-typeset-table-color);
+    vertical-align: middle;
+}
+.md-typeset table:not([class]) tr:nth-child(2n) {
+  background-color: var(--md-code-bg-color);
+}
+
+
+/* ### JUPYTER ### */
+/*.jupyter-wrapper .jp-RenderedText {
+    --jp-code-font-size: var(--font-size-smal);
+}
+.md-typeset h1:not([class]) {
+    margin-top: calc(var(--jp-content-heading-margin-top));
+    margin-bottom: calc(var(--jp-content-heading-margin-bottom));
+}
+.jp-RenderedHTMLCommon h1 {
+    margin: var(--jp-content-heading-margin-top) 0 var(--jp-content-heading-margin-bottom) 0;
+}*/
+
+
+/* text line width */
+/*.md-grid {
+    max-width: 90em;
+}  */
