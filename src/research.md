@@ -1,6 +1,5 @@
 # Research
 
-
 ## Current
 
 My current postgraduate research focuses on high performance computing (HPC) and machine learning (ML), specifically in the application of artificial neural networks (NN) to solve scientific problems, such as physical simulation. The research uses the supercomputer [Santos Dumont](https://sdumont.lncc.br/) of LNCC, as part of the project [AMPEMI](https://sdumont.lncc.br/projects_view.php?pg=projects&status=ongoing). The current research repository is: <https://github.com/efurlanm/radnn/> .

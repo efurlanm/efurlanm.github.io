@@ -1,6 +1,6 @@
 # Teaching
 
-List of current duties and courses taught. The links point to repositories where some more information, in Portuguese, can be found.
+List of current duties and courses taught. The links point to repositories where some more information can be found (in Portuguese).
 
 ## Current duties
 

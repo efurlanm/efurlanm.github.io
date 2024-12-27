@@ -31,7 +31,6 @@ extra_javascript:
 markdown_extensions:
     - tables
     - def_list
-    - md_in_html
     - pymdownx.snippets:    # mkdocs-macros-plugin
         check_paths: true
         base_path: src/include
