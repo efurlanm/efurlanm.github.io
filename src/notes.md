@@ -24,7 +24,12 @@ This section includes some of the work I have completed for my own use, for post
 - [Home](https://github.com/efurlanm/home/) - repository dedicated to my personal notes on High Performance Computing, Parallel Processing, Programming Languages, and related topics.
 
 
-## Bookmarks
+## Courses
+
+- [Courses](courses.md) - list of courses I took at INPE.
+
+
+## Random bookmarks
 
 Collection of links I found interesting.
 
@@ -38,11 +43,7 @@ Collection of links I found interesting.
 - [Jeff Huang's page, Professor at Brown University](http://jeffhuang.com/).
 - [Maziar Raissi's page at University of Colorado Boulder](https://dl4sci-school.lbl.gov/maziar-raissi).
 - [Jason Blevins' page, Professor at Ohio State University](https://jblevins.org/).
+- [JupyterLite](https://jupyterlite.readthedocs.io/en/latest/_static/lab/index.html). JupyterLab distribution that runs entirely in the browser.
 
 
-## Courses
-
-- [Courses](courses.md) - list of courses I took at INPE.
-
-
-<br><sub>Last edited: 2024-12-25</sub>
+<br><sub>Last edited: 2024-12-28</sub>
