@@ -24,8 +24,8 @@ My name is Eduardo Furlan and I am a PhD student at the [National Institute for 
 
 ## Projects
 
-* **ANN and PDE**. Solving partial differential equations (PDE) using artificial neural networks (ANN).
-* **Python on HPC**. Use of recent HPC capabilities in solving scientific problems, including machine learning.
+* **PIML** - application of physics-based machine learning in solving scientific problems.
+* **MPI-based HPC Approaches** - use of recent high-performance computing resources in solving scientific problems.
 
 More information can be found on the [research page](research.md).
 
