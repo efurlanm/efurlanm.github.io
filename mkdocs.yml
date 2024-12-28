@@ -41,7 +41,6 @@ exclude_docs: |
     assets/cheatsheet.md
 not_in_nav: |
     include/
-    jupyterlite/
     courses.md
     pub-all.md
     pub-courses.md
