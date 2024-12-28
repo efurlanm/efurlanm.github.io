@@ -16,8 +16,8 @@ theme:
         text: Lato
     features:
         - header.autohide
-        - navigation.instant
         - navigation.tracking   # address show active anchor
+        - navigation.instant
 plugins: []
 extra:
     generator: false
@@ -41,6 +41,7 @@ exclude_docs: |
     assets/cheatsheet.md
 not_in_nav: |
     include/
+    jupyterlite/
     courses.md
     pub-all.md
     pub-courses.md
