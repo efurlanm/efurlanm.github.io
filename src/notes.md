@@ -43,7 +43,6 @@ Collection of links I found interesting.
 - [Jeff Huang's page, Professor at Brown University](http://jeffhuang.com/).
 - [Maziar Raissi's page at University of Colorado Boulder](https://dl4sci-school.lbl.gov/maziar-raissi).
 - [Jason Blevins' page, Professor at Ohio State University](https://jblevins.org/).
-- [JupyterLite](https://jupyterlite.readthedocs.io/en/latest/_static/lab/index.html). JupyterLab distribution that runs entirely in the browser.
 
 
 <br><sub>Last edited: 2024-12-28</sub>

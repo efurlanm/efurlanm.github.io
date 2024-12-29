@@ -1,32 +1,32 @@
-/* Margem inferior zerada para todos os li - CRUCIAL PARA EVITAR ESPAÇAMENTOS RESIDUAIS */
+/* Zero bottom margin for all li - CRUCIAL TO AVOID RESIDUAL SPACING */
 .md-typeset ul li,
 .md-typeset ol li {
     margin-bottom: 0;
 }
 
-/* Espaçamento ENTRE os itens da lista (usando MARGIN no li) - CONDICIONAL: Apenas se houver outro li ANTES E SE O *PRIMEIRO FILHO* DESTE li FOR UM <p> */
-.md-typeset li + li > p:first-of-type { /* Seletor de irmão adjacente (+) E seletor de filho direto (>) E seletor :first-of-type - CRUCIAL */
-    margin-top: 0rem; /* Espaçamento entre itens COM <p> - Ajuste este valor para controlar o espaçamento de "uma linha" */
+/* Spacing BETWEEN list items (using MARGIN on li) - CONDITIONAL: Only if there is another li BEFORE AND IF the *FIRST CHILD* of THIS li is a <p> */
+.md-typeset li + li > p:first-of-type { /* Adjacent sibling selector (+) AND direct child selector (>) AND :first-of-type selector - CRUCIAL */
+    margin-top: 0rem; /* Spacing between items WITH <p> - Adjust this value to control "one line" spacing */
 }
 
-/* Espaçamento APENAS para a PRIMEIRA sublista DENTRO de um item da lista PAI QUE TEM UM PARÁGRAFO */
+/* Spacing ONLY for the FIRST sublist WITHIN a parent list item THAT HAS A PARAGRAPH */
 .md-typeset li > p + ul,
 .md-typeset li > p + ol {
     margin-top: 0rem;
 }
 
-/* Remove o espaçamento interno dos parágrafos DENTRO dos LIs */
+/* Remove internal padding of paragraphs WITHIN LIs */
 .md-typeset li > p {
     margin: 0;
     padding: 0;
 }
 
-/* Espaçamento entre parágrafos DENTRO do MESMO item da lista */
+/* Spacing between paragraphs WITHIN THE SAME list item */
 .md-typeset li > p + p {
     margin-top: 0.5rem;
 }
 
-/* Remove margem extra em listas imediatamente após um parágrafo fora da lista */
+/* Remove extra margin on lists immediately after a paragraph outside the list */
 .md-typeset > p + ul,
 .md-typeset > p + ol {
     margin-top: 0.8rem;
