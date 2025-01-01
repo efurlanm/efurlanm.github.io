@@ -10,8 +10,8 @@ theme:
     name: material
     # squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
     palette:
-        primary: grey
-        accent: grey
+        primary: white
+        accent: white
     font:
         text: Lato
     features:
