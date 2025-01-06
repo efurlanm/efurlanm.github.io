@@ -45,4 +45,6 @@ Collection of links I found interesting.
 - [Jason Blevins' page, Professor at Ohio State University](https://jblevins.org/).
 
 
+<div style="text-align: right;">
 <br><sub>Last edited: 2024-12-28</sub>
+</div>
