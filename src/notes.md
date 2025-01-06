@@ -40,11 +40,9 @@ Collection of links I found interesting.
 - [Marcio Delamaro's page at USP](http://conteudo.icmc.usp.br/pessoas/delamaro/).
 - [Tomasz Kowaltowski's page at UNICAMP](http://www.ic.unicamp.br/~tomasz/).
 - [Lectures by Walter Lewin at MIT](https://www.youtube.com/@lecturesbywalterlewin.they9259). (Youtube video)
-- [Jeff Huang's page, Professor at Brown University](http://jeffhuang.com/).
+- [Jeff Huang's page at Brown University](http://jeffhuang.com/).
 - [Maziar Raissi's page at University of Colorado Boulder](https://dl4sci-school.lbl.gov/maziar-raissi).
-- [Jason Blevins' page, Professor at Ohio State University](https://jblevins.org/).
+- [Jason Blevins' page at Ohio State University](https://jblevins.org/).
+- [John Burkardt's page at Florida State University](https://people.sc.fsu.edu/~jburkardt/).
 
-
-<div style="text-align: right;">
-<br><sub>Last edited: 2024-12-28</sub>
-</div>
+<br><sub>Last edited: 2025-01-06</sub>
