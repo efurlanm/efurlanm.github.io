@@ -8,7 +8,7 @@ List of current duties and courses taught. The links point to repositories where
 * [Formal Languages ​​and Automata](https://github.com/efurlanm/teaching/tree/main/lfa)
 * [Programming Languages](https://github.com/efurlanm/teaching/tree/main/lprog)
 * [Integrated Project](https://github.com/efurlanm/teaching/tree/main/pi/)
-* [Final Course Work](https://github.com/efurlanm/teaching/tree/main/tcc)
+* [Capstone Project](https://github.com/efurlanm/teaching/tree/main/tcc)
 
 ## Past courses
 
@@ -50,4 +50,4 @@ List of current duties and courses taught. The links point to repositories where
 * [All Publications ](pub-all.md) (long listing) - collection of all publications, including courses, teaching material, and my research.
 
 
-<br><sub>Last edited: 2024-12-25</sub>
+<br><sub>Last edited: 2025-01-14</sub>

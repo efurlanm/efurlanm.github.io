@@ -1,4 +1,4 @@
-# Last edited: 2024-12-28
+# Last edited: 2025-01-14
 # Site Generator: https://squidfunk.github.io/mkdocs-material/
 site_name: Eduardo Furlan
 site_author: Eduardo Furlan
@@ -10,14 +10,12 @@ theme:
     name: material
     # squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
     palette:
-        primary: white
-        accent: white
-    font:
-        text: Lato
+        primary: grey
+        accent: grey
     features:
         - header.autohide
-        - navigation.tracking   # address show active anchor
-        - navigation.instant
+        #- navigation.tracking   # address show active anchor
+        #- navigation.instant
 plugins: []
 extra:
     generator: false
@@ -30,11 +28,11 @@ extra_javascript:
     - assets/katex/contrib/auto-render.min.js
 markdown_extensions:
     - tables
-    - pymdownx.snippets:    # mkdocs-macros-plugin
+    - pymdownx.snippets:        # mkdocs-macros-plugin
         check_paths: true
         base_path: src/include
     - pymdownx.arithmatex:
-        generic: true   # katex
+        generic: true           # katex
 exclude_docs: |
     .*
     assets/cheatsheet.md

@@ -21,7 +21,7 @@ This section includes some of the work I have completed for my own use, for post
 
 - [CNN & MLP](https://github.com/efurlanm/351/) - repository containing my notes on the CAP 351 course, and also the manuscript generated from the work, entitled "Comparison of CNN and MLP artificial neural network models, for an optical character recognition test case" (in Portuguese).
 
-- [Home](https://github.com/efurlanm/home/) - repository dedicated to my personal notes on High Performance Computing, Parallel Processing, Programming Languages, and related topics.
+- [Home](https://github.com/efurlanm/home/) - repository dedicated to my random personal notes on topics such as high performance computing, parallel processing, programming languages, and others.
 
 
 ## Courses
