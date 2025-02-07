@@ -7,7 +7,7 @@ This section includes some of the work I have completed for my own use, for post
 
 - [PD1B24](https://github.com/efurlanm/pd1b24/) - repository containing code, data, manuscripts, and other files used in my research on PIML for the Qualifying and Proposal Exams.
 
-- [MSC22](https://github.com/efurlanm/msc22/) - repository containing the material generated during my master's research.
+- [MSC22](https://github.com/efurlanm/msc22/) - repository containing the research material generated for my master's degree.
 
 - [PINN Discovery](https://github.com/efurlanm/425/tree/main/project/) - repository containing my work on data-driven parameter discovery of a 1D Burgers' equation using a physics-informed neural network. There is also an [online HTML version of the manuscript](https://efurlanm.github.io/425/).
 
@@ -21,12 +21,8 @@ This section includes some of the work I have completed for my own use, for post
 
 - [CNN & MLP](https://github.com/efurlanm/351/) - repository containing my notes on the CAP 351 course, and also the manuscript generated from the work, entitled "Comparison of CNN and MLP artificial neural network models, for an optical character recognition test case" (in Portuguese).
 
-- [Home](https://efurlanm.github.io/home/) - repository dedicated to my random personal notes on topics such as high performance computing, parallel processing, programming languages, and others.
+- [Home](https://efurlanm.github.io/home/) - repository and website dedicated to my personal notes on random topics that I collect over time on the most diverse subjects.
 
-
-## Courses
-
-- [Courses](courses.md) - list of courses I took at INPE.
 
 
 ## Random bookmarks
@@ -45,4 +41,5 @@ Collection of links I found interesting.
 - [Jason Blevins' page at Ohio State University](https://jblevins.org/).
 - [John Burkardt's page at Florida State University](https://people.sc.fsu.edu/~jburkardt/).
 
-<br><sub>Last edited: 2025-01-06</sub>
+
+<br><sub>Last edited: 2025-02-02 19:24:21</sub>

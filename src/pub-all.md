@@ -27,4 +27,4 @@ Publications from my academic postgraduate research at INPE.
 --8<-- "inc-pub-research-abnt.md"
 
 
-<br><br><sub>Last edited: 2024-12-25</sub>
+<br><sub>Last edited: 2024-12-26 16:10:05</sub>

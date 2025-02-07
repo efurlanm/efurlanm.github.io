@@ -50,4 +50,4 @@ List of current duties and courses taught. The links point to repositories where
 * [All Publications ](pub-all.md) (long listing) - collection of all publications, including courses, teaching material, and my research.
 
 
-<br><sub>Last edited: 2025-01-14</sub>
+<br><sub>Last edited: 2025-01-14 11:45:07</sub>

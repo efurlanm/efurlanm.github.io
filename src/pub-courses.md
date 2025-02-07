@@ -10,4 +10,4 @@ There also is a [file containing the references in BibTeX format](include/inc-pu
 --8<-- "inc-pub-courses.md"
 
 
-<br><br><sub>Last edited: 2024-12-25</sub>
+<br><sub>Last edited: 2024-12-26 16:11:08</sub>
