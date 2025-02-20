@@ -6,6 +6,7 @@ List of current duties and courses taught. The links point to repositories where
 
 * [Parallel and Distributed Architectures](https://github.com/efurlanm/teaching/tree/main/apd)
 * [Formal Languages ​​and Automata](https://github.com/efurlanm/teaching/tree/main/lfa)
+* [Computer Architecture and Organization](https://github.com/efurlanm/teaching/tree/main/aoc/)
 * [Programming Languages](https://github.com/efurlanm/teaching/tree/main/lprog)
 * [Integrated Project](https://github.com/efurlanm/teaching/tree/main/pi/)
 * [Capstone Project](https://github.com/efurlanm/teaching/tree/main/tcc)
@@ -29,7 +30,6 @@ List of current duties and courses taught. The links point to repositories where
 * [Algorithms and Structured Programming](https://github.com/efurlanm/teaching/tree/main/ape/)
 * [Compilers](https://github.com/efurlanm/teaching/tree/main/comp/)
 * [Computational Logic and Mathematics](https://github.com/efurlanm/teaching/tree/main/lmc/)
-* [Computer Architecture and Organization](https://github.com/efurlanm/teaching/tree/main/aoc/)
 * [Creativity and Innovation](https://github.com/efurlanm/teaching/tree/main/cinov/)
 * [Digital Systems](https://github.com/efurlanm/teaching/tree/main/sdigi/)
 * [Digital Systems and Microprocessors](https://github.com/efurlanm/teaching/tree/main/sdm/)
@@ -50,4 +50,4 @@ List of current duties and courses taught. The links point to repositories where
 * [All Publications ](pub-all.md) (long listing) - collection of all publications, including courses, teaching material, and my research.
 
 
-<br><sub>Last edited: 2025-01-14 11:45:07</sub>
+<br><sub>Last edited: 2025-02-20 10:45:45</sub>
