@@ -13,35 +13,33 @@ List of current duties and courses taught. The links point to repositories where
 
 ## Past courses
 
-* [Building Systems](https://github.com/efurlanm/teaching/tree/main/spred/)
-* [Electrical Power Systems](https://github.com/efurlanm/teaching/tree/main/sep/)
-* [Electrotechnical](https://github.com/efurlanm/teaching/tree/main/eapli/)
-* [Industrial Communication Networks](https://github.com/efurlanm/teaching/tree/main/rci/)
-* [Industrial Organization and Automation](https://github.com/efurlanm/teaching/tree/main/oauto/)
-* [Machine Design](https://github.com/efurlanm/teaching/tree/main/pmaq/)
-* [Production Management](https://github.com/efurlanm/teaching/tree/main/gprod/)
-* [Project Management for Production](https://github.com/efurlanm/teaching/tree/main/gproj/)
-* [Protection of the Electric Power System](https://github.com/efurlanm/teaching/tree/main/psep/)
-* [Reverse Logistic](https://github.com/efurlanm/teaching/tree/main/lreve/)
-* [Strategic Production Planning](https://github.com/efurlanm/teaching/tree/main/pestr/)
-* [Theory of Structures](https://github.com/efurlanm/teaching/tree/main/testr/)
-* [Transport Works](https://github.com/efurlanm/teaching/tree/main/otran/)
 * [Advanced Algorithms and Data Structures](https://github.com/efurlanm/teaching/tree/main/aed/)
 * [Algorithms and Structured Programming](https://github.com/efurlanm/teaching/tree/main/ape/)
+* [Building Systems](https://github.com/efurlanm/teaching/tree/main/spred/)
 * [Compilers](https://github.com/efurlanm/teaching/tree/main/comp/)
 * [Computational Logic and Mathematics](https://github.com/efurlanm/teaching/tree/main/lmc/)
 * [Creativity and Innovation](https://github.com/efurlanm/teaching/tree/main/cinov/)
 * [Digital Systems](https://github.com/efurlanm/teaching/tree/main/sdigi/)
 * [Digital Systems and Microprocessors](https://github.com/efurlanm/teaching/tree/main/sdm/)
+* [Electrical Power Systems](https://github.com/efurlanm/teaching/tree/main/sep/)
+* [Electrotechnical](https://github.com/efurlanm/teaching/tree/main/eapli/)
 * [Formal Languages, Automata and Computability](https://github.com/efurlanm/teaching/tree/main/lform/)
 * [Fundamentals of Parallel and Distributed Programming](https://github.com/efurlanm/teaching/tree/main/ppara/)
+* [Industrial Communication Networks](https://github.com/efurlanm/teaching/tree/main/rci/)
+* [Industrial Organization and Automation](https://github.com/efurlanm/teaching/tree/main/oauto/)
+* [Machine Design](https://github.com/efurlanm/teaching/tree/main/pmaq/)
 * [Object Oriented Languages](https://github.com/efurlanm/teaching/tree/main/loo/)
 * [Object Oriented Programming](https://github.com/efurlanm/teaching/tree/main/poo/)
 * [Operational Systems](https://github.com/efurlanm/teaching/tree/main/so/)
-* [Programming Languages](https://github.com/efurlanm/teaching/tree/main/lprog/)
+* [Production Management](https://github.com/efurlanm/teaching/tree/main/gprod/)
 * [Programming Techniques](https://github.com/efurlanm/teaching/tree/main/tprog/)
+* [Project Management for Production](https://github.com/efurlanm/teaching/tree/main/gproj/)
+* [Protection of the Electric Power System](https://github.com/efurlanm/teaching/tree/main/psep/)
+* [Reverse Logistic](https://github.com/efurlanm/teaching/tree/main/lreve/)
 * [Special Topics in Computer Science](https://github.com/efurlanm/teaching/tree/main/tespe/)
-
+* [Strategic Production Planning](https://github.com/efurlanm/teaching/tree/main/pestr/)
+* [Theory of Structures](https://github.com/efurlanm/teaching/tree/main/testr/)
+* [Transport Works](https://github.com/efurlanm/teaching/tree/main/otran/)
 
 ## Publications
 
@@ -50,4 +48,4 @@ List of current duties and courses taught. The links point to repositories where
 * [All Publications ](pub-all.md) (long listing) - collection of all publications, including courses, teaching material, and my research.
 
 
-<br><sub>Last edited: 2025-02-20 10:45:45</sub>
+<br><sub>Last edited: 2025-02-23 09:29:19</sub>

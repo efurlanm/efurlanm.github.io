@@ -1,9 +1,9 @@
-# Last edited: 2025-01-18
-# Site Generator: https://squidfunk.github.io/mkdocs-material/
-site_description: Eduardo Furlan's Page
-site_url: https://efurlanm.github.io/
+# Last edited: 2025-02-23
 site_name: Eduardo Furlan
+site_description: Eduardo Furlan's Page
 site_author: Eduardo Furlan
+site_url: https://efurlanm.github.io/
+copyright: CC BY 4.0 License
 site_dir: docs
 docs_dir: src
 use_directory_urls: false
@@ -17,7 +17,9 @@ theme:
     features:
         - header.autohide
         - navigation.tracking   # address show active anchor
-plugins: []
+# plugins: []
+plugins:
+    - search
 extra:
     generator: false
 extra_css:
@@ -29,11 +31,11 @@ extra_javascript:
     - assets/katex/contrib/auto-render.min.js
 markdown_extensions:
     - tables
+    - pymdownx.arithmatex:
+        generic: true           # katex
     - pymdownx.snippets:        # mkdocs-macros-plugin
         check_paths: true
         base_path: src/include
-    - pymdownx.arithmatex:
-        generic: true           # katex
 exclude_docs: |
     .*
     _*
