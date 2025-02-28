@@ -3,7 +3,6 @@ site_name: Eduardo Furlan
 site_description: Eduardo Furlan's Page
 site_author: Eduardo Furlan
 site_url: https://efurlanm.github.io/
-copyright: CC BY 4.0 License
 site_dir: docs
 docs_dir: src
 use_directory_urls: false
@@ -17,7 +16,6 @@ theme:
     features:
         - header.autohide
         - navigation.tracking   # address show active anchor
-# plugins: []
 plugins:
     - search
 extra:
@@ -39,7 +37,6 @@ markdown_extensions:
 exclude_docs: |
     .*
     _*
-    assets/cheatsheet.md
 not_in_nav: |
     include/
     courses.md
