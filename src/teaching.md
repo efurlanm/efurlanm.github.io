@@ -41,11 +41,16 @@ List of current duties and courses taught. The links point to repositories where
 * [Theory of Structures](https://github.com/efurlanm/teaching/tree/main/testr/)
 * [Transport Works](https://github.com/efurlanm/teaching/tree/main/otran/)
 
+## Student Activities Gallery
+
+Gallery with some photos showing the activities and projects developed by the students:
+
+* [View Photo Gallery](teach-gallery.md)
+
 ## Publications
 
 * [Course publications](pub-courses.md) - publications that were generated as part of the activities of the courses taught.
 
 * [All Publications ](pub-all.md) (long listing) - collection of all publications, including courses, teaching material, and my research.
 
-
-<br><sub>Last edited: 2025-02-23 09:29:19</sub>
+<br><sub>Last edited: 2025-04-25 18:14:08</sub>

@@ -1,6 +1,6 @@
 # Engineering
 
-Technical consultant with 15+ years of industry experience, focused on production, processes, maintenance, and automation. I have worked with large companies in the Machinery, Automotive, Packaging, and Engineering sectors. My expertise includes:
+Technical consultant with 15+ years of industry experience, focused on projects, construction, automation, maintenance, and ensuring the reliable operation of production lines. I have worked with large companies in the Machinery, Automotive, Beverage Packaging, and Engineering sectors. My expertise includes:
 
 ## Industrial Experience
 
@@ -19,4 +19,4 @@ Technical consultant with 15+ years of industry experience, focused on productio
 
 ✉️ <a href="&#101;&#102;&#117;&#114;&#108;&#97;&#110;&#109;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#102;&#117;&#114;&#108;&#97;&#110;&#109;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>
 
-<br><sub>Last edited: 2025-04-18 20:54:55</sub>
+<br><sub>Last edited: 2025-04-24 15:09:01</sub>

@@ -2,50 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://efurlanm.github.io/index.html</loc>
-         <lastmod>2025-04-18</lastmod>
+         <lastmod>2025-04-25</lastmod>
     </url>
     <url>
          <loc>https://efurlanm.github.io/engineering.html</loc>
-         <lastmod>2025-04-18</lastmod>
+         <lastmod>2025-04-25</lastmod>
     </url>
     <url>
          <loc>https://efurlanm.github.io/notes.html</loc>
-         <lastmod>2025-04-18</lastmod>
+         <lastmod>2025-04-25</lastmod>
     </url>
     <url>
          <loc>https://efurlanm.github.io/pub-all.html</loc>
-         <lastmod>2025-04-18</lastmod>
+         <lastmod>2025-04-25</lastmod>
     </url>
     <url>
          <loc>https://efurlanm.github.io/pub-courses.html</loc>
-         <lastmod>2025-04-18</lastmod>
+         <lastmod>2025-04-25</lastmod>
     </url>
     <url>
          <loc>https://efurlanm.github.io/research.html</loc>
-         <lastmod>2025-04-18</lastmod>
+         <lastmod>2025-04-25</lastmod>
+    </url>
+    <url>
+         <loc>https://efurlanm.github.io/teach-gallery.html</loc>
+         <lastmod>2025-04-25</lastmod>
+    </url>
+    <url>
+         <loc>https://efurlanm.github.io/teach-project.html</loc>
+         <lastmod>2025-04-25</lastmod>
     </url>
     <url>
          <loc>https://efurlanm.github.io/teaching.html</loc>
-         <lastmod>2025-04-18</lastmod>
+         <lastmod>2025-04-25</lastmod>
     </url>
     <url>
          <loc>https://efurlanm.github.io/include/inc-pub-courses.html</loc>
-         <lastmod>2025-04-18</lastmod>
+         <lastmod>2025-04-25</lastmod>
     </url>
     <url>
          <loc>https://efurlanm.github.io/include/inc-pub-manuscript.html</loc>
-         <lastmod>2025-04-18</lastmod>
+         <lastmod>2025-04-25</lastmod>
     </url>
     <url>
          <loc>https://efurlanm.github.io/include/inc-pub-pmaq-2023h2.html</loc>
-         <lastmod>2025-04-18</lastmod>
+         <lastmod>2025-04-25</lastmod>
     </url>
     <url>
          <loc>https://efurlanm.github.io/include/inc-pub-research-abnt.html</loc>
-         <lastmod>2025-04-18</lastmod>
+         <lastmod>2025-04-25</lastmod>
     </url>
     <url>
          <loc>https://efurlanm.github.io/include/inc-pub-research.html</loc>
-         <lastmod>2025-04-18</lastmod>
+         <lastmod>2025-04-25</lastmod>
     </url>
 </urlset>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="author" content="Fulano de Tal">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fulano de Tal</title>
+
+  <meta name="title" content="FulanoDeTal" />
+  <meta itemprop="name" content="FulanoDeTal" />
+  <meta property="og:title" content="FulanoDeTal" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400&display=swap" />
+
+  <style type="text/css">
+    body {
+      background-color: #fff;
+      color: black;
+      font-family: Poppins;
+      font-weight: 300;
+      font-size: 1em;
+      --link-color: #1DB954;
+    }
+
+    .main-column {
+      max-width: 1000px;
+      width: 95%;
+      margin: auto;
+      align-items: center;
+      min-width: 320px; /* Ajustado para telas menores */
+    }
+
+    .content {
+      width: 90%;
+      margin: auto;
+    }
+
+    .page-heading {
+      text-align: center;
+      width: 100%;
+      padding-top: 15px;
+    }
+
+    .title {
+      padding-top: 5px;
+      font-size: 2.5em;
+      color: rgb(44, 44, 43);
+      font-weight: 200;
+      margin: 0px;
+    }
+
+    .menu {
+      margin: auto;
+      padding-top: 10px;
+    }
+
+    .menu > ul {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      flex-wrap: wrap; /* Adicionado para quebrar em telas menores */
+      padding: 0; /* Removido padding padrão de lista */
+    }
+
+    .menu > ul > li {
+      border-top: 2px solid #FFEFE8;
+      padding-top: 5px;
+      list-style: none; /* Removido marcador de lista */
+      margin: 0 10px; /* Adicionado margem horizontal para espaçamento */
+    }
+
+    .menu > ul > li:hover {
+      border-top: 2px solid var(--link-color);
+    }
+
+    .menu > ul > li > a {
+      text-decoration: none;
+    }
+
+    .intro {
+      display: flex;
+      height: auto;
+      flex-direction: row;
+      padding-top: 35px;
+      padding-bottom: 8px;
+      margin: auto;
+      align-items: flex-start; /* Alinhar topo */
+    }
+
+    .headshot {
+      width: 33%;
+      max-width: 270px;
+      padding-top: 36px;
+      flex-shrink: 0; /* Evitar que a imagem diminua demais */
+    }
+
+    .headshot img {
+        max-width: 100%;
+        height: auto; /* Manter proporção */
+        display: block; /* Remover espaço extra abaixo da imagem */
+    }
+
+    .self-descrip {
+      width: 100%;
+      text-align: justify;
+      text-justify: inter-word;
+      padding-left: 25px;
+      flex-grow: 1; /* Permitir que o texto ocupe o espaço restante */
+    }
+
+    .subheading {
+      font-size: 2em;
+      font-weight: 400;
+      padding-top: 25px;
+      margin: 0;
+    }
+
+    .personal-links > ul{
+      display: flex;
+      align-items: stretch;
+      justify-content: flex-start; /* Alinhar links pessoais à esquerda */
+      padding: 0; /* Removido padding padrão */
+      margin-top: 15px; /* Espaço acima dos links */
+    }
+
+    .personal-links > ul > li {
+        list-style: none; /* Remover marcador de lista */
+        margin-right: 20px; /* Espaço entre os links */
+    }
+
+    .personal-links a {
+        text-decoration: none;
+        /* Cor já definida em a */
+    }
+
+    .pubs-list, .proj-list { /* Combinado, aplicado a Publicações e Projetos */
+      padding-top: 15px; /* Ajustado para manter espaçamento */
+    }
+
+    .pub, .proj { /* Combinado, aplicado a Publicações e Projetos */
+      padding-bottom: 8px;
+    }
+
+    .pub-title {
+      font-weight: bold;
+    }
+
+    .pub-authors {
+      font-size: .9em;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+
+    /* Link color specifications */
+    a {
+      color: var(--link-color);
+      text-decoration: none; /* Garantir que links não tenham underline por padrão */
+    }
+
+    a:hover {
+        text-decoration: underline; /* Adicionar underline no hover */
+    }
+
+    @media (max-width: 768px) { /* Ponto de quebra ajustado para ser mais comum */
+      .main-column {
+        width: 95%;
+        min-width: unset; /* Remover min-width fixo em telas menores */
+      }
+
+      .content {
+        width: 95%; /* Ajustar largura do conteúdo */
+      }
+
+      .intro {
+        flex-direction: column;
+        padding-top: 20px; /* Ajustar padding */
+      }
+
+      .headshot {
+        width: 50%; /* Imagem ocupa mais largura em mobile */
+        max-width: 200px; /* Limitar tamanho máximo */
+        padding-top: 15px;
+        align-self: center; /* Centralizar imagem */
+        margin-bottom: 15px; /* Espaço abaixo da imagem */
+      }
+
+      .self-descrip {
+        width: 100%;
+        padding-left: 0px;
+        text-align: left; /* Remover justificar para melhor leitura em mobile */
+      }
+
+      .menu > ul {
+          flex-direction: column; /* Links do menu em coluna */
+          align-items: center; /* Centralizar links do menu */
+      }
+
+      .menu > ul > li {
+          margin: 5px 0; /* Espaço entre links do menu na vertical */
+      }
+
+       .personal-links > ul{
+          flex-direction: column; /* Links pessoais em coluna */
+          align-items: flex-start; /* Alinhar links pessoais à esquerda */
+      }
+
+      .personal-links > ul > li {
+          margin: 5px 0; /* Espaço entre links pessoais na vertical */
+      }
+
+      .subheading {
+          font-size: 1.6em; /* Ajustar tamanho de subtítulos */
+          padding-top: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <script>0</script>
+  <div class="main-column">
+    <div class="content">
+
+      <header class="page-heading">
+        <h1 class="title">
+          Fulano de Tal
+        </h1>
+
+        <nav class="menu">
+          <ul>
+            <li><a href="index.html#about-me"><font color="#1DB954">Sobre Mim</font></a></li>
+            <li><a href="index.html#projects"><font color="#1DB954">Projetos</font></a></li>
+            <li><a href="index.html#publications"><font color="#1DB954">Publicações</font></a></li>
+            <li><a href="index.html#other"><font color="#1DB954">Atualizações</font></a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="intro">
+        <div class="headshot">
+          <img src="data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAABwDQCdASqWAMgAPp1MoE2lo6MiIVM4ULATiWlu4XYBG3+zAMNkE8zMXsgnmZi9kE8zMXsgnmZi9kE8LAY1UDZwMYvEAzk/+dQuU8QmIJhNypTAP0CmprH2YvZBPMzF7IJ5mYvZBPMzF7IJ5mYvZBPMzF7CAAD+/zfgAD4mPwat5zeZbIY8xGlkUaWLlTfphdJe53z//5NmuGjeTodjcYihSSXlHv5O5hudNU5akCRQCOHBeQeBlvZoWmtGkIYy4U+3+u04eRUCe9pgtsD9OjPd98QAAAAA" alt="Foto de Fulano de Tal">
+        </div>
+
+        <div class="self-descrip">
+          <h2 class="subheading" id="about-me">
+            Sobre mim
+          </h2>
+          <p class="inner-text">
+            Olá! Eu sou Fulano de Tal, estudante de <span style="color: blue;">[Nome do Curso, ex: Engenharia da Computação]</span> na <span style="color: blue;">[Nome da Faculdade/Universidade]</span>.
+            Tenho grande interesse em <span style="color: green;">[Área de Interesse 1, ex: Desenvolvimento de Software]</span> e <span style="color: green;">[Área de Interesse 2, ex: Inteligência Artificial]</span>.
+            Busco aplicar os conhecimentos teóricos em projetos práticos e colaborar em iniciativas que gerem impacto.
+          </p>
+
+            <div class="personal-links">
+              <ul>
+                <li><a href="nediyana_cv.pdf">CV</a></li>
+                <li><a href="https://www.linkedin.com/in/nediyana/">LinkedIn</a></li>
+                <li><a href="https://twitter.com/nediyana">Twitter</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+
+<div class="others" id="other">
+  <h2 class="subheading">
+    Atualizações
+  </h2>
+
+  <div class="pub">
+    <div class="pub-authors">
+      <span style="color: orange;">Março de 2025</span>: Concluí o projeto da disciplina de <span style="color: green;">[Nome da Disciplina]</span> sobre <span style="color: green;">[Tópico do Projeto]</span>. <br>
+      <span style="color: orange;">[Data Recente]</span>: Participando ativamente do <span style="color: pink;">[Nome do Grupo Estudantil ou Projeto de Extensão]</span>. <br>
+      <span style="color: orange;">[Data Passada]</span>: Obtive <span style="color: pink;">[Nome da Bolsa ou Prêmio]</span> pela faculdade. <br>
+      <span style="color: orange;">[Data Passada]</span>: Participei do evento/workshop <span style="color: pink;">[Nome do Evento]</span>. <br>
+      <span style="color: orange;">[Data Passada]</span>: Iniciei o <span style="color: blue;">[Número do Período]</span> período do curso de <span style="color: blue;">[Nome do Curso]</span>. <br>
+            </div>
+          </div>
+
+          </div>
+
+        <div class="proj-list" id="projects">
+          <h2 class="subheading">
+            Projetos
+          </h2>
+
+          <div class="proj">
+            <div class="proj-title">
+             <span style="font-weight:bold;"><a href="link/para/pagina/projeto1"><font color="#1DB954"><span style="color: purple;">[Nome do Projeto de Disciplina, ex: Robô Seguidor de Linha]:</span></font></a></span> <span style="color: purple;">[Breve descrição do projeto, ex: Desenvolvimento de hardware e software para navegação autônoma em pista marcada]</span>.
+            </div>
+
+           <div class="proj-links">
+            [<span style="color: teal;">Repositório no GitHub</span>](https://github.com/fulano/robo-seguidor) - [<span style="color: teal;">Documentação/Relatório</span>](link/para/documentacao.pdf)
+            </div>
+
+          </div>
+
+        <div class="proj">
+          <div class="proj-title">
+           <span style="font-weight:bold;"> <a href="link/para/pagina/projeto2"> <font color="#1DB954"><span style="color: purple;">[Nome do Projeto Pessoal, ex: Aplicativo de Tarefas]</span></span> (Também conhecido como <span style="color: purple;">[Nome Alternativo]</span>):</font></a> <span style="color: purple;">[Breve descrição, ex: Aplicativo mobile desenvolvido em [Tecnologia] para gerenciamento pessoal]</span>.
+          </div>
+
+         <div class="proj-links">
+           [<span style="color: teal;">Repositório no GitHub</span>](https://github.com/fulano/app-tarefas) - [<span style="color: teal;">Link para a Loja (se publicado)</span>](link/para/loja)
+          </div>
+        </div>
+
+          </div>
+
+    <div class="pubs-list" id="publications">
+      <h2 class="subheading">
+        Publicações e Trabalhos Acadêmicos
+      </h2>
+
+      <div class="pub">
+        <div class="pub-title">
+          <span style="color: purple;">[Título do Artigo Simples/Trabalho Apresentado, ex: Desenvolvimento de um Robô Seguidor de Linha usando Visão Computacional]</span>
+        </div>
+        <div class="pub-authors">
+          <em>Fulano de Tal</em>, <span style="color: brown;">[Nome do Colega 1]</span>*, <span style="color: brown;">[Nome do Colega 2]</span>*, <span style="color: brown;">[Nome do Professor Orientador]</span>. Apresentado em <span style="color: pink;">[Nome do Evento Local/Disciplina]</span>, <span style="color: orange;">[Ano]</span>.
+          [<span style="color: teal;">Link para PDF/Repositório</span>](link/para/pdf_trabalho1.pdf) - [<span style="color: teal;">Vídeo</span>](link/para/video_apresentacao)
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">
+          <span style="color: purple;">[Título de Relatório Técnico ou Projeto de Iniciação Científica, ex: Estudo de Viabilidade para Implementação de Sistema Embarcado]</span>
+        </div>
+        <div class="pub-authors">
+          <em>Fulano de Tal</em>. <span style="color: green;">[Nome do Programa/Disciplina, ex: Iniciação Científica Voluntária]</span>, <span style="color: orange;">[Ano]</span>.
+          [<span style="color: teal;">Link para Relatório/PDF</span>](link/para/relatorio.pdf)
+        </div>
+      </div>
+
+    </div>
+
+<div class="pubs-list" id="awards"> <h2 class="subheading">
+    Prêmios e Conquistas </h2>
+
+  <div class="pub">
+    <div class="pub-authors">
+      <span style="color: pink;">[Nome do Prêmio/Bolsa]</span> (<span style="color: orange;">[Ano]</span>) - <span style="color: pink;">[Breve descrição se necessário, ex: Bolsa de Iniciação Científica CNPq]</span>
+    </div>
+  </div>
+  <div class="pub">
+    <div class="pub-authors">
+      <span style="color: pink;">[Conquista em Competição, ex: 1º Lugar na Competição de Robótica da Faculdade X]</span> (<span style="color: orange;">[Ano]</span>)
+      [<span style="color: teal;">Artigo/Notícia</span>](link/para/noticia_evento)
+    </div>
+  </div>
+  <div class="pub">
+    <div class="pub-authors">
+      <span style="color: pink;">[Reconhecimento Acadêmico, ex: Destaque Acadêmico no Período Y]</span> (<span style="color: orange;">[Ano]</span>)
+    </div>
+  </div>
+  <div class="pub">
+    <div class="pub-authors">
+      <span style="color: pink;">[Outro Reconhecimento, ex: Selecionado para Programa de Talentos Z]</span> (<span style="color: orange;">[Ano]</span>)
+    </div>
+  </div>
+
+</div>
+
+    </div>
+  </div>
+
+</body>
+</html>

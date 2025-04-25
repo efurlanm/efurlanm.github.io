@@ -39,6 +39,8 @@ not_in_nav: |
     courses.md
     pub-all.md
     pub-courses.md
+    gallery.md
+    teach-project.md
 nav:
     - index.md
     - research.md
