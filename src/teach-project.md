@@ -180,4 +180,10 @@ Tutoriais e referências técnicas focadas no robô:
 * [Vídeo Monte um robô seguidor de linha (WR Kits)](https://youtu.be/C59--0zq_y8).
 * [Site Tudo sobre Arduino (br-arduino.org)](https://br-arduino.org/).
 
-<br><sub>Last edited: 2025-04-25 21:13:11</sub>
+## Outras fontes de informação
+
+Coletânea de slides apresentados durante o semestre. Alguns estão com assuntos repetidos e também podem não estar organizados em uma sequência lógica.
+
+- [projeto-coletanea](pdf/projeto-coletanea_2025-04-26.pdf)
+
+<br><sub>Last edited: 2025-04-26 20:59:18</sub>

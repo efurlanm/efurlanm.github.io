@@ -1,22 +1,31 @@
-# Engineering
+# Specialist in Industrial Engineering and Operations
 
-Technical consultant with 15+ years of industry experience, focused on projects, construction, automation, maintenance, and ensuring the reliable operation of production lines. I have worked with large companies in the Machinery, Automotive, Beverage Packaging, and Engineering sectors. My expertise includes:
+My professional trajectory and academic background converge in the field of Industrial Engineering and Operations, with a focus on Project Development, Infrastructure Construction, Automation Systems, Maintenance Strategies, and the Assurance of Production Line Reliability. My expertise is built upon extensive practical experience gained across diverse industrial sectors, including Machinery, Automotive, Beverage Packaging, and Engineering (at companies such as Engepack, Volkswagen, Siemens Dematic, and MAN Ferrostaal). This practical foundation is complemented by a solid academic background, fostering a commitment to technical rigor, methodological application, and continuous learning.
 
-## Industrial Experience
+## My Areas of Specialization and Interest
 
-* Led factory projects, including construction, maintenance, and production capacity expansions.
-* Assembly line automation and installation/commissioning of automatic machines, including system integration and problem diagnosis/solving.
-* Design and installation of automated vertical warehouses and handling/robotics systems.
-* Participation in industrial plant projects (e.g., ethanol plant), coordination of multidisciplinary teams, and interface with technical areas (electrical, instrumentation, control, automation).
-* Delivered 20 blow molding plants for PET packaging and executed expansions involving up to 48 blow molding machines producing 125 million packages/month.
-* Preparation of technical and economic feasibility studies.
-* Requirements modeling, system design, and specification.
-* Project management: definition of methods, cost, and timeline control.
-* Team training, equipment qualification, and technical support.
-* Preparation of complete technical documentation (drawings, manuals, specifications).
+* **Methodologies for Industrial Project Management and Execution:** covering the lifecycle from initial conceptualization and feasibility assessment (technical and economic) through planning, control, commissioning, and final acceptance.
+* **Process Automation and Control Systems:** design, implementation, integration, and troubleshooting of automated systems, robotics, and complex industrial machinery, including advanced handling and warehousing solutions.
+* **Industrial Infrastructure Development:** participation and leadership in construction, expansion, and significant maintenance projects for industrial plants, coordinating multidisciplinary engineering efforts (Electrical, Automation, Instrumentation, Civil).
+* **Operational Reliability and Maintenance Engineering:** analysis and implementation of strategies to enhance the robustness and performance of production assets and processes.
+* **Optimization Techniques for Industrial Systems:** application of methodologies for process improvement, efficiency gains, and data-driven decision-making based on industrial databases.
+* **Introduction of New Technologies and Products:** methodologies for integrating new systems and products into existing industrial environments.
+* **Technical Team Leadership and Development:** coordination and guidance of multidisciplinary technical teams in project and operational settings.
+
+My experience highlights include comprehensive involvement in defining project parameters, rigorous schedule and cost control, development of technical specifications and procedures, and meticulous execution of testing and commissioning phases. I have contributed to the design and implementation of complex automation solutions, including specialized sorting and automated warehousing systems. Furthermore, my work in manufacturing, particularly within the plastic packaging sector, has emphasized operational excellence, process optimization, and seamless integration of IT with factory floor activities.
+
+## Academic and Professional Credentials
+
+* Electrical Production Engineer
+* Specialization in Power Systems
+* MBA in Strategic and Economic Project Management (FGV SP)
+* Background as an Electromechanical Technician
+* Fluent in English and Spanish
+
+This profile reflects a blend of theoretical knowledge and practical application, aiming to contribute to the advancement and effective implementation of solutions in complex industrial environments.
 
 ## Contact
 
 ✉️ <a href="&#101;&#102;&#117;&#114;&#108;&#97;&#110;&#109;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#102;&#117;&#114;&#108;&#97;&#110;&#109;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>
 
-<br><sub>Last edited: 2025-04-24 15:09:01</sub>
+<br><sub>Last edited: 2025-04-26 15:54:25</sub>

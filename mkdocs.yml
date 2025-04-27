@@ -45,7 +45,7 @@ nav:
     - index.md
     - research.md
     - teaching.md
-    - engineering.md
+    - Engineering: engineering.md
     - notes.md
 exclude_docs: |
     .*
