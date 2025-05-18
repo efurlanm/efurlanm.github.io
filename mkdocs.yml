@@ -1,10 +1,11 @@
 site_name: Eduardo Furlan
 site_author: Eduardo Furlan
 site_description: Eduardo Furlan's Page
-site_url: https://efurlanm.github.io/
+#site_url: https://efurlanm.github.io/
 site_dir: docs
 docs_dir: src
-use_directory_urls: false
+site_url: ""  # for offline use
+use_directory_urls: false  # also for offline use
 theme:
     font: false                 # no external fonts
     name: material
@@ -17,6 +18,7 @@ theme:
         - navigation.tracking   # address show active anchor
 plugins:
     - search
+    - offline
 extra:
     generator: false
 extra_css:
