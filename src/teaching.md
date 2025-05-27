@@ -7,6 +7,7 @@ List of current duties and courses taught. The links point to repositories where
 * [Parallel and Distributed Architectures](https://github.com/efurlanm/teaching/tree/main/apd)
 * [Formal Languages ​​and Automata](https://github.com/efurlanm/teaching/tree/main/lfa)
 * [Computer Architecture and Organization](https://github.com/efurlanm/teaching/tree/main/aoc/)
+* [Operational Systems](https://github.com/efurlanm/teaching/tree/main/so/)
 * [Programming Languages](https://github.com/efurlanm/teaching/tree/main/lprog)
 * [Integrated Project](https://github.com/efurlanm/teaching/tree/main/pi/)
 * [Capstone Project](https://github.com/efurlanm/teaching/tree/main/tcc)
@@ -30,7 +31,6 @@ List of current duties and courses taught. The links point to repositories where
 * [Machine Design](https://github.com/efurlanm/teaching/tree/main/pmaq/)
 * [Object Oriented Languages](https://github.com/efurlanm/teaching/tree/main/loo/)
 * [Object Oriented Programming](https://github.com/efurlanm/teaching/tree/main/poo/)
-* [Operational Systems](https://github.com/efurlanm/teaching/tree/main/so/)
 * [Production Management](https://github.com/efurlanm/teaching/tree/main/gprod/)
 * [Programming Techniques](https://github.com/efurlanm/teaching/tree/main/tprog/)
 * [Project Management for Production](https://github.com/efurlanm/teaching/tree/main/gproj/)
@@ -53,4 +53,4 @@ Gallery with some photos showing the activities and projects developed by the st
 
 * [All Publications ](pub-all.md) (long listing) - collection of all publications, including courses, teaching material, and my research.
 
-<br><sub>Last edited: 2025-04-25 18:14:08</sub>
+<br><sub>Last edited: 2025-05-27 13:39:06</sub>
