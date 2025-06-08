@@ -4,8 +4,8 @@ site_description: Eduardo Furlan's Page
 #site_url: https://efurlanm.github.io/
 site_dir: docs
 docs_dir: src
-site_url: ""  # for offline use
-use_directory_urls: false  # also for offline use
+site_url: ""                    # for offline use
+use_directory_urls: false       # also for offline use
 theme:
     font: false                 # no external fonts
     name: material
@@ -19,6 +19,8 @@ theme:
 plugins:
     - search
     - offline
+    - blog:
+        post_readtime: false
 extra:
     generator: false
 extra_css:
@@ -38,6 +40,7 @@ markdown_extensions:
 not_in_nav: |
     assets/
     include/
+    books/
     courses.md
     pub-all.md
     pub-courses.md
@@ -49,6 +52,9 @@ nav:
     - teaching.md
     - Engineering: engineering.md
     - notes.md
+    - Blog:
+      - blog/index.md
 exclude_docs: |
     .*
     *§*
+    *#*

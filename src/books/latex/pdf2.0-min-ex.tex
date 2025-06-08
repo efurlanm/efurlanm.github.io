@@ -1,0 +1,35 @@
+% PDF 2.0 LuaTeX example 2025-01-21
+
+% Set PDF 2.0
+\directlua{
+  pdf.setmajorversion(2) % Set the major version to 2
+  pdf.setminorversion(0) % Set the minor version to 0
+}
+
+% main
+\documentclass[12pt,a4paper,oneside]{article}
+\usepackage[left=3cm,right=2cm,top=3cm,bottom=2cm]{geometry} % Defines page margins
+\usepackage{amsmath,amssymb} % Advanced mathematical formatting and symbols
+\usepackage{newcomputermodern} % New Computer Modern font
+\usepackage{fontspec} % Font customization, advanced features, styling, and unicode support
+\usepackage{microtype} % Improves the document's typographic quality
+\microtypesetup{protrusion=true,expansion=true,tracking=true}
+
+\begin{document}
+ABCDEFGHIJKLMNOPQRSTUVXWYZ abcdefghijklmnopqrstuvxwyz 123456890
+
+O0|lI1ΓvνφγΦɸδεθλΣΩΔ≤≥∞†‡£€⊢℘𝒫 ◊▷≠ℕ∈∉∀∃⊂⊆≪
+
+Lorem ipsum dolor sit amet
+
+$X_{\sum_i a_i}$
+$$x_2$$
+$$1_x^2$$
+$$\pi$$
+$$\alpha$$
+$$y=\sin{x}^2$$
+$$\sqrt[3]{x^2+y^2}$$
+$$\left(\frac{2}{3}\right)$$
+$$\left[\frac{2}{3}\right]$$
+$$\left\{\frac{2}{3}\right\}$$
+\end{document}

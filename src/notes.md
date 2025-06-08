@@ -21,7 +21,7 @@ This section includes some of the work I have completed for my own use, for post
 
 - [CNN & MLP](https://github.com/efurlanm/351/) - repository containing my notes on the CAP 351 course, and also the manuscript generated from the work, entitled "Comparison of CNN and MLP artificial neural network models, for an optical character recognition test case" (in Portuguese).
 
-- [Home](https://efurlanm.github.io/home/) - repository and website containing my personal notes on random subjects that I collect over time.
+- [Books](books/README.md) - selected books, ebooks, wikibooks, papers, publications, and related topics that I collect over time.
 
 
 
@@ -41,5 +41,4 @@ Collection of links I found interesting.
 - [Jason Blevins' page at Ohio State University](https://jblevins.org/).
 - [John Burkardt's page at Florida State University](https://people.sc.fsu.edu/~jburkardt/).
 
-
-<br><sub>Last edited: 2025-03-03 16:49:25</sub>
+<br><sub>Last edited: 2025-06-07 21:18:12</sub>

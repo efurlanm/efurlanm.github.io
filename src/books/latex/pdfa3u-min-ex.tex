@@ -1,0 +1,51 @@
+% PDF/A-3u LuaTeX example 2025-01-21
+
+% PDF/A metadata required
+\RequirePackage{filecontents}
+\begin{filecontents*}{\jobname.xmpdata}
+  \Title{*Default PDF Document Title (For PDF/A Compatibility)*}
+  \Author{*Author Name*}
+  \Language{English}
+\end{filecontents*}
+% PDF/A-3 is based on PDF 1.7
+\directlua{
+  pdf.setmajorversion(1) % Set the major version to 1
+  pdf.setminorversion(7) % Set the minor version to 7
+}
+
+% main
+\documentclass[12pt,a4paper,oneside]{article}
+\usepackage[left=3cm,right=2cm,top=3cm,bottom=2cm]{geometry} % Defines page margins
+\usepackage{amsmath,amssymb} % Advanced mathematical formatting and symbols
+\usepackage{newcomputermodern} % New Computer Modern font
+\usepackage{fontspec} % Font customization, advanced features, styling, and unicode support
+\usepackage{microtype} % Improves the document's typographic quality
+\microtypesetup{protrusion=true,expansion=true,tracking=true}
+
+% Ensures the document conforms to PDF/A-3u standards
+% loads hyperref and xcolor
+\usepackage[a-3u]{pdfx}
+% Instructs LuaTeX to omit the CID (Character Identifier) set from the PDF output
+% Helps in controlling the embedding of font information in the PDF, optimizing the document for PDF/A compliance
+\pdfvariable omitcidset=1
+
+\hypersetup{colorlinks=true,allcolors=blue} % Appearance of hyperlinks
+
+\begin{document}
+ABCDEFGHIJKLMNOPQRSTUVXWYZ abcdefghijklmnopqrstuvxwyz 123456890
+
+O0|lI1ΓvνφγΦɸδεθλΣΩΔ≤≥∞†‡£€⊢℘𝒫 ◊▷≠ℕ∈∉∀∃⊂⊆≪
+
+Lorem ipsum dolor sit amet
+
+$X_{\sum_i a_i}$
+$$x_2$$
+$$1_x^2$$
+$$\pi$$
+$$\alpha$$
+$$y=\sin{x}^2$$
+$$\sqrt[3]{x^2+y^2}$$
+$$\left(\frac{2}{3}\right)$$
+$$\left[\frac{2}{3}\right]$$
+$$\left\{\frac{2}{3}\right\}$$
+\end{document}
