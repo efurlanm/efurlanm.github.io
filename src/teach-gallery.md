@@ -6,15 +6,15 @@ This gallery documents an interdisciplinary, project-based learning initiative w
 
 Description of the project developed during the semester (in Portuguese): [teach-project](teach-project.md).
 
-(click on the images to see them in a larger size)
+[![](img/2025-04-15/tn/001.jpg)](img/2025-04-15/001.jpg)
+[![](img/2025-04-15/tn/002.jpg)](img/2025-04-15/002.jpg)
+[![](img/2025-04-15/tn/003.jpg)](img/2025-04-15/003.jpg)
+[![](img/2025-04-15/tn/004.jpg)](img/2025-04-15/004.jpg)
+[![](img/2025-04-15/tn/005.jpg)](img/2025-04-15/005.jpg)
+[![](img/2025-04-15/tn/006.jpg)](img/2025-04-15/006.jpg)
+[![](img/2025-04-15/tn/007.jpg)](img/2025-04-15/007.jpg)
+[![](img/2025-04-15/tn/008.jpg)](img/2025-04-15/008.jpg)
 
-[![Texto Alternativo da Miniatura](img/2025-04-15/tn/001.jpg)](img/2025-04-15/001.jpg)
-[![Texto Alternativo da Miniatura](img/2025-04-15/tn/002.jpg)](img/2025-04-15/002.jpg)
-[![Texto Alternativo da Miniatura](img/2025-04-15/tn/003.jpg)](img/2025-04-15/003.jpg)
-[![Texto Alternativo da Miniatura](img/2025-04-15/tn/004.jpg)](img/2025-04-15/004.jpg)
-[![Texto Alternativo da Miniatura](img/2025-04-15/tn/005.jpg)](img/2025-04-15/005.jpg)
-[![Texto Alternativo da Miniatura](img/2025-04-15/tn/006.jpg)](img/2025-04-15/006.jpg)
-[![Texto Alternativo da Miniatura](img/2025-04-15/tn/007.jpg)](img/2025-04-15/007.jpg)
-[![Texto Alternativo da Miniatura](img/2025-04-15/tn/008.jpg)](img/2025-04-15/008.jpg)
+(click on image to display larger version)
 
-<br><sub>Last edited: 2025-04-25 18:14:32</sub>
+<br><sub>Last edited: 2025-06-08 10:26:42</sub>
