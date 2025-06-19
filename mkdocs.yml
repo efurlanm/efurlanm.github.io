@@ -24,6 +24,8 @@ theme:
         - navigation.tracking   # address show active anchor
     icon:
         logo: material/account-outline
+    # https://www.iconarchive.com/show/material-icons-by-pictogrammers/account-outline-icon.html
+    favicon: img/account-outline.ico
 plugins:
     # - search    # the idea is not to be a big site
     # - offline
