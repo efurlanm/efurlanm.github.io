@@ -11,7 +11,7 @@ site_url: https://efurlanm.github.io/    # for online use
 #site_url: ""                    # for offline use
 #use_directory_urls: false       # for offline use
 theme:
-    #font: false                 # no external fonts
+    font: Lato                   # no external fonts
     name: material
     #squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
     palette:
@@ -20,6 +20,8 @@ theme:
     features:
         - header.autohide
         - navigation.tracking   # address show active anchor
+    icon:
+        logo: material/account-outline
 plugins:
     # - search    # the idea is not to be a big site
     # - offline
