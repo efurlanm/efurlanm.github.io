@@ -1,22 +1,24 @@
-# Last edited: 2025-06-16
 site_name: Eduardo Furlan
 site_description: Eduardo Furlan's Page
 site_author: Eduardo Furlan
-#repo_name: efurlanm
-#repo_url: https://www.github.com/efurlanm/
-#copyright: CC BY 4.0 License
+# repo_name: efurlanm
+# repo_url: https://www.github.com/efurlanm/
+# copyright: CC BY 4.0 License
 docs_dir: src
 site_dir: docs
 site_url: https://efurlanm.github.io/    # for online use
-#site_url: ""                    # for offline use
-#use_directory_urls: false       # for offline use
+# site_url: ""                    # for offline use
+use_directory_urls: false        # for offline use
 theme:
-    font: Lato                   # no external fonts
+    # squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
     name: material
-    #squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
     palette:
         primary: white
         accent: white
+    # font: false                  # no external fonts
+    font:
+        text: Lato
+        code: Roboto Mono
     features:
         - header.autohide
         - navigation.tracking   # address show active anchor
