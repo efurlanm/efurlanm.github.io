@@ -1,38 +1,36 @@
-site_name: Eduardo Furlan
-site_description: Eduardo Furlan's Page
+# Last edited: 2025-06-28
+site_name: "Eduardo Furlan"
+site_description: Eduardo Furlan's Home
 site_author: Eduardo Furlan
+site_url: https://efurlanm.github.io/
 # repo_name: efurlanm
 # repo_url: https://www.github.com/efurlanm/
 # copyright: CC BY 4.0 License
+use_directory_urls: false
 docs_dir: src
 site_dir: docs
-site_url: https://efurlanm.github.io/    # for online use
-# site_url: ""                    # for offline use
-use_directory_urls: false        # for offline use
 theme:
     # squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
     name: material
     palette:
         primary: white
         accent: white
-    # font: false                  # no external fonts
-    font:
-        text: Lato
-        code: Roboto Mono
+    font: false
+       #text: Lato
+       #code: Lato Mono
     features:
         - header.autohide
-        - navigation.tracking   # address show active anchor
+        - navigation.tracking   # address shows active anchor
     icon:
         logo: material/account-outline
     # https://www.iconarchive.com/show/material-icons-by-pictogrammers/account-outline-icon.html
     favicon: img/account-outline.ico
 plugins:
-    # - search    # the idea is not to be a big site
-    # - offline
+    # - search
     - blog:
         post_readtime: false
 extra:
-    generator: false    # "Made with Material for MkDocs"
+    generator: false            # "Made with Material for MkDocs"
 extra_css:
     - assets/extra.css
     - assets/katex/katex.min.css
@@ -42,6 +40,7 @@ extra_javascript:
     - assets/katex/contrib/auto-render.min.js
 markdown_extensions:
     - tables
+    #- md_in_html  # allows for writing Markdown inside of HTML
     - pymdownx.arithmatex:
         generic: true           # katex
     - pymdownx.snippets:        # mkdocs-macros-plugin
@@ -56,6 +55,7 @@ not_in_nav: |
     pub-courses.md
     teach-gallery.md
     teach-project.md
+    teach-pdesc.md
 nav:
     - Home: index.md
     - Research: research.md

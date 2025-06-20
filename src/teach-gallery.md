@@ -1,10 +1,31 @@
 # Classroom activities
 
-2025-04-15
+(click on image to display larger version)
 
-This gallery documents an interdisciplinary, project-based learning initiative where students developed a line-following robot competition. This hands-on activity required collaborative teamwork and the application of a structured methodology to integrate concepts and skills from diverse disciplines within the curriculum. Through the process of design, building, and programming the robots, students gained practical experience and developed problem-world problem-solving skills. The project culminated in a competitive event and showcased the students' work. As part of the project documentation and an introduction to academic publishing, the students also produced a brief introductory article summarizing their approach and outcomes. Some past publications are listed in [pub-courses](pub-courses.md).
+## 2025-05-27 competition
 
-Description of the project developed during the semester (in Portuguese): [teach-project](teach-project.md).
+[![](img/2025-05-27/tn/001.jpg)](img/2025-05-27/001.jpg)
+[![](img/2025-05-27/tn/002.jpg)](img/2025-05-27/002.jpg)
+[![](img/2025-05-27/tn/003.jpg)](img/2025-05-27/003.jpg)
+[![](img/2025-05-27/tn/004.jpg)](img/2025-05-27/004.jpg)
+[![](img/2025-05-27/tn/005.jpg)](img/2025-05-27/005.jpg)
+[![](img/2025-05-27/tn/006.jpg)](img/2025-05-27/006.jpg)
+[![](img/2025-05-27/tn/007.jpg)](img/2025-05-27/007.jpg)
+[![](img/2025-05-27/tn/008.jpg)](img/2025-05-27/008.jpg)
+[![](img/2025-05-27/tn/009.jpg)](img/2025-05-27/009.jpg)
+[![](img/2025-05-27/tn/010.jpg)](img/2025-05-27/010.jpg)
+[![](img/2025-05-27/tn/011.jpg)](img/2025-05-27/011.jpg)
+[![](img/2025-05-27/tn/012.jpg)](img/2025-05-27/012.jpg)
+[![](img/2025-05-27/tn/013.jpg)](img/2025-05-27/013.jpg)
+[![](img/2025-05-27/tn/014.jpg)](img/2025-05-27/014.jpg)
+[![](img/2025-05-27/tn/015.jpg)](img/2025-05-27/015.jpg)
+[![](img/2025-05-27/tn/016.jpg)](img/2025-05-27/016.jpg)
+[![](img/2025-05-27/tn/017.jpg)](img/2025-05-27/017.jpg)
+[![](img/2025-05-27/tn/018.jpg)](img/2025-05-27/018.jpg)
+[![](img/2025-05-27/tn/019.jpg)](img/2025-05-27/019.jpg)
+[![](img/2025-05-27/tn/020.jpg)](img/2025-05-27/020.jpg)
+
+## 2025-04-15 development
 
 [![](img/2025-04-15/tn/001.jpg)](img/2025-04-15/001.jpg)
 [![](img/2025-04-15/tn/002.jpg)](img/2025-04-15/002.jpg)
@@ -15,6 +36,4 @@ Description of the project developed during the semester (in Portuguese): [teach
 [![](img/2025-04-15/tn/007.jpg)](img/2025-04-15/007.jpg)
 [![](img/2025-04-15/tn/008.jpg)](img/2025-04-15/008.jpg)
 
-(click on image to display larger version)
-
-<br><sub>Last edited: 2025-06-08 10:26:42</sub>
+<br><sub>Last edited: 2025-07-02 12:55:39</sub>
