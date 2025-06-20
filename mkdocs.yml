@@ -1,70 +1,89 @@
-site_name: Eduardo Furlan
-site_description: Eduardo Furlan's Page
+# Last edited: 2026-01-21
+site_name: Furlan
 site_author: Eduardo Furlan
-# repo_name: efurlanm
-# repo_url: https://www.github.com/efurlanm/
-# copyright: CC BY 4.0 License
-docs_dir: src
-site_dir: docs
-site_url: https://efurlanm.github.io/    # for online use
-# site_url: ""                    # for offline use
-use_directory_urls: false        # for offline use
+site_description: Academic and professional portfolio of Eduardo Furlan, a PhD candidate at INPE specializing in High-Performance Computing (HPC) for scientific and engineering challenges. Showcasing research, education, and industrial experience.
+site_url: https://efurlanm.github.io/
+copyright: CC BY 4.0 License
+repo_name: efurlanm
+repo_url: https://www.github.com/efurlanm/
+site_dir: docs                  # Github standard convention
+docs_dir: docs_src
+##use_directory_urls: false  # offline functionality (creates file.html)
 theme:
-    # squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
     name: material
+    custom_dir: overrides
+# squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
     palette:
         primary: white
-        accent: white
-    # font: false                  # no external fonts
+        accent:  white
     font:
-        text: Lato
+        text: Roboto        # provides uniformity between platforms
         code: Roboto Mono
     features:
         - header.autohide
-        - navigation.tracking   # address show active anchor
+        ##- navigation.expand
     icon:
         logo: material/account-outline
-    # https://www.iconarchive.com/show/material-icons-by-pictogrammers/account-outline-icon.html
-    favicon: img/account-outline.ico
+# https://www.iconarchive.com/show/material-icons-by-pictogrammers/\
+# account-outline-icon.html
+    favicon: assets/img/account-outline.ico
 plugins:
-    # - search    # the idea is not to be a big site
-    # - offline
+    - search
+    ##- offline             # for offline navigation
+    ##- privacy             # for offline navigation
+    - autorefs              # enables global reference resolution
+    ##- obsidian-bridge     # enable Wikilinks
     - blog:
         post_readtime: false
-extra:
-    generator: false    # "Made with Material for MkDocs"
 extra_css:
     - assets/extra.css
-    - assets/katex/katex.min.css
+    - assets/katex/katex.min.css  # for offline navigation
+    ##- https://unpkg.com/katex@0/dist/katex.min.css
 extra_javascript:
-    - assets/katex.js
-    - assets/katex/katex.min.js
-    - assets/katex/contrib/auto-render.min.js
+    - assets/katex.js       # https://katex.org/
+    - assets/katex/katex.min.js   # for offline navigation
+    - assets/katex/contrib/auto-render.min.js # for offline navigation
+    ##- https://unpkg.com/katex@0/dist/katex.min.js
+    ##- https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
 markdown_extensions:
     - tables
+    - md_in_html            # allows for writing Markdown inside of HTML
+    - attr_list             # required to define manual IDs {#id}
+    - pymdownx.magiclink    # autolinks (text to link)
+    - pymdownx.mark         # marked or highlighted <mark>
     - pymdownx.arithmatex:
-        generic: true           # katex
-    - pymdownx.snippets:        # mkdocs-macros-plugin
+        generic: true       # for Katex
+    - pymdownx.snippets:    # mkdocs-macros-plugin
         check_paths: true
-        base_path: src/include
-not_in_nav: |
-    assets/
-    include/
-    books/
-    courses.md
-    pub-all.md
-    pub-courses.md
-    teach-gallery.md
-    teach-project.md
+        base_path: docs_src/include
+    - pymdownx.superfences:
+        custom_fences:
+          - name: mermaid   # https://mermaid.js.org/
+            class: mermaid
+            format: !!python/name:pymdownx.superfences.fence_code_format
+validation:
+    links:
+        anchors: warn       # detects broken links in the compilation
+        not_found: warn
 nav:
     - Home: index.md
     - Research: research.md
     - Teaching: teaching.md
     - Engineering: engineering.md
     - Notes: notes.md
-    - Blog:
+    - Blog: 
       - blog/index.md
+not_in_nav: |
+    assets/
+    include/
+    books/
+    gallery/
+    courses.md
+    pub-all.md
+    pub-courses.md
+    tech-perfil.html
+    teach-proj.md
 exclude_docs: |
     .*
-    *§*
-    *#*
+    *~*
+    include/

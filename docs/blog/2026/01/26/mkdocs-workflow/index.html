@@ -1,0 +1,1596 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Academic and professional portfolio of Eduardo Furlan, a PhD candidate at INPE specializing in High-Performance Computing (HPC) for scientific and engineering challenges. Showcasing research, education, and industrial experience.">
+      
+      
+        <meta name="author" content="Eduardo Furlan">
+      
+      
+        <link rel="canonical" href="https://efurlanm.github.io/blog/2026/01/26/mkdocs-workflow/">
+      
+      
+        <link rel="prev" href="../../../../2025/12/03/hpc-fort-opti/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/img/account-outline.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Tutorial: A Reproducible MkDocs Workflow with Centralized Templates - Furlan</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/extra.css">
+    
+      <link rel="stylesheet" href="../../../../../assets/katex/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="white">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tutorial-a-reproducible-mkdocs-workflow-with-centralized-templates" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="Furlan" class="md-header__button md-logo" aria-label="Furlan" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 2a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2m0 7c2.67 0 8 1.33 8 4v3H4v-3c0-2.67 5.33-4 8-4m0 1.9c-2.97 0-6.1 1.46-6.1 2.1v1.1h12.2V17c0-.64-3.13-2.1-6.1-2.1"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Furlan
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tutorial: A Reproducible MkDocs Workflow with Centralized Templates
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://www.github.com/efurlanm/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    efurlanm
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Furlan" class="md-nav__button md-logo" aria-label="Furlan" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 2a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2m0 7c2.67 0 8 1.33 8 4v3H4v-3c0-2.67 5.33-4 8-4m0 1.9c-2.97 0-6.1 1.46-6.1 2.1v1.1h12.2V17c0-.64-3.13-2.1-6.1-2.1"/></svg>
+
+    </a>
+    Furlan
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://www.github.com/efurlanm/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    efurlanm
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../teaching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teaching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Posts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archive
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2024/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2024
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2023
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Categories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Categories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ann/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ANN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/classic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/fortran/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fortran
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/hpc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HPC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/inpe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INPE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/internals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/pinn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PINN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/publication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/virtualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virtualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/mkdocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mkdocs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Directory Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Directory Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-template-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Template Directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-base-configuration-mkdocsyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Base Configuration (mkdocs.yml)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-the-project-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: The Project Directory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: The Project Directory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-inheritance-config-mkdocs-inherityml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Inheritance Config (mkdocs-inherit.yml)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-the-zk-script-the-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: The zk Script (The Engine)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-daily-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Daily Usage
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-01-26 00:00:00+00:00" class="md-ellipsis">January 26, 2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/mkdocs/">mkdocs</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+
+
+<h1 id="tutorial-a-reproducible-mkdocs-workflow-with-centralized-templates">Tutorial: A Reproducible MkDocs Workflow with Centralized Templates</h1>
+<p>Creating documentation or course notes shouldn't involve copy-pasting configuration files and CSS assets for every new project.</p>
+<p>In this post, I will share my complete workflow. It uses <strong>MkDocs</strong>, a custom Bash script (<code>zk</code>), and a centralized template directory. This allows me to write in <strong>Zettlr</strong> or <strong>Kate</strong> (pure text mode) and instantly preview the result without cluttering my project folders.</p>
+<!-- more -->
+
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To reproduce this setup, you will need:</p>
+<ul>
+<li><strong>MkDocs</strong> installed (preferably in a Conda environment or venv).</li>
+<li><strong>MkDocs Material</strong> theme.</li>
+<li>A Linux environment (Bash).</li>
+</ul>
+<h2 id="step-1-directory-structure">Step 1: Directory Structure</h2>
+<p>First, organize your file system to separate the <strong>Template</strong> (global assets) from your <strong>Projects</strong> (content).</p>
+<p>Create a base directory (e.g., <code>template</code>).</p>
+<h3 id="the-template-directory">The Template Directory</h3>
+<p>This folder holds the files that are common to all projects: CSS, JavaScript (like KaTeX for math), and fonts .</p>
+<div class="highlight"><pre><span></span><code>/path/to/your/template
+├── assets
+│   ├── extra.css
+│   ├── katex/        # Offline math rendering 
+│   └── katex.js
+├── index.md          # Default homepage if none exists 
+└── mkdocs.yml        # Base configuration 
+</code></pre></div>
+<h3 id="the-base-configuration-mkdocsyml">The Base Configuration (<code>mkdocs.yml</code>)</h3>
+<p>Save this as <code>/path/to/your/template/mkdocs.yml</code>. It defines the theme, offline settings, and plugins .</p>
+<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Notes</span>
+<span class="nt">use_directory_urls</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nt">theme</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
+
+<span class="nt">plugins</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">search</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<span class="w">  </span><span class="nt">offline</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<span class="w">  </span><span class="nt">autorefs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+
+<span class="nt">extra_css</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">assets/extra.css</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">assets/katex/katex.min.css</span>
+
+<span class="nt">extra_javascript</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">assets/katex.js</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">assets/katex/katex.min.js</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">assets/katex/contrib/auto-render.min.js</span>
+
+<span class="nt">markdown_extensions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">admonition</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<span class="w">  </span><span class="nt">pymdownx.details</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<span class="w">  </span><span class="nt">pymdownx.arithmatex</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">generic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">pymdownx.superfences</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">custom_fences</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mermaid</span>
+<span class="w">        </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mermaid</span>
+<span class="w">        </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="kt">!!python/name:pymdownx.superfences.fence_code_format</span>
+</code></pre></div>
+<h2 id="step-2-the-project-directory">Step 2: The Project Directory</h2>
+<p>Now, create a project folder (e.g., <code>event</code>). Notice how clean it is—it only contains content and a small config file .</p>
+<div class="highlight"><pre><span></span><code>/path/to/your/event/
+├── index.md
+├── my-article.md
+└── mkdocs-inherit.yml  # The &quot;Delta&quot; config
+</code></pre></div>
+<h3 id="the-inheritance-config-mkdocs-inherityml">The Inheritance Config (<code>mkdocs-inherit.yml</code>)</h3>
+<p>Instead of a full config, this file simply inherits from the base and overrides specific fields (like the site name or color) .</p>
+<div class="highlight"><pre><span></span><code><span class="nt">INHERIT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdocs.yml</span>
+<span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Tech Week 2026.1</span>
+<span class="nt">theme</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">palette</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">primary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">teal</span>
+<span class="w">        </span><span class="nt">accent</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">teal</span>
+<span class="nt">nav</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">About</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-article.md</span>
+</code></pre></div>
+<h2 id="step-3-the-zk-script-the-engine">Step 3: The <code>zk</code> Script (The Engine)</h2>
+<p>This script automates the build process. It creates a temporary directory, links your project files to the template assets, and runs the server .</p>
+<p>Save this file as <code>zk</code> in your path (e.g., <code>/usr/local/bin/zk</code>) and make it executable (<code>chmod +x zk</code>).</p>
+<p><strong>Note:</strong> You <strong>must</strong> edit the <code>BASE</code> variable to match your template path .</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1"># Enable extended globbing (pattern matching) to handle numeric arguments later.</span>
+<span class="nb">shopt</span><span class="w"> </span>-s<span class="w"> </span>extglob
+
+<span class="c1">#</span>
+<span class="c1"># USER CONFIGURATION</span>
+<span class="c1">#</span>
+
+<span class="c1"># Default port for the local server</span>
+<span class="nv">PORT</span><span class="o">=</span><span class="m">8000</span>
+
+<span class="c1"># Default mode is &quot;serve&quot; (preview). Set to true to generate static HTML files.</span>
+<span class="nv">BUILD</span><span class="o">=</span><span class="nb">false</span>
+
+<span class="c1"># IMPORTANT: Absolute path to your centralized template folder.</span>
+<span class="c1"># This folder must contain the &#39;mkdocs.yml&#39; and the &#39;assets&#39; folder.</span>
+<span class="nv">BASE_TEMPLATE</span><span class="o">=</span><span class="s2">&quot;/path/to/your/template&quot;</span><span class="w"> </span>
+
+<span class="c1"># Optional: Activate your Python/Conda environment containing MkDocs.</span>
+<span class="c1"># Uncomment the line below if you run this outside of an active environment.</span>
+<span class="c1"># source ~/anaconda3/bin/activate mkdocs</span>
+
+<span class="c1">#</span>
+<span class="c1"># ARGUMENT PARSING</span>
+<span class="c1">#</span>
+<span class="c1"># This section checks if the user provided arguments like &quot;b&quot; or a port number.</span>
+
+<span class="k">case</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="k">in</span>
+<span class="w">    </span><span class="s2">&quot;b&quot;</span><span class="o">)</span>
+<span class="w">        </span><span class="c1"># Usage: ./zk b</span>
+<span class="w">        </span><span class="c1"># Enables build mode (generates the &#39;site&#39; folder).</span>
+<span class="w">        </span><span class="nv">BUILD</span><span class="o">=</span><span class="nb">true</span>
+<span class="w">    </span><span class="p">;;</span>
+<span class="w">    </span>+<span class="o">([</span><span class="m">0</span>-9<span class="o">]))</span><span class="w"> </span>
+<span class="w">        </span><span class="c1"># Usage: ./zk 8085</span>
+<span class="w">        </span><span class="c1"># If the argument is just a number, treat it as the Port.</span>
+<span class="w">        </span><span class="nv">PORT</span><span class="o">=</span><span class="nv">$1</span>
+<span class="w">    </span><span class="p">;;</span>
+<span class="k">esac</span>
+
+<span class="c1">#</span>
+<span class="c1"># VARIABLES &amp; PREPARATION</span>
+<span class="c1">#</span>
+
+<span class="c1"># Flags to track which temporary links we created (to delete them later)</span>
+<span class="nv">USING_TEMPLATE</span><span class="o">=</span><span class="nb">false</span>
+<span class="nv">LINKED_ASSETS</span><span class="o">=</span><span class="nb">false</span>
+<span class="nv">LINKED_INDEX</span><span class="o">=</span><span class="nb">false</span>
+<span class="nv">CFG</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+
+<span class="c1"># Save the current directory (Project Folder)</span>
+<span class="nv">SRC</span><span class="o">=</span><span class="nv">$PWD</span>
+
+<span class="c1"># Define a temporary location for the build process.</span>
+<span class="c1"># We use /tmp to ensure we don&#39;t clutter your home directory.</span>
+<span class="c1"># ${PWD##*/} extracts just the current folder name (e.g., &quot;event&quot;).</span>
+<span class="nv">TMP</span><span class="o">=</span><span class="s2">&quot;/tmp/mkdocs-build-</span><span class="si">${</span><span class="nv">PWD</span><span class="p">##*/</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>
+
+<span class="c1">#</span>
+<span class="c1"># LOGIC: VIRTUAL ENVIRONMENT SETUP</span>
+<span class="c1">#</span>
+
+<span class="c1"># Check: Does this folder already have a full mkdocs.yml?</span>
+<span class="c1"># If NOT, we assume it&#39;s a &quot;Content-Only&quot; project and needs the Template.</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;mkdocs.yml&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nv">USING_TEMPLATE</span><span class="o">=</span><span class="nb">true</span>
+
+<span class="w">    </span><span class="c1"># Create a clean temporary directory and move into it</span>
+<span class="w">    </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$TMP</span>
+<span class="w">    </span><span class="nb">cd</span><span class="w"> </span><span class="nv">$TMP</span>
+
+<span class="w">    </span><span class="c1"># Link the Project Content</span>
+<span class="w">    </span><span class="c1"># We create a link named &#39;docs&#39; pointing to your actual project files.</span>
+<span class="w">    </span><span class="c1"># MkDocs expects content to be in a folder named &#39;docs&#39;.</span>
+<span class="w">    </span>ln<span class="w"> </span>-sf<span class="w"> </span><span class="nv">$SRC</span><span class="w"> </span>docs
+
+<span class="w">    </span><span class="c1"># Link the Template Cache (Optional)</span>
+<span class="w">    </span><span class="c1"># This helps speed up builds if you have plugins that cache data.</span>
+<span class="w">    </span>ln<span class="w"> </span>-sf<span class="w"> </span><span class="nv">$BASE_TEMPLATE</span>/.cache<span class="w"> </span>.
+
+<span class="w">    </span><span class="c1"># Link the Base Config</span>
+<span class="w">    </span>ln<span class="w"> </span>-sf<span class="w"> </span><span class="nv">$BASE_TEMPLATE</span>/mkdocs.yml<span class="w"> </span>.
+
+<span class="w">    </span><span class="c1"># Inject Assets (CSS/JS)</span>
+<span class="w">    </span><span class="c1"># If your project doesn&#39;t have an &#39;assets&#39; folder, we borrow the template&#39;s.</span>
+<span class="w">    </span><span class="c1"># We link it inside your source folder so the preview works correctly.</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$SRC</span><span class="s2">/assets&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="nv">LINKED_ASSETS</span><span class="o">=</span><span class="nb">true</span>
+<span class="w">        </span>ln<span class="w"> </span>-s<span class="w"> </span><span class="nv">$BASE_TEMPLATE</span>/assets<span class="w"> </span><span class="nv">$SRC</span>/
+<span class="w">    </span><span class="k">fi</span>
+
+<span class="w">    </span><span class="c1"># Inject Default Homepage</span>
+<span class="w">    </span><span class="c1"># If you haven&#39;t written an index.md yet, use the generic one from the template.</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$SRC</span><span class="s2">/index.md&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="nv">LINKED_INDEX</span><span class="o">=</span><span class="nb">true</span>
+<span class="w">        </span>ln<span class="w"> </span>-s<span class="w"> </span><span class="nv">$BASE_TEMPLATE</span>/index.md<span class="w"> </span><span class="nv">$SRC</span>/
+<span class="w">    </span><span class="k">fi</span>
+
+<span class="w">    </span><span class="c1"># Handle Configuration Inheritance</span>
+<span class="w">    </span><span class="c1"># If the project has a &#39;mkdocs-inherit.yml&#39; (Delta config), we use it.</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$SRC</span><span class="s2">/mkdocs-inherit.yml&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="c1"># Tell MkDocs to use this specific file</span>
+<span class="w">        </span><span class="nv">CFG</span><span class="o">=</span><span class="s2">&quot;-f mkdocs-inherit.yml&quot;</span><span class="w">       </span>
+<span class="w">        </span><span class="c1"># Link the inherit file to the temp dir</span>
+<span class="w">        </span>ln<span class="w"> </span>-sf<span class="w"> </span><span class="nv">$SRC</span>/mkdocs-inherit.yml<span class="w"> </span>.
+<span class="w">    </span><span class="k">fi</span>
+<span class="k">fi</span>
+
+<span class="c1">#</span>
+<span class="c1"># EXECUTION</span>
+<span class="c1">#</span>
+
+<span class="k">if</span><span class="w"> </span><span class="nv">$BUILD</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="c1"># Generates the static site (usually into a &#39;site&#39; folder)</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Building static site...&quot;</span>
+<span class="w">    </span>mkdocs<span class="w"> </span>build<span class="w"> </span><span class="nv">$CFG</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="c1"># Starts the live preview server.</span>
+<span class="w">    </span><span class="c1"># --dirty: Only rebuilds modified files (faster).</span>
+<span class="w">    </span><span class="c1"># --clean: Cleans up stale artifacts before starting.</span>
+<span class="w">    </span><span class="c1"># -a: Binds to 0.0.0.0 to allow access from other devices on the network.</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Starting local server on port </span><span class="nv">$PORT</span><span class="s2">...&quot;</span>
+<span class="w">    </span>mkdocs<span class="w"> </span>serve<span class="w"> </span>--livereload<span class="w"> </span>--dirty<span class="w"> </span>--clean<span class="w"> </span>-a<span class="w"> </span><span class="m">0</span>.0.0.0:<span class="nv">$PORT</span><span class="w"> </span><span class="nv">$CFG</span>
+<span class="k">fi</span>
+
+<span class="c1">#</span>
+<span class="c1"># CLEANUP</span>
+<span class="c1">#</span>
+<span class="c1"># This runs after you stop the server (Ctrl+C).</span>
+
+<span class="k">if</span><span class="w"> </span><span class="nv">$USING_TEMPLATE</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="c1"># Go back to the original folder</span>
+<span class="w">    </span><span class="nb">cd</span><span class="w"> </span><span class="nv">$SRC</span>
+
+<span class="w">    </span><span class="c1"># Delete the temporary build environment</span>
+<span class="w">    </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="nv">$TMP</span>
+<span class="k">fi</span>
+
+<span class="c1"># Remove the temporary &#39;assets&#39; link from your project folder</span>
+<span class="k">if</span><span class="w"> </span><span class="nv">$LINKED_ASSETS</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span>rm<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$SRC</span><span class="s2">/assets&quot;</span>
+<span class="k">fi</span>
+
+<span class="c1"># Remove the temporary &#39;index.md&#39; link from your project folder</span>
+<span class="k">if</span><span class="w"> </span><span class="nv">$LINKED_INDEX</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span>rm<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$SRC</span><span class="s2">/index.md&quot;</span>
+<span class="k">fi</span>
+
+<span class="c1"># End of script</span>
+</code></pre></div>
+<h2 id="step-4-daily-usage">Step 4: Daily Usage</h2>
+<p>With the setup complete, here is the workflow:</p>
+<ol>
+<li><strong>Open your project</strong> folder.</li>
+<li><strong>Edit content</strong> using your preferred tool:<ul>
+<li><strong>Zettlr:</strong> Great for a "notebook" feel with Markdown highlighting.</li>
+<li><strong>Kate:</strong> Excellent for a lightweight, <strong>pure text</strong> editing experience.</li>
+</ul>
+</li>
+<li><strong>Run the script:</strong>
+Open a terminal in the folder and type:
+<div class="highlight"><pre><span></span><code>zk
+</code></pre></div>
+Or specifying a port:
+<div class="highlight"><pre><span></span><code>zk<span class="w"> </span><span class="m">8085</span>
+</code></pre></div></li>
+<li>It's possible to edit the Markdown file; MkDocs' live reload will refresh the page in your browser.</li>
+</ol>
+<p>The script will handle the linking, launch the server, and clean up the temporary links when you press <code>Ctrl+C</code>. This keeps your source directory perfectly clean, containing only your text files.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      CC BY 4.0 License
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["header.autohide"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../assets/katex.js"></script>
+      
+        <script src="../../../../../assets/katex/katex.min.js"></script>
+      
+        <script src="../../../../../assets/katex/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
