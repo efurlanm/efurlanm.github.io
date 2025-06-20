@@ -1,4 +1,5 @@
-site_name: Eduardo Furlan
+# Last edited: 2025-06-28
+site_name: "Eduardo Furlan"
 site_description: Eduardo Furlan's Page
 site_author: Eduardo Furlan
 # repo_name: efurlanm
@@ -6,7 +7,7 @@ site_author: Eduardo Furlan
 # copyright: CC BY 4.0 License
 docs_dir: src
 site_dir: docs
-site_url: https://efurlanm.github.io/    # for online use
+site_url: https://efurlanm.github.io/
 # site_url: ""                    # for offline use
 use_directory_urls: false        # for offline use
 theme:
@@ -15,10 +16,9 @@ theme:
     palette:
         primary: white
         accent: white
-    # font: false                  # no external fonts
     font:
         text: Lato
-        code: Roboto Mono
+        code: Lato Mono
     features:
         - header.autohide
         - navigation.tracking   # address show active anchor
