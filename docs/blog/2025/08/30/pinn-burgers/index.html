@@ -1,0 +1,1404 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Academic and professional portfolio of Eduardo Furlan, a PhD candidate at INPE specializing in High-Performance Computing (HPC) for scientific and engineering challenges. Showcasing research, education, and industrial experience.">
+      
+      
+        <meta name="author" content="Eduardo Furlan">
+      
+      
+        <link rel="canonical" href="https://efurlanm.github.io/blog/2025/08/30/pinn-burgers/">
+      
+      
+        <link rel="prev" href="../pinn-chal/">
+      
+      
+        <link rel="next" href="../../31/pinn-para/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/img/account-outline.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Overcoming Generalization Challenges in 2D Burgers' Equation with Physics-Informed Neural Networks - Furlan</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/extra.css">
+    
+      <link rel="stylesheet" href="../../../../../assets/katex/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="white">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#overcoming-generalization-challenges-in-2d-burgers-equation-with-physics-informed-neural-networks" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="Furlan" class="md-header__button md-logo" aria-label="Furlan" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 2a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2m0 7c2.67 0 8 1.33 8 4v3H4v-3c0-2.67 5.33-4 8-4m0 1.9c-2.97 0-6.1 1.46-6.1 2.1v1.1h12.2V17c0-.64-3.13-2.1-6.1-2.1"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Furlan
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overcoming Generalization Challenges in 2D Burgers' Equation with Physics-Informed Neural Networks
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://www.github.com/efurlanm/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    efurlanm
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Furlan" class="md-nav__button md-logo" aria-label="Furlan" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 2a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2m0 7c2.67 0 8 1.33 8 4v3H4v-3c0-2.67 5.33-4 8-4m0 1.9c-2.97 0-6.1 1.46-6.1 2.1v1.1h12.2V17c0-.64-3.13-2.1-6.1-2.1"/></svg>
+
+    </a>
+    Furlan
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://www.github.com/efurlanm/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    efurlanm
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../teaching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teaching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Posts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archive
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2024/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2024
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2023
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Categories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Categories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ann/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ANN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/classic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/fortran/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fortran
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/hpc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HPC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/inpe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INPE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/internals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/pinn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PINN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/publication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/virtualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virtualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/mkdocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mkdocs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-core-problem-gradient-pathologies-and-numerical-stiffness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Core Problem: Gradient Pathologies and Numerical Stiffness
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#promising-strategies-for-enhanced-generalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Promising Strategies for Enhanced Generalization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Promising Strategies for Enhanced Generalization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adaptive-causal-sampling-and-evolutionary-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adaptive Causal Sampling and Evolutionary Sampling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adaptive-learning-rate-annealing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adaptive Learning Rate Annealing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#novel-neural-network-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Novel Neural Network Architectures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-order-physics-informed-neural-networks-fo-pinns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First-Order Physics-Informed Neural Networks (FO-PINNs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#residual-based-adaptive-refinement-rar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Residual-Based Adaptive Refinement (RAR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-fidelity-hierarchical-training-and-data-complementarity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Fidelity Hierarchical Training and Data Complementarity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2025-08-30 00:00:00+00:00" class="md-ellipsis">August 30, 2025</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/pinn/">PINN</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+
+
+<h1 id="overcoming-generalization-challenges-in-2d-burgers-equation-with-physics-informed-neural-networks">Overcoming Generalization Challenges in 2D Burgers' Equation with Physics-Informed Neural Networks</h1>
+<p>Physics-Informed Neural Networks (PINNs) have emerged as a powerful paradigm in "scientific machine learning," enabling the integration of physical laws, expressed as Partial Differential Equations (PDEs), into neural network training (Wang et al., 2021, p. 1; Lu et al., 2021, p. 208). While PINNs offer a promising avenue for solving complex, non-linear systems like the 2D Burgers' equation, ensuring robust generalization remains a critical challenge, particularly for solutions exhibiting multi-scale features, anisotropic behavior, or in data-poor environments. The 2D Burgers' equation is a fundamental non-linear PDE often used as a benchmark for such challenges (Raissi et al., 2019, p. 686). This post explores several cutting-edge approaches aimed at enhancing PINN generalization capabilities, directly addressing the underlying limitations that hinder their performance.</p>
+<!-- more -->
+
+<h2 id="the-core-problem-gradient-pathologies-and-numerical-stiffness">The Core Problem: Gradient Pathologies and Numerical Stiffness</h2>
+<p>A significant obstacle to PINN generalization stems from "gradient pathologies," characterized by "unbalanced back-propagated gradients during model training" (Wang et al., 2021, p. 1). This imbalance frequently leads to "numerical stiffness" in the gradient flow dynamics (Wang et al., 2021, p. 1), where gradients from different components of the loss function (e.g., PDE residual versus boundary conditions) can vary by orders of magnitude (Wang et al., 2021, p. 4). This disparity can cause the network to prioritize minimizing the PDE residual within the domain while neglecting crucial boundary or initial conditions, resulting in "erroneous predictions" (Wang et al., 2021, p. 4). For the 2D Burgers' equation, which can involve complex flow patterns and potential shock formation, such stiffness is particularly problematic.</p>
+<p>Furthermore, the importance of "sampling collocation points on the performance of PINNs has largely been overlooked" (Daw et al., 2022, p. 1). Failures can arise when the "correct solution must propagate from the initial and/or boundary points to the interior points" (Daw et al., 2022, p. 3). If this propagation is hindered, PINNs can converge to "trivial solutions" (Daw et al., 2022, p. 1), especially in regions with "highly imbalanced PDE residual fields" (Daw et al., 2022, p. 1).</p>
+<h2 id="promising-strategies-for-enhanced-generalization">Promising Strategies for Enhanced Generalization</h2>
+<p>Recent research has yielded several innovative techniques that directly combat these limitations, leading to substantial improvements in PINN accuracy and generalization.</p>
+<h3 id="adaptive-causal-sampling-and-evolutionary-sampling">Adaptive Causal Sampling and Evolutionary Sampling</h3>
+<p>The selection and sampling of collocation points are "quite crucial in training PINNs" (Guo et al., 2022, p. 1). A key insight is that "sampling should obey temporal causality" to avoid "sampling confusion and trivial solution of PINNs" (Guo et al., 2022, p. 1, 5). The <strong>Adaptive Causal Sampling Method (ACSM)</strong> introduces temporal causality into adaptive sampling, significantly improving PINN performance with "few collocation points" and "almost no extra computation cost," achieving up to "two orders of magnitude" improvement in prediction accuracy (Guo et al., 2022, p. 1, 5, 33).</p>
+<p>Building on this, the <strong>Evolutionary Sampling (Evo)</strong> method and its <strong>Causal Evo extension</strong> directly address "propagation failures" by incrementally accumulating collocation points in regions of high PDE residuals (Daw et al., 2022, p. 1, 4). Causal Evo, specifically designed for time-dependent PDEs, also incorporates a "causal formulation of the PDE loss" (Daw et al., 2022, p. 6), enabling faster convergence to accurate solutions (Daw et al., 2022, p. 8). These methods demonstrate a "two orders of magnitude improvement in sampling efficiency" for scenarios with very few collocation points, making them highly beneficial for high-dimensional problems like the 2D Burgers' equation where sampling efficiency is critical (Daw et al., 2022, p. 8).</p>
+<h3 id="adaptive-learning-rate-annealing">Adaptive Learning Rate Annealing</h3>
+<p>To counteract the "unbalanced gradients," an <strong>adaptive learning rate annealing algorithm</strong> dynamically adjusts the weights (<span class="arithmatex">\(\lambda_i\)</span>) of different loss terms during training (Wang et al., 2021, p. 1, 10). This algorithm "utilizes gradient statistics" to "balance the interplay between the different terms" in the composite loss function (Wang et al., 2021, p. 1, 10), ensuring that all physical constraints are adequately considered (Wang et al., 2021, p. 11). For the Helmholtz equation, this method improved prediction error by "more than one order of magnitude" (Wang et al., 2021, p. 11). This technique has been shown to "consistently improve the predictive accuracy of physics-informed neural networks by a factor of 50-100x" across various computational physics problems (Wang et al., 2021, p. 1, 13, 22).</p>
+<h3 id="novel-neural-network-architectures">Novel Neural Network Architectures</h3>
+<p>Architectural innovations also play a crucial role. A <strong>novel neural network architecture</strong> has been proposed that is inherently "more resilient to such gradient pathologies and presents less stiffness in the gradient flow dynamics" (Wang et al., 2021, p. 2). This design incorporates "multiplicative interactions between different input dimensions" and "enhances the hidden states with residual connections," drawing inspiration from attention mechanisms (Wang et al., 2021, p. 12). Such architectures can lead to a "decrease in the magnitude of the leading Hessian eigenvalue" by approximately three times, indicating reduced gradient flow stiffness (Wang et al., 2021, p. 13). This "better capacity to represent complicated functions" is highly advantageous for capturing the detailed dynamics of the 2D Burgers' equation (Wang et al., 2021, p. 14, 15).</p>
+<h3 id="first-order-physics-informed-neural-networks-fo-pinns">First-Order Physics-Informed Neural Networks (FO-PINNs)</h3>
+<p>A significant challenge for standard PINNs, especially for parameterized systems, is the "accuracy decreases significantly" and the "soft implementation of boundary conditions" (Gladstone et al., 2023, p. 1). <strong>First-Order Physics-Informed Neural Networks (FO-PINNs)</strong> address this by reformulating higher-order PDEs into first-order systems (Gladstone et al., 2023, p. 1, 5). For a second-order PDE like:</p>
+<div class="arithmatex">\[ a \frac{\partial^2 u}{\partial x^2} + b \frac{\partial^2 u}{\partial x \partial y} + c \frac{\partial^2 u}{\partial y^2} + d \frac{\partial u}{\partial x} + e \frac{\partial u}{\partial y} + fu = g(x, y) \]</div>
+<p>FO-PINNs define first-order derivatives <span class="arithmatex">\(u_x = \frac{\partial u}{\partial x}\)</span> and <span class="arithmatex">\(u_y = \frac{\partial u}{\partial y}\)</span> as new output variables, transforming the PDE loss function into a first-order one and introducing compatibility loss terms:</p>
+<div class="arithmatex">\[ J_{PDE} = \left(a \frac{\partial \hat{u}_x}{\partial x} + b \frac{\partial \hat{u}_y}{\partial y} + c \frac{\partial \hat{u}_x}{\partial y} + d\hat{u}_x + e\hat{u}_y + f\hat{u} - g\right)^2 \]</div>
+<div class="arithmatex">\[ J_{COMP} = \left(\hat{u}_x - \frac{\partial \hat{u}}{\partial x}\right)^2 + \left(\hat{u}_y - \frac{\partial \hat{u}}{\partial y}\right)^2 \]</div>
+<div class="arithmatex">\[ J = J_{PDE} + J_{COMP} \]</div>
+<p>This approach offers "significantly higher accuracy in solving parameterized systems" and enables the "exact imposition of boundary conditions" through approximate distance functions, overcoming the "exploding Laplacian issue" associated with higher-order derivatives (Gladstone et al., 2023, p. 1, 2, 5). For the 2D Burgers' equation, where second-order diffusion terms are often present, this reformulation could lead to improved accuracy and boundary enforcement.</p>
+<h3 id="residual-based-adaptive-refinement-rar">Residual-Based Adaptive Refinement (RAR)</h3>
+<p>For PDEs with "steep gradients," such as the Burgers' equation, simply using randomly distributed residual points may not be efficient (Lu et al., 2021, p. 217). The <strong>Residual-Based Adaptive Refinement (RAR)</strong> method dynamically adds more collocation points "in the locations where the PDE residual... is large" during training (Lu et al., 2021, p. 217). This adaptive strategy significantly improves "training efficiency" (Lu et al., 2021, p. 217). For the 1D Burgers' equation, PINNs with RAR "can capture the discontinuity much better" (Lu et al., 2021, p. 222). The effectiveness of RAR has also been "demonstrated" for the <strong>2D Burgers' equation</strong> (Lu et al., 2021, p. 222, 223), highlighting its utility in accurately resolving sharp fronts or complex features.</p>
+<h3 id="multi-fidelity-hierarchical-training-and-data-complementarity">Multi-Fidelity Hierarchical Training and Data Complementarity</h3>
+<p>For "data-poor environments" and "parametric PINNs," <strong>multi-fidelity hierarchical training</strong> proves beneficial (Hassanaly et al., 2024, p. 7). This method uses solutions from simpler or lower-fidelity models to guide the training of more complex PINNs (Hassanaly et al., 2024, p. 7). This strategy can help mitigate the "curse of dimensionality" when PINNs are applied to parametric variations (Hassanaly et al., 2024, p. 9, 16).</p>
+<p>Furthermore, while PINNs are data-efficient, "if data is available, it should be used" (Hassanaly et al., 2024, p. 10). The "physics loss is best used as a complement to data rather than as a complete replacement" (Hassanaly et al., 2024, p. 10). In scenarios with "low-data availability," combining physics and data losses leads to the "highest accuracy throughout the parameter space" (Hassanaly et al., 2024, p. 2, 10, 16). For the 2D Burgers' equation, even sparse data from traditional simulations or experimental observations could greatly assist in achieving more accurate and generalizable solutions.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The generalization of PINNs for solving challenging non-linear PDEs, such as the 2D Burgers' equation, is continuously improving through targeted methodological advancements. By systematically addressing issues like gradient pathologies, numerical stiffness, and inefficient sampling, a comprehensive framework for more robust PINN training is emerging. The combination of <strong>adaptive and causal sampling methods (ACSM, Evo, Causal Evo)</strong>, <strong>adaptive learning rate annealing</strong>, <strong>novel and resilient neural network architectures</strong>, <strong>first-order reformulations (FO-PINNs)</strong> for improved accuracy and boundary condition imposition, <strong>residual-based adaptive refinement (RAR)</strong>, and the strategic integration of <strong>multi-fidelity hierarchical training and observational data</strong>, offers a powerful toolkit. These approaches are crucial for unlocking the full potential of PINNs in accurately and efficiently solving complex problems in computational fluid dynamics and beyond, paving the way for reliable "scientific machine learning" applications.</p>
+<h2 id="references">References</h2>
+<p>Daw, A., Bu, J., Wang, S., Perdikaris, P., &amp; Karpatne, A. (2022). <em>Rethinking the importance of sampling in physics-informed neural networks</em>. arXiv preprint arXiv:2207.02338.</p>
+<p>Gladstone, R. J., Nabian, M. A., Sukumar, N., Srivastava, A., &amp; Meidani, H. (2023). FO-PINN: A First-Order formulation for Physics-Informed Neural Networks. <em>arXiv preprint arXiv:2303.15681</em>.</p>
+<p>Guo, J., Wang, H., &amp; Hou, C. (2022). A Novel Adaptive Causal Sampling Method for Physics-Informed Neural Networks. <em>Global Science Preprint</em>.</p>
+<p>Hassanaly, M., Weddle, P. J., King, R. N., De, S., Doostan, A., Randall, C. R., Dufek, E. J., Colclasure, A. M., &amp; Smith, K. (2024). PINN surrogate of Li-ion battery models for parameter inference. Part II: Regularization and application of the pseudo-2D model. <em>NREL, University of Colorado Boulder, Northern Arizona University, Idaho National Laboratory (INL)</em>.</p>
+<p>Lu, L., Meng, X., Mao, Z., &amp; Karniadakis, G. E. (2021). DeepXDE: A deep learning library for solving differential equations. <em>SIAM Review, 63</em>(1), 208–228.</p>
+<p>Raissi, M., Perdikaris, P., &amp; Karniadakis, G. E. (2019). Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations. <em>Journal of Computational Physics, 378</em>, 686–707.</p>
+<p>Wang, S., Teng, Y., &amp; Perdikaris, P. (2021). <em>Understanding and mitigating gradient pathologies in physics-informed neural networks</em>. SIAM Journal on Scientific Computing, 43(5), A3055–A3081.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      CC BY 4.0 License
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["header.autohide"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../assets/katex.js"></script>
+      
+        <script src="../../../../../assets/katex/katex.min.js"></script>
+      
+        <script src="../../../../../assets/katex/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1961 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Academic and professional portfolio of Eduardo Furlan, a PhD candidate at INPE specializing in High-Performance Computing (HPC) for scientific and engineering challenges. Showcasing research, education, and industrial experience.">
+      
+      
+        <meta name="author" content="Eduardo Furlan">
+      
+      
+        <link rel="canonical" href="https://efurlanm.github.io/books/autodoc/autodoc/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/img/account-outline.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Sistema de Documentação - Furlan</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/extra.css">
+    
+      <link rel="stylesheet" href="../../../assets/katex/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="white">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#um-sistema-simples-para-documentacao-semi-automatica-de-programas" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Furlan" class="md-header__button md-logo" aria-label="Furlan" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 2a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2m0 7c2.67 0 8 1.33 8 4v3H4v-3c0-2.67 5.33-4 8-4m0 1.9c-2.97 0-6.1 1.46-6.1 2.1v1.1h12.2V17c0-.64-3.13-2.1-6.1-2.1"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Furlan
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sistema de Documentação
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://www.github.com/efurlanm/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    efurlanm
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Furlan" class="md-nav__button md-logo" aria-label="Furlan" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 2a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2m0 7c2.67 0 8 1.33 8 4v3H4v-3c0-2.67 5.33-4 8-4m0 1.9c-2.97 0-6.1 1.46-6.1 2.1v1.1h12.2V17c0-.64-3.13-2.1-6.1-2.1"/></svg>
+
+    </a>
+    Furlan
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://www.github.com/efurlanm/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    efurlanm
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../teaching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teaching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Posts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archive
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/archive/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/archive/2024/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2024
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/archive/2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2023
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Categories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Categories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/ann/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ANN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/classic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/fortran/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fortran
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/hpc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HPC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/inpe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INPE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/internals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/pinn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PINN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/publication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/virtualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virtualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/mkdocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mkdocs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introducao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. INTRODUÇÃO
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-niveis-de-documentacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. NÍVEIS DE DOCUMENTAÇÃO
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-especificacoes-dos-niveis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. ESPECIFICAÇÕES DOS NÍVEIS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-listador-da-documentacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. LISTADOR DA DOCUMENTAÇÃO
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-exemplo-detalhes-das-documentacoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. EXEMPLO - DETALHES DAS DOCUMENTAÇÕES
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. EXEMPLO - DETALHES DAS DOCUMENTAÇÕES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-nivel-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. Nível 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-nivel-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2. Nível 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-nivel-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3. Nível 3
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-documentacao-das-alteracoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. DOCUMENTAÇÃO DAS ALTERAÇÕES
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-resultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. RESULTADOS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-conclusoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. CONCLUSÕES
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-agradecimentos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. AGRADECIMENTOS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-referencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. REFERÊNCIAS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anexo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ANEXO
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+<h1 id="um-sistema-simples-para-documentacao-semi-automatica-de-programas">Um Sistema Simples para Documentação Semi Automática de Programas</h1>
+<blockquote>
+<p>Este documento está publicamente disponível em <a href="https://repositorio.usp.br/item/000781431">https://repositorio.usp.br/item/000781431</a>, e foi manualmente convertido para Markdown GFM a partir de texto gerado por <a href="https://ocrmypdf.readthedocs.io/en/latest/">OCRmyPDF</a>.</p>
+</blockquote>
+<p>Autor: V. W. Setzer<br />
+Data: 1988<br />
+Relatório Técnico RI-MAC-880<br />
+DEPARTAMENTO DE CIÊNCIA DA COMPUTAÇÃO<br />
+UNIVERSIDADE DE SÃO PAULO<br />
+INSTITUTO DE MATEMÁTICA E ESTATÍSTICA<br />
+SÃO PAULO - BRASIL</p>
+<h2 id="1-introducao">1. INTRODUÇÃO</h2>
+<p>A documentação de programas é um dos aspectos cruciais do desenvolvimento de sistemas computacionais em qualquer ambiente. Desde o desenvolvimento de "software" básico, até o de "software aplicativo" para processamentos administrativos, a atividade de programação usando alguma linguagem de programação requer um esforço específico na documentação de sistemas e programas. Esse fato independe da linguagem: essa necessidade existe desde a programação em linguagem de montagem ("assembler") até o uso de linguagens denominadas de "4ª geração".</p>
+<p>Temos verificado continuamente que as documentações de sistemas e programas em geral simplesmente inexistem ou são inadequadas e desatualizadas. As principais consequências desses fatos são:</p>
+<ol>
+<li>A manutenção de programas é muito cara e demorada.</li>
+<li>A fase de testes de programas demanda um tempo exagerado e sobrecarrega os analistas e programadores.</li>
+<li>Não há segurança e confiança de que os programas estão corretos.</li>
+<li>O autor de um programa torna-se o "pai" do mesmo, pois ninguém mais consegue compreendê-lo e mantê-lo.</li>
+<li>Não há meios para se verificar a documentação, isto é, se ela realmente reflete a estrutura do programa.</li>
+<li>A gerência não consegue saber se um programa está bem documentado.</li>
+<li>O projeto, a programação e a documentação devem ser feitos pelas mesmas pessoas.</li>
+</ol>
+<p>Neste artigo apresentamos um sistema extremamente simples de documentação de programas através de comentários feitos na sintaxe (de comentários) da própria linguagem de programação do programa. Um programa também simples (apresentado aqui com o exemplo da documentação em sua versão em Pascal para o VAX) é empregado para gerar automaticamente três níveis de documentação. Delineamos também um programa para gerar automaticamente a documentação das alterações efetuadas em um programa, feitas em um editor de textos qualquer. Veremos como esse sistema também pode forçar metodologias "top-down" de programação (refinamentos sucessivos), como permite introduzir e controlar padrões de documentação e como diminui as consequências apresentadas acima.</p>
+<h2 id="2-niveis-de-documentacao">2. NÍVEIS DE DOCUMENTAÇÃO</h2>
+<p>Em nosso sistema empregamos três níveis de documentação; ele pode ser facilmente estendido para conter mais níveis, se for conveniente. Os níveis contêm o seguinte:</p>
+<ul>
+<li>Nivel 1: Informações gerais sobre os programas e procedimentos.</li>
+<li>Nivel 2: Toda a documentação de nível 1, mais estruturas conceituais de dados e de programas e rotinas.</li>
+<li>Nivel 3: Todas as documentações de níveis 1 e 2, mais o programa propriamente dito, com documentação de seus detalhes.</li>
+</ul>
+<p>Note-se o encaixamento dos conteúdos de cada nível em relação aos níveis anteriores.</p>
+<h2 id="3-especificacoes-dos-niveis">3. ESPECIFICAÇÕES DOS NÍVEIS</h2>
+<p>A documentação de nível 1 é inserida no programa sob forma de comentários ocupando linhas completas (isto é, não deve haver nada, nessas linhas, além desses comentários), que denominaremos de <em>comentários de nível 1</em>. Eles são identificados colocando-se o digito '1' após o símbolo de início de comentário da linguagem, que deve ser inserido na posição mais à esquerda da linha (coluna 1), como por exemplo '(<em>1', '{1' ou '</em>1' (dependendo da linguagem). O simbolo de fim de comentário deve ser colocado nas últimas posições da linha.</p>
+<p>A documentação de nível 2, como vimos, contém a de nível 1, produzida pelos comentários de nível 1, e mais os <em>comentários de nível 2</em>. Estes são linhas de comentários de formato idêntico ao dos comentários de nível 1, excetuando-se o dígito '2' colocado no lugar do '1'.</p>
+<p>A documentação de nível 3 contém as duas anteriores, e mais todos os comandos do programa e <em>comentários de nível 3</em>. Estes são inseridos no programa em qualquer posição das linhas, usando-se simplesmente os símbolos de comentários da linguagem empregada. Evidentemente, não devem confundir-se com os comentários de nível 1 e 2; portanto, não devem conter os dígitos '1' ou '2' imediatamente após o símbolo de início de comentário.</p>
+<h2 id="4-listador-da-documentacao">4. LISTADOR DA DOCUMENTAÇÃO</h2>
+<p>O "listador" da documentação é um programa que solicita do usuário a informação do nível de documentação desejado, e em seguida varre sequencialmente o arquivo com o programa, produzindo uma listagem contendo o seguinte:</p>
+<p>a) Cabeçalho em cada página, contendo o nome do programa, o nível de documentação, a data e a hora da listagem e o número da página.</p>
+<p>b) Se o nível desejado é 3, a listagem conterá todas as linhas do programa, incluindo todos os comentários, precedida cada uma por um <em>número de linha</em>. Esse número é o número de ordem de cada linha do programa, incluindo todos os comentários dos vários níveis.</p>
+<p>c) Se o nível desejado for 1 ou 2, a listagem conterá as linhas de comentário extraídas do programa, conforme o nível desejado, precedidas do número de linha correspondente à listagem do nível 3.</p>
+<p>Por meio dos números de linhas pode-se estabelecer rapidamente uma correspondência visual entre as linhas das listagens dos vários níveis de documentação.</p>
+<h2 id="5-exemplo-detalhes-das-documentacoes">5. EXEMPLO - DETALHES DAS DOCUMENTAÇÕES</h2>
+<p>No apêndice apresentamos como exemplo as listagens dos três níveis de documentação para o programa COMENT.PAS. Esse programa é justamente um listador para programas escritos em Pascal, COBOL ou ZIM. Ele foi escrito em Pascal para o VAX. A partir desse exemplo especificaremos aquilo que, até o presente momento, consideramos como interessante constar da documentação de cada nível.</p>
+<h3 id="51-nivel-1">5.1. Nível 1</h3>
+<p>Note-se que ao programa principal e a cada procedimento corresponde um trecho da documentação deste nível. Esta deve ser totalmente <strong>conceitual</strong>, isto é, deve ser voltada para o problema (ou "mundo real", se for o caso). Assim, num sistema de conferição de notas fiscais colocaríamos "verificação do ICM" e não "verificação do campo NFICM do registro R2". Além disso, deve ser totalmente auto-contida, isto é, deve ser independente das documentações de níveis 2 e 3, a menos dos números de linhas. Denominamos nessa documentação de "entradas" e "saídas" os dados transportados de e para unidades externas, respectivamente. Denominamos de "importações" e "exportações" os dados que são globais a ou são parâmetros de procedimentos; no primeiro caso acrescentamos a palavra "globais".</p>
+<p>Note-se, ainda, a enumeração dos nomes dos procedimentos chamados ("rotinas chamadas") e quais procedimentos chamam uma certa rotina ("chamado por").</p>
+<h3 id="52-nivel-2">5.2. Nível 2</h3>
+<p>Observe-se que a documentação deste nível contém a de nível 1; distinguimos os comentários de níveis 1 e 2 por meio da impressão do digito que constava do início do comentário correspondente.</p>
+<p>Como no nível 1, os comentários de nível 2 devem ser totalmente conceituais. Além disso, devem ser totalmente independentes da documentação de nível 3, a menos dos números de linhas.</p>
+<p>No exemplo, não colocamos as estruturas dos dados, pois elas são demasiado elementares; se existissem, deveriam ser independentes da estrutura "física". Por exemplo, deveriam comentar o mais conceitualmente possível o conteúdo dos arquivos como conjuntos ou tabelas (visão relacional) em relação com o problema ou “mundo real”.</p>
+<p>A estrutura dos programas é dada em um "Português estruturado". Chamamos a atenção para o fato de que procuramos evitar em nosso "Português estruturado" o uso de palavras reservadas das linguagens de programação usuais pois cremos que a descrição de algoritmos deve libertar-se das amarras estruturais e linguísticas impostas por essas linguagens. Assim, não precedemos as condições com "se..." para evitar propositalmente a conotação com o "if". De fato, essas condições estão formuladas como perguntas com interrogação, e podem gerar tanto estruturas como "if” quanto "case". Infelizmente, não encontramos uma alternativa melhor do que "caso contrário" para o "senão". É importante nesse nível tratar os dados como conjuntos e elementos de conjuntos. Por exemplo, uma certa malha de repetição ("loop") poderia ser especificada como "processa cada linha da nota fiscal".</p>
+<p>Atenção especial deve ser dada para o alinhamento vertical: é ele que dá a estrutura de composição das ações. A regra empregada é a seguinte: se uma linha m começa na coluna i, a próxima linha n a ser executada sequencialmente depois de m, independentemente da composição desta, deve ser a próxima linha que também começa na coluna i; entre m e n não deve ocorrer nenhuma linha com algum caractere em colunas de índice menor ou igual a i.</p>
+<p>Note-se a correspondência da numeração das documentações de nível 1 e de nível 2.</p>
+<h3 id="53-nivel-3">5.3. Nível 3</h3>
+<p>Note-se que a documentação deste nível contém todo o programa, com os comentários de níveis 1, 2 e 3, exatamente como ocorrem no arquivo.</p>
+<p>Observe-se que todas as variáveis do programa foram documentadas através de comentários de nível 3. Esse é o nível correto para isso, pois variáveis não têm nada a ver com a descrição conceitual dos níveis superiores. Além disso, foram colocados alguns comentários de nível 3 para comandos do programa.</p>
+<p>Procuramos seguir a mesma regra de alinhamento vertical exposta para os comentários de nível 2. Infelizmente, o resultado não foi exatamente o desejado, mas é suficiente para ilustrar essa nossa única regra; a existência de uma só regra de alinhamento, ao contrário de maneiras usuais de alinhar comandos de programas, que contêm regras especificas para certos comandos, tem a intenção de uniformizar e simplificar essa disposição, independentemente da linguagem.</p>
+<p>Finalmente, note-se como os comandos do programa aparecem inseridos nos comentários de nível 2; cada um destes está documentando conceitualmente a ação executada pelos comandos que o seguem e que precedem o próximo comentário daquele nível.</p>
+<h2 id="6-documentacao-das-alteracoes">6. DOCUMENTAÇÃO DAS ALTERAÇÕES</h2>
+<p>Se se deseja documentar o histórico de todas as alterações efetuadas em um programa, a simples listagem das várias versões do mesmo não é prática, pois é relativamente difícil deduzir quais foram as modificações introduzidas empregando-se uma comparação visual entre as listagens de duas versões consecutivas. Muitos programadores empregam um programa especial de comparação de arquivos, que salienta as diferenças. Essa solução não é satisfatória em casos de muitas alterações. Vejamos a solução que nosso sistema oferece para esse problema.</p>
+<p>Afim de documentar as alterações projetamos um programa de listagem de alterações LA, que funciona da seguinte maneira:</p>
+<p>a) O usuário ativa LA e comunica a este que deseja iniciar alterações; fornece ainda o nome do arquivo, por exemplo A, onde está seu programa P e o nome do editor de textos E que deseja utilizar para editar as alterações.</p>
+<p>b) LA abre um novo arquivo A1 e copia P em A1, numerando suas linhas.</p>
+<p>c) LA passa o controle ao editor E dando A1 como origem do texto.</p>
+<p>d) O usuário altera Al empregando E, sem alterar nenhuma numeração de linhas; ele pode alterar o conteúdo de linhas de P, inserir neste novas linhas (sem colocar a numeração destas) ou eliminar linhas (eliminando também sua numeração). O usuário deve também inserir linhas de comentário especiais no início de A1, usando um código de comentário especial como '/#' a partir da coluna 1; essas linhas servem para documentar-se a razão de se ter feito as alterações. O programa alterado, que denominaremos de P1, é então gravado em A1.</p>
+<p>e) O usuário ativa LA novamente e comunica a este que deseja emitir as listagens de alterações, fornecendo os nomes de A e de A1.</p>
+<p>f) LA varre A numerando internamente as linhas de P. Em paralelo, lê A1 comparando as suas linhas com as de mesmo número de A. Se houver alguma diferença de conteúdo entre duas linhas de mesmo número, ambas são gravadas em um arquivo de saída S, a de A precedida da mensagem "original" e a de A1 de "alterada". Se houver alguma linha de A com um número de linha que não ocorre em A1, ela é gravada em S precedida de "eliminada". Se ocorrer uma sequência de linhas de A1 sem numeração, estas são gravadas em S precedidas da mensagem "linhas inseridas", da linha de A correspondente à linha numerada de A1 imediatamente anterior à sequência, e seguidas pela linha de A imediatamente seguinte. Todas as linhas de A1 com código de comentário especial ('/#') são também inseridas em S. </p>
+<p>q) A medida que LA varre A1 no passo anterior, vai regravando A1 retirando as numerações de linhas e eliminando as linhas com código de comentário especial ('/#').</p>
+<p>h) Ao terminar a varredura de A e de A1, LA executa uma rotina de listagem semelhante ao listador, que lê S e produz a impressão das alterações em todos os níveis de documentação; cada nível é precedido dos comentários especiais ('/#').</p>
+<p>Como resultado desses procedimentos permanece o programa P em A, P1 é criado em A1 e obtém-se a listagem das alterações efetuadas na passagem de P para P1, divididas nos vários níveis de documentação, com as numerações das linhas de P para referência com o programa original e precedida dos comentários especiais que descrevem os motivos das alterações. O arquivo S pode ser novamente empregado para obter-se novas cópias das alterações, bastando para isso ativar LA e informar que se deseja executar esse passo.</p>
+<p>Note-se que esse sistema de documentar as alterações serve tanto para registrar-se as alterações de manutenção, como também para documentar os passos de desenvolvimento de um programa em um método por refinamentos sucessivos.</p>
+<p>Existem vários sistemas de documentação de alterações, denominados de "version control systems"; uma descrição de vários desses sistemas pode ser encontrada em [1]. Em particular, o sistema DIFF originário do UNIX e transposto para o TURBO-C é muito empregado no IBM-PC. Cremos que nossa proposta é superior a esses produtos pois está voltada especificamente para o sistema de documentação aqui descrito, além de adaptar-se a qualquer editor de textos. Note-se que a numeração das linhas feitas pelo nosso sistema resolve todos os problemas de comparação entre as linhas sem prejudicar o usuário, pelo contrário, está dentro do esquema da documentação produzida pelo listador.</p>
+<h2 id="6-resultados">6. RESULTADOS</h2>
+<p>Com o método aqui exposto pode-se obter os seguintes resultados:</p>
+<ol>
+<li>Documentação de um programa, do seu desenvolvimento e de sua manutenção em vários níveis de abstração.</li>
+<li>Programação "top-down". Deve-se desenvolver um programa começando-se pelos comentários de nível 1, a seguir inserir os de nível 2, e finalmente o programa propriamente dito e os comentários de nível 3.</li>
+<li>Geração automática de documentação.</li>
+<li>Aceleração do desenvolvimento. A documentação em vários níveis auxilia a programação e diminui o tempo dedicado aos testes.</li>
+<li>Aceleração da manutenção. Para se fazer manutenção de um programa, pode-se localizar o ponto de alteração (ou de erro) "navegando-se" pelos níveis decrescentes de abstração da documentação. Os números de linhas podem ser empregados para uma rápida movimentação de um nível para outro.</li>
+<li>Atualização permanente da documentação. Qualquer alteração do programa deve redundar em alteração nos comentários de níveis 3, 2 e mesmo 1 se necessário. Os listadores de alterações e de documentação produzirão a documentação das alterações efetuadas e da nova versão da documentação do programa.</li>
+<li>Programação encadeada. Várias pessoas podem. participar do desenvolvimento de um programa, particionando-se a equipe conforme os três níveis de abstração. Isso garante a qualidade das documentações de níveis 1 e 2.</li>
+<li>Controle da programação "top down". A listagem das alterações correspondendo ao desenvolvimento "top down", contendo as várias versões do refinamento sucessivo, possibilita à gerência verificar se a metodologia está sendo corretamente seguida.</li>
+<li>Controle da documentação. A gerência pode controlar a documentação dos programas, já que é relativamente fácil seguir as documentações de níveis 1 e 2. A partir destas, não deve ser difícil seguir o programa distribuído entre elas, e seus comentários de detalhe. A documentação das alterações permite controlar a manutenção das documentações dos níveis mais altos.</li>
+<li>Aumento da portabilidade. Alterações de programas devidas a mudanças de ambiente de processamento podem ser feitas com muito maior rapidez, pois devem afetar muito pouco os níveis 1 e 2 de documentação. Em particular, comentários de nível 3 podem ser inseridos para salientar as dependências de trechos do programa em relação ao ambiente.</li>
+<li>Documentação independente dos detalhes de programação. A documentação de nível 1 pode ser empregada por pessoas que desejam conhecer a funcionalidade dos programas e das rotinas sem se importar com detalhes de programação.</li>
+</ol>
+<h2 id="7-conclusoes">7. CONCLUSÕES</h2>
+<p>Apresentamos aqui um método extremamente simples de produzir e manter a documentação de programas. Estamos cônscios de que esta não é uma área promissora, pois a programação está desaparecendo devido a introdução de geradores universais de aplicações para processamento de dados administrativos, que em alguns casos como o sistema LDT geram automaticamente programas e documentação, sendo esta de altíssimo nível [2]. No entanto, sobram ainda todos os desenvolvimentos de "software" básico, quando não são usadas técnicas formais como VDM (ver, como exemplo dessa técnica, [3]), e a grande maioria dos sistemas desenvolvidos em linguagens de programação algorítmicas e de "4ª geração". Outros esforços tem sido produzidos no sentido de se introduzir comentários significativos nos programas, como o sistema WEB de Knuth [4]. No entanto, trata-se de sistema muito mais complexo, abrangendo inclusive a parte de asserções para prova de corretude (para uma extensa referência a respeito, ver [5]). Essas asserções podem evidentemente ser introduzidas em nosso método como comentários de nível 2. O mesmo se passa com comentários de tipo formal como os propostos por Krieg-Brueckner e Luckham [6]. Nesse dois casos, cremos que as asserções ficam ligadas demais ao código, de modo que poderiam constituir um nível adicional, entre os nossos níveis 2 e 3. Com isso as asserções teriam seus próprios comentários; estes serviriam para esclarecer em um nível informal o conteúdo matemático daquelas, o que daria a documentação do desenvolvimento delas e do programa. A documentação desse desenvolvimento não é a intenção exposta em [6]. Além disso, nosso sistema tem a vantagem adicional de documentar as versões.</p>
+<p>É interessante observar que as considerações de Beckman [7] contrárias ao uso de comentários em programas não se aplicam as propostas aqui apresentadas, pois os comentários que propomos estão intimamente ligados à funcionalidade dos programas e de seus trechos, ao desenvolvimento dos mesmos e ao uso do nível 1 independentemente dos outros níveis.</p>
+<p>Testamos e desenvolvemos estas ideias com alunos de nossa disciplina de Compilação, em que eles elaboram individualmente um programa de milhares de linhas. Apesar do protesto inicial dos alunos, estes logo perceberam as enormes vantagens do sistema de documentação. Em 1987, apenas 22% da turma concluiu o projeto durante o semestre; em 1988, na turma em que testamos o método, 65% dos alunos o concluiu, provavelmente devido, em boa parte, à documentação.</p>
+<p>Várias melhorias podem ser introduzidas no sistema. Por exemplo, pode-se eliminar o aparecimento dos números dos níveis 1 e 2 nas listagens desses níveis, bastando para isso enquadrar totalmente os comentários de nível 1 do programa principal e de cada procedimento em um retângulo de asteriscos. Como vimos, a possibilidade de se documentar as alterações de uma versão para outra pode servir de base para documentar todo processo de desenvolvimento do programa por refinamentos sucessivos; além disso os comentários de nível 2 poderiam ser subdivididos em vários subníveis, para produzir uma documentação completa desse desenvolvimento.</p>
+<p>O colega Arnaldo Mandel propôs um sistema de 5 níveis. O nível 1 contém a documentação para o usuário "externo", do sistema como um todo, como se ele só tivesse o programa-objeto; o nível 2 contém informações para a compilação; o nível 3 é uma documentação para reutilização das rotinas, com variáveis globais, parâmetros, modo de chamar os procedimentos, etc.; o nível 4 é correspondente ao nosso nível 2; o nível 5 contém o histórico de alterações correspondente aos nossos comentários especiais (ele não propõe que se documente as alterações propriamente ditas).</p>
+<p>Roberto C. Mayer implementou o listador em C, possibilitando que a especificação de nível (1 ou 2) valha para uma sequência de linhas, e não somente para cada linha: o encerramento do comentário fecha a sequência. Além disso, sua codificação de comentário de um desses níveis pode ser colocada em qualquer posição de uma linha, ao contrário da nossa proposta, que exige essa colocação no início da linha, simplificando a construção do listador. Seu sistema exige, obviamente, um analisador léxico para detetar os níveis e o encerramento dos comentários correspondentes.</p>
+<p>Mirza Neuman propôs o armazenamento apenas da última versão da documentação e dos arquivos com as alterações de uma versão para outra, gerando-se uma versão anterior a partir desses dados. Parece-nos que é possível construir-se esse programa gerador, pois todos os dados necessários estão disponíveis.</p>
+<h2 id="8-agradecimentos">8. AGRADECIMENTOS</h2>
+<p>O sistema aqui apresentado foi desenvolvido a partir de ideias lançadas por Marcos Ximenes para o sistema ZIM. Especial agradecimento é devido a Afonso C.R. Mastrelli, que programou o exemplo dado no apêndice, com enorme paciência de introduzir paulatinamente as nossas seguidas sugestões. Wagner T. Martins programou uma excelente versão do listador em NATURAL para o sistema ADABAS.</p>
+<h2 id="9-referencias">9. REFERÊNCIAS</h2>
+<p>[1] Rex, J. - Keeping Track: Five Version Control Systems - Computer Language 5, 6 (June 1988), pp. 111-122.</p>
+<p>[2] Setzer, V.W. e Marussi, E. - LDT: Um Gerador Universal de Aplicações para Processamento de Dados - RT-MAC-8806, Departamento de Ciência da Computação do IME-USP (Junho de 1988).</p>
+<p>[3] Bjorner, D. - Programming Languages: Formal Development of Interpreters and Compilers - in Proc. Intl. Comp. Symp. ICS'77, North Holland Publ., pp. 1-21.</p>
+<p>[4] Knuth, D. - Literate Programming - Computer Journal 27, 2 (1984), pp. 97-111.</p>
+<p>[5] Gries, D. - The Science of Programming - Springer Verlag, N. York (1981).</p>
+<p>[6] Krieg-Brueckner, B. e Luckham, D.C. - Anna: Towards a Language for Annotating Ada Programs - ACM SIGPLAN Notices 15, 11 (Nov. 1980), pp. 128-138.</p>
+<p>[7] Beckman, A. - Comments Considered Harmful - ACM SIGPLAN Notices 12, 4 (April 1977), pp. 94-97.</p>
+<h2 id="anexo">ANEXO</h2>
+<div class="highlight"><pre><span></span><code><span class="n">PROGRAMA</span><span class="o">:</span><span class="w"> </span><span class="n">COMENT</span><span class="o">.</span><span class="n">PAS</span><span class="w">           </span><span class="n">DOC</span><span class="o">.</span><span class="n">NIVEL</span><span class="w">  </span><span class="mi">1</span><span class="w">    </span><span class="n">DATA</span><span class="o">:</span><span class="w">  </span><span class="mi">8</span><span class="o">-</span><span class="n">AUG</span><span class="o">-</span><span class="mi">1988</span><span class="w"> </span><span class="mi">15</span><span class="o">:</span><span class="mi">57</span><span class="w">      </span><span class="n">PAG</span><span class="o">:</span><span class="w">   </span><span class="mi">1</span>
+
+<span class="w">    </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="o">=============================================================================</span>
+<span class="w">    </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">TITULO</span><span class="o">:</span><span class="w"> </span><span class="n">COMENTARIO</span>
+<span class="w">    </span><span class="mi">3</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">AUTOR</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">AFONSO</span><span class="w"> </span><span class="n">CELSO</span><span class="w"> </span><span class="n">ROCHA</span><span class="w"> </span><span class="n">MASTRELLI</span>
+<span class="w">    </span><span class="mi">4</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">DATA</span><span class="w">  </span><span class="o">:</span><span class="w"> </span><span class="mi">29</span><span class="o">/</span><span class="mi">06</span><span class="o">/</span><span class="mi">88</span>
+<span class="w">    </span><span class="mi">5</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">VERSAO</span><span class="o">:</span><span class="w"> </span><span class="mf">1.2</span>
+<span class="w">    </span><span class="mi">6</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">FINALIDADE</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">GERAR</span><span class="w"> </span><span class="n">RELATORIO</span><span class="w"> </span><span class="n">CONTENDO</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">DCCUMENTACAO</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">DETERMINADO</span><span class="w"> </span><span class="n">PRO</span><span class="o">-</span>
+<span class="w">    </span><span class="mi">7</span><span class="w"> </span><span class="mi">1</span><span class="w">              </span><span class="n">GRAMA</span><span class="o">;</span>
+<span class="w">    </span><span class="mi">8</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">ENTRADAS</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ARQUIVO</span><span class="w"> </span><span class="n">QUE</span><span class="w"> </span><span class="n">CONTEM</span><span class="w"> </span><span class="n">O</span><span class="w"> </span><span class="n">COLICGO</span><span class="w"> </span><span class="n">FONTE</span><span class="w"> </span><span class="p">(</span><span class="n">EM</span><span class="w"> </span><span class="n">PASCAL</span><span class="o">,</span><span class="w"> </span><span class="n">COBOL</span><span class="w"> </span><span class="n">OU</span><span class="w"> </span><span class="n">ZIM</span><span class="p">)</span>
+<span class="w">    </span><span class="mi">9</span><span class="w"> </span><span class="mi">1</span><span class="w">            </span><span class="n">COMENTADO</span><span class="w"> </span><span class="n">POR</span><span class="w"> </span><span class="n">NIVEIS</span><span class="o">;</span><span class="w"> </span><span class="n">CODIGO</span><span class="w"> </span><span class="k">DO</span><span class="w"> </span><span class="n">NIVEL</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">COMENTARIO</span><span class="w"> </span><span class="n">DESEJADO</span><span class="o">;</span>
+<span class="w">   </span><span class="mi">10</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">SAIDAS</span><span class="w">   </span><span class="o">:</span><span class="w"> </span><span class="n">RELATORIO</span><span class="w"> </span><span class="n">COM</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">DOCUMENTACAO</span><span class="w"> </span><span class="n">EXTRAIDA</span><span class="w"> </span><span class="k">DO</span><span class="w"> </span><span class="n">ARQUIVO</span><span class="w"> </span><span class="n">FONTE</span><span class="o">;</span>
+<span class="w">   </span><span class="mi">11</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">ROTINAS</span><span class="w"> </span><span class="n">CHAMADAS</span><span class="o">:</span><span class="w"> </span><span class="n">LIB</span><span class="mh">$D</span><span class="n">O_COMMAND</span><span class="w"> </span><span class="p">(</span><span class="n">EXTERNA</span><span class="p">)</span><span class="o">,</span><span class="w"> </span><span class="n">MOSTRA_TELA</span><span class="o">,</span><span class="w"> </span><span class="n">CABECALHO</span><span class="o">,</span>
+<span class="w">   </span><span class="mi">12</span><span class="w"> </span><span class="mi">1</span><span class="w">                   </span><span class="n">RELAT</span><span class="o">,</span><span class="w"> </span><span class="n">RELATPAS</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">SYS</span><span class="mh">$A</span><span class="n">SCTIM</span><span class="w"> </span><span class="p">(</span><span class="n">EXTERNA</span><span class="p">)</span><span class="o">;</span>
+<span class="w">   </span><span class="mi">13</span><span class="w"> </span><span class="mi">1</span><span class="o">=============================================================================</span>
+<span class="w">   </span><span class="mi">51</span><span class="w"> </span><span class="mi">1</span><span class="o">=============================================================================</span>
+<span class="w">   </span><span class="mi">52</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">ROTINA</span><span class="o">:</span><span class="w"> </span><span class="n">MOSTRA</span><span class="o">-</span><span class="n">TELA</span><span class="o">;</span>
+<span class="w">   </span><span class="mi">53</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">FINALIDADE</span><span class="o">:</span><span class="w"> </span><span class="n">MOSTRA</span><span class="w"> </span><span class="n">MENU</span><span class="w"> </span><span class="n">AO</span><span class="w"> </span><span class="n">USUARIO</span><span class="o">,</span><span class="w"> </span><span class="n">PERGUNTANDO</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">RECEBENDO</span><span class="w"> </span><span class="n">O</span><span class="w"> </span><span class="n">NIVEL</span><span class="w"> </span><span class="n">DE</span>
+<span class="w">   </span><span class="mi">54</span><span class="w"> </span><span class="mi">1</span><span class="w">             </span><span class="n">DOCUMENTACAO</span><span class="w"> </span><span class="n">QUE</span><span class="w"> </span><span class="n">ELE</span><span class="w"> </span><span class="n">QUER</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">O</span><span class="w"> </span><span class="n">NOME</span><span class="w"> </span><span class="k">DO</span><span class="w"> </span><span class="n">ARQUIVO</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">SER</span><span class="w"> </span><span class="n">LIDO</span><span class="o">,</span>
+<span class="w">   </span><span class="mi">55</span><span class="w"> </span><span class="mi">1</span><span class="w">             </span><span class="n">PASSANDO</span><span class="w"> </span><span class="n">ESSAS</span><span class="w"> </span><span class="n">INFORMAC</span><span class="err">Õ</span><span class="n">ES</span><span class="w"> </span><span class="n">AO</span><span class="w"> </span><span class="n">PROGRAMA</span><span class="w"> </span><span class="n">PRINCIPAL</span><span class="o">;</span>
+<span class="w">   </span><span class="mi">56</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">ENTRADAS</span><span class="o">:</span><span class="w"> </span><span class="n">NIVEL</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">DOCUMENTACAO</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">NOME</span><span class="w"> </span><span class="k">DO</span><span class="w"> </span><span class="n">ARQUIVO</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">SER</span><span class="w"> </span><span class="n">LIDO</span><span class="o">;</span>
+<span class="w">   </span><span class="mi">57</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">EXPORTACDES</span><span class="w"> </span><span class="n">GLOBAIS</span><span class="o">:</span><span class="w"> </span><span class="n">NIVEL</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">DOCUMENTACAO</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">NOME</span><span class="w"> </span><span class="k">DO</span><span class="w"> </span><span class="n">ARQUIVO</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">SER</span><span class="w"> </span><span class="n">LIDO</span><span class="o">;</span>
+<span class="w">   </span><span class="mi">58</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">CHAMADO</span><span class="w"> </span><span class="n">POR</span><span class="o">:</span><span class="w"> </span><span class="n">COMENTARIO</span><span class="o">;</span>
+<span class="w">   </span><span class="mi">59</span><span class="w"> </span><span class="mi">1</span><span class="o">=============================================================================</span>
+<span class="w">  </span><span class="mi">111</span><span class="w"> </span><span class="mi">1</span><span class="o">=============================================================================</span>
+<span class="w">  </span><span class="mi">112</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">ROTINA</span><span class="o">:</span><span class="w"> </span><span class="n">CABECALHO</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">113</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">FINALIDADE</span><span class="o">:</span><span class="w"> </span><span class="n">IMPRIMIR</span><span class="w"> </span><span class="n">CABECALHO</span><span class="w"> </span><span class="n">NO</span><span class="w"> </span><span class="n">INICIO</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">CADA</span><span class="w"> </span><span class="n">PAGINA</span><span class="w"> </span><span class="k">DO</span><span class="w"> </span><span class="n">RELATORIO</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">114</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">IMPORTACOES</span><span class="w"> </span><span class="n">GLOBAIS</span><span class="o">:</span><span class="w"> </span><span class="n">NOME</span><span class="w"> </span><span class="k">DO</span><span class="w"> </span><span class="n">ARQUIVO</span><span class="w"> </span><span class="n">LIDO</span><span class="o">,</span><span class="w"> </span><span class="n">NIVEL</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">DOCUMENTACAO</span><span class="o">,</span>
+<span class="w">  </span><span class="mi">115</span><span class="w"> </span><span class="mi">1</span><span class="w">                      </span><span class="n">DATA</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">HORA</span><span class="w"> </span><span class="n">ATUAIS</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">116</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">SAIDA</span><span class="o">:</span><span class="w"> </span><span class="n">LINHA</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">CABECALHO</span><span class="w"> </span><span class="n">IMPRESSA</span><span class="w"> </span><span class="n">NO</span><span class="w"> </span><span class="n">ALTO</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">CADA</span><span class="w"> </span><span class="n">PAG</span><span class="o">.</span><span class="w"> </span><span class="n">DA</span><span class="w"> </span><span class="n">LISTACEM</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">117</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">CHAMADO</span><span class="w"> </span><span class="n">POR</span><span class="o">:</span><span class="w"> </span><span class="n">COMENTARIO</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">118</span><span class="w"> </span><span class="mi">1</span><span class="o">=============================================================================</span>
+<span class="w">  </span><span class="mi">142</span><span class="w"> </span><span class="mi">1</span><span class="o">=============================================================================</span>
+<span class="w">  </span><span class="mi">143</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">ROTINA</span><span class="o">:</span><span class="w"> </span><span class="n">RELAT</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">144</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">FINALIDADE</span><span class="o">:</span><span class="w"> </span><span class="n">FAZ</span><span class="w"> </span><span class="n">LEITURA</span><span class="w"> </span><span class="k">DO</span><span class="w"> </span><span class="n">ARQUIVO</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">ENTRADA</span><span class="w"> </span><span class="p">(</span><span class="n">EM</span><span class="w"> </span><span class="n">COBOL</span><span class="w"> </span><span class="n">OU</span><span class="w"> </span><span class="n">ZIM</span><span class="p">)</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">MONTA</span><span class="w"> </span><span class="n">O</span>
+<span class="w">  </span><span class="mi">145</span><span class="w"> </span><span class="mi">1</span><span class="w">             </span><span class="n">DE</span><span class="w"> </span><span class="n">SAIDA</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">146</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">IMPORTACOES</span><span class="o">:</span><span class="w"> </span><span class="n">CARACTERE</span><span class="w"> </span><span class="n">QUE</span><span class="w"> </span><span class="n">IDENTIFICA</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">LINHA</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">COMENTARIO</span><span class="w"> </span><span class="n">NA</span><span class="w"> </span><span class="n">LINGUAGEM</span>
+<span class="w">  </span><span class="mi">147</span><span class="w"> </span><span class="mi">1</span><span class="w">              </span><span class="n">UTILIZADA</span><span class="w"> </span><span class="p">(</span><span class="n">COBOL</span><span class="w"> </span><span class="n">OU</span><span class="w"> </span><span class="n">ZIM</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">143</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">SAIDA</span><span class="w">  </span><span class="o">:</span><span class="w"> </span><span class="n">COMENTARIOS</span><span class="w"> </span><span class="k">DO</span><span class="w"> </span><span class="n">PROGRAMA</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">ENTRADA</span><span class="w"> </span><span class="n">NO</span><span class="w"> </span><span class="n">NIVEL</span><span class="w"> </span><span class="n">DESEJADO</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">149</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">CHAMADO</span><span class="w"> </span><span class="n">POR</span><span class="o">:</span><span class="w"> </span><span class="n">COMENTARIO</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">150</span><span class="w"> </span><span class="mi">1</span><span class="o">=============================================================================</span>
+<span class="w">  </span><span class="mi">206</span><span class="w"> </span><span class="mi">1</span><span class="o">=============================================================================</span>
+<span class="w">  </span><span class="mi">207</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">ROTINA</span><span class="o">:</span><span class="w"> </span><span class="n">RELATPAS</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">208</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">FINALIDADE</span><span class="o">:</span><span class="w"> </span><span class="n">FAZ</span><span class="w"> </span><span class="n">LEITURA</span><span class="w"> </span><span class="k">DO</span><span class="w"> </span><span class="n">ARQUIVO</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">ENTRADA</span><span class="w"> </span><span class="p">(</span><span class="n">EM</span><span class="w"> </span><span class="n">PASCAL</span><span class="p">)</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">MONTA</span><span class="w"> </span><span class="n">O</span><span class="w"> </span><span class="n">DE</span>
+<span class="w">  </span><span class="mi">209</span><span class="w"> </span><span class="mi">1</span><span class="w">             </span><span class="n">SAIDA</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">210</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">SAIDA</span><span class="o">:</span><span class="w"> </span><span class="n">COMENTARIOS</span><span class="w"> </span><span class="k">DO</span><span class="w"> </span><span class="n">PROGRAMA</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">ENTRADA</span><span class="w"> </span><span class="n">NO</span><span class="w"> </span><span class="n">NIVEL</span><span class="w"> </span><span class="n">DESEJADO</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">211</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">CHAMADO</span><span class="w"> </span><span class="n">POR</span><span class="o">:</span><span class="w"> </span><span class="n">COMENTARIOS</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">212</span><span class="w"> </span><span class="mi">1</span><span class="o">=============================================================================</span>
+
+
+<span class="n">PROGRAMA</span><span class="o">:</span><span class="w"> </span><span class="n">COMENT</span><span class="o">.</span><span class="n">PAS</span><span class="w">           </span><span class="n">DOC</span><span class="o">.</span><span class="n">NIVEL</span><span class="w">  </span><span class="mi">2</span><span class="w">    </span><span class="n">DATA</span><span class="o">:</span><span class="w">  </span><span class="mi">8</span><span class="o">-</span><span class="n">AUG</span><span class="o">-</span><span class="mi">1988</span><span class="w"> </span><span class="mi">15</span><span class="o">:</span><span class="mi">59</span><span class="w">      </span><span class="n">PAG</span><span class="o">:</span><span class="w">   </span><span class="mi">1</span>
+
+<span class="w">    </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="o">=============================================================================</span>
+<span class="w">    </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">TITULO</span><span class="o">:</span><span class="w"> </span><span class="n">COMENTARIO</span>
+<span class="w">    </span><span class="mi">3</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">AUTOR</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">AFONSO</span><span class="w"> </span><span class="n">CELSO</span><span class="w"> </span><span class="n">ROCHA</span><span class="w"> </span><span class="n">MASTRELLI</span>
+<span class="w">    </span><span class="mi">4</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">DATA</span><span class="w">  </span><span class="o">:</span><span class="w"> </span><span class="mi">29</span><span class="o">/</span><span class="mi">06</span><span class="o">/</span><span class="mi">88</span>
+<span class="w">    </span><span class="mi">5</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">VERSAO</span><span class="o">:</span><span class="w"> </span><span class="mf">1.2</span>
+<span class="w">    </span><span class="mi">6</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">FINALIDADE</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">GERAR</span><span class="w"> </span><span class="n">RELATORIO</span><span class="w"> </span><span class="n">CONTENDO</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">DOCUMENTACAO</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">DETERMINADO</span><span class="w"> </span><span class="n">PRO</span><span class="o">-</span>
+<span class="w">    </span><span class="mi">7</span><span class="w"> </span><span class="mi">1</span><span class="w">              </span><span class="n">GRAMA</span><span class="o">;</span>
+<span class="w">    </span><span class="mi">8</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">ENTRADAS</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ARQUIVO</span><span class="w"> </span><span class="n">QUE</span><span class="w"> </span><span class="n">CONTEM</span><span class="w"> </span><span class="n">O</span><span class="w"> </span><span class="n">CODIGO</span><span class="w"> </span><span class="n">FONTE</span><span class="w"> </span><span class="p">(</span><span class="n">EM</span><span class="w"> </span><span class="n">PASCAL</span><span class="o">,</span><span class="w"> </span><span class="n">COBOL</span><span class="w"> </span><span class="n">OU</span><span class="w"> </span><span class="n">ZIM</span><span class="p">)</span>
+<span class="w">    </span><span class="mi">9</span><span class="w"> </span><span class="mi">1</span><span class="w">            </span><span class="n">COMENTADO</span><span class="w"> </span><span class="n">POR</span><span class="w"> </span><span class="n">NIVEIS</span><span class="o">;</span><span class="w">  </span><span class="n">CODIGO</span><span class="w"> </span><span class="k">DO</span><span class="w"> </span><span class="n">NIVEL</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">CCMENTARIO</span><span class="w"> </span><span class="n">DESEJADO</span><span class="o">;</span>
+<span class="w">   </span><span class="mi">10</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">SAIDAS</span><span class="w">   </span><span class="o">:</span><span class="w"> </span><span class="n">RELATORIO</span><span class="w"> </span><span class="n">COM</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">DCOCUMENTACAO</span><span class="w"> </span><span class="n">EXTRAIDA</span><span class="w"> </span><span class="k">DO</span><span class="w"> </span><span class="n">ARQUIVO</span><span class="w"> </span><span class="n">FONTE</span><span class="o">;</span>
+<span class="w">   </span><span class="mi">11</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">ROTINAS</span><span class="w"> </span><span class="n">CHAMADAS</span><span class="o">:</span><span class="w"> </span><span class="n">LIB</span><span class="mh">$D</span><span class="n">O_COMMAND</span><span class="w"> </span><span class="p">(</span><span class="n">EXTERNA</span><span class="p">)</span><span class="o">,</span><span class="w"> </span><span class="n">MOSTRA</span><span class="o">-</span><span class="n">TELA</span><span class="o">,</span><span class="w"> </span><span class="n">CABECALHO</span><span class="o">,</span>
+<span class="w">   </span><span class="mi">12</span><span class="w"> </span><span class="mi">1</span><span class="w">                   </span><span class="n">RELAT</span><span class="o">,</span><span class="w"> </span><span class="n">RELATPAS</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">SYS</span><span class="mh">$A</span><span class="n">SCTIM</span><span class="w"> </span><span class="p">(</span><span class="n">EXTERNA</span><span class="p">)</span><span class="o">;</span>
+<span class="w">   </span><span class="mi">13</span><span class="w"> </span><span class="mi">1</span><span class="o">=============================================================================</span>
+<span class="w">   </span><span class="mi">51</span><span class="w"> </span><span class="mi">1</span><span class="o">=============================================================================</span>
+<span class="w">   </span><span class="mi">52</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">ROTINA</span><span class="o">:</span><span class="w"> </span><span class="n">MOSTRA</span><span class="o">-</span><span class="n">TELA</span><span class="o">;</span>
+<span class="w">   </span><span class="mi">53</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">FINALIDADE</span><span class="o">:</span><span class="w"> </span><span class="n">MOSTRA</span><span class="w"> </span><span class="n">MENU</span><span class="w"> </span><span class="n">AO</span><span class="w"> </span><span class="n">USUARIOS</span><span class="w"> </span><span class="n">PERGUNTANDO</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">RECEBENDO</span><span class="w"> </span><span class="n">O</span><span class="w"> </span><span class="n">NIVEL</span><span class="w"> </span><span class="n">DE</span>
+<span class="w">   </span><span class="mi">54</span><span class="w"> </span><span class="mi">1</span><span class="w">             </span><span class="n">DOCUMENTACAO</span><span class="w"> </span><span class="n">QUE</span><span class="w"> </span><span class="n">ELE</span><span class="w"> </span><span class="n">QUER</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">O</span><span class="w"> </span><span class="n">NOVE</span><span class="w"> </span><span class="k">DO</span><span class="w"> </span><span class="n">ARQUIVO</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">SER</span><span class="w"> </span><span class="n">LIDO</span><span class="o">,</span>
+<span class="w">   </span><span class="mi">55</span><span class="w"> </span><span class="mi">1</span><span class="w">             </span><span class="n">PASSANDO</span><span class="w"> </span><span class="n">ESSAS</span><span class="w"> </span><span class="n">INFORMACOES</span><span class="w"> </span><span class="n">AU</span><span class="w"> </span><span class="n">PROGRAMA</span><span class="w"> </span><span class="n">PRINCIPAL</span><span class="o">;</span>
+<span class="w">   </span><span class="mi">56</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">ENTRADAS</span><span class="o">:</span><span class="w"> </span><span class="n">NIVEL</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">DOCUMENTACAD</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">NOME</span><span class="w"> </span><span class="k">DO</span><span class="w"> </span><span class="n">ARQUIVO</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">SER</span><span class="w"> </span><span class="n">LIDO</span><span class="o">;</span>
+<span class="w">   </span><span class="mi">57</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">EXPORTACOES</span><span class="w"> </span><span class="n">GLOBAIS</span><span class="o">:</span><span class="w"> </span><span class="n">NIVEL</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">DOCUMENTACAO</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">NOME</span><span class="w"> </span><span class="k">DO</span><span class="w"> </span><span class="n">ARQUIVO</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">SER</span><span class="w"> </span><span class="n">LIDO</span><span class="o">;</span>
+<span class="w">   </span><span class="mi">58</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">CHAMADO</span><span class="w"> </span><span class="n">POR</span><span class="o">:</span><span class="w"> </span><span class="n">COMENTARIO</span><span class="o">;</span>
+<span class="w">   </span><span class="mi">59</span><span class="w"> </span><span class="mi">1</span><span class="o">=============================================================================</span>
+<span class="w">   </span><span class="mi">61</span><span class="w"> </span><span class="mi">1</span><span class="o">=============================================================================</span>
+<span class="w">   </span><span class="mi">62</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">INICIO</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">MOSTRA</span><span class="o">-</span><span class="n">TELA</span><span class="o">;</span>
+<span class="w">   </span><span class="mi">63</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">LIMPA</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">TELA</span>
+<span class="w">   </span><span class="mi">65</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">MOSTRA</span><span class="w"> </span><span class="n">MENU</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">OPCOES</span><span class="w"> </span><span class="n">AO</span><span class="w"> </span><span class="n">USUARIO</span>
+<span class="w">   </span><span class="mi">84</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">LE</span><span class="w"> </span><span class="n">OPCAO</span><span class="w"> </span><span class="k">DO</span><span class="w"> </span><span class="n">USUARIO</span>
+<span class="w">   </span><span class="mi">86</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">OPCAO</span><span class="w"> </span><span class="n">LIDA</span><span class="w"> </span><span class="n">E</span><span class="s">&#39; DE CONTINUAR A EXECUCAO ?</span>
+<span class="s">   91 2       LE NOME DO ARQUIVO DE ENTRADA</span>
+<span class="s">   95 2       LE NOME DA LINGUAGEM UTILIZADA NO PROGRAPA</span>
+<span class="s">   97 2       LINGUACEM NAO E&#39;</span><span class="w"> </span><span class="n">COBOL</span><span class="w"> </span><span class="n">NEM</span><span class="w"> </span><span class="n">ZIM</span><span class="err">?</span>
+<span class="w">  </span><span class="mi">101</span><span class="w"> </span><span class="mi">2</span><span class="w">         </span><span class="n">ASSUME</span><span class="o">-</span><span class="n">SE</span><span class="w"> </span><span class="n">PASCAL</span><span class="w"> </span><span class="n">COMO</span><span class="w"> </span><span class="n">LINGUAGEM</span><span class="w"> </span><span class="n">UTILIZADA</span>
+<span class="w">  </span><span class="mi">106</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">FIM</span><span class="o">-</span><span class="n">DE</span><span class="o">-</span><span class="n">MOSTRA</span><span class="o">-</span><span class="n">TELA</span>
+<span class="w">  </span><span class="mi">111</span><span class="w"> </span><span class="mi">1</span><span class="o">=============================================================================</span>
+<span class="w">  </span><span class="mi">112</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">ROTINA</span><span class="o">:</span><span class="w"> </span><span class="n">CABECALHO</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">113</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">FINALIDADE</span><span class="o">:</span><span class="w"> </span><span class="n">IMPRIMIR</span><span class="w"> </span><span class="n">CABECALHO</span><span class="w"> </span><span class="n">NO</span><span class="w"> </span><span class="n">INICIO</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">CADA</span><span class="w"> </span><span class="n">PAGINA</span><span class="w"> </span><span class="k">DO</span><span class="w"> </span><span class="n">RELATORIO</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">114</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">IMPORTACOES</span><span class="w"> </span><span class="n">GLOBAIS</span><span class="o">:</span><span class="w"> </span><span class="n">NOME</span><span class="w"> </span><span class="k">DO</span><span class="w"> </span><span class="n">ARQUIVO</span><span class="w"> </span><span class="n">LIDO</span><span class="o">,</span><span class="w"> </span><span class="n">NIVEL</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">DOCUMENTACAO</span><span class="o">,</span>
+<span class="w">  </span><span class="mi">115</span><span class="w"> </span><span class="mi">1</span><span class="w">                      </span><span class="n">DATA</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">HORA</span><span class="w"> </span><span class="n">ATUAIS</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">116</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">SAIDA</span><span class="o">:</span><span class="w"> </span><span class="n">LINHA</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">CABECALHO</span><span class="w"> </span><span class="n">IMPRESSA</span><span class="w"> </span><span class="n">NO</span><span class="w"> </span><span class="n">ALTO</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">CADA</span><span class="w"> </span><span class="n">PAG</span><span class="o">.</span><span class="w"> </span><span class="n">DA</span><span class="w"> </span><span class="n">LISTACEM</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">117</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">CHAMADO</span><span class="w"> </span><span class="n">POR</span><span class="o">:</span><span class="w"> </span><span class="n">COMENTARIO</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">118</span><span class="w"> </span><span class="mi">1</span><span class="o">=============================================================================</span>
+<span class="w">  </span><span class="mi">121</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">INICIO</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">CABECALHO</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">122</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">PAGINA</span><span class="w"> </span><span class="n">ESTA</span><span class="s">&#39; CHEIA ?</span>
+<span class="s">  125 2       ATUALIZA O NUMERO DA PAGINA.</span>
+<span class="s">  127 2       RELATORIO JA&#39;</span><span class="w"> </span><span class="n">FOI</span><span class="w"> </span><span class="n">INICIALIZADO</span><span class="w"> </span><span class="err">?</span>
+<span class="w">  </span><span class="mi">129</span><span class="w"> </span><span class="mi">2</span><span class="w">           </span><span class="n">SALTA</span><span class="w"> </span><span class="n">PAGINA</span>
+<span class="w">  </span><span class="mi">131</span><span class="w"> </span><span class="mi">2</span><span class="w">       </span><span class="n">ESCREVE</span><span class="w"> </span><span class="n">LINHA</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">CABECALHO</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">138</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">FIM</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">CABECALHO</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">142</span><span class="w"> </span><span class="mi">1</span><span class="o">=============================================================================</span>
+<span class="w">  </span><span class="mi">143</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">ROTINA</span><span class="o">:</span><span class="w"> </span><span class="n">RELAT</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">144</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">FINALIDADE</span><span class="o">:</span><span class="w"> </span><span class="n">FAZ</span><span class="w"> </span><span class="n">LEITURA</span><span class="w"> </span><span class="n">DU</span><span class="w"> </span><span class="n">ARQUIVO</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">ENTRADA</span><span class="w"> </span><span class="p">(</span><span class="n">EM</span><span class="w"> </span><span class="n">COBOL</span><span class="w"> </span><span class="n">OU</span><span class="w"> </span><span class="n">ZIM</span><span class="p">)</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">MONTA</span><span class="w"> </span><span class="n">O</span>
+<span class="w">  </span><span class="mi">145</span><span class="w"> </span><span class="mi">1</span><span class="w">             </span><span class="n">DE</span><span class="w"> </span><span class="n">SAIDA</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">146</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">IMPORTACOES</span><span class="o">:</span><span class="w"> </span><span class="n">CARACTERE</span><span class="w"> </span><span class="n">QUE</span><span class="w"> </span><span class="n">IDENTIFICA</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">LINHA</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">COMENTARIO</span><span class="w"> </span><span class="n">NA</span><span class="w"> </span><span class="n">LINGUAGEM</span>
+<span class="w">  </span><span class="mi">147</span><span class="w"> </span><span class="mi">1</span><span class="w">              </span><span class="n">UTILIZADA</span><span class="w"> </span><span class="p">(</span><span class="n">COBOL</span><span class="w"> </span><span class="n">OU</span><span class="w"> </span><span class="n">ZIM</span><span class="p">)</span><span class="o">;</span>
+
+
+<span class="w"></span><span class="n">PROGRAMA</span><span class="o">:</span><span class="w"> </span><span class="n">COMENT</span><span class="o">.</span><span class="n">PAS</span><span class="w">           </span><span class="n">DOC</span><span class="o">.</span><span class="n">NIVEL</span><span class="w">  </span><span class="mi">2</span><span class="w">    </span><span class="n">DATA</span><span class="o">:</span><span class="w">  </span><span class="mi">9</span><span class="o">-</span><span class="n">AUG</span><span class="o">-</span><span class="mi">1988</span><span class="w"> </span><span class="mi">15</span><span class="o">:</span><span class="mi">59</span><span class="w">      </span><span class="n">PAG</span><span class="o">:</span><span class="w">   </span><span class="mi">2</span>
+
+<span class="w">  </span><span class="mi">148</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">SAIDA</span><span class="w">  </span><span class="o">:</span><span class="w"> </span><span class="n">COVENTARIOS</span><span class="w"> </span><span class="k">DO</span><span class="w"> </span><span class="n">PROGRAMA</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">ENTRADA</span><span class="w"> </span><span class="n">NO</span><span class="w"> </span><span class="n">NIVEL</span><span class="w"> </span><span class="n">DESEJADO</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">149</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">CHAMADO</span><span class="w"> </span><span class="n">POR</span><span class="o">:</span><span class="w"> </span><span class="n">COMENTARIO</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">150</span><span class="w"> </span><span class="mi">1</span><span class="o">============================================================================</span>
+<span class="w">  </span><span class="mi">155</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">INICIO</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">RELAT</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">159</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">PARA</span><span class="w"> </span><span class="n">CADA</span><span class="w"> </span><span class="n">LINHA</span><span class="w"> </span><span class="k">DO</span><span class="w"> </span><span class="n">ARQUIVO</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">ENTRADA</span><span class="w"> </span><span class="o">:</span>
+<span class="w">  </span><span class="mi">162</span><span class="w"> </span><span class="mi">2</span><span class="w">     </span><span class="n">LE</span><span class="w"> </span><span class="n">LINHA</span><span class="w"> </span><span class="n">SEQUENCIALMENTE</span>
+<span class="w">  </span><span class="mi">164</span><span class="w"> </span><span class="mi">2</span><span class="w">     </span><span class="n">NUMERA</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">LINHA</span><span class="w"> </span><span class="n">LIDA</span>
+<span class="w">  </span><span class="mi">166</span><span class="w"> </span><span class="mi">2</span><span class="w">     </span><span class="n">DOCUMENTACAO</span><span class="w"> </span><span class="n">E</span><span class="s">&#39; DE NIVEL 3 ?</span>
+<span class="s">  169 2           ESCREVE LINHA NO RELATORIO</span>
+<span class="s">  174 2       CASO CONTRARIO</span>
+<span class="s">  177 2           LINHA NAO E&#39;</span><span class="w"> </span><span class="n">NULA</span><span class="w"> </span><span class="err">?</span>
+<span class="w">  </span><span class="mi">180</span><span class="w"> </span><span class="mi">2</span><span class="w">                 </span><span class="n">LINHA</span><span class="w"> </span><span class="n">E</span><span class="s">&#39; DE COMENTARIO NIVEL 1 ?</span>
+<span class="s">  185 2                       ESCREVE LINHA NO RELATORIO</span>
+<span class="s">  188 2                   CASO CONTRARIO</span>
+<span class="s">  190 2                     E&#39;</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">COMENTARIO</span><span class="w"> </span><span class="n">NIVEL</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">USUARIO</span><span class="w"> </span><span class="n">QUER</span><span class="w"> </span><span class="n">NIVEL</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="err">?</span>
+<span class="w">  </span><span class="mi">195</span><span class="w"> </span><span class="mi">2</span><span class="w">                           </span><span class="n">ESCREVE</span><span class="w"> </span><span class="n">LINHA</span><span class="w"> </span><span class="n">NO</span><span class="w"> </span><span class="n">RELATORIO</span>
+<span class="w">  </span><span class="mi">202</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">FIM</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">RELAT</span>
+<span class="w">  </span><span class="mi">206</span><span class="w"> </span><span class="mi">1</span><span class="o">============================================================================</span>
+<span class="w">  </span><span class="mi">207</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">ROTINA</span><span class="o">:</span><span class="w"> </span><span class="n">RELATPAS</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">208</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">INALIDADE</span><span class="o">:</span><span class="w"> </span><span class="n">FAZ</span><span class="w"> </span><span class="n">LEITURA</span><span class="w"> </span><span class="k">DO</span><span class="w"> </span><span class="n">ARQUIVO</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">ENTRADA</span><span class="w"> </span><span class="p">(</span><span class="n">EM</span><span class="w"> </span><span class="n">PASCAL</span><span class="p">)</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">MONTA</span><span class="w"> </span><span class="n">O</span><span class="w"> </span><span class="n">DE</span>
+<span class="w">  </span><span class="mi">209</span><span class="w"> </span><span class="mi">1</span><span class="w">            </span><span class="n">SAIDA</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">210</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">SAIDA</span><span class="o">:</span><span class="w"> </span><span class="n">COMENTARIOS</span><span class="w"> </span><span class="k">DO</span><span class="w"> </span><span class="n">PROGRAMA</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">ENTRADA</span><span class="w"> </span><span class="n">NO</span><span class="w"> </span><span class="n">NIVEL</span><span class="w"> </span><span class="n">DESEJADO</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">211</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">CHAMADO</span><span class="w"> </span><span class="n">POR</span><span class="o">:</span><span class="w"> </span><span class="n">COMENTARIO</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">212</span><span class="w"> </span><span class="mi">1</span><span class="o">============================================================================</span>
+<span class="w">  </span><span class="mi">214</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">INICIO</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">RELATPAS</span>
+<span class="w">  </span><span class="mi">216</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">PARA</span><span class="w"> </span><span class="n">CADA</span><span class="w"> </span><span class="n">LINHA</span><span class="w"> </span><span class="k">DO</span><span class="w"> </span><span class="n">ARQUIVO</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">ENTRADA</span><span class="w"> </span><span class="o">:</span>
+<span class="w">  </span><span class="mi">219</span><span class="w"> </span><span class="mi">2</span><span class="w">     </span><span class="n">LE</span><span class="w"> </span><span class="n">LINHA</span><span class="w"> </span><span class="n">SEQUENCIALMENTE</span>
+<span class="w">  </span><span class="mi">222</span><span class="w"> </span><span class="mi">2</span><span class="w">     </span><span class="n">DOCUMENTACAD</span><span class="w"> </span><span class="n">E</span><span class="s">&#39; DE NIVEL 3 ?</span>
+<span class="s">  225 2           ESCREVE LINHA NO RELATORIO</span>
+<span class="s">  230 2       CASO CONTRARIO</span>
+<span class="s">  233 2           LINHA NAO E&#39;</span><span class="w"> </span><span class="n">NULA</span><span class="w"> </span><span class="err">?</span>
+<span class="w">  </span><span class="mi">236</span><span class="w"> </span><span class="mi">2</span><span class="w">                 </span><span class="n">LINHA</span><span class="w"> </span><span class="n">E</span><span class="s">&#39; DE COMENTARIO NIVEL 1 ?</span>
+<span class="s">  241 2                       ESCREVE LINHA NO RELATORIO</span>
+<span class="s">  244 2                   CASO CONTRARIO</span>
+<span class="s">  247 2                       E&#39;</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">COMENTARIO</span><span class="w"> </span><span class="n">NIVEL</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">USUARIO</span><span class="w"> </span><span class="n">QUER</span><span class="w"> </span><span class="n">NIVEL</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="err">?</span>
+<span class="w">  </span><span class="mi">252</span><span class="w"> </span><span class="mi">2</span><span class="w">                             </span><span class="n">ESCREVE</span><span class="w"> </span><span class="n">LINHA</span><span class="w"> </span><span class="n">NO</span><span class="w"> </span><span class="n">RELAT</span><span class="err">Ó</span><span class="n">RIO</span>
+<span class="w">  </span><span class="mi">260</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">FIM</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">RELATPAS</span>
+<span class="w">  </span><span class="mi">264</span><span class="w"> </span><span class="mi">2</span><span class="o">----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="mi">265</span><span class="w"> </span><span class="mi">2</span><span class="w">                  </span><span class="n">P</span><span class="w"> </span><span class="n">R</span><span class="w"> </span><span class="n">O</span><span class="w"> </span><span class="n">G</span><span class="w"> </span><span class="n">R</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="n">A</span><span class="w">    </span><span class="n">P</span><span class="w"> </span><span class="n">R</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="n">C</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="n">P</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">L</span>
+<span class="w">  </span><span class="mi">266</span><span class="w"> </span><span class="mi">2</span><span class="o">----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="mi">267</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">INICIO</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">COMENTARIO</span>
+<span class="w">  </span><span class="mi">272</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">EXIBE</span><span class="w"> </span><span class="n">TELA</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">ENTRADA</span>
+<span class="w">  </span><span class="mi">274</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">OPCAO</span><span class="w"> </span><span class="k">DO</span><span class="w"> </span><span class="n">USUARIO</span><span class="w"> </span><span class="n">E</span><span class="s">&#39; CONTINUAR ?</span>
+<span class="s">  277 2       ABRE ARQUIVOS DE ENTRADA E SAIDA</span>
+<span class="s">  289 2 OPCAO DO USUARIO E&#39;</span><span class="w"> </span><span class="n">NIVEL</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">OU</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="err">?</span>
+<span class="w">  </span><span class="mi">294</span><span class="w"> </span><span class="mi">2</span><span class="w">             </span><span class="n">ENTRADA</span><span class="w"> </span><span class="n">ESTA</span><span class="s">&#39; EM PASCAL ?</span>
+<span class="s">  296 2                  PROCESSA ARQUIVO EM PASCAL</span>
+<span class="s">  298 2               CASO CONTRARIO</span>
+<span class="s">  300 2                 PROCESSA ARQUIVO EM COBOL OU ZIM</span>
+<span class="s">  310 2 ALGUM ARQUIVO FOI ABERTO ?</span>
+<span class="s">  313 2       FECHA ARQUIVOS UTILIZADOS</span>
+<span class="s">  317 2 FIM DE COMENTARIO</span>
+
+
+<span class="s">PROGRAMA: COMENT.PAS           DOC.NIVEL  3    DATA:  8-AUG-1988 16:00      PAG:   1</span>
+
+<span class="s">    1 (*1===========================================================================*)</span>
+<span class="s">    2 (*1 TITULO: COMENTARIO                                                        *)</span>
+<span class="s">    3 (*1 AUTOR : AFONSO CELSO ROCHA MASTRELLI                                      *)</span>
+<span class="s">    4 (*1 DATA  : 29/06/88                                                          *)</span>
+<span class="s">    5 (*1 VERSAD: 1.2                                                               *)</span>
+<span class="s">    6 (*1 FINALIDADE : GERAR RELATORIO CONTENDO A DOCUMENTACAO DE DE TERMINADO PRO- *)</span>
+<span class="s">    7 (*1              GRAMA;                                                       *)</span>
+<span class="s">    8 (*1 ENTRADAS : ARQUIVO QUE CONTEM O CODICO FONTE (EM PASCAL, COBOL OU ZIM)    *)</span>
+<span class="s">    9 (*1            COMENTADO POR NIVEIS;  CODIGO DO NIVEL DE COMENTARIO DESEJADO; *)</span>
+<span class="s">   10 (*1 SAIDAS   : RELATORIO COM A DOCUMENTACAO EXTRAIDA DO ARQUIVO FONTE;        *)</span>
+<span class="s">   11 (*1 ROTINAS CHAMADAS: LIB$DO_COMMAND (EXTERNA), MOSTRA_TELA, CABECALHO,       *)</span>
+<span class="s">   12 (*1                   RELAT, RELATPAS E SYS$ASCTIM (EXTERNA);                 *)</span>
+<span class="s">   13 (*1===========================================================================*)</span>
+<span class="s">   14 PROGRAM COMENTARIO (INPUT,OUTPUT);</span>
+<span class="s">   15</span>
+<span class="s">   16 CONST</span>
+<span class="s">   17     CLS = CHR(27) + &#39;</span><span class="p">[</span><span class="n">H</span><span class="s">&#39; + CHR(27) + &#39;</span><span class="p">[</span><span class="n">J</span><span class="s">&#39;; (* LIMPA A TELA DO VT100/200/220 *)</span>
+<span class="s">   18 TYPE</span>
+<span class="s">   19     LINHA      = VARYING[120] OF CHAR; (* PARA LINHA DE IMPRESSAO;            *)</span>
+<span class="s">   20     CARACTERE  = CHAR;                 (* PARA PARAMETRO DE RELAT;            *)</span>
+<span class="s">   21     $WORD      = [WORD] 0..65535;      (* PARA PARAMETRO DE SYS$ASCTIM;       *)</span>
+<span class="s">   22     $DATE_TIME = [QUAD] RECORD END;    (* PARA PARAMETRO DE SYS$ASCTIM;       *)</span>
+<span class="s">   23</span>
+<span class="s">   24 VAR</span>
+<span class="s">   25     COMANDO : VARYING[200] OF CHAR; (* COMANDO DCL A SER EXECUTADO;           *)</span>
+<span class="s">   26     LINPROG : LINHA;                (* GUARDA LINHA DO PROGRAMA LIDO;         *)</span>
+<span class="s">   27     OPCAO   : INTEGER;              (* NRO DA CPCAO DO USUARIC NO MENUS       *)</span>
+<span class="s">   28     NOMEARQ : VARYING[30] OF CHAR;  (* NOME DO ARQUIVO QUE CONTEM O PROCRAMA; *)</span>
+<span class="s">   29     SAIDA   : TEXT;                 (* CONTEM O RELATORIO DE SAIDA;           *)</span>
+<span class="s">   30     ENTRADA : TEXT;                 (* PROGRAMA COMENTADO A SECR LIDO;        *)</span>
+<span class="s">   31     LING    : CARACTERE;            (* LINGUAGEM DO PROGRAMA A SER LIDO;      *)</span>
+<span class="s">   32     NUMLIN  : INTEGER;              (* NUMERACAO DAS LINHAS CO FONTE LIDO;    *)</span>
+<span class="s">   33     LINPAG  : INTECER;              (* NUMERO DE LINHAS POR PAGINA;           *)</span>
+<span class="s">   34     NPAG    : INTEGER;              (* NUMERO DA PAGINA DO RELATÓRIO;         *)</span>
+<span class="s">   35     DATA_HORA: VARYING[17] OF CHAR; (* DATA E HORA RECEBIDA DO SISTEMA;       *)</span>
+<span class="s">   36     RETORNO : INTEGER;              (* SOMENTE AUXILIA O RECEBIMENTO DA HORA; *)</span>
+<span class="s">   37</span>
+<span class="s">   38</span>
+<span class="s">   39 (* ROTINA EXTERNA QUE EXECUTA COMANDO DCL                                     *)</span>
+<span class="s">   40 PROCEDURE LIB$DO_COMMAND(CMDTXT : VARYING[A] OF CHAR); EXTERN;</span>
+<span class="s">   41</span>
+<span class="s">   42</span>
+<span class="s">   43 (* FUNCAO EXTERNA QUE RETORNA DATA E HORA ATUAIS DO SISTEMA OPERACIONAL       *)</span>
+<span class="s">   44 [EXTERNAL] FUNCTION SYS$ASCTIM(%REF NADA1 : $WORD := %IMMED 0;</span>
+<span class="s">   45                                DATA_HORA : [CLASS_S]</span>
+<span class="s">   46                                            PACKED ARRAY[L..U:INTEGER] OF CHAR;</span>
+<span class="s">   47                                %REF NADA2 : $DATE_TIME := %IMMED 0;</span>
+<span class="s">   48                                NADA3 : UNSIGNED := %IMMED 0):INTEGER; EXTERN;</span>
+<span class="s">   49</span>
+<span class="s">   50</span>
+<span class="s">   51 (*1===========================================================================*)</span>
+<span class="s">   52 (*1 ROTINAS: MOSTRA-TELA;                                                     *)</span>
+<span class="s">   53 (*1 FINALIDADE: MOSTRA MENU AO USUARIO, PERGUNTANDO E RECERENDO O NIVEL DE    *)</span>
+
+
+<span class="s">PROGRAMAS COMENT.PAS           DOC.NIVEL  3    DATA:  8-AUG-1988 16:00      PAG:   2</span>
+
+<span class="s">   54 (*1             DOCUMENTACAO QUE ELE QUER E O NOME DO ARGUIVO A SER LIDO,     *)</span>
+<span class="s">   55 (*1             PASSANDO ESSAS INFORMACOES AO PROGRAMA PRINCIPAL;             *)</span>
+<span class="s">   56 (*1 ENTRADAS: NIVEL DE DOCUMENTACAO E NOME DO ARQUIVO A SER LIDO;             *)</span>
+<span class="s">   57 (*1 EXPORTACOES GLOBAIS: NIVEL DE DOCUMENTACAO E NOME DO ARQUIVO A SER LIDO;  *)</span>
+<span class="s">   58 (*1 CHAMADO POR: COMENTARIO;                                                  *)</span>
+<span class="s">   59 (*1===========================================================================*)</span>
+<span class="s">   60 PROCEDURE MOSTRA-TELA;</span>
+<span class="s">   61 (*2 INICIO DE MOSTRA_TELA;                                                    *)</span>
+<span class="s">   62 BEGIN</span>
+<span class="s">   63 (*2 LIMPA A TELA                                                              *)</span>
+<span class="s">   64     WRITE(CLS);</span>
+<span class="s">   65 (*2 MOSTRA MENU DE OPCOES AO USUARIO                                          *)</span>
+<span class="s">   66     WRITELN(&#39;</span><span class="w"> </span><span class="s">&#39;:25,&#39;</span><span class="n">DOCUMENTACAO</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">SOFTWARE</span><span class="s">&#39;);</span>
+<span class="s">   67     WRITELN(&#39;</span><span class="w"> </span><span class="s">&#39;:25,&#39;</span><span class="o">^^^^^^^^^^^^^^^^^^^^^^^^</span><span class="s">&#39;);</span>
+<span class="s">   68     WRITELN;</span>
+<span class="s">   69     WRITELN(&#39;</span><span class="w"> </span><span class="s">&#39;:10,&#39;</span><span class="n">VOCE</span><span class="w"> </span><span class="n">PODE</span><span class="w"> </span><span class="n">LISTAR</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="n">NIVEIS</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">DOCUMENTACAO</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">UM</span><span class="w"> </span><span class="n">PROGRAMA</span><span class="o">.</span><span class="s">&#39;);</span>
+<span class="s">   70     WRITELN(&#39;</span><span class="w"> </span><span class="s">&#39;:10,&#39;</span><span class="n">O</span><span class="w"> </span><span class="n">PROGRAMA</span><span class="w"> </span><span class="n">PODE</span><span class="w"> </span><span class="n">ESTAR</span><span class="w"> </span><span class="n">NUMA</span><span class="w"> </span><span class="n">DAS</span><span class="w"> </span><span class="n">SEGUINTES</span><span class="w"> </span><span class="n">LINGUAGENS</span><span class="o">:</span><span class="w"> </span><span class="s">&#39;);</span>
+<span class="s">   71     WRITELN;</span>
+<span class="s">   72     WRITELN(&#39;</span><span class="w"> </span><span class="s">&#39;:27,&#39;</span><span class="p">[</span><span class="n">P</span><span class="p">]</span><span class="n">ASCAL</span><span class="w">   </span><span class="p">(</span><span class="kp">DEFAULT</span><span class="p">)</span><span class="s">&#39;);</span>
+<span class="s">   73     WRITELN(&#39;</span><span class="w"> </span><span class="s">&#39;:27,&#39;</span><span class="p">[</span><span class="n">C</span><span class="p">]</span><span class="n">OBOL</span><span class="s">&#39;);</span>
+<span class="s">   74     WRITELN(&#39;</span><span class="w"> </span><span class="s">&#39;:27,&#39;</span><span class="p">[</span><span class="n">Z</span><span class="p">]</span><span class="n">IM</span><span class="s">&#39;);</span>
+<span class="s">   75     WRITELN; WRITELN;</span>
+<span class="s">   76     WRITELN(&#39;</span><span class="w"> </span><span class="s">&#39;:26,&#39;</span><span class="n">NIVEIS</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">DOCUMENTACAO</span><span class="s">&#39;);</span>
+<span class="s">   77     WRITELN;</span>
+<span class="s">   78     WRITELN(&#39;</span><span class="w"> </span><span class="s">&#39;:12,&#39;</span><span class="err">1</span><span class="o">.</span><span class="w"> </span><span class="n">DESCRICAO</span><span class="w"> </span><span class="n">FUNCIONAL</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">FINALIDADES</span><span class="s">&#39;);</span>
+<span class="s">   79     WRITELN(&#39;</span><span class="w"> </span><span class="s">&#39;:12,&#39;</span><span class="err">2</span><span class="o">.</span><span class="w"> </span><span class="n">NIVEL</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">PSEUDO</span><span class="o">-</span><span class="n">CODIGO</span><span class="s">&#39;);</span>
+<span class="s">   80     WRITELN(&#39;</span><span class="w"> </span><span class="s">&#39;:12,&#39;</span><span class="err">3</span><span class="o">.</span><span class="w"> </span><span class="n">NIVEIS</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">CODIGO</span><span class="w"> </span><span class="n">FONTE</span><span class="s">&#39;);</span>
+<span class="s">   81     WRITELN(&#39;</span><span class="w"> </span><span class="s">&#39;:12,&#39;</span><span class="err">4</span><span class="o">.</span><span class="w"> </span><span class="n">F</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="n">M</span><span class="s">&#39;);</span>
+<span class="s">   82     WRITELN; WRITELN;</span>
+<span class="s">   83     WRITE(&#39;</span><span class="w"> </span><span class="s">&#39;:15,&#39;</span><span class="n">SUA</span><span class="w"> </span><span class="n">OPCAO</span><span class="w"> </span><span class="n">E</span><span class="s">&#39;&#39;</span><span class="w">        </span><span class="o">:</span><span class="s">&#39;);</span>
+<span class="s">   84 (*2 LE OPCAO DO USUARIO                                                        *)</span>
+<span class="s">   85     READLN(OPCAO);</span>
+<span class="s">   86 (*2 OPCAO LIDA E&#39;</span><span class="w"> </span><span class="n">DE</span><span class="w"> </span><span class="n">CONTINUAR</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">EXECUCAO</span><span class="w"> </span><span class="err">?</span><span class="w">                                    </span><span class="o">*</span><span class="p">)</span>
+<span class="w">   </span><span class="mi">87</span><span class="w">     </span><span class="k">IF</span><span class="w"> </span><span class="p">((</span><span class="n">OPCAO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="p">(</span><span class="n">OPCAO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="p">(</span><span class="n">OPCAO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">))</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">   </span><span class="mi">88</span><span class="w">       </span><span class="k">BEGIN</span>
+<span class="w">   </span><span class="mi">89</span><span class="w">           </span><span class="nb">WRITELN</span><span class="o">;</span>
+<span class="w">   </span><span class="mi">90</span><span class="w">           </span><span class="nb">WRITE</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="o">:</span><span class="mi">15</span><span class="o">,</span><span class="s">&#39;NOME DO ARQUIVO     : &#39;</span><span class="p">)</span><span class="o">;</span>
+<span class="w">   </span><span class="mi">91</span><span class="w"> </span><span class="cm">(*2       LE NOME DO ARQUIVO DE ENTRADA                                       *)</span>
+<span class="w">   </span><span class="mi">92</span><span class="w">           </span><span class="nb">READLN</span><span class="p">(</span><span class="n">NOMEARQ</span><span class="p">)</span><span class="o">;</span>
+<span class="w">   </span><span class="mi">93</span><span class="w">           </span><span class="nb">WRITELN</span><span class="o">;</span>
+<span class="w">   </span><span class="mi">94</span><span class="w">           </span><span class="nb">WRITE</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="o">:</span><span class="mi">15</span><span class="o">,</span><span class="s">&#39;LINGUAGEM UTILIZADA : &#39;</span><span class="p">)</span><span class="o">;</span>
+<span class="w">   </span><span class="mi">95</span><span class="w"> </span><span class="cm">(*2       LE NOME DA LINGUAGEM UTILIZADA NO PROGRAMA                          *)</span>
+<span class="w">   </span><span class="mi">96</span><span class="w">           </span><span class="nb">READLN</span><span class="p">(</span><span class="n">LING</span><span class="p">)</span><span class="o">;</span>
+<span class="w">   </span><span class="mi">97</span><span class="w"> </span><span class="cm">(*2       LINGUAGEM NAO E* COBOL NEK ZIM?                                     *)</span>
+<span class="w">   </span><span class="mi">98</span><span class="w">           </span><span class="k">CASE</span><span class="w"> </span><span class="n">LING</span><span class="w"> </span><span class="k">OF</span>
+<span class="w">   </span><span class="mi">99</span><span class="w">              </span><span class="s">&#39;C&#39;</span><span class="o">,</span><span class="s">&#39;C&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">LING</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&#39;C&#39;</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">100</span><span class="w">              </span><span class="s">&#39;Z&#39;</span><span class="o">,</span><span class="s">&#39;Z&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">LING</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&#39;Z&#39;</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">101</span><span class="w"> </span><span class="cm">(*2          ASSUME-SE PASCAL COMO LINGUAGEM UTILIZADA                        *)</span>
+<span class="w">  </span><span class="mi">102</span><span class="w">              </span><span class="n">OTHERWISE</span>
+<span class="w">  </span><span class="mi">103</span><span class="w">                 </span><span class="n">LING</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&#39;P&#39;</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">104</span><span class="w">              </span><span class="k">END</span><span class="o">;</span><span class="w"> </span><span class="cm">(* CASE *)</span>
+<span class="w">  </span><span class="mi">105</span><span class="w">            </span><span class="k">END</span><span class="o">;</span><span class="w"> </span><span class="cm">(* IF *)</span>
+<span class="w">  </span><span class="mi">106</span><span class="w"> </span><span class="cm">(*2 FIM=-DE-LOSTRA-TELA                                                        *)</span>
+<span class="w">  </span><span class="mi">107</span><span class="w"> </span><span class="k">END</span><span class="o">;</span><span class="w">    </span><span class="cm">(* MOSTRA TELA *)</span>
+
+
+<span class="w"></span><span class="n">PROGRAMA</span><span class="o">:</span><span class="w"> </span><span class="n">COMENT</span><span class="o">.</span><span class="n">PAS</span><span class="w">           </span><span class="n">DOC</span><span class="o">.</span><span class="n">NIVEL</span><span class="w">  </span><span class="mi">3</span><span class="w">    </span><span class="n">DATA</span><span class="o">:</span><span class="w">  </span><span class="mi">8</span><span class="o">-</span><span class="n">AUG</span><span class="o">-</span><span class="mi">1988</span><span class="w"> </span><span class="mi">16</span><span class="o">:</span><span class="mi">00</span><span class="w">      </span><span class="n">PAG</span><span class="o">:</span><span class="w">   </span><span class="mi">3</span>
+
+<span class="w">  </span><span class="mi">108</span>
+<span class="w">  </span><span class="mi">109</span>
+<span class="w">  </span><span class="mi">110</span>
+<span class="w">  </span><span class="mi">111</span><span class="w"> </span><span class="cm">(*1===========================================================================*)</span>
+<span class="w">  </span><span class="mi">112</span><span class="w"> </span><span class="cm">(*1 ROTINA: CABECALHO;                                                        *)</span>
+<span class="w">  </span><span class="mi">113</span><span class="w"> </span><span class="cm">(*1 FINALIDACE: IMPRIMIR CABECALHO NO INICIO DE CADA PAGINA DO RELATORIO;     *)</span>
+<span class="w">  </span><span class="mi">114</span><span class="w"> </span><span class="cm">(*1 IMPORTACOES GLOBAIS: NOME DO ARCGUIVO LIDOs NIVEL DE DOCUMENTACAO,        *)</span>
+<span class="w">  </span><span class="mi">115</span><span class="w"> </span><span class="cm">(*1                      DATA E HORA ATUAIS;                                  *)</span>
+<span class="w">  </span><span class="mi">116</span><span class="w"> </span><span class="cm">(*1 SAIDA: LINHA DE CABECALHO IMPRESSA NO ALTO DE CADA PAG. DA LISTAGEM;      *)</span>
+<span class="w">  </span><span class="mi">117</span><span class="w"> </span><span class="cm">(*1 CHAMADO POR: COMENTARIO;                                                  *)</span>
+<span class="w">  </span><span class="mi">118</span><span class="w"> </span><span class="cm">(*1===========================================================================*)</span>
+<span class="w">  </span><span class="mi">119</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="nf">CABECALHO</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">120</span><span class="w"> </span><span class="k">BEGIN</span>
+<span class="w">  </span><span class="mi">121</span><span class="w"> </span><span class="cm">(*2 INICIO DE CABECALHO;                                                      *)</span>
+<span class="w">  </span><span class="mi">122</span><span class="w"> </span><span class="cm">(*2 PAGINA ESTA&#39; CHEIA ?                                                      *)</span>
+<span class="w">  </span><span class="mi">123</span><span class="w">     </span><span class="k">IF</span><span class="w"> </span><span class="n">LINPAG</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">57</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">  </span><span class="mi">124</span><span class="w">         </span><span class="k">BEGIN</span>
+<span class="w">  </span><span class="mi">125</span><span class="w"> </span><span class="cm">(*2       ATUALIZA O NUMERO DA PAGINA. 2)                                     *)</span>
+<span class="w">  </span><span class="mi">126</span><span class="w">           </span><span class="n">NPAG</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">NPAG</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">127</span><span class="w"> </span><span class="cm">(*2       RELATORIO JA&#39; FOI INICIALIZADO ?                                    *)</span>
+<span class="w">  </span><span class="mi">128</span><span class="w">           </span><span class="k">IF</span><span class="w"> </span><span class="n">NPAG</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">  </span><span class="mi">129</span><span class="w"> </span><span class="cm">(*2           SALTA PAGINA                                                    *)</span>
+<span class="w">  </span><span class="mi">130</span><span class="w">               </span><span class="n">PAGE</span><span class="p">(</span><span class="n">SAIDA</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">131</span><span class="w"> </span><span class="cm">(*2       ESCREVE LINHA DE CABECALHO;                                         *)</span>
+<span class="w">  </span><span class="mi">132</span><span class="w">           </span><span class="nb">WRITELN</span><span class="p">(</span><span class="n">SAIDA</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="nb">WRITELN</span><span class="p">(</span><span class="n">SAIDA</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">133</span><span class="w">           </span><span class="nb">WRITE</span><span class="p">(</span><span class="n">SAIDA</span><span class="o">,</span><span class="s">&#39;    PROGRAMA: &#39;</span><span class="o">,</span><span class="n">NOMEARQ</span><span class="o">,</span><span class="s">&#39; &#39;</span><span class="o">:</span><span class="p">(</span><span class="mi">22</span><span class="o">-</span><span class="n">NOMEARQ</span><span class="o">.</span><span class="n">LENGTH</span><span class="p">))</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">134</span><span class="w">           </span><span class="nb">WRITE</span><span class="p">(</span><span class="n">SAIDA</span><span class="o">,</span><span class="s">&#39;DOC.NIVEL &#39;</span><span class="o">,</span><span class="n">OPCAO</span><span class="o">:</span><span class="mi">2</span><span class="o">,</span><span class="s">&#39;    DATA: &#39;</span><span class="o">,</span><span class="n">DATA_HORA</span><span class="o">,</span><span class="s">&#39;      PAG: &#39;</span><span class="o">,</span><span class="n">NPAG</span><span class="o">:</span><span class="mi">4</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">135</span><span class="w">           </span><span class="nb">WRITELN</span><span class="p">(</span><span class="n">SAIDA</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="nb">WRITELN</span><span class="p">(</span><span class="n">SAIDA</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">136</span><span class="w">           </span><span class="n">LINPAG</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">4</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">137</span><span class="w">           </span><span class="k">END</span><span class="o">;</span><span class="w"> </span><span class="cm">(* IF *)</span>
+<span class="w">  </span><span class="mi">138</span><span class="w"> </span><span class="cm">(*2 FIM DE CABECALHO;                                                         *)</span>
+<span class="w">  </span><span class="mi">139</span><span class="w"> </span><span class="k">END</span><span class="o">;</span><span class="w"> </span><span class="cm">(* CABECALHO *)</span>
+<span class="w">  </span><span class="mi">140</span>
+<span class="w">  </span><span class="mi">141</span>
+<span class="w">  </span><span class="mi">142</span><span class="w"> </span><span class="cm">(*1===========================================================================*)</span>
+<span class="w">  </span><span class="mi">143</span><span class="w"> </span><span class="cm">(*1 ROTINA: RELAT;                                                            *)</span>
+<span class="w">  </span><span class="mi">144</span><span class="w"> </span><span class="cm">(*1 FINALIDADE: FAZ LEITURA DO ARQUIVO DE ENTRADA (EM COBOL OU ZIM) E MONTA O *)</span>
+<span class="w">  </span><span class="mi">145</span><span class="w"> </span><span class="cm">(*1             DE SAIDA;                                                     *)</span>
+<span class="w">  </span><span class="mi">146</span><span class="w"> </span><span class="cm">(*1 IMPORTACOES: CARACTERE QUE IDENTIFICA A LINHA DE COMENTARIO NA LINGUAGEM  *)</span>
+<span class="w">  </span><span class="mi">147</span><span class="w"> </span><span class="cm">(*1              UTILIZADA (COBOL OU ZIM);                                   *)</span>
+<span class="w">  </span><span class="mi">148</span><span class="w"> </span><span class="cm">(*1 SAIDA  : COMENTARIOS DO PROGRAMA DE ENTRADA AO NIVEL DESEJADO;            *)</span>
+<span class="w">  </span><span class="mi">149</span><span class="w"> </span><span class="cm">(*1 CHAMADO POR: COMENTARIO;                                                  *)</span>
+<span class="w">  </span><span class="mi">150</span><span class="w"> </span><span class="cm">(*1===========================================================================*)</span>
+<span class="w">  </span><span class="mi">151</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="nf">RELAT</span><span class="p">(</span><span class="n">INI</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CARACTERE</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">152</span><span class="w"> </span><span class="k">VAR</span>
+<span class="w">  </span><span class="mi">153</span><span class="w">     </span><span class="n">IDENT1</span><span class="o">,</span><span class="w"> </span><span class="n">IDENT2</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">VARYING</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="kt">CHAR</span><span class="o">;</span><span class="w">     </span><span class="cm">(* CONTEM IDENTIFICADOR DE NIVEL *)</span>
+<span class="w">  </span><span class="mi">154</span>
+<span class="w">  </span><span class="mi">155</span><span class="w"> </span><span class="cm">(*2 INICIO DE RELAT;                                                          *)</span>
+<span class="w">  </span><span class="mi">156</span><span class="w"> </span><span class="k">BEGIN</span>
+<span class="w">  </span><span class="mi">157</span><span class="w">     </span><span class="n">IDENT1</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">INI</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#39;1&#39;</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">158</span><span class="w">     </span><span class="n">IDENT2</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">INI</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#39;2&#39;</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">159</span><span class="w"> </span><span class="cm">(*2 PARA CADA LINHA DO ARQUIVO DE ENTRADA :                                   *)</span>
+<span class="w">  </span><span class="mi">160</span><span class="w">     </span><span class="k">WHILE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="nb">EOF</span><span class="p">(</span><span class="n">ENTRADA</span><span class="p">)</span><span class="w"> </span><span class="k">DO</span>
+<span class="w">  </span><span class="mi">161</span><span class="w">       </span><span class="k">BEGIN</span>
+
+
+<span class="w"></span><span class="n">PROGRAMA</span><span class="o">:</span><span class="w"> </span><span class="n">COMENT</span><span class="o">.</span><span class="n">PAS</span><span class="w">           </span><span class="n">DOC</span><span class="o">.</span><span class="n">NTVEL</span><span class="w">  </span><span class="mi">3</span><span class="w">    </span><span class="n">DATA</span><span class="o">:</span><span class="w">  </span><span class="mi">8</span><span class="o">-</span><span class="n">AUG</span><span class="o">-</span><span class="mi">1988</span><span class="w"> </span><span class="mi">16</span><span class="o">:</span><span class="mi">00</span><span class="w">      </span><span class="n">PAG</span><span class="o">:</span><span class="w">   </span><span class="mi">4</span>
+
+<span class="w">  </span><span class="mi">162</span><span class="w"> </span><span class="cm">(*2     LE LINHA SEQUENCIALMENTE                                              *)</span>
+<span class="w">  </span><span class="mi">163</span><span class="w">         </span><span class="nb">READLN</span><span class="p">(</span><span class="n">ENTRADA</span><span class="o">,</span><span class="n">LINPROG</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">164</span><span class="w"> </span><span class="cm">(*2     NUMERA A LINHA LIDA                                                   *)</span>
+<span class="w">  </span><span class="mi">165</span><span class="w">         </span><span class="n">NUMLIN</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">NUMLIN</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">166</span><span class="w"> </span><span class="cm">(*2     DOCUMENTACAO E&#39; DE NIVEL 3 ?                                          *)</span>
+<span class="w">  </span><span class="mi">167</span><span class="w">         </span><span class="k">IF</span><span class="w"> </span><span class="n">OPCAO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">  </span><span class="mi">168</span><span class="w">             </span><span class="k">BEGIN</span>
+<span class="w">  </span><span class="mi">169</span><span class="w"> </span><span class="cm">(*2           ESCREVE LINHA NO RELATORIO                                      *)</span>
+<span class="w">  </span><span class="mi">170</span><span class="w">               </span><span class="n">LINPAG</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">LINPAG</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">171</span><span class="w">               </span><span class="n">CABECALHO</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">172</span><span class="w">               </span><span class="nb">WRITELN</span><span class="p">(</span><span class="n">SAIDA</span><span class="o">,</span><span class="s">&#39; &#39;</span><span class="o">:</span><span class="mi">4</span><span class="o">,</span><span class="n">NUMLIN</span><span class="o">:</span><span class="mi">5</span><span class="o">,</span><span class="s">&#39; &#39;</span><span class="o">,</span><span class="n">LINPROG</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">173</span><span class="w">               </span><span class="k">END</span>
+<span class="w">  </span><span class="mi">174</span><span class="w"> </span><span class="cm">(*2       CASO CONTRARIO                                                      *)</span>
+<span class="w">  </span><span class="mi">175</span><span class="w">           </span><span class="k">ELSE</span>
+<span class="w">  </span><span class="mi">176</span><span class="w">             </span><span class="k">BEGIN</span>
+<span class="w">  </span><span class="mi">177</span><span class="w"> </span><span class="cm">(*2           LINHA NAO E&#39; NULA ?                                             *)</span>
+<span class="w">  </span><span class="mi">178</span><span class="w">               </span><span class="k">IF</span><span class="w"> </span><span class="p">(</span><span class="nb">LENGTH</span><span class="p">(</span><span class="n">LINPROG</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">  </span><span class="mi">179</span><span class="w">                   </span><span class="k">BEGIN</span>
+<span class="w">  </span><span class="mi">180</span><span class="w"> </span><span class="cm">(*2                 LINHA E&#39; DE COMENTARIO NIVEL 1 ?                          *)</span>
+<span class="w">  </span><span class="mi">181</span><span class="w">                     </span><span class="k">IF</span><span class="w"> </span><span class="p">(</span><span class="n">SUBSTR</span><span class="p">(</span><span class="n">LINPROG</span><span class="o">,</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IDENT1</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">  </span><span class="mi">182</span><span class="w">                         </span><span class="k">BEGIN</span>
+<span class="w">  </span><span class="mi">183</span><span class="w">                           </span><span class="n">LINPAG</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">LINPAG</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">184</span><span class="w">                           </span><span class="n">CABECALHO</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">185</span><span class="w"> </span><span class="cm">(*2                       ESCREVE LINHA NO RELATORIO                          *)</span>
+<span class="w">  </span><span class="mi">186</span><span class="w">                           </span><span class="nb">WRITELN</span><span class="p">(</span><span class="n">SAIDA</span><span class="o">,</span><span class="s">&#39; &#39;</span><span class="o">:</span><span class="mi">4</span><span class="o">,</span><span class="n">NUMLIN</span><span class="o">:</span><span class="mi">5</span><span class="o">,</span><span class="s">&#39; &#39;</span><span class="o">,</span><span class="n">SUBSTR</span><span class="p">(</span><span class="n">LINPROG</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="nb">LENGTH</span><span class="p">(</span><span class="n">LINPROG</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">187</span><span class="w">                         </span><span class="k">END</span>
+<span class="w">  </span><span class="mi">188</span><span class="w"> </span><span class="cm">(*2                   CASO CONTRARIO                                          *)</span>
+<span class="w">  </span><span class="mi">189</span><span class="w">                       </span><span class="k">ELSE</span>
+<span class="w">  </span><span class="mi">190</span><span class="w"> </span><span class="cm">(*2                     E&#39; DE COMENTARIO NIVEL 2 E USUARIO QUER NIVEL 2 ?     *)</span>
+<span class="w">  </span><span class="mi">191</span><span class="w">                         </span><span class="k">IF</span><span class="w"> </span><span class="p">((</span><span class="n">SUBSTR</span><span class="p">(</span><span class="n">LINPROG</span><span class="o">,</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IDENT2</span><span class="p">)</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="n">OPCAO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">  </span><span class="mi">192</span><span class="w">                             </span><span class="k">BEGIN</span>
+<span class="w">  </span><span class="mi">193</span><span class="w">                               </span><span class="n">LINPAG</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">LINPAG</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">194</span><span class="w">                               </span><span class="n">CABECALHO</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">195</span><span class="w"> </span><span class="cm">(*2                           ESCREVE LINHA NO RELATORIO                      *)</span>
+<span class="w">  </span><span class="mi">196</span><span class="w">                               </span><span class="nb">WRITELN</span><span class="p">(</span><span class="n">SAIDA</span><span class="o">,</span><span class="s">&#39; &#39;</span><span class="o">:</span><span class="mi">4</span><span class="o">,</span><span class="n">NUMLIN</span><span class="o">:</span><span class="mi">5</span><span class="o">,</span><span class="s">&#39; &#39;</span><span class="o">,</span><span class="n">SUBSTR</span><span class="p">(</span><span class="n">LINPROG</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="nb">LENGTH</span><span class="p">(</span><span class="n">LINPROG</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">197</span><span class="w">                               </span><span class="k">END</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">198</span><span class="w">                   </span><span class="k">END</span><span class="o">;</span><span class="w"> </span><span class="cm">(* IF *)</span>
+<span class="w">  </span><span class="mi">199</span><span class="w">               </span><span class="k">END</span><span class="o">;</span><span class="w"> </span><span class="cm">(* IF *)</span>
+<span class="w">  </span><span class="mi">200</span><span class="w">         </span><span class="k">END</span><span class="o">;</span><span class="w"> </span><span class="cm">(* WHILE *)</span>
+<span class="w">  </span><span class="mi">201</span><span class="w">     </span><span class="nb">WRITELN</span><span class="p">(</span><span class="n">SAIDA</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">202</span><span class="w"> </span><span class="cm">(*2 FIM DE RELAT                                                              *)</span>
+<span class="w">  </span><span class="mi">293</span><span class="w"> </span><span class="k">END</span><span class="o">;</span><span class="w"> </span><span class="cm">(* RELAT *)</span>
+<span class="w">  </span><span class="mi">204</span>
+<span class="w">  </span><span class="mi">205</span>
+<span class="w">  </span><span class="mi">206</span><span class="w"> </span><span class="cm">(*1===========================================================================*)</span>
+<span class="w">  </span><span class="mi">207</span><span class="w"> </span><span class="cm">(*1 ROTINA: RELATPAS;                                                         *)</span>
+<span class="w">  </span><span class="mi">208</span><span class="w"> </span><span class="cm">(*1 FINALIDADE: FAZ LEITURA DO ARQUIVO DE ENTRADA (EM PASCAL) E MONTA O DE    *)</span>
+<span class="w">  </span><span class="mi">209</span><span class="w"> </span><span class="cm">(*1             SAIDA;                                                        *)</span>
+<span class="w">  </span><span class="mi">210</span><span class="w"> </span><span class="cm">(*1 SAIDA: COMENTARIOS DO FROGRAMA DE ENTRADA NO NIVEL DESEJADO;              *)</span>
+<span class="w">  </span><span class="mi">211</span><span class="w"> </span><span class="cm">(*1 CHAMADO POR: COMENTARIO;                                                  *)</span>
+<span class="w">  </span><span class="mi">212</span><span class="w"> </span><span class="cm">(*1===========================================================================*)</span>
+<span class="w">  </span><span class="mi">213</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="nf">RELATPAS</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">214</span><span class="w"> </span><span class="cm">(*2 INICIO DE RELATPAS                                                        *)</span>
+<span class="w">  </span><span class="mi">215</span><span class="w"> </span><span class="k">BEGIN</span>
+
+
+<span class="w"></span><span class="n">PROGRAMAS</span><span class="w"> </span><span class="n">COMENT</span><span class="o">.</span><span class="n">PAS</span><span class="w">           </span><span class="n">DOC</span><span class="o">.</span><span class="n">NIVEL</span><span class="w">  </span><span class="mi">3</span><span class="w">    </span><span class="n">DATA</span><span class="o">:</span><span class="w">  </span><span class="mi">8</span><span class="o">-</span><span class="n">AUG</span><span class="o">-</span><span class="mi">1988</span><span class="w"> </span><span class="mi">16</span><span class="o">:</span><span class="mi">00</span><span class="w">      </span><span class="n">PAG</span><span class="o">:</span><span class="w">   </span><span class="mi">5</span>
+
+<span class="w">  </span><span class="mi">216</span><span class="w"> </span><span class="cm">(*2 PARA CADA LINHA DO ARQUIVO DE ENTRADA                                     *)</span>
+<span class="w">  </span><span class="mi">217</span><span class="w">     </span><span class="k">WHILE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="nb">EOF</span><span class="p">(</span><span class="n">ENTRADA</span><span class="p">)</span><span class="w"> </span><span class="k">DO</span>
+<span class="w">  </span><span class="mi">218</span><span class="w">       </span><span class="k">BEGIN</span>
+<span class="w">  </span><span class="mi">219</span><span class="w"> </span><span class="cm">(*2     LE LINHA SEQUENCIALMENTE                                              *)</span>
+<span class="w">  </span><span class="mi">220</span><span class="w">         </span><span class="nb">READLN</span><span class="p">(</span><span class="n">ENTRADA</span><span class="o">,</span><span class="n">LINPROG</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">221</span><span class="w">         </span><span class="n">NUMLIN</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">NUMLIN</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">222</span><span class="w"> </span><span class="cm">(*2     DOCUMENTACAO E&#39; DE NIVEL 3 ?                                          *)</span>
+<span class="w">  </span><span class="mi">223</span><span class="w">         </span><span class="k">IF</span><span class="w"> </span><span class="n">OPCAO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">  </span><span class="mi">224</span><span class="w">             </span><span class="k">BEGIN</span>
+<span class="w">  </span><span class="mi">225</span><span class="w"> </span><span class="cm">(*2           ESCREVE LINHA NO RELATORIO                                      *)</span>
+<span class="w">  </span><span class="mi">226</span><span class="w">               </span><span class="n">LINPAG</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">LINPAG</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">221</span><span class="w">               </span><span class="n">CABECALHOS</span>
+<span class="w">  </span><span class="mi">228</span><span class="w">               </span><span class="nb">WRITELN</span><span class="p">(</span><span class="n">SAIDAS</span><span class="o">,</span><span class="s">&#39; &#39;</span><span class="o">,:</span><span class="mi">4</span><span class="o">,</span><span class="n">NUMLIN</span><span class="o">:</span><span class="mi">5</span><span class="o">,</span><span class="s">&#39; &#39;</span><span class="o">,</span><span class="n">LINPROG</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">229</span><span class="w">               </span><span class="k">END</span>
+<span class="w">  </span><span class="mi">230</span><span class="w"> </span><span class="cm">(*2       CASO CONTRARIO                                                      *)</span>
+<span class="w">  </span><span class="mi">231</span><span class="w">           </span><span class="k">ELSE</span>
+<span class="w">  </span><span class="mi">232</span><span class="w">             </span><span class="k">BEGIN</span>
+<span class="w">  </span><span class="mi">233</span><span class="w"> </span><span class="cm">(*2           LINHA NAO Ef NULA 2                                             *)</span>
+<span class="w">  </span><span class="mi">234</span><span class="w">               </span><span class="k">IF</span><span class="w"> </span><span class="p">(</span><span class="nb">LENGTH</span><span class="p">(</span><span class="n">LINPROG</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">  </span><span class="mi">235</span><span class="w">                   </span><span class="k">BEGIN</span>
+<span class="w">  </span><span class="mi">236</span><span class="w"> </span><span class="cm">(*2                 LINHA E&#39; DE COMENTARIO NIVEL 1 ?                          *)</span>
+<span class="w">  </span><span class="mi">237</span><span class="w">                     </span><span class="k">IF</span><span class="w"> </span><span class="p">(</span><span class="n">SUBSTR</span><span class="p">(</span><span class="n">LINPROG</span><span class="o">,</span><span class="mi">1</span><span class="o">,</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;(*1&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">  </span><span class="mi">238</span><span class="w">                         </span><span class="k">BEGIN</span>
+<span class="w">  </span><span class="mi">239</span><span class="w">                           </span><span class="n">LINPAG</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">LINPAG</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">240</span><span class="w">                           </span><span class="n">CABECALHO</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">241</span><span class="w"> </span><span class="cm">(*2                       ESCREVE LINHA NO RELATORIO                           *)</span>
+<span class="w">  </span><span class="mi">242</span><span class="w">                           </span><span class="nb">WRITELN</span><span class="p">(</span><span class="n">SAIDA</span><span class="o">,</span><span class="s">&#39; &#39;</span><span class="o">:</span><span class="mi">4</span><span class="o">,</span><span class="n">NUMLIN</span><span class="o">:</span><span class="mi">5</span><span class="o">,</span><span class="s">&#39; &#39;</span><span class="o">,</span><span class="n">SUBSTR</span><span class="p">(</span><span class="n">LINPROG</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="kp">INDEX</span><span class="p">(</span><span class="n">LINPROG</span><span class="o">,</span><span class="s">&#39;*)&#39;</span><span class="p">)</span><span class="o">-</span><span class="mi">3</span><span class="p">))</span>
+<span class="w">  </span><span class="mi">243</span><span class="w">                           </span><span class="k">END</span>
+<span class="w">  </span><span class="mi">244</span><span class="w"> </span><span class="cm">(*2                   CASO CONTRARIO                                           *)</span>
+<span class="w">  </span><span class="mi">245</span><span class="w">                       </span><span class="k">ELSE</span>
+<span class="w">  </span><span class="mi">246</span><span class="w">                         </span><span class="k">BEGIN</span>
+<span class="w">  </span><span class="mi">241</span><span class="w"> </span><span class="cm">(*2                       E&#39; DE COMENTARIO NIVEL 2 E USUARIO QUER NIVEL 2 ?    *)</span>
+<span class="w">  </span><span class="mi">248</span><span class="w">                           </span><span class="k">IF</span><span class="w"> </span><span class="p">((</span><span class="n">SUBSTR</span><span class="p">(</span><span class="n">LINPROG</span><span class="o">,</span><span class="mi">1</span><span class="o">,</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;(*2&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="n">OPCAO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">  </span><span class="mi">249</span><span class="w">                               </span><span class="k">BEGIN</span>
+<span class="w">  </span><span class="mi">250</span><span class="w">                                 </span><span class="n">LINPAG</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">LINPAG</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">251</span><span class="w">                                 </span><span class="n">CABECALHO</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">250</span><span class="w"> </span><span class="cm">(*2                             ESCREVE LINHA NO RELATORIO                    *)</span>
+<span class="w">  </span><span class="mi">253</span><span class="w">                                 </span><span class="nb">WRITELN</span><span class="p">(</span><span class="n">SAIDA</span><span class="o">,</span><span class="s">&#39; &#39;</span><span class="o">:</span><span class="mi">4</span><span class="o">,</span><span class="n">NUMLIN</span><span class="o">:</span><span class="mi">5</span><span class="o">,</span><span class="s">&#39; &#39;</span><span class="o">,</span><span class="n">SUBSTR</span><span class="p">(</span><span class="n">LINPROG</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="kp">INDEX</span><span class="p">(</span><span class="n">LINPROG</span><span class="o">,</span><span class="s">&#39;*)&#39;</span><span class="p">)</span><span class="o">-</span><span class="mi">3</span><span class="p">))</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">254</span><span class="w">                                 </span><span class="k">END</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">255</span><span class="w">                           </span><span class="k">END</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">256</span><span class="w">                     </span><span class="k">END</span><span class="o">;</span><span class="w"> </span><span class="cm">(* IF *)</span>
+<span class="w">  </span><span class="mi">251</span><span class="w">               </span><span class="k">END</span><span class="o">;</span><span class="w"> </span><span class="cm">(* IF *)</span>
+<span class="w">  </span><span class="mi">258</span><span class="w">         </span><span class="k">END</span><span class="o">;</span><span class="w"> </span><span class="cm">(* WHILE *)</span>
+<span class="w">  </span><span class="mi">259</span><span class="w">     </span><span class="nb">WRITELN</span><span class="p">(</span><span class="n">SAIDA</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">260</span><span class="w"> </span><span class="cm">(*2 FIM DE RELATPAS                                                            *)</span>
+<span class="w">  </span><span class="mi">261</span><span class="w"> </span><span class="k">END</span><span class="o">;</span><span class="w"> </span><span class="cm">(* RELATPAS *)</span>
+<span class="w">  </span><span class="mi">262</span>
+<span class="w">  </span><span class="mi">263</span>
+<span class="w">  </span><span class="mi">264</span><span class="w"> </span><span class="cm">(*2----------------------------------------------------------------------------*)</span>
+<span class="w">  </span><span class="mi">265</span><span class="w"> </span><span class="cm">(*2                  P R O G R A M A    P R I N C I P A L                      *)</span>
+<span class="w">  </span><span class="mi">266</span><span class="w"> </span><span class="cm">(*2----------------------------------------------------------------------------*)</span>
+<span class="w">  </span><span class="mi">267</span><span class="w"> </span><span class="cm">(*2 INICIO DE COMENTARIO                                                       *)</span>
+<span class="w">  </span><span class="mi">268</span><span class="w"> </span><span class="k">BEGIN</span>
+<span class="w">  </span><span class="mi">269</span><span class="w">     </span><span class="n">OPCAO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="o">;</span>
+
+
+<span class="w"></span><span class="n">PROGRAMA</span><span class="o">:</span><span class="w"> </span><span class="n">COMENT</span><span class="o">.</span><span class="n">PAS</span><span class="w">           </span><span class="n">DOC</span><span class="o">.</span><span class="n">NIVEL</span><span class="w">  </span><span class="mi">3</span><span class="w">    </span><span class="n">DATA</span><span class="o">:</span><span class="w">  </span><span class="mi">8</span><span class="o">-</span><span class="n">AUG</span><span class="o">-</span><span class="mi">1988</span><span class="w"> </span><span class="mi">16</span><span class="o">:</span><span class="mi">00</span><span class="w">      </span><span class="n">PAG</span><span class="o">:</span><span class="w">   </span><span class="mi">6</span>
+
+<span class="w">  </span><span class="mi">270</span><span class="w">     </span><span class="n">DATA_HORA</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&#39;                 &#39;</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">271</span><span class="w">     </span><span class="n">NUMLIN</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">272</span><span class="w"> </span><span class="cm">(*2 EXIBE TELA DE ENTRADA                                                     *)</span>
+<span class="w">  </span><span class="mi">273</span><span class="w">     </span><span class="n">MOSTRA_TELA</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">274</span><span class="w"> </span><span class="cm">(*2 OPCAO DO USUARIO E&#39; CONTINUAR ?                                           *)</span>
+<span class="w">  </span><span class="mi">275</span><span class="w">     </span><span class="k">IF</span><span class="w"> </span><span class="p">((</span><span class="n">OPCAO</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="n">OPCAO</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">4</span><span class="p">))</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">  </span><span class="mi">276</span><span class="w">         </span><span class="k">BEGIN</span>
+<span class="w">  </span><span class="mi">277</span><span class="w"> </span><span class="cm">(*2       ABRE ARQUIVOS DE ENTRADA E SATDA                                    *)</span>
+<span class="w">  </span><span class="mi">278</span><span class="w">           </span><span class="n">OPEN</span><span class="p">(</span><span class="n">ENTRADAS</span><span class="o">,</span><span class="n">NOMEARQ</span><span class="o">,</span>
+<span class="w">  </span><span class="mi">279</span><span class="w">                </span><span class="n">HISTORY</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">OLD</span><span class="o">,</span>
+<span class="w">  </span><span class="mi">280</span><span class="w">                </span><span class="n">ACCESS_METHOD</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">SEQUENTIAL</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">281</span><span class="w">                </span><span class="n">OPEN</span><span class="p">(</span><span class="n">SAIDA</span><span class="o">,</span><span class="s">&#39;COMMENT.LIS&#39;</span><span class="o">,</span><span class="n">HISTORY</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">NEW</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">282</span><span class="w">           </span><span class="nb">RESET</span><span class="p">(</span><span class="n">ENTRADA</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">283</span><span class="w">           </span><span class="nb">REWRITE</span><span class="p">((</span><span class="n">SAIDA</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">284</span><span class="w">           </span><span class="n">RETORNO</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">SYS</span><span class="mh">$A</span><span class="n">SCTIM</span><span class="p">(</span><span class="o">,</span><span class="n">DATA_HORA</span><span class="o">,,</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">285</span><span class="w">           </span><span class="cm">(* FORCA A IMPRESSAO DO CABECALHO NA PRIMEIRA PAGINA *)</span>
+<span class="w">  </span><span class="mi">286</span><span class="w">           </span><span class="n">LINPAG</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">70</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">287</span><span class="w">           </span><span class="n">CABECALHO</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">288</span><span class="w">           </span><span class="k">END</span><span class="o">;</span><span class="w"> </span><span class="cm">(* IF *)</span>
+<span class="w">  </span><span class="mi">289</span><span class="w"> </span><span class="cm">(*2 OPCAO DO USUARIO E&#39; NIVEL 1 OU 2 ?                                        *)</span>
+<span class="w">  </span><span class="mi">290</span><span class="w">     </span><span class="k">CASE</span><span class="w"> </span><span class="n">OPCAO</span><span class="w"> </span><span class="k">OF</span>
+<span class="w">  </span><span class="mi">291</span><span class="w">       </span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">BEGIN</span>
+<span class="w">  </span><span class="mi">292</span><span class="w">                 </span><span class="k">IF</span><span class="w"> </span><span class="p">(</span><span class="n">NOMEARQ</span><span class="o">.</span><span class="n">LENGTH</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">  </span><span class="mi">293</span><span class="w">                     </span><span class="n">NOMEARQ</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">SUBSTR</span><span class="p">(</span><span class="n">NOMEARQ</span><span class="o">,</span><span class="mi">1</span><span class="o">,</span><span class="mi">20</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">294</span><span class="w"> </span><span class="cm">(*2             ENTRADA ESTA&#39; EM PASCAL ?                                     *)</span>
+<span class="w">  </span><span class="mi">295</span><span class="w">                 </span><span class="k">IF</span><span class="w"> </span><span class="p">(</span><span class="n">LING</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;P&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">  </span><span class="mi">296</span><span class="w"> </span><span class="cm">(*2                  PROCESSA ARQUIVO EM PASCAL                               *)</span>
+<span class="w">  </span><span class="mi">297</span><span class="w">                      </span><span class="n">RELATPAS</span>
+<span class="w">  </span><span class="mi">298</span><span class="w"> </span><span class="cm">(*2               CASO CONTRARIO                                              *)</span>
+<span class="w">  </span><span class="mi">299</span><span class="w">                   </span><span class="k">ELSE</span>
+<span class="w">  </span><span class="mi">300</span><span class="w"> </span><span class="cm">(*2                 PROCESSA ARQUIVO EM COBOL OU ZIM                          *)</span>
+<span class="w">  </span><span class="mi">301</span><span class="w">                     </span><span class="k">IF</span><span class="w"> </span><span class="p">(</span><span class="n">LING</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;C&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">  </span><span class="mi">302</span><span class="w">                         </span><span class="n">RELAT</span><span class="p">(</span><span class="s">&#39;*&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="mi">303</span><span class="w">                       </span><span class="k">ELSE</span>
+<span class="w">  </span><span class="mi">304</span><span class="w">                         </span><span class="n">RELAT</span><span class="p">(</span><span class="s">&#39;%&#39;</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">305</span><span class="w"> </span><span class="cm">(*              MANDA RELATORIO PARA A FILA DE IMPRESSAO                      *)</span>
+<span class="w">  </span><span class="mi">306</span><span class="w"> </span><span class="cm">(*              COMANDO := &#39;PRINT COMMENT.LIS&#39;;  *)</span>
+<span class="w">  </span><span class="mi">307</span><span class="w"> </span><span class="cm">(*              LIB$DO_COMMAND(COMANDO);         *)</span>
+<span class="w">  </span><span class="mi">308</span><span class="w">                 </span><span class="k">END</span><span class="o">;</span><span class="w"> </span><span class="cm">(* 1,2,3 *)</span>
+<span class="w">  </span><span class="mi">309</span><span class="w">       </span><span class="k">END</span><span class="o">;</span><span class="w"> </span><span class="cm">(* CASE *)</span>
+<span class="w">  </span><span class="mi">310</span><span class="w"> </span><span class="cm">(*2 ALGUM ARGUIVO FOI ABERTO ?                                                *)</span>
+<span class="w">  </span><span class="mi">311</span><span class="w">     </span><span class="k">IF</span><span class="w"> </span><span class="p">((</span><span class="n">OPCAO</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="n">OPCAO</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">4</span><span class="p">))</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">  </span><span class="mi">312</span><span class="w">         </span><span class="k">BEGIN</span>
+<span class="w">  </span><span class="mi">313</span><span class="w"> </span><span class="cm">(*2       FECHA ARQUIVOS UTILIZADOS                                           *)</span>
+<span class="w">  </span><span class="mi">314</span><span class="w">           </span><span class="nb">CLOSE</span><span class="p">(</span><span class="n">ENTRADA</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">315</span><span class="w">           </span><span class="nb">CLOSE</span><span class="p">(</span><span class="n">SAIDA</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">316</span><span class="w">           </span><span class="k">END</span><span class="o">;</span>
+<span class="w">  </span><span class="mi">317</span><span class="w"> </span><span class="cm">(*2 FIM DE COMENTARTO                                                         *)</span>
+<span class="w">  </span><span class="mi">318</span><span class="w"> </span><span class="k">END</span><span class="o">.</span><span class="w"> </span><span class="cm">(* COMENTARIO *)</span>
+</code></pre></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+  
+    <br>
+    <p style="font-size: 0.8em; text-align: right;">
+      Last edited: 2025-01-05
+    </p>
+  
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      CC BY 4.0 License
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["header.autohide"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../assets/katex.js"></script>
+      
+        <script src="../../../assets/katex/katex.min.js"></script>
+      
+        <script src="../../../assets/katex/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

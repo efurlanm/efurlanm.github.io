@@ -1,203 +1,255 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://efurlanm.github.io/index.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/engineering.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/courses/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/notes.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/engineering/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/pub-all.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/notes/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/pub-courses.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/pub-all/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/research.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/pub-courses/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/teach-gallery.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/research/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/teach-project.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/teach-proj/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/teaching.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/teaching/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/index.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/2024/12/01/hp-41.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2024/12/01/hp41/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/2024/01/24/inpe-general-regulations.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2024/01/24/inpe-general-regulations/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/2024/12/02/internals.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2024/12/02/internals/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/2024/05/29/loss-landscape.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2024/05/29/loss-lands/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/2024/01/25/microcloud.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2024/01/25/microcloud/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/2024/05/24/nn-optimization.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2024/05/24/nn-opti/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/2024/02/22/parallel-spectral.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2024/02/22/para-spec/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/2025/02/28/periodicals-from-capes.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2025/02/28/capes-peri/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/2024/05/13/pinn-inverse-pereira.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2024/05/13/pinn-inverse-pereira/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/2024/12/01/retrocomputing-archive.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2024/12/01/retro-arch/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/2024/04/07/sdumont-upgrade.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2024/04/07/sd-upgr/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/2024/02/17/lncc-sdumont-supercomputer.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2024/02/17/sd-link/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/2024/02/03/brazil-supercomputers-top500-nov2023.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2024/02/03/top-2023/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/2024/02/02/wscad-and-sbac-pad.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2024/02/02/wscad/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/2024/02/16/zenodo.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2024/02/16/zenodo/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/2023/08/24/zotero.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2023/08/24/zotero/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/2025/01/15/marimo.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2025/11/23/opti-scie-work/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/2025/01/18/notebooks.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2025/12/03/hpc-fort-opti/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/books/index.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2025/09/02/pinn-smar-trai/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/books/autodoc/autodoc.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2025/09/01/pinn-debug/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/books/bcomp/bcomp.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2025/08/31/lm-trai/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/include/inc-pub-courses.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2025/08/30/pinn-burgers/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/include/inc-pub-manuscript.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2025/01/15/marimo/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/include/inc-pub-pmaq-2023h2.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2025/11/26/mbp-nix/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/include/inc-pub-research-abnt.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2025/01/18/jupy-repr/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/include/inc-pub-research.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2025/08/30/pinn-chal/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/archive/2025.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2025/09/01/pinn-acce/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/archive/2024.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2025/08/31/pinn-para/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/archive/2023.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/2026/01/26/mkdocs-workflow/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/category/publication.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/books/books/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/category/tools.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/books/autodoc/autodoc/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/category/internals.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/books/bcomp/bcomp/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/category/classic.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/archive/2026/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/category/ann.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/archive/2025/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/category/inpe.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/archive/2024/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/category/pinn.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/archive/2023/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/category/hpc.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/category/mkdocs/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/category/virtualization.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/category/hpc/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/page/2/index.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/category/fortran/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://efurlanm.github.io/blog/archive/2024/page/2.html</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://efurlanm.github.io/blog/category/linux/</loc>
+         <lastmod>2026-02-04</lastmod>
+    </url>
+    <url>
+         <loc>https://efurlanm.github.io/blog/category/optimization/</loc>
+         <lastmod>2026-02-04</lastmod>
+    </url>
+    <url>
+         <loc>https://efurlanm.github.io/blog/category/pinn/</loc>
+         <lastmod>2026-02-04</lastmod>
+    </url>
+    <url>
+         <loc>https://efurlanm.github.io/blog/category/ann/</loc>
+         <lastmod>2026-02-04</lastmod>
+    </url>
+    <url>
+         <loc>https://efurlanm.github.io/blog/category/publication/</loc>
+         <lastmod>2026-02-04</lastmod>
+    </url>
+    <url>
+         <loc>https://efurlanm.github.io/blog/category/tools/</loc>
+         <lastmod>2026-02-04</lastmod>
+    </url>
+    <url>
+         <loc>https://efurlanm.github.io/blog/category/internals/</loc>
+         <lastmod>2026-02-04</lastmod>
+    </url>
+    <url>
+         <loc>https://efurlanm.github.io/blog/category/classic/</loc>
+         <lastmod>2026-02-04</lastmod>
+    </url>
+    <url>
+         <loc>https://efurlanm.github.io/blog/category/inpe/</loc>
+         <lastmod>2026-02-04</lastmod>
+    </url>
+    <url>
+         <loc>https://efurlanm.github.io/blog/category/virtualization/</loc>
+         <lastmod>2026-02-04</lastmod>
+    </url>
+    <url>
+         <loc>https://efurlanm.github.io/blog/page/2/</loc>
+         <lastmod>2026-02-04</lastmod>
+    </url>
+    <url>
+         <loc>https://efurlanm.github.io/blog/page/3/</loc>
+         <lastmod>2026-02-04</lastmod>
+    </url>
+    <url>
+         <loc>https://efurlanm.github.io/blog/archive/2025/page/2/</loc>
+         <lastmod>2026-02-04</lastmod>
+    </url>
+    <url>
+         <loc>https://efurlanm.github.io/blog/archive/2024/page/2/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
 </urlset>

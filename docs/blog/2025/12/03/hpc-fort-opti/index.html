@@ -1,0 +1,1676 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Academic and professional portfolio of Eduardo Furlan, a PhD candidate at INPE specializing in High-Performance Computing (HPC) for scientific and engineering challenges. Showcasing research, education, and industrial experience.">
+      
+      
+        <meta name="author" content="Eduardo Furlan">
+      
+      
+        <link rel="canonical" href="https://efurlanm.github.io/blog/2025/12/03/hpc-fort-opti/">
+      
+      
+        <link rel="prev" href="../../../11/26/mbp-nix/">
+      
+      
+        <link rel="next" href="../../../../2026/01/26/mkdocs-workflow/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/img/account-outline.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>High-Performance Computing: The Fortran Optimization Manifesto - Furlan</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/extra.css">
+    
+      <link rel="stylesheet" href="../../../../../assets/katex/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="white">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#high-performance-computing-the-fortran-optimization-manifesto" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="Furlan" class="md-header__button md-logo" aria-label="Furlan" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 2a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2m0 7c2.67 0 8 1.33 8 4v3H4v-3c0-2.67 5.33-4 8-4m0 1.9c-2.97 0-6.1 1.46-6.1 2.1v1.1h12.2V17c0-.64-3.13-2.1-6.1-2.1"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Furlan
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              High-Performance Computing: The Fortran Optimization Manifesto
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://www.github.com/efurlanm/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    efurlanm
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Furlan" class="md-nav__button md-logo" aria-label="Furlan" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 2a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2m0 7c2.67 0 8 1.33 8 4v3H4v-3c0-2.67 5.33-4 8-4m0 1.9c-2.97 0-6.1 1.46-6.1 2.1v1.1h12.2V17c0-.64-3.13-2.1-6.1-2.1"/></svg>
+
+    </a>
+    Furlan
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://www.github.com/efurlanm/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    efurlanm
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../teaching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teaching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Posts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archive
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2024/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2024
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2023
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Categories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Categories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ann/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ANN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/classic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/fortran/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fortran
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/hpc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HPC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/inpe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INPE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/internals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/pinn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PINN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/publication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/virtualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virtualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/mkdocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mkdocs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction-and-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduction and Context
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduction and Context">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-hardware-environment-the-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. Hardware Environment (The Constraints)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-baseline-c-supremacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The Baseline: C++ Supremacy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-optimization-roadmap-a-forensic-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The Optimization Roadmap: A Forensic Approach
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. The Optimization Roadmap: A Forensic Approach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-memory-architecture-the-apache-runtime-arena" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Memory Architecture: The Apache Runtime Arena
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1. Memory Architecture: The Apache Runtime Arena">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-compliance-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Compliance Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-data-layout-the-aos-breakthrough" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Data Layout: The "AoS" Breakthrough
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-pointer-compression-32-bit-indices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Pointer Compression (32-bit Indices)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-algorithmic-transformation-aggressive-manual-unrolling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4. Algorithmic Transformation: Aggressive Manual Unrolling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-parallelism-zero-overhead-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5. Parallelism: Zero-Overhead Scheduling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-forensic-analysis-the-verdict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Forensic Analysis: The Verdict
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Forensic Analysis: The Verdict">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-the-scoreboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. The Scoreboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-why-fortran-won" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Why Fortran Won?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-the-advantages-of-modern-fortran-for-hpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. The Advantages of Modern Fortran for HPC
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-how-to-reproduce-step-by-step-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. How to Reproduce (Step-by-Step Guide)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. How to Reproduce (Step-by-Step Guide)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1. Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-compilation-with-pgo-profile-guided-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2. Compilation with PGO (Profile Guided Optimization)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3. Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-the-final-source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. The Final Source Code
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2025-12-03 00:00:00+00:00" class="md-ellipsis">December 3, 2025</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/hpc/">HPC</a>, 
+                              <a href="../../../../category/fortran/">Fortran</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+
+
+<h1 id="high-performance-computing-the-fortran-optimization-manifesto">High-Performance Computing: The Fortran Optimization Manifesto</h1>
+<p>This post details the engineering journey to optimize the <a href="https://benchmarksgame-team.pages.debian.net/benchmarksgame/performance/binarytrees.html"><strong>Binary Trees</strong> benchmark</a>, aiming to surpass the performance of the fastest C++ implementation. Through rigorous profiling, micro-architectural analysis, and the application of modern Fortran techniques, we achieved a <strong>&gt;50% reduction in execution time</strong> (0.76s vs 1.60s) on an Intel Ivy Bridge architecture. This case study demonstrates that language choice is secondary to algorithmic understanding, memory architecture mastery, and compiler-assisted optimization.</p>
+<!-- more -->
+
+<h2 id="1-introduction-and-context">1. Introduction and Context</h2>
+<p>In the realm of High-Performance Computing (HPC), the "Computer Language Benchmarks Game" serves as a rigorous testing ground for compiler efficiency and runtime performance. The <strong>Binary Trees</strong> benchmark is particularly punishing; it stresses the memory allocator and the CPU's branch predictor rather than raw floating-point throughput.</p>
+<p>The objective was absolute: utilize <strong>Modern Fortran (2018+)</strong> to beat the state-of-the-art C++ solution, which utilizes <code>std::pmr</code> (Polymorphic Memory Resources) and template metaprogramming.</p>
+<h3 id="11-hardware-environment-the-constraints">1.1. Hardware Environment (The Constraints)</h3>
+<p>Optimization is meaningless without context. Our target architecture imposes specific physical limits:</p>
+<ul>
+<li><strong>CPU:</strong> <a href="https://ark.intel.com/content/www/us/en/ark/products/67355/intel-core-i5-3210m-processor-3m-cache-up-to-3-10-ghz-rga.html">Intel® Core™ i5-3210M</a> (Ivy Bridge Mobile, 22nm).</li>
+<li><strong>Topology:</strong> 2 Physical Cores / 4 Threads.</li>
+<li><strong>Frequency:</strong> 2.50 GHz (Turbo 3.10 GHz).</li>
+<li><strong>Cache:</strong> 3MB L3, 256KB L2, 32KB L1.</li>
+<li><strong>Memory:</strong> DDR3.</li>
+<li><strong>OS:</strong> Ubuntu 22.04 LTS (Linux Kernel 6.8.0).</li>
+</ul>
+<p><strong>Implication:</strong> The Ivy Bridge architecture relies heavily on its <a href="https://en.wikipedia.org/wiki/Cache_prefetching">Hardware Prefetcher</a>. Optimizations must ensure linear memory access patterns to exploit this. The relatively small L1 cache demands strict data locality.</p>
+<hr />
+<h2 id="2-the-baseline-c-supremacy">2. The Baseline: C++ Supremacy</h2>
+<p>The reference implementation is <strong>C++ g++ #7</strong>. Its performance dominance stems from three factors:</p>
+<ol>
+<li><strong>Monotonic Memory Resource:</strong> It avoids the operating system's heap (<code>malloc/free</code>) by using a stack-like allocator (<code>std::pmr::monotonic_buffer_resource</code>).</li>
+<li><strong>Compile-Time Evaluation:</strong> Heavy use of C++ templates generates specialized assembly for specific tree depths.</li>
+<li><strong>Structure:</strong> It utilizes pointers (<code>Node* left, right</code>) which map directly to the hardware's addressing mode.</li>
+</ol>
+<p><strong>Baseline Metrics (C++ on Target Hardware):</strong></p>
+<ul>
+<li><strong>Time:</strong> 1.605s</li>
+<li><strong>Instructions:</strong> ~26.49 Billion</li>
+<li><strong>Cache Misses:</strong> ~11.7 Million</li>
+<li><strong>IPC:</strong> 1.58</li>
+</ul>
+<hr />
+<h2 id="3-the-optimization-roadmap-a-forensic-approach">3. The Optimization Roadmap: A Forensic Approach</h2>
+<p>We adopted a multi-stage optimization strategy, iterating based on telemetry from Linux <code>perf</code> tools.</p>
+<h3 id="31-memory-architecture-the-apache-runtime-arena">3.1. Memory Architecture: The Apache Runtime Arena</h3>
+<p>Standard Fortran <code>ALLOCATE</code> and <code>DEALLOCATE</code> incur massive overhead due to system calls and metadata management. To compete with C++'s <code>std::pmr</code>, we implemented a <strong>Region-Based Memory Management</strong> system (Arena).</p>
+<h4 id="the-compliance-strategy">The Compliance Strategy</h4>
+<p>The benchmark rules prohibit "rolling your own" custom allocators but allow standard external libraries. We utilized the <strong>Apache Portable Runtime (APR)</strong> via <code>ISO_C_BINDING</code>.</p>
+<ul>
+<li><strong>Technique:</strong> We request massive blocks of raw memory using <code>apr_palloc</code> (a C library function).</li>
+<li><strong>Fortran Implementation:</strong> We map this C-pointer to a Fortran array using <code>c_f_pointer</code>.</li>
+<li><strong>Allocation Cost:</strong> <span class="arithmatex">\(O(1)\)</span>. We simply increment an integer cursor (<code>cur = cur + 1</code>).</li>
+<li><strong>Deallocation Cost:</strong> <span class="arithmatex">\(O(1)\)</span>. We reset the cursor to 0.</li>
+</ul>
+<h3 id="32-data-layout-the-aos-breakthrough">3.2. Data Layout: The "AoS" Breakthrough</h3>
+<p>In HPC, data layout dictates cache efficiency.</p>
+<ul>
+<li><strong>Initial Attempt (SoA):</strong> Separate arrays for <code>Left_Children</code> and <code>Right_Children</code>. This failed to beat C++ because accessing a node required two disjoint memory lookups.</li>
+<li><strong>Final Solution (AoS - Array of Structs):</strong> We implemented a 2D array <code>integer(4) :: d(2, N)</code>.<ul>
+<li><code>d(1, i)</code> is the Left Child.</li>
+<li><code>d(2, i)</code> is the Right Child.</li>
+<li><strong>Why it wins:</strong> Fortran stores arrays in <strong>Column-Major</strong> order. This ensures that <code>d(1,i)</code> and <code>d(2,i)</code> are physically adjacent in RAM. A single cache line fetch retrieves both children, maximizing bandwidth utilization.</li>
+</ul>
+</li>
+</ul>
+<h3 id="33-pointer-compression-32-bit-indices">3.3. Pointer Compression (32-bit Indices)</h3>
+<p>Modern CPUs are 64-bit, meaning standard pointers consume 8 bytes.</p>
+<ul>
+<li><strong>Optimization:</strong> We replaced pointers with <code>integer(4)</code> indices.</li>
+<li><strong>Impact:</strong> This reduces the node size by 50%. We effectively <strong>double the capacity of the L3 Cache</strong> (3MB), significantly reducing cache misses compared to the C++ pointer-based implementation.</li>
+</ul>
+<h3 id="34-algorithmic-transformation-aggressive-manual-unrolling">3.4. Algorithmic Transformation: Aggressive Manual Unrolling</h3>
+<p>Telemetry showed that the C++ compiler was unwinding recursion better than GFortran. We responded with <strong>Aggressive Manual Batch Allocation</strong>.</p>
+<p>Instead of allocating one node at a time, our recursive constructor <code>make_tree</code> allocates entire subtrees (Depth 0, 1, 2, and 3) in a single block.</p>
+<div class="highlight"><pre><span></span><code><span class="c">! Batch Allocation for Depth 3 (15 Nodes at once)</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">depth</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">   </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pool</span><span class="p">%</span><span class="n">cursor</span>
+<span class="w">   </span><span class="n">pool</span><span class="p">%</span><span class="n">cursor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="c">! Single atomic update to cursor</span>
+<span class="w">   </span><span class="c">! ... 15 nodes initialized linearly ...</span>
+<span class="w">   </span><span class="n">pool</span><span class="p">%</span><span class="n">nodes</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">base</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">base</span><span class="o">+</span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">pool</span><span class="p">%</span><span class="n">nodes</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">base</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">base</span><span class="o">+</span><span class="mi">6</span>
+<span class="w">   </span><span class="c">! ...</span>
+<span class="w">   </span><span class="k">return</span>
+<span class="k">end if</span>
+</code></pre></div>
+<p><strong>Benefit:</strong></p>
+<ol>
+<li><strong>Store-Level Parallelism:</strong> The CPU can issue multiple memory writes in parallel because the addresses are known offsets.</li>
+<li><strong>Elimination of Calls:</strong> This covers <strong>93.75%</strong> of all nodes in the tree, effectively turning a recursive algorithm into a linear memory fill operation.</li>
+</ol>
+<h3 id="35-parallelism-zero-overhead-scheduling">3.5. Parallelism: Zero-Overhead Scheduling</h3>
+<p>OpenMP's <code>schedule(dynamic)</code> incurs runtime overhead. Since binary trees are perfectly balanced, the workload is deterministic.</p>
+<ul>
+<li><strong>Strategy:</strong> We utilized <code>schedule(static)</code>.</li>
+<li><strong>Locality:</strong> We moved the <code>Arena</code> structure to the <strong>Thread Stack</strong> (inside the parallel region). This guarantees that memory used by Thread A is physically distant from Thread B, eliminating <strong>False Sharing</strong> (cache line contention) without requiring padding.</li>
+</ul>
+<hr />
+<h2 id="4-forensic-analysis-the-verdict">4. Forensic Analysis: The Verdict</h2>
+<p>The final comparison reveals why the Fortran implementation is superior. It is not about "speed"; it is about <strong>efficiency</strong>.</p>
+<h3 id="41-the-scoreboard">4.1. The Scoreboard</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">C++ (Baseline)</th>
+<th style="text-align: left;">Fortran (Optimized)</th>
+<th style="text-align: left;">Delta</th>
+<th style="text-align: left;">Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Time (s)</strong></td>
+<td style="text-align: left;">1.605</td>
+<td style="text-align: left;"><strong>0.769</strong></td>
+<td style="text-align: left;"><strong>-52.1%</strong></td>
+<td style="text-align: left;">Fortran is more than <strong>2x faster</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Instructions</strong></td>
+<td style="text-align: left;">26.49 Billion</td>
+<td style="text-align: left;"><strong>9.75 Billion</strong></td>
+<td style="text-align: left;"><strong>-63.2%</strong></td>
+<td style="text-align: left;">The key victory. We solved the problem with 3x less code execution.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CPU Cycles</strong></td>
+<td style="text-align: left;">16.73 Billion</td>
+<td style="text-align: left;"><strong>7.11 Billion</strong></td>
+<td style="text-align: left;"><strong>-57.5%</strong></td>
+<td style="text-align: left;">The hardware worked for less than half the time.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cache Misses</strong></td>
+<td style="text-align: left;">11.71 Million</td>
+<td style="text-align: left;"><strong>3.92 Million</strong></td>
+<td style="text-align: left;"><strong>-66.5%</strong></td>
+<td style="text-align: left;"><strong>Architecture Dominance.</strong> 32-bit indices + AoS layout fit 3x more data in cache.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Branch Misses</strong></td>
+<td style="text-align: left;">3.33 Million</td>
+<td style="text-align: left;"><strong>0.39 Million</strong></td>
+<td style="text-align: left;"><strong>-88.1%</strong></td>
+<td style="text-align: left;">Manual unrolling made the execution path perfectly predictable.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-why-fortran-won">4.2. Why Fortran Won?</h3>
+<ol>
+<li><strong>Lower Abstraction Penalty:</strong> Modern Fortran arrays (<code>contiguous</code>) map directly to hardware vectors. We bypassed the "object-oriented tax" that C++ pays.</li>
+<li><strong>Instruction Density:</strong> By manually unrolling the tree creation (Depth 3), we removed billions of <code>CALL</code> and <code>RET</code> instructions.</li>
+<li><strong>Memory Bandwidth:</strong> The combination of <strong>32-bit indices</strong> (vs 64-bit pointers) reduced the memory bandwidth requirement by half.</li>
+</ol>
+<hr />
+<h2 id="5-the-advantages-of-modern-fortran-for-hpc">5. The Advantages of Modern Fortran for HPC</h2>
+<p>This experiment disproves the notion that Fortran is archaic. It demonstrates specific advantages over C/C++ in HPC contexts:</p>
+<ol>
+<li><strong>Strict Aliasing by Default:</strong> Fortran assumes arrays do not overlap unless specified. This allows the compiler (<code>gfortran</code>) to apply aggressive vectorization (<code>AVX</code>).</li>
+<li><strong>Array-Oriented Syntax:</strong> Operations like slicing <code>array(1:n)</code> are intrinsic. In our code, the layout <code>d(:,:)</code> allowed the compiler to understand the memory stride perfectly.</li>
+<li><strong>Clean Module System:</strong> The <code>module</code> system provides encapsulation without the header/source duplication of C++.</li>
+<li><strong>Zero-Overhead Interoperability:</strong> The <code>ISO_C_BINDING</code> module allowed us to use the <code>libapr</code> C library seamlessly.</li>
+</ol>
+<hr />
+<h2 id="6-how-to-reproduce-step-by-step-guide">6. How to Reproduce (Step-by-Step Guide)</h2>
+<p>To verify these results on a Debian/Ubuntu system:</p>
+<h3 id="61-dependencies">6.1. Dependencies</h3>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>gfortran<span class="w"> </span>libapr1-dev<span class="w"> </span>linux-tools-common<span class="w"> </span>linux-tools-generic
+</code></pre></div>
+<h3 id="62-compilation-with-pgo-profile-guided-optimization">6.2. Compilation with PGO (Profile Guided Optimization)</h3>
+<p><strong>Critical Step:</strong> We use PGO to inform the branch predictor of the tree traversal patterns.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 1. Instrument</span>
+gfortran<span class="w"> </span>-std<span class="o">=</span>f2018<span class="w"> </span>-O3<span class="w"> </span>-march<span class="o">=</span>native<span class="w"> </span>-flto<span class="w"> </span>-fopenmp<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-funroll-loops<span class="w"> </span>-floop-nest-optimize<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--param<span class="w"> </span>max-inline-insns-single<span class="o">=</span><span class="m">1200</span><span class="w"> </span>--param<span class="w"> </span>max-inline-insns-auto<span class="o">=</span><span class="m">1000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-fprofile-generate<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>binarytrees.f90<span class="w"> </span>-o<span class="w"> </span>binarytrees<span class="w"> </span>-lapr-1
+
+<span class="c1"># 2. Train (Single threaded to avoid race conditions in .gcda files)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span>
+./binarytrees_train<span class="w"> </span><span class="m">18</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+<span class="nb">unset</span><span class="w"> </span>OMP_NUM_THREADS
+
+<span class="c1"># 3. Optimize</span>
+gfortran<span class="w"> </span>-std<span class="o">=</span>f2018<span class="w"> </span>-O3<span class="w"> </span>-march<span class="o">=</span>native<span class="w"> </span>-flto<span class="w"> </span>-fopenmp<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-funroll-loops<span class="w"> </span>-floop-nest-optimize<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--param<span class="w"> </span>max-inline-insns-single<span class="o">=</span><span class="m">1200</span><span class="w"> </span>--param<span class="w"> </span>max-inline-insns-auto<span class="o">=</span><span class="m">1000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-fprofile-use<span class="w"> </span>-fprofile-correction<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>binarytrees.f90<span class="w"> </span>-o<span class="w"> </span>binarytrees<span class="w"> </span>-lapr-1
+</code></pre></div>
+<h3 id="63-verification">6.3. Verification</h3>
+<div class="highlight"><pre><span></span><code>./binarytrees<span class="w"> </span><span class="m">21</span>
+</code></pre></div>
+<hr />
+<h2 id="7-the-final-source-code">7. The Final Source Code</h2>
+<p><a href="https://github.com/efurlanm/fortran/blob/main/btree/binarytrees.f90">https://github.com/efurlanm/fortran/blob/main/btree/binarytrees.f90</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      CC BY 4.0 License
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["header.autohide"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../assets/katex.js"></script>
+      
+        <script src="../../../../../assets/katex/katex.min.js"></script>
+      
+        <script src="../../../../../assets/katex/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
